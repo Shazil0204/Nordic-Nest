@@ -1,0 +1,75 @@
+.animated-word {
+    display: inline-block;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+}
+
+@keyframes fly-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-top {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-bottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fly-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animations to each word */
+.animated-word.left {
+    animation-name: fly-in-left;
+}
+
+.animated-word.top {
+    animation-name: fly-in-top;
+}
+
+.animated-word.bottom {
+    animation-name: fly-in-bottom;
+    color: #1a8cd8;
+}
+
+.animated-word.right {
+    animation-name: fly-in-right;
+    color: #28a745;
+}

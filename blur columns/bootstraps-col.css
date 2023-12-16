@@ -1,0 +1,80 @@
+/*Sroll bar css*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: green;
+    transition: 1s;
+}
+
+
+section {
+    background: url('/Images/landscape.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+.container {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    height: 10000px;
+}
+
+#logo,
+#slogan,
+#welcome {
+    background: rgb(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid black;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px 5px 10px 5px;
+}
+
+#slogan h1 {
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    width: auto;
+    border-radius: 20px;
+    color: black;
+}
+
+#logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1270px) {
+    #logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    #slogan h1 {
+        white-space: nowrap;
+        font-size: 6vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url(/Images/landscape.png)no-repeat; /*gonna change it later*/
+    background-position: center;
+    background-size: cover;
+}
+
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 2em;
+    color:#fff;
+    text-align: center;
+}
+/* 
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid ¤fff;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+    top: -15px;
+    font-size: larger;
+    color: #fff;
+} */
+
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    padding: 0 5px;
+    transition: 0.3s;
+    color: #5f6368; /* Stylish grey for the text, but choose any color you like */
+    font-size: 0.9em; /* Slightly smaller text */
+    font-weight: 500; /* Medium weight for better readability */
+}
+
+.inputbox input[type="username"],
+.inputbox input[type="password"] {
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    padding: 10px; /* Add some padding for a better look */
+    border: 2px solid #e0e0e0; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    left: 120px;
+    color: #000000; /* Highlight color when active */
+}
+
+/* Style for input focus */
+input:focus,
+input:valid {
+    border-color: #1a73e8; /* Highlight color when active */
+}
+
+/* Adding an animation to the label on focus of the input */
+input:focus ~ label,
+input:valid ~ label {
+    animation: labelSlideUp 0.3s ease-in-out forwards;
+}
+
+@keyframes labelSlideUp {
+    0% {
+        top: 10px;
+        font-size: 0.9em;
+    }
+    100% {
+        top: -20px;
+        font-size: 0.8em;
+    }
+}
+.forget label input{
+    margin-right: 3px;
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 60px;
+}
+
+.forget label a:hover{
+    text-decoration: underline;
+    color: rgb(126, 182, 255); /* A soothing, trust-inspiring blue */
+    transition: .5s;
+}
+
+button{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover{
+    text-decoration: underline;
+    color: lightgreen;
+    transition: .5s;
+}
