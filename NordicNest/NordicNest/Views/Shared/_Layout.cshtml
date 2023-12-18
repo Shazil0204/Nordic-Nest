@@ -25,15 +25,15 @@
                     </div>
                     <!-- Primary Navbar items -->
                     <div class="hidden md:flex items-center space-x-1">
-                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Home</a>
-                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Services</a>
-                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">About</a>
-                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Contact</a>
+                        <a asp-controller="Home" asp-action="About" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Home</a>
+                        <a asp-controller="Home" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Services</a>
+                        <a asp-controller="Home" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">About</a>
+                        <a asp-controller="Home" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Contact</a>
                     </div>
                 </div>
                 <!-- Secondary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="#" class="py-2 px-3 bg-blue-700 text-white rounded hover:font-bold">Login</a>
+                    <a href="#" class="py-2 px-3 bg-blue-700 text-white rounded hover:font-bold animate-pulse">Login</a>
                     <a href="#" class="py-2 px-3 bg-green-600 text-white rounded hover:font-bold">Sign Up</a>
                 </div>
                 <!-- Mobile menu button -->
@@ -48,12 +48,12 @@
         </div>
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden md:hidden flex flex-col items-center justify-center space-y-1">
-            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Home</a>
-            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Services</a>
-            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">About</a>
-            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Contact</a>
-            <a asp-controller="Home" class="block py-2 px-4 text-sm bg-blue-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Login</a>
-            <a asp-controller="Home" class="block py-2 px-4 text-sm bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Sign Up</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm text-white rounded">Home</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm text-white rounded">Services</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm text-white rounded">About</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm text-white rounded">Contact</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm text-white bg-blue-700 rounded">Login</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm text-white bg-green-700 rounded">Sign Up</a>
         </div>
 
     </nav>
