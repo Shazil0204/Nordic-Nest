@@ -18,23 +18,23 @@
                 <div class="flex space-x-4">
                     <!-- Logo -->
                     <div class="py-3">
-                        <a href="#" class="flex items-center py-2 px-2 rounded-3 bg-black hover:text-white">
+                        <a asp-controller="Home" class="py-2 px-2 rounded-3 hover:bg-white hover:text-blue hover:font-bold transition duration-300">
                             <i class="text-2xl fas fa-hand-holding-usd" stroke="currentColor"></i>
                             <span class="font-bold">Nordic Nest</span>
                         </a>
                     </div>
                     <!-- Primary Navbar items -->
                     <div class="hidden md:flex items-center space-x-1">
-                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Home</a>
-                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Services</a>
-                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">About</a>
-                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Contact</a>
+                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Home</a>
+                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Services</a>
+                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">About</a>
+                        <a asp-controller="Home" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Contact</a>
                     </div>
                 </div>
                 <!-- Secondary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="#" class="py-2 px-3 hover:text-white rounded transition duration-150 hover:bg-blue-700">Login</a>
-                    <a href="#" class="py-2 px-3 bg-green-600 text-white rounded transition duration-150 hover:bg-blue-700">Sign Up</a>
+                    <a href="#" class="py-2 px-3 bg-blue-700 text-white rounded hover:font-bold">Login</a>
+                    <a href="#" class="py-2 px-3 bg-green-600 text-white rounded hover:font-bold">Sign Up</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
@@ -47,13 +47,13 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div class="mobile-menu hidden md:hidden flex flex-col items-center justify-center">
-            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Home</a>
-            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Services</a>
-            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">About</a>
-            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Contact</a>
-            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Login</a>
-            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Sign Up</a>
+        <div class="mobile-menu hidden md:hidden flex flex-col items-center justify-center space-y-1">
+            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Home</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Services</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">About</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Contact</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm bg-blue-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Login</a>
+            <a asp-controller="Home" class="block py-2 px-4 text-sm bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Sign Up</a>
         </div>
 
     </nav>
