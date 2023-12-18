@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest\\wwwroot\\js\\Navbar.js",
+      "PackagePath": "staticwebassets\\js\\Navbar.js"
     },
     {
       "Id": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest\\wwwroot\\js\\site.js",

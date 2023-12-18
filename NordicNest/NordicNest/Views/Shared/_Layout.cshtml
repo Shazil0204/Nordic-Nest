@@ -8,40 +8,64 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/NordicNest.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/fbb7e3ec7b.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    @* <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NordicNest</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+<body style="height:10000px;">
+
+    <nav class="bg-gray-800 text-white fixed top-0 w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-4">
+                    <!-- Logo -->
+                    <div class="py-3">
+                        <a href="#" class="flex items-center py-2 px-2 rounded-3 bg-black hover:text-white">
+                            <i class="text-2xl fas fa-hand-holding-usd" stroke="currentColor"></i>
+                            <span class="font-bold">Nordic Nest</span>
+                        </a>
+                    </div>
+                    <!-- Primary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Home</a>
+                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Services</a>
+                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">About</a>
+                        <a href="#" class="py-2 px-3 transition duration-500 hover:font-bold hover:text-white">Contact</a>
+                    </div>
+                </div>
+                <!-- Secondary Navbar items -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#" class="py-2 px-3 hover:text-white rounded transition duration-150 hover:bg-blue-700">Login</a>
+                    <a href="#" class="py-2 px-3 bg-green-600 text-white rounded transition duration-150 hover:bg-blue-700">Sign Up</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </nav>
-    </header> *@
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden flex flex-col items-center justify-center">
+            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Home</a>
+            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Services</a>
+            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">About</a>
+            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Contact</a>
+            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Login</a>
+            <a href="#" class="block py-2 px-4 text-sm rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Sign Up</a>
+        </div>
+
+    </nav>
+
+    <script src="/js/Navbar.js"></script>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    @* <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - NordicNest - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
