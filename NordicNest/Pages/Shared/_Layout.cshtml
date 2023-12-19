@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Model.NavBar.NavBarConnection navBarConnection = new Model.NavBar.NavBarConnection();
+    List<Model.NavBar.NavBarProperties> NBP = navBarConnection.GetNavBars();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,10 +29,10 @@
                     </div>
                     <!-- Primary Navbar items -->
                     <div class="hidden md:flex items-center space-x-1">
-                        <a asp-page="/index" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Home</a>
-                        <a asp-page="/About" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Services</a>
-                        <a asp-page="/index" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">About</a>
-                        <a asp-page="/About" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">Contact</a>
+                        @foreach(var navbar in NBP)
+                        {
+                            <a asp-page="@navbar.URL" class="py-2 px-3 bg-green-700 rounded transition duration-700 hover:bg-white hover:text-black hover:font-bold">@navbar.Name</a>
+                        }
                     </div>
                 </div>
                 <!-- Secondary Navbar items -->
@@ -49,10 +53,10 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden md:hidden flex flex-col items-center justify-center space-y-1">
-            <a asp-page="/About" class="block py-2 px-4 text-sm text-white rounded">Home</a>
-            <a asp-page="/About" class="block py-2 px-4 text-sm text-white rounded">Services</a>
-            <a asp-page="/About" class="block py-2 px-4 text-sm text-white rounded">About</a>
-            <a asp-page="/About" class="block py-2 px-4 text-sm text-white rounded">Contact</a>
+            @foreach (var navbar in NBP)
+            {
+                <a asp-page="@navbar.URL" class="block py-2 px-4 text-sm text-white rounded">@navbar.Name</a>
+            }
             <a asp-page="/About" class="block py-2 px-4 text-sm text-white bg-blue-700 rounded">Login</a>
             <a asp-page="/About" class="block py-2 px-4 text-sm text-white bg-green-700 rounded">Sign Up</a>
         </div>

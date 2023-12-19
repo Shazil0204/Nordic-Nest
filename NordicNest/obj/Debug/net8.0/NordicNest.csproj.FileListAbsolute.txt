@@ -63,3 +63,11 @@ C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\D
 C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.pdb
 C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.genruntimeconfig.cache
 C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\ref\NordicNest.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.AssemblyReference.cache
+C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.CopyComplete
