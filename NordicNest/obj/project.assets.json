@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+      "projectUniqueName": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
       "projectName": "NordicNest",
-      "projectPath": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+      "projectPath": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
       "packagesPath": "C:\\Users\\20shi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\20shi\\Documents\\!On going project\\Nordic-Nest\\NordicNest\\obj\\",
+      "outputPath": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\20shi\\AppData\\Roaming\\NuGet\\NuGet.Config",
