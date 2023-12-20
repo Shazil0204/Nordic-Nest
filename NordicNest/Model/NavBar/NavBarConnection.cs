@@ -5,12 +5,17 @@ namespace NordicNest.Model.NavBar
 {
     public class NavBarConnection
     {
+        // Modified method to accept a page name and return NavBarProperties
         public List<NavBarProperties> GetNavBars()
         {
             var navBars = new List<NavBarProperties>();
 
             // Connection string
-            string connectionString = "Server=SHIZ;Database=NordicNestDB;User ID=Navbar;Password=Navbar;Integrated Security=True;TrustServerCertificate=true;";
+            var config = new ConfigurationBuilder()
+                   .AddJsonFile("appsettings.json")
+                   .Build();
+
+            var connectionString = config.GetConnectionString("NavBarConnection");
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -18,21 +23,32 @@ namespace NordicNest.Model.NavBar
                 {
                     CommandType = CommandType.StoredProcedure
                 };
+                Console.WriteLine(BasicProperties.CurrentPage);
+                // Add the page name as a parameter
+                command.Parameters.AddWithValue("@PageName", Model.BasicProperties.CurrentPage);
 
                 try
                 {
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
-                    while (reader.Read())
+                    if (reader.HasRows)
                     {
-                        var navBar = new NavBarProperties
+                        while (reader.Read())
                         {
-                            Name = reader["Name"].ToString(),
-                            URL = reader["URL"].ToString()
-                        };
+                            var navBar = new NavBarProperties
+                            {
+                                Name = reader["Name"].ToString(),
+                                URL = reader["URL"].ToString()
+                            };
 
-                        navBars.Add(navBar);
+                            navBars.Add(navBar);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No navbars found for the specified page or page does not exist.");
+                        // You can also choose to handle this scenario differently
                     }
 
                     reader.Close();
@@ -47,4 +63,5 @@ namespace NordicNest.Model.NavBar
             return navBars;
         }
     }
+
 }
