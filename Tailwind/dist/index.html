@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="flex justify-center items-center h-screen bg-cover bg-center" style="background-image: url('/Images/landscape.png');">
+    <div class="bg-transparent backdrop-filter backdrop-blur-md border border-white border-opacity-50 rounded-lg px-8 py-10 w-100 max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        <form action="">
+            <h2 class="text-2xl font-bold mb-6">Login</h2>
+            <div class="mb-4">
+                <input type="username" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Username">
+            </div>
+            <div class="mb-6">
+                <input type="password" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Password">
+            </div>
+            <div class="flex justify-center items-center mb-6">
+                <a href="#" class="text-blue-500 transition duration-700 hover:text-blue-700">Forgot my password</a>
+            </div>
+            <button class="w-full bg-blue-500 hover:bg-green-700 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Log in</button>
+            <div class="text-center mt-4">
+                <p>
+                    Don't have an account?
+                    <a href="#" class="text-green-500 transition duration-700 hover:text-blue-700">Register</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="flex justify-center items-center h-screen bg-cover bg-center" style="background-image: url('/Images/landscape.png');">
+    <div class="relative w-100 max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        <div class="absolute inset-0 bg-transparent backdrop-filter backdrop-blur-md border border-white border-opacity-50 rounded-lg"></div>
+        <div class="relative px-8 py-10">
+            <form action="">
+                <h2 class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-200 hover:text-white">Login</h2>
+                <div class="mb-4">
+                    <input type="username" required class="-skew-y-12 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Username">
+                </div>
+                <div class="mb-6">
+                    <input type="password" required class="-skew-y-12 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Password">
+                </div>
+                <div class="flex justify-center items-center mb-6">
+                    <a href="#" class="font-bold text-blue-800 transition duration-700 hover:text-blue-700">Forgot my password</a>
+                </div>
+                <button class="w-full bg-blue-500 hover:bg-green-700 transition duration-700 text-white font-bold py-2 px-4 rounded-lg animate-bounce">Log in</button>
+                <div class="text-center mt-4">
+                    <p class="font-bold">
+                        Don't have an account?
+                        <a href="#" class="text-green-800 transition duration-700 hover:text-blue-700">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
