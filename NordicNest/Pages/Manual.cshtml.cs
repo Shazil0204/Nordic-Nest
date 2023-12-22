@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace NordicNest.Pages
 {
-    public class PrivacyModel : PageModel
+    public class ManualModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+        private readonly ILogger<ManualModel> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public ManualModel(ILogger<ManualModel> logger)
         {
             _logger = logger;
         }

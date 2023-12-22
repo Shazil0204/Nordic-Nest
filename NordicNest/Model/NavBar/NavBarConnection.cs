@@ -39,7 +39,8 @@ namespace NordicNest.Model.NavBar
                             var navBar = new NavBarProperties
                             {
                                 Name = reader["Name"].ToString(),
-                                URL = reader["URL"].ToString()
+                                URL = reader["URL"].ToString(),
+                                IsAuthBtn = (bool)reader["IsAuthBtn"]
                             };
 
                             navBars.Add(navBar);
