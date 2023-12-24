@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dRK6iH7SUaADk2vHq+OFwHsv8g7Z+8JnlYpdMV0QggQ=",
+  "Hash": "VIBj56InPNudFwSOp8cwoWJUakc0h2eIeWcdhetTBIk=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\NN.png"
+    },
+    {
+      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Auth.js",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "js/Auth.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Auth.js"
     },
     {
       "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\js\\ConfirmPassword.js",
