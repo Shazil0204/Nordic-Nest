@@ -40,7 +40,7 @@ INSERT INTO NavBars(Name, URL, IsAuthBtn) VALUES
     ('Contact','/Contact',0),
 	('Manual','/Manual', 0),
 	('Login','/Login',1),
-	('Sign Up','/SignUp',1);
+	('Register','/Register',1);
 GO
 
 -- Insert initial data into the Pages table
