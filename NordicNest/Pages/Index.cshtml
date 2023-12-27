@@ -3,24 +3,19 @@
 @{
     ViewData["Title"] = "Welcome to";
 }
-<head>
-
-    <style>
-        .testing {
-            background: #777;
-            margin-top: 100px;
-        }
-    </style>
-</head>
 <body>
-
-    <section class="testing">
-
-
-        <h1>This is outside container</h1>
-
-        <container>
-            <h1>This is inside container</h1>
-        </container>
+    <section class="mt-20 border border-solid border-gray-300 rounded">
+        <div class="flex items-center">
+            <logo class="hidden lg:block">
+                <img class="h-96 w-auto" src="/Images/Logo2.png" />
+            </logo>
+            <div class="flex-grow m-10">
+                <slogan class="text-center">
+                    <h1 class="font-open-sans text-4xl text-white bg-opacity-20 p-4 rounded-lg backdrop-blur-md [text-shadow:_0_1px_0_rgb(18_255_255_/_70%)]">
+                        Track and Stack, Nordic Nest Has Your Back!
+                    </h1>
+                </slogan>
+            </div>
+        </div>
     </section>
 </body>
