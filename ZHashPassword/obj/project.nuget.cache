@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DavgGz4twBpphNVIs+nxY5hUPTSpfl59jMexgxtJCpvaTXttLFdT3+EhLAnXhgmUAekdm8Evr+dKZwfuJ7wvpA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\ZHashPassword\\HashPassword.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\20shi\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

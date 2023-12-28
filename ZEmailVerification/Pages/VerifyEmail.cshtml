@@ -1,0 +1,13 @@
+﻿@page
+@model EmailVerification.Pages.VerifyEmailModel
+@{
+}
+
+@if (Model.IsSuccess)
+{
+    <p>Your account has been successfully verified!</p>
+}
+else
+{
+    <p>Verification failed. Invalid or expired token.</p>
+}

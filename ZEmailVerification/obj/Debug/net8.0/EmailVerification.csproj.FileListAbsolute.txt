@@ -1,0 +1,60 @@
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\appsettings.json
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\EmailVerification.staticwebassets.runtime.json
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\EmailVerification.exe
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\EmailVerification.deps.json
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\EmailVerification.runtimeconfig.json
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\EmailVerification.dll
+C:\Users\20shi\Desktop\EmailVerification\bin\Debug\net8.0\EmailVerification.pdb
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.AssemblyInfoInputs.cache
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.AssemblyInfo.cs
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.csproj.CoreCompileInputs.cache
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.RazorAssemblyInfo.cache
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.RazorAssemblyInfo.cs
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.EmailVerification.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.build.EmailVerification.props
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.EmailVerification.props
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.EmailVerification.props
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\scopedcss\bundle\EmailVerification.styles.css
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\scopedcss\projectbundle\EmailVerification.bundle.scp.css
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.dll
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\refint\EmailVerification.dll
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.pdb
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\EmailVerification.genruntimeconfig.cache
+C:\Users\20shi\Desktop\EmailVerification\obj\Debug\net8.0\ref\EmailVerification.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\appsettings.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\EmailVerification.staticwebassets.runtime.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\EmailVerification.exe
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\EmailVerification.deps.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\EmailVerification.runtimeconfig.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\EmailVerification.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\bin\Debug\net8.0\EmailVerification.pdb
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.AssemblyInfoInputs.cache
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.AssemblyInfo.cs
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.csproj.CoreCompileInputs.cache
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.RazorAssemblyInfo.cache
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.RazorAssemblyInfo.cs
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.EmailVerification.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.build.EmailVerification.props
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.EmailVerification.props
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.EmailVerification.props
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\scopedcss\bundle\EmailVerification.styles.css
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\scopedcss\projectbundle\EmailVerification.bundle.scp.css
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\refint\EmailVerification.dll
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.pdb
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\EmailVerification.genruntimeconfig.cache
+C:\Users\20shi\OneDrive\Documenti\!On going project\ZEmailVerification\obj\Debug\net8.0\ref\EmailVerification.dll
