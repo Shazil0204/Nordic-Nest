@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Images\\NN.png"
     },
     {
+      "Id": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\backend.png",
+      "PackagePath": "staticwebassets\\Images\\backend.png"
+    },
+    {
       "Id": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\background.png",
       "PackagePath": "staticwebassets\\Images\\background.png"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\landscape.png",
       "PackagePath": "staticwebassets\\Images\\landscape.png"
+    },
+    {
+      "Id": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\css\\ScrollBar.css",
+      "PackagePath": "staticwebassets\\css\\ScrollBar.css"
     },
     {
       "Id": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\css\\site.css",

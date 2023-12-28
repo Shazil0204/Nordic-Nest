@@ -3,19 +3,24 @@
 @{
     ViewData["Title"] = "Welcome to";
 }
+
+<style>
+    body {
+        background-image: url('/Images/financial.png') !important;
+    }
+</style>
+
 <body>
-    <section class="mt-20 border border-solid border-gray-300 rounded">
-        <div class="flex items-center">
-            <logo class="hidden lg:block">
-                <img class="h-96 w-auto" src="/Images/Logo2.png" />
-            </logo>
-            <div class="flex-grow m-10">
-                <slogan class="text-center">
-                    <h1 class="font-open-sans text-4xl text-white bg-opacity-20 p-4 rounded-lg backdrop-blur-md [text-shadow:_0_1px_0_rgb(18_255_255_/_70%)]">
-                        Track and Stack, Nordic Nest Has Your Back!
-                    </h1>
-                </slogan>
-            </div>
-        </div>
+
+    @* This is my main Image *@
+    <section class="mt-20 mb-3 ">
+        <img class="h-auto w-100 rounded border-4 border-cyan-500 rounded" src="/Images/backend.png" />
     </section>
+
+    @* This is for my Slogan *@
+    <slogan class="text-center">
+        <h1 class="font-open-sans text-md lg:text-4xl xl:text-6xl text-cyan-200 bg-opacity-20 p-4 rounded-lg backdrop-blur-xl [text-shadow:_0_1px_0_rgb(18_255_255_/_70%)] border-4 border-cyan-500 rounded hover:bg-black hover:text-white transition duration-500 hover:scale-110">
+            Track and Stack, Nordic Nest Has Your Back!
+        </h1>
+    </slogan>
 </body>

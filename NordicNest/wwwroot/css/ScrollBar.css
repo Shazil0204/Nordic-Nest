@@ -1,0 +1,20 @@
+﻿/* Customizes the whole scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* Customizes the scrollbar track (the part the thumb slides along) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+/* Customizes the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color */
+}
+
+    /* Changes the color of the thumb when it's hovered or active */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }

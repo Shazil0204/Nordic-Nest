@@ -19,6 +19,10 @@
 	  <Folder Include="wwwroot\Images\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include="wwwroot\js\Auth.js" />
+	</ItemGroup>
+
 	<Target Name="Tailwind" BeforeTargets="Build">
 		<Exec Command="npm run css:build" />
 	</Target>
