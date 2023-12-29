@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zhRvUDARLE+FCqgGaminlA9A3wbe6LIQ7svTIX/X+QQ=",
+  "Hash": "f/uDyAPtMLjfOFDc7SbHeDcmMNAwWlPoIGToXfLYai0=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -188,6 +188,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\financial.png"
     },
     {
+      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\Financial_Clarity.png",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "Images/Financial_Clarity.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Financial_Clarity.png"
+    },
+    {
       "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\just.png",
       "SourceId": "NordicNest",
       "SourceType": "Discovered",
@@ -224,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\landscape.png"
+    },
+    {
+      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\Loan_Lifecycle.png",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "Images/Loan_Lifecycle.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Loan_Lifecycle.png"
     },
     {
       "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\Logo.png",
@@ -264,12 +302,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\Logo1.png"
     },
     {
-      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\Logo2.png",
+      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\Simplified_Savings.png",
       "SourceId": "NordicNest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\",
       "BasePath": "_content/NordicNest",
-      "RelativePath": "Images/Logo2.png",
+      "RelativePath": "Images/Simplified_Savings.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,15 +318,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Logo2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Simplified_Savings.png"
     },
     {
-      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\NN.png",
+      "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\Images\\Subscription_Insights.png",
       "SourceId": "NordicNest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\",
       "BasePath": "_content/NordicNest",
-      "RelativePath": "Images/NN.png",
+      "RelativePath": "Images/Subscription_Insights.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -299,7 +337,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\NN.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Subscription_Insights.png"
     },
     {
       "Identity": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Auth.js",
