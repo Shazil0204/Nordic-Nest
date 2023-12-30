@@ -2,27 +2,93 @@
 @model NordicNest.Pages.ContactModel
 @{
     // This code will make sure that you don't get anything from the _Layout.cshtml page
-    Layout = null;
+    // Layout = null;
+    ViewData["Title"] = "Contact me though ";
 }
 
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
-<h1>Hello this is Contact</h1>
+<body>
+
+    <div class="container mt-20 mx-auto p-4">
+
+        <div class="bg-white rounded shadow-lg p-6">
+
+            <div class="text-center border-4 border-cyan-500 rounded p-4 mb-3">
+                <h1 class="text-2xl font-bold text-gray-900">Contact Me</h1>
+            </div>
+
+            <div class="w-full p-4 border-4 border-cyan-500 rounded mb-3">
+                <div class="text-center font-mono text-xs sm:text-sm lg:text-lg xl:text-xl">
+                    <h2 class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                        I'm always here to help you navigate your financial journey with Nordic Nest. 
+                        Whether you have questions, feedback, or need assistance, I'm just a message away. 
+                        Your insights and experiences matter to me, and I'm dedicated to providing you with the support you need.
+                    </h2>
+                </div>
+            </div>
+
+            @* Get in touch *@
+
+            <div class="w-full p-4 border-4 border-cyan-500 rounded mb-3">
+                <div class="text-justify font-mono text-xs sm:text-sm lg:text-lg xl:text-xl">
+                    <div class="text-center">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-3">Get In Touch</h2>
+                    </div>
+
+                    <div class="group">
+                        <p class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                            <strong class="group-hover:text-green-500">Email</strong>
+                            Reach out to me anytime at your-email@example.com. I strive to respond to all emails within 24 hours:
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <p class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                            > <strong class="group-hover:text-green-500">Contact Form:</strong>
+                            Prefer a quick message? Fill out the <a class="text-green-500 hover:uppercase transition duration-500" asp-page="/Contact_Form">contact form</a>, and I’ll get back to you as soon as possible.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <p class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                            > <strong class="group-hover:text-green-500">Social Media:</strong>
+                            Follow and message me on social media for updates, tips, and more. Find me on <abbr title="my links here">LinkedIn, Twitter, Facebook</abbr>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-4 border-4 border-cyan-500 rounded mb-3">
+                <div class="text-justify font-mono text-xs sm:text-sm lg:text-lg xl:text-xl">
+                    <div class="text-center">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-3">Support Hours</h2>
+                    </div>
+
+                    <div class="group">
+                        <p class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                            I'm available from Monday to Friday, 7:45 to 15:45 Central European Standard Time. During these hours, I ensure prompt responses and dedicated support.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <p class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                            > <strong class="group-hover:text-green-500">Feedback and Suggestions:</strong>
+                            Your feedback is invaluable in shaping Nordic Nest. If you have suggestions or ideas on how I can improve your experience, please don't hesitate to share them.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <p class="mb-3 bg-gray-200 hover:bg-black hover:text-white transition duration-500 rounded p-2">
+                            > <strong class="group-hover:text-green-500">Technical Support:</strong>
+                            Encountering technical issues? Describe your problem in detail, and I’ll work diligently to resolve it as quickly as possible.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
