@@ -2,4 +2,119 @@
 @model NordicNest.Pages.Contact_FormModel
 @{
     ViewData["Title"] = "Contact Form ";
+    Model.Contact_Form.Contact_FormProperties CFP = new Model.Contact_Form.Contact_FormProperties();
+    int returnValue = CFP.Result;
+    Console.WriteLine(returnValue);
 }
+
+<body>
+
+    @if (!Model.ShowMessage)
+    {
+        <div class="container mt-20 mx-auto p-4">
+            <div class="bg-white rounded shadow-lg p-6">
+                <div class="text-center border-4 border-cyan-500 rounded p-4 mb-3">
+                    <h1 class="text-2xl font-bold text-gray-900">Contact me by filling the form. <strong class="text-blue-500">Thanks!</strong></h1>
+                </div>
+
+                <div class="text-center border-4 border-cyan-500 rounded p-4 mb-3">
+                    <form id="clientForm">
+                        <div class="text-center">
+                            <h2>Are you a client of <strong class="text-blue-500">Nordic Nest</strong>?</h2>
+                        </div>
+
+                        <div class="mt-4 flex justify-center gap-10">
+                            <!-- 'Yes' Checkbox with Tailwind Styling -->
+                            <div class="flex items-center me-4">
+                                <input type="checkbox" id="isClient" name="clientStatus"
+                                       class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500" required checked />
+                                <label for="isClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-green-500">Yes</label>
+                            </div>
+
+                            <!-- 'No' Checkbox with Tailwind Styling -->
+                            <div class="flex items-center me-4">
+                                <input type="checkbox" id="notClient" name="clientStatus"
+                                       class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500" required />
+                                <label for="notClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-red-500">No</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Form for 'Yes' option (Initially Hidden) -->
+                <div id="clientFormYes" class="hidden">
+                    <div class="text-center border-4 border-cyan-500 rounded p-4 mb-1">
+                        <form id="clientForm" method="post">
+                            <div class="bg-gray-100 p-1 rounded">
+                                <div class="flex text-left bg-gray-100">
+                                    <p class="w-1/2">Please type your First Name</p>
+                                    <input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold" name="FirstName" type="text" placeholder="First Name" />
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1">
+                                <div class="flex text-left ">
+                                    <p class="w-1/2">Please type your Client Number</p>
+                                    <input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" name="ClientNumber" type="number" placeholder="Client Number" />
+                                </div>
+                            </div>
+
+                            <button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-50 h-10 lg:w-25 text-black font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:scale-110 hover:border-2 hover:border-black">
+                                Next
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Form for 'No' option (Initially Hidden) -->
+                <div id="clientFormNo" class="hidden">
+                    <p>Form for non-clients goes here...</p>
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (Model.ShowMessage)
+    {
+        <div class="container mt-20 mx-auto p-4">
+            <div class="bg-white rounded shadow-lg p-6">
+                <div class="text-center border-4 border-cyan-500 rounded p-4 mb-3">
+                    @if (returnValue == -99)
+                    {
+                        <h1>An error occure while loading please refresh the page and try again thanks</h1>
+                    }
+                    else if (returnValue == -2)
+                    {
+                        <h1>We could not find you in our database. Please check your information again.</h1>
+                    }
+                    else if (returnValue == 1)
+                    {
+                        <div class="text-black"> 
+
+                            <h1>We found you in our database. Lucky for you!</h1>
+                            <br />
+                            <br />
+                            <h1>@CFP.FirstName</h1>
+                            <br />
+                            <br />
+                            <h1>@CFP.LastName</h1>
+                            <br />
+                            <br />
+                            <h1>@CFP.ClientNumber</h1>
+                        </div>
+                    }
+                    else if (returnValue == 0)
+                    {
+                        <h1> It is still fucking zero</h1>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+    <script src="~/js/Contact_Form.js" asp-append-version="true"></script>
+</body>
