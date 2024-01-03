@@ -71,3 +71,44 @@ C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\D
 C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.AssemblyReference.cache
 C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.CopyComplete
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\appsettings.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\package-lock.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\package.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\NordicNest.staticwebassets.runtime.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\NordicNest.exe
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\NordicNest.deps.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\NordicNest.runtimeconfig.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\NordicNest.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\NordicNest.pdb
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.AssemblyReference.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.AssemblyInfoInputs.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.AssemblyInfo.cs
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.CoreCompileInputs.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.RazorAssemblyInfo.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.RazorAssemblyInfo.cs
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.sourcelink.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets\msbuild.NordicNest.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets\msbuild.build.NordicNest.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.NordicNest.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.NordicNest.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\bundle\NordicNest.styles.css
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\projectbundle\NordicNest.bundle.scp.css
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.CopyComplete
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\refint\NordicNest.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.pdb
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.genruntimeconfig.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\ref\NordicNest.dll

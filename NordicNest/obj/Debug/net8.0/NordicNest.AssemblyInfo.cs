@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NordicNest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebff34989a2d6e9541eb4b6e612428919be7770d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51ab98cb45e0bb7c855f3bdc44742f1a7924c69f")]
 [assembly: System.Reflection.AssemblyProductAttribute("NordicNest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NordicNest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

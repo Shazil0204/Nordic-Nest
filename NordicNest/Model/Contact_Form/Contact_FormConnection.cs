@@ -8,7 +8,7 @@ namespace NordicNest.Model.Contact_Form
 {
     public class Contact_FormConnection
     {
-        public int GetUserExistence(string firstName, int clientNumber)
+        public Contact_FormProperties GetUserExistence(string firstName, int clientNumber)
         {
             Contact_FormProperties properties = new Contact_FormProperties();
 
@@ -48,7 +48,7 @@ namespace NordicNest.Model.Contact_Form
                     else
                     {
                         properties.Result = -2; // Indicating no data found
-                        return -2;
+                        return properties;
                     }
 
                     reader.Close();
@@ -57,10 +57,10 @@ namespace NordicNest.Model.Contact_Form
                 {
                     Console.WriteLine(ex.Message);
                     properties.Result = -99; // Indicating an error
-                    return -99;
+                    return null;
                 }
 
-                return 1;
+                return properties;
             }
 
         }

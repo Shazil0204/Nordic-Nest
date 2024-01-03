@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {}
+    "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {
+    "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+        "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
         "projectName": "NordicNest",
-        "projectPath": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
-        "packagesPath": "C:\\Users\\20shi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\obj\\",
+        "projectPath": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+        "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\20shi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
