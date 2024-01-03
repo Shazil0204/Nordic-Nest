@@ -102,5 +102,3 @@ GO
 -- Grant read-only access to the Navbar user by adding it to db_datareader role
 ALTER ROLE db_datareader ADD MEMBER Navbar;
 GO
-
-exec CHECKNAVBAR 'Home'
