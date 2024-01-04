@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0xgVuqk8es4sRiyJmKWOOrMGZbYVO2+4Z1LMvSr3kY8=",
+  "Hash": "/23rPnA0+a6fgCxGMOLhPYVt0w2KHeoOesRKU6Xceo8=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -357,6 +357,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Auth.js"
+    },
+    {
+      "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\charCount.js",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "js/charCount.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\charCount.js"
     },
     {
       "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\ConfirmPassword.js",

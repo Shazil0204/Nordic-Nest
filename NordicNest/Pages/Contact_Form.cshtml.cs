@@ -52,7 +52,7 @@ namespace NordicNest.Pages
             //return RedirectToPage();
         }
 
-        public void OnAgain()
+        public void OnCancel()
         {
             ShowMessage = false;
         }

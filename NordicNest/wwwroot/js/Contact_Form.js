@@ -21,6 +21,8 @@ function handleCheckboxChange(changedCheckbox, otherCheckbox) {
 function toggleForms(selectedId) {
     var clientFormYes = document.getElementById("clientFormYes");
     var clientFormNo = document.getElementById("clientFormNo");
+    var ifClientNo = document.getElementById("firstOption");
+    var mainContainer = document.getElementById("mainContainer");
 
     clientFormYes.classList.add("hidden");
     clientFormNo.classList.add("hidden");
@@ -29,6 +31,8 @@ function toggleForms(selectedId) {
         clientFormYes.classList.remove("hidden");
     } else if (selectedId === "notClient") {
         clientFormNo.classList.remove("hidden");
+        ifClientNo.classList.add("hidden");
+        mainContainer.style.width = "100%";
     }
 }
 

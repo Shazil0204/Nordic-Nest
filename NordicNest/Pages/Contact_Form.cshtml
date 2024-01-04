@@ -10,13 +10,13 @@
 
 	@if (!Model.ShowMessage)
 	{
-		<div class="container mt-20 mx-auto p-4">
+		<div id="mainContainer" class="container mt-20 mx-auto p-4 lg:w-2/5">
 			<div class="bg-white rounded shadow-lg p-6">
 				<div class="text-center border-4 border-cyan-500 rounded p-4 mb-3">
 					<h1 class="text-xs sm:text-sm lg:text-lg xl:text-xl font-bold text-gray-900">Contact me by filling the form. <strong class="text-blue-500">Thanks!</strong></h1>
 				</div>
 
-				<div class="text-center border-4 border-cyan-500 rounded p-4 mb-3">
+				<div id="firstOption" class="block text-center border-4 border-cyan-500 rounded p-4 mb-3">
 					<form id="clientForm">
 						<div class="text-center">
 							<h2>Are you a client of <strong class="text-blue-500">Nordic Nest</strong>?</h2>
@@ -44,23 +44,23 @@
 				<!-- Form for 'Yes' option (Initially Hidden) -->
 				<div id="clientFormYes" class="hidden">
 					<div class="text-center border-4 border-cyan-500 rounded p-4 mb-1">
-						<form id="clientForm" method="post">
+						<form id="clientForm" method="post" class="text-black">
 							<div class="bg-gray-100 p-1 rounded">
-								<div class="lg:flex text-center lg:text-left bg-gray-100">
-									<p class="lg:w-1/2 text-center">Please type your First Name</p>
-									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold" name="FirstName" type="text" placeholder="First Name" required/>
+								<div class="lg:flex text-center">
+									<p class="w-100 lg:text-left">Your First Name</p>
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center w-100 lg:w-2/3 font-bold" name="FirstName" type="text" placeholder="First Name" required />
 
 								</div>
 							</div>
 
 							<div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1">
-								<div class="lg:flex text-center lg:text-left ">
-									<p class="lg:w-1/2">Please type your Client Number</p>
-									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" name="ClientNumber" type="number" placeholder="Client Number" required/>
+								<div class="lg:flex text-center">
+									<p class="w-100 lg:text-left">Your Client Number</p>
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center w-100 lg:w-2/3 font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" name="ClientNumber" type="number" placeholder="Client Number" required />
 								</div>
 							</div>
 
-							<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-50 h-10 lg:w-25 text-black font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:scale-110 hover:border-2 hover:border-black">
+							<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-50 h-10 lg:w-25 font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:scale-110 hover:border-2 hover:border-black hover:text-white">
 								Next
 							</button>
 
@@ -70,7 +70,36 @@
 
 				<!-- Form for 'No' option (Initially Hidden) -->
 				<div id="clientFormNo" class="hidden">
-					<p>Form for non-clients goes here...</p>
+					<form id="clientForm" method="message">
+						<div class="bg-gray-100 p-1 rounded">
+							<div class="lg:flex text-center justify-center items-center bg-gray-100">
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" type="text" placeholder="First Name" required/>
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" type="text" placeholder="Last Name"  required/>
+							</div>
+						</div>
+
+						<div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1">
+							<div class="text-justify ">
+								<textarea id="messageTextarea" class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-44 break-words border-4 border-cyan-500 rounded " name="message" maxlength="255"></textarea>
+
+								<label id="charCountLabel" class="text-xs sm:text-sm lg:text-lg xl:text-xl flex text-left ">Character Count: </label>
+
+								<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-100 h-10 lg:w-25 text-black font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:border-2 hover:border-black">
+									Next
+								</button>
+
+							</div>
+						</div>
+
+						<script src="~/js/charCount.js" asp-append-version="true"></script>
+
+					</form>
+
+					<form method="cancel">
+						<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-red-400 w-100 h-10 lg:w-25 text-white font-bold mt-3 rounded transition duration-500 hover:bg-red-600 hover:border-2 hover:border-black">
+							Cancel
+						</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -112,7 +141,9 @@
 
 							<div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1">
 								<div class="text-justify ">
-									<textarea class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-24 lg:h-64 break-words border-4 border-cyan-500 rounded " name="message" maxlength="255"></textarea>
+									<textarea id="messageTextarea" class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-44 break-words border-4 border-cyan-500 rounded " name="message" maxlength="255" required></textarea>
+
+									<label id="charCountLabel" class="text-xs sm:text-sm lg:text-lg xl:text-xl flex text-left ">Character Count: </label>
 
 									<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-100 h-10 lg:w-25 text-black font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:border-2 hover:border-black">
 										Next
@@ -121,9 +152,11 @@
 								</div>
 							</div>
 
+							<script src="~/js/charCount.js" asp-append-version="true"></script>
+
 						</form>
 
-						<form method="again">
+						<form method="cancel">
 							<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-red-400 w-100 h-10 lg:w-25 text-white font-bold mt-3 rounded transition duration-500 hover:bg-red-600 hover:border-2 hover:border-black">
 								Cancel
 							</button>

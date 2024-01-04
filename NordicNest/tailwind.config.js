@@ -4,7 +4,8 @@ module.exports = {
         './Views/**/*.cshtml'
     ],
     theme: {
-        extend: {},
+        extend: {
+        },
     },
     plugins: [],
 }
