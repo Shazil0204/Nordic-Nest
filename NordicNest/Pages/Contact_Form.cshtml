@@ -1,4 +1,5 @@
 ﻿@page
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery antiforgery
 @model NordicNest.Pages.Contact_FormModel
 @{
 	ViewData["Title"] = "Contact Form ";
@@ -17,7 +18,8 @@
 				</div>
 
 				<div id="firstOption" class="block text-center border-4 border-cyan-500 rounded p-4 mb-3">
-					@* <form id="clientForm">
+
+					<form id="clientForm">
 						<div class="text-center">
 							<h2>Are you a client of <strong class="text-blue-500">Nordic Nest</strong>?</h2>
 						</div>
@@ -27,49 +29,27 @@
 							<div class="flex items-center me-4">
 								<input type="checkbox" id="isClient" name="clientStatus"
 									   class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500" required checked />
-								<label for="isClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-green-500">
-									Yes
-									@Model.isClient = true;
-								</label>
+								<label for="isClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-green-500">Yes</label>
 							</div>
 
 							<!-- 'No' Checkbox with Tailwind Styling -->
 							<div class="flex items-center me-4">
 								<input type="checkbox" id="notClient" name="clientStatus"
 									   class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500" required />
-								<label for="notClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-red-500">
-									No
-								</label>
-								@Model.isClient = false;
+								<label for="notClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-red-500">No</label>
 							</div>
 						</div>
-					</form> *@
 
-					<form id="clientForm" method="post">
-						<div class="text-center">
-							<h2>Are you a client of <strong class="text-blue-500">Nordic Nest</strong>?</h2>
-						</div>
-
-						<div class="mt-4 flex justify-center gap-10">
-							<!-- 'Yes' Checkbox with Tailwind Styling -->
-							<div class="flex items-center me-4">
-								<input type="checkbox" id="isClient" name="clientStatus" value="true"
-									   class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500" />
-								<label for="isClient">Yes</label>
-
-								<!-- 'No' Checkbox -->
-								<input type="checkbox" id="notClient" name="clientStatus" value="false"
-									   class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500" />
-								<label for="notClient">No</label>
-
-								<!-- Submit Button -->
-								<button type="submit">Submit</button>
-							</div>
-						</div>
+						<!-- CSRF Token Field -->
+						@{
+							var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
+						}
+						<input type="hidden" id="csrfToken" name="__RequestVerificationToken" value="@token" />
 					</form>
 
 				</div>
 
+				<script src="~/js/Contact_Form.js" asp-append-version="true"></script>
 
 				<!-- Form for 'Yes' option (Initially Hidden) -->
 				<div id="clientFormYes" class="hidden">
@@ -203,5 +183,4 @@
 		</div>
 	}
 
-	<script src="~/js/Contact_Form.js" asp-append-version="true"></script>
 </body>

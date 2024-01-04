@@ -1,4 +1,9 @@
-﻿var isClientCheckbox = document.getElementById("isClient");
+﻿function getCSRFToken() {
+    return document.getElementById('csrfToken').value;
+}
+
+// Event listeners for checkboxes
+var isClientCheckbox = document.getElementById("isClient");
 var notClientCheckbox = document.getElementById("notClient");
 
 isClientCheckbox.addEventListener("change", function () {
@@ -9,15 +14,40 @@ notClientCheckbox.addEventListener("change", function () {
     handleCheckboxChange(this, isClientCheckbox);
 });
 
+// Handle checkbox change
 function handleCheckboxChange(changedCheckbox, otherCheckbox) {
     if (changedCheckbox.checked) {
         otherCheckbox.checked = false;
+        updateClientStatus(changedCheckbox.id === "isClient");
         toggleForms(changedCheckbox.id);
     } else {
         toggleForms();
     }
 }
 
+// Function to send AJAX request
+function updateClientStatus(isClient) {
+    var csrfToken = getCSRFToken();
+
+    fetch('/Contact_Form?handler=UpdateClientStatus', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'RequestVerificationToken': csrfToken
+        },
+        body: JSON.stringify({ isClient: isClient })
+    })
+        // ... rest of your AJAX call ...
+
+        .then(response => {
+            console.log('Status updated');
+        })
+        .catch(error => {
+            console.error('Error updating status', error);
+        });
+}
+
+// Toggle forms based on selection
 function toggleForms(selectedId) {
     var clientFormYes = document.getElementById("clientFormYes");
     var clientFormNo = document.getElementById("clientFormNo");
@@ -36,5 +66,6 @@ function toggleForms(selectedId) {
     }
 }
 
-// Initial call to show the form based on the default state of checkboxes
+// Initial call to set default form state
 toggleForms("isClient");
+
