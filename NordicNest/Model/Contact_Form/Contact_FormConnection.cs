@@ -17,7 +17,7 @@ namespace NordicNest.Model.Contact_Form
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-            var connectionString = config.GetConnectionString("Contact_form_check");
+            var connectionString = config.GetConnectionString("Contact_Form_Check");
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

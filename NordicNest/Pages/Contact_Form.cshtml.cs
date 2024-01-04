@@ -5,16 +5,30 @@ namespace NordicNest.Pages
 {
     public class Contact_FormModel : PageModel
     {
+        Model.Contact_From_Filled.C_F_FilledConnection CFFC = new Model.Contact_From_Filled.C_F_FilledConnection();
+        
         Model.Contact_Form.Contact_FormProperties CFP = new Model.Contact_Form.Contact_FormProperties();
+
         Controller.Contact_FormController CFConn = new Controller.Contact_FormController();
 
         internal string _firstname;
         internal string _lastname;
         internal int _clientNumber;
         internal int _result;
+        internal bool isClient;
 
+		public void OnPost(string clientStatus)
+		{
+            Console.WriteLine("Before"+isClient);
+			isClient = clientStatus == "true";
+            Console.WriteLine("After" + isClient);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+        }
 
-        [BindProperty]
+		[BindProperty]
         public bool ShowMessage { get; set; }
 
         [BindProperty]
@@ -22,8 +36,20 @@ namespace NordicNest.Pages
 
         [BindProperty]
         public int ClientNumber { get; set; }
+        
+        [BindProperty]
+        public string NewUserFirstName { get; set; }
 
-        public void OnGet()
+        [BindProperty]
+        public string NewUserLastName { get; set; }
+
+        [BindProperty]
+        public string userMessage {  get; set; }
+        
+        [BindProperty]
+        public string userEmail {  get; set; }
+
+		public void OnGet()
         {
 
         }
@@ -55,6 +81,18 @@ namespace NordicNest.Pages
         public void OnCancel()
         {
             ShowMessage = false;
+        }
+
+        public void OnMessage()
+        {
+            if(isClient == false)
+            {
+                CFFC.SubmitContactForm(NewUserFirstName, NewUserLastName, isClient, userMessage, userEmail);
+            }
+            else
+            {
+                CFFC.SubmitContactForm(_firstname, _lastname, isClient, userMessage, userEmail);
+            }
         }
     }
 }

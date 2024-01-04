@@ -17,7 +17,7 @@
 				</div>
 
 				<div id="firstOption" class="block text-center border-4 border-cyan-500 rounded p-4 mb-3">
-					<form id="clientForm">
+					@* <form id="clientForm">
 						<div class="text-center">
 							<h2>Are you a client of <strong class="text-blue-500">Nordic Nest</strong>?</h2>
 						</div>
@@ -27,17 +27,47 @@
 							<div class="flex items-center me-4">
 								<input type="checkbox" id="isClient" name="clientStatus"
 									   class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500" required checked />
-								<label for="isClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-green-500">Yes</label>
+								<label for="isClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-green-500">
+									Yes
+									@Model.isClient = true;
+								</label>
 							</div>
 
 							<!-- 'No' Checkbox with Tailwind Styling -->
 							<div class="flex items-center me-4">
 								<input type="checkbox" id="notClient" name="clientStatus"
 									   class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500" required />
-								<label for="notClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-red-500">No</label>
+								<label for="notClient" class="text-xs sm:text-sm lg:text-lg xl:text-xl ms-2 text-sm font-medium text-red-500">
+									No
+								</label>
+								@Model.isClient = false;
+							</div>
+						</div>
+					</form> *@
+
+					<form id="clientForm" method="post">
+						<div class="text-center">
+							<h2>Are you a client of <strong class="text-blue-500">Nordic Nest</strong>?</h2>
+						</div>
+
+						<div class="mt-4 flex justify-center gap-10">
+							<!-- 'Yes' Checkbox with Tailwind Styling -->
+							<div class="flex items-center me-4">
+								<input type="checkbox" id="isClient" name="clientStatus" value="true"
+									   class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500" />
+								<label for="isClient">Yes</label>
+
+								<!-- 'No' Checkbox -->
+								<input type="checkbox" id="notClient" name="clientStatus" value="false"
+									   class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500" />
+								<label for="notClient">No</label>
+
+								<!-- Submit Button -->
+								<button type="submit">Submit</button>
 							</div>
 						</div>
 					</form>
+
 				</div>
 
 
@@ -73,19 +103,20 @@
 					<form id="clientForm" method="message">
 						<div class="bg-gray-100 p-1 rounded">
 							<div class="lg:flex text-center justify-center items-center bg-gray-100">
-								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" type="text" placeholder="First Name" required/>
-								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" type="text" placeholder="Last Name"  required/>
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" name="NewUserFirstName" type="text" placeholder="First Name" required />
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" name="NewUserLastName" type="text" placeholder="Last Name" required />
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" name="userEmail" type="email" placeholder="Your Email" required />
 							</div>
 						</div>
 
 						<div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1">
-							<div class="text-justify ">
-								<textarea id="messageTextarea" class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-44 break-words border-4 border-cyan-500 rounded " name="message" maxlength="255"></textarea>
+							<div class="text-justify text-black">
+								<textarea id="messageTextarea" class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-44 break-words border-4 border-cyan-500 rounded " name="userMessage" maxlength="255"></textarea>
 
 								<label id="charCountLabel" class="text-xs sm:text-sm lg:text-lg xl:text-xl flex text-left ">Character Count: </label>
 
-								<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-100 h-10 lg:w-25 text-black font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:border-2 hover:border-black">
-									Next
+								<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-100 h-10 lg:w-25 hover:text-white font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:border-2 hover:border-black">
+									Submit The request
 								</button>
 
 							</div>
@@ -136,17 +167,18 @@
 									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold" type="text" placeholder="@Model._firstname" readonly />
 									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold" type="text" placeholder="@Model._lastname" readonly />
 									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" type="number" placeholder="@Model._clientNumber" readonly />
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold" name="userEmail" type="Email" placeholder="Your Email" readonly />
 								</div>
 							</div>
 
-							<div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1">
+							<div class="bg-gray-100 p-1 rounded mt-3 mt-lg-1 text-black">
 								<div class="text-justify ">
-									<textarea id="messageTextarea" class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-44 break-words border-4 border-cyan-500 rounded " name="message" maxlength="255" required></textarea>
+									<textarea id="messageTextarea" class="text-xs sm:text-sm lg:text-lg xl:text-xl w-100 h-44 break-words border-4 border-cyan-500 rounded " name="userMessage" maxlength="255" required></textarea>
 
 									<label id="charCountLabel" class="text-xs sm:text-sm lg:text-lg xl:text-xl flex text-left ">Character Count: </label>
 
-									<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-100 h-10 lg:w-25 text-black font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:border-2 hover:border-black">
-										Next
+									<button type="submit" class="text-xs sm:text-sm lg:text-lg xl:text-xl bg-green-500 w-100 h-10 lg:w-25 hover:text-white font-bold mt-3 rounded transition duration-500 hover:bg-blue-500 hover:border-2 hover:border-black">
+										Submit The request
 									</button>
 
 								</div>
