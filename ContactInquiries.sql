@@ -8,20 +8,57 @@ CREATE TABLE ContactInquiries (
 	LastName VARCHAR(30) NOT NULL,
 	IsExistingClient BIT NOT NULL,
 	SubmissionDateTime DATETIME NOT NULL,
-	MessageContent VARCHAR(255) NOT NULL
+	MessageContent VARCHAR(255) NOT NULL,
+	UserEmail VARCHAR(75) NOT NULL,
+	InquiryCompleted BIT NOT NULL
 );
 
-INSERT INTO ContactInquiries (FirstName, LastName, IsExistingClient, SubmissionDateTime, MessageContent)
-VALUES 
-('John', 'Doe', 0, GETDATE(), 'Interested in product details.'),
-('Jane', 'Smith', 1, GETDATE(), 'Issue with recent purchase.'),
-('Emily', 'Johnson', 0, GETDATE(), 'Request for more information on services.'),
-('Michael', 'Brown', 1, GETDATE(), 'Feedback on customer support.'),
-('Sarah', 'Davis', 0, GETDATE(), 'Inquiry about partnership opportunities.'),
-('David', 'Wilson', 1, GETDATE(), 'Questions regarding billing.'),
-('Emma', 'Martinez', 0, GETDATE(), 'Looking for customized solutions.'),
-('Daniel', 'Anderson', 1, GETDATE(), 'Feedback and suggestions for improvements.'),
-('Olivia', 'Thomas', 0, GETDATE(), 'General inquiry about the company.'),
-('James', 'Jackson', 1, GETDATE(), 'Request for a follow-up on previous discussion.');
+GO
+CREATE PROCEDURE USERCONTACTFORM(
+	@FirstName VARCHAR(30),
+	@LastName VARCHAR(30),
+	@IsExistingClient BIT,
+	@MessageContent VARCHAR(255),
+	@UserEmail VARCHAR(75)
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+    BEGIN TRY
+        -- INSERTING DATA INTO THE TABLE
+		INSERT INTO ContactInquiries (FirstName, LastName, IsExistingClient, SubmissionDateTime, MessageContent, UserEmail, InquiryCompleted)
+		VALUES (@FirstName, @LastName, @IsExistingClient, GETDATE(), @MessageContent, @UserEmail, 0);
+		
+		-- DATA INSERT SUCCESSFULLY
+		SELECT 1 AS Result;
 
+    END TRY
+    BEGIN CATCH
+        -- Handle errors
+        SELECT -99 AS Result, 
+               '' AS FirstName, 
+               '' AS LastName, 
+               0 AS ClientNumber, 
+               ERROR_NUMBER() AS ErrorNumber, 
+               ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END;
 
+-- exec USERCONTACTFORM 'Shazil','Shahid',0,'Hello my name is Shazil Shahid','Shazilshahid@gmail.com';
+
+-- select * from ContactInquiries
+GO
+-- Create a new login
+CREATE LOGIN WriteOnlyLogin WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
+-- GOING INTO THE DATABASE
+USE NordicNestDB;
+GO
+-- Create a user in your database for this login
+CREATE USER WriteOnlyUser FOR LOGIN WriteOnlyLogin;
+GO
+-- Grant insert permissions on the ContactInquiries table
+GRANT INSERT ON ContactInquiries TO WriteOnlyUser;
+GO
+-- Explicitly deny select and delete permissions
+DENY SELECT, UPDATE, DELETE ON ContactInquiries TO WriteOnlyUser;
+GO

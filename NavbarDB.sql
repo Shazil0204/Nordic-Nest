@@ -91,7 +91,7 @@ END
 -- Create a read-only login for the database
 GO
 -- Create a new login named Navbar with SQL Server authentication
-CREATE LOGIN Navbar WITH PASSWORD = 'Navbar', DEFAULT_DATABASE = NordicNestDB;
+CREATE LOGIN Navbar WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
 GO
 -- Switch to NordicNestDB database
 USE NordicNestDB;

@@ -50,3 +50,18 @@ BEGIN
                ERROR_MESSAGE() AS ErrorMessage;
     END CATCH
 END;
+
+-- Create a read-only login for the database
+GO
+-- Create a new login named CheckClient with SQL Server authentication
+CREATE LOGIN CheckClient WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
+GO
+-- Switch to NordicNestDB database
+USE NordicNestDB;
+GO
+-- Create a user for the CheckClient login
+CREATE USER CheckClient FOR LOGIN CheckClient;
+GO
+-- Grant read-only access to the CheckClient user by adding it to db_datareader role
+ALTER ROLE db_datareader ADD MEMBER CheckClient;
+GO
