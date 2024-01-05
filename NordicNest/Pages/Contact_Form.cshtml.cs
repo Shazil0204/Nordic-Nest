@@ -19,31 +19,52 @@ namespace NordicNest.Pages
 		internal int _clientNumber;
 		internal int _result;
 
+		/// <summary>
+		/// This is used to show different divs in my cshtml
+		/// </summary>
 		[BindProperty]
 		public bool ShowMessage { get; set; }
 
+		/// <summary>
+		/// This is what i get from the frontend to check if user is a client or not
+		/// </summary>
 		[BindProperty]
 		public string FirstName { get; set; }
 
+		/// <summary>
+		/// This is what i get from the frontend to check if user is a client or not
+		/// </summary>
 		[BindProperty]
 		public int ClientNumber { get; set; }
 
+		/// <summary>
+		/// This is for a new user
+		/// </summary>
 		[BindProperty]
 		public string NewUserFirstName { get; set; }
 
+		/// <summary>
+		/// This is for a new user
+		/// </summary>
 		[BindProperty]
 		public string NewUserLastName { get; set; }
 
-		[BindProperty]
-		public string userMessage { get; set; }
-
+		/// <summary>
+		/// This is for find out where to reply
+		/// </summary>
 		[BindProperty]
 		public string userEmail { get; set; }
+
+		/// <summary>
+		/// This is for the message i get from the user
+		/// </summary>
+		[BindProperty]
+		public string userMessage { get; set; }
 
 		public void OnGet()
 		{
 
-        }
+		}
 
 		public void OnPost()
 		{
@@ -63,6 +84,9 @@ namespace NordicNest.Pages
 				_lastname = CFP.LastName;
 				_clientNumber = CFP.ClientNumber;
 				_result = CFP.Result;
+
+				TempData["FirstName"] = _firstname;
+				TempData["LastName"] = _lastname;
 			}
 
 			ShowMessage = true;
@@ -78,14 +102,27 @@ namespace NordicNest.Pages
 
 		public IActionResult OnPostIsClient()
 		{
-            Console.WriteLine("Everything is working on OnPostIsClient");
+			// Retrieve values from TempData
+			var firstName = TempData["FirstName"] as string;
+			var lastName = TempData["LastName"] as string;
+			// ... similarly for other variables ...
+
+			Console.WriteLine("Everything is working on OnPostIsClient");
+			Console.WriteLine("_firstname " + firstName + " _lastname " + lastName + " userEmail " + userEmail + " userMessage " + userMessage);
+
+			CFFC.SubmitContactForm(firstName, lastName, true, userMessage, userEmail);
 
 			return RedirectToPage();
 		}
 
+
 		public IActionResult OnPostIsNotClient()
 		{
 			Console.WriteLine("Everything is working on OnPostIsNotClient");
+
+            Console.WriteLine("NewUserFirstName " + NewUserFirstName + " NewUserLastName " + NewUserLastName + " userEmail " + userEmail + " userMessage " + userMessage );
+
+			CFFC.SubmitContactForm(NewUserFirstName, NewUserLastName, false, userMessage, userEmail);
 
 			return RedirectToPage();
 		}
