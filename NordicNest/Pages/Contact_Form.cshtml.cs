@@ -1,24 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
-using System.Xml;
 
 namespace NordicNest.Pages
 {
 	public class Contact_FormModel : PageModel
 	{
+		#region Instances
 		Model.Contact_From_Filled.C_F_FilledConnection CFFC = new Model.Contact_From_Filled.C_F_FilledConnection();
 
 		Model.Contact_Form.Contact_FormProperties CFP = new Model.Contact_Form.Contact_FormProperties();
 
 		Controller.Contact_FormController CFConn = new Controller.Contact_FormController();
+		#endregion
 
+		#region Variables
 		internal string _firstname;
 		internal string _lastname;
 		internal int _clientNumber;
 		internal int _result;
+		#endregion
 
+		#region Variable from frontend
 		/// <summary>
 		/// This is used to show different divs in my cshtml
 		/// </summary>
@@ -60,12 +62,17 @@ namespace NordicNest.Pages
 		/// </summary>
 		[BindProperty]
 		public string userMessage { get; set; }
+		#endregion
 
+		#region Methods
 		public void OnGet()
 		{
 
 		}
 
+		/// <summary>
+		/// To check if user exist in my database
+		/// </summary>
 		public void OnPost()
 		{
 			Console.WriteLine();
@@ -92,6 +99,10 @@ namespace NordicNest.Pages
 			ShowMessage = true;
 		}
 
+		/// <summary>
+		/// Back button 
+		/// </summary>
+		/// <returns></returns>
 		public IActionResult OnPostCancel()
 		{
 			ShowMessage = false;
@@ -99,7 +110,10 @@ namespace NordicNest.Pages
 			return RedirectToPage(); // Redirects to the same page with a GET request
 		}
 
-
+		/// <summary>
+		/// This is if the user is not a client
+		/// </summary>
+		/// <returns></returns>
 		public IActionResult OnPostIsClient()
 		{
 			// Retrieve values from TempData
@@ -115,7 +129,10 @@ namespace NordicNest.Pages
 			return RedirectToPage();
 		}
 
-
+		/// <summary>
+		/// This is if the user is a client
+		/// </summary>
+		/// <returns></returns>
 		public IActionResult OnPostIsNotClient()
 		{
 			Console.WriteLine("Everything is working on OnPostIsNotClient");
@@ -126,5 +143,6 @@ namespace NordicNest.Pages
 
 			return RedirectToPage();
 		}
+		#endregion
 	}
 }
