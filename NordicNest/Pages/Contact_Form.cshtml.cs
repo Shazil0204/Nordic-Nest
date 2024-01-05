@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Xml;
 
@@ -17,20 +18,6 @@ namespace NordicNest.Pages
 		internal string _lastname;
 		internal int _clientNumber;
 		internal int _result;
-		internal bool isClient;
-
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public JsonResult OnPostUpdateClientStatus([FromBody] JsonElement data)
-		{
-			Console.WriteLine("Before: " + isClient);
-
-			isClient = data.GetProperty("isClient").GetBoolean();
-
-			Console.WriteLine("After: " + isClient);
-
-			return new JsonResult(new { message = "Update successful" });
-		}
 
 		[BindProperty]
 		public bool ShowMessage { get; set; }
@@ -81,21 +68,26 @@ namespace NordicNest.Pages
 			ShowMessage = true;
 		}
 
-		public void OnCancel()
+		public IActionResult OnPostCancel()
 		{
 			ShowMessage = false;
+			Console.WriteLine("Back button method is working");
+			return RedirectToPage(); // Redirects to the same page with a GET request
 		}
 
-		public void OnMessage()
+
+		public IActionResult OnPostIsClient()
 		{
-			if (isClient == false)
-			{
-				CFFC.SubmitContactForm(NewUserFirstName, NewUserLastName, isClient, userMessage, userEmail);
-			}
-			else
-			{
-				CFFC.SubmitContactForm(_firstname, _lastname, isClient, userMessage, userEmail);
-			}
+            Console.WriteLine("Everything is working on OnPostIsClient");
+
+			return RedirectToPage();
+		}
+
+		public IActionResult OnPostIsNotClient()
+		{
+			Console.WriteLine("Everything is working on OnPostIsNotClient");
+
+			return RedirectToPage();
 		}
 	}
 }
