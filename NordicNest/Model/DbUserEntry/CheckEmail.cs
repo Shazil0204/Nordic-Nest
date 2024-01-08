@@ -12,49 +12,6 @@ namespace NordicNest.Model.DbUserEntry
 		/// </summary>
 		/// <param name="email"></param>
 		/// <returns></returns>
-		//public int CheckEmailIfExist(string email)
-		//{
-
-		//          Console.WriteLine(email);
-
-		//          var config = new ConfigurationBuilder()
-		//		.AddJsonFile("appsettings.json")
-		//		.Build();
-
-		//	var connectionString = config.GetConnectionString("Check_Email");
-
-		//	int result = 0;
-
-		//	using (SqlConnection conn = new SqlConnection(connectionString))
-		//	{
-		//		SqlCommand cmd = new SqlCommand("CheckEmailExist", conn);
-		//		cmd.CommandType = CommandType.StoredProcedure;
-
-		//		// Set up the output parameter
-		//		cmd.Parameters.Add("@EmailExists", SqlDbType.VarChar, 255).Value = email;
-
-		//		try
-		//		{
-		//			conn.Open();
-		//			// Execute the stored procedure
-		//			cmd.ExecuteNonQuery();
-		//			result = Convert.ToInt32(cmd.Parameters["@EmailExists"].Value);
-		//		}
-		//		catch (SqlException ex)
-		//		{
-		//			// Handle exceptions
-		//			Console.WriteLine("SQL Error: " + ex.Message);
-		//			result = -99;
-		//		}
-		//		finally
-		//		{
-		//			conn.Close();
-		//		}
-		//	}
-
-		//	return result;
-		//}
-
 		public int CheckEmailIfExist(string email)
 		{
 			Console.WriteLine(email);

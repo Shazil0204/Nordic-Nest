@@ -139,33 +139,38 @@ namespace NordicNest.Pages
             }
         }
 
-        public IActionResult OnPostAllDone(string firstname, string lastname, int userage, string username, string password)
+        public IActionResult OnPostAllDone(string firstname, string lastname, int userage, string username, string password, string usergender )
         {
-			Model.DbUserEntry.CheckUserName CUN = new Model.DbUserEntry.CheckUserName();
-			int i = CUN.CheckUserNameIfExist(username);
 
-            if (i == 0)
-            {
-				_username = HashData(username);
-				_password = HashData(password);
+            Console.WriteLine(usergender);
 
-				Console.WriteLine(_username + _password);
+   //         Model.DbUserEntry.InsertClient IC = new Model.DbUserEntry.InsertClient();
+			//int i = IC.CheckUserNameIfExist(username);
 
-				TempData["allComplete"] = true;
+   //         if (i == 0)
+   //         {
+			//	_username = HashData(username);
+			//	_password = HashData(password);
 
-                Console.WriteLine("return value in CheckUserNameIfExist is: " + i);
+			//	Console.WriteLine(_username + _password);
 
-				return Page();
-			}
+			//	TempData["allComplete"] = true;
 
-            else
-            {
-                TempData["usernameExist"] = true;
+   //             Console.WriteLine("return value in CheckUserNameIfExist is: " + i);
+
+			//	return Page();
+			//}
+
+   //         else
+   //         {
+   //             TempData["usernameExist"] = true;
                 
-                Console.WriteLine("return value in CheckUserNameIfExist is: " + i);
+   //             Console.WriteLine("return value in CheckUserNameIfExist is: " + i);
 
+			//	return Page();
+			//}
 				return Page();
-			}
+            // I am thinking that it will be great if i create a new page where user can insert there data after they have verified so that we don't go ack to email page again and again
         }
 
         /// <summary>
