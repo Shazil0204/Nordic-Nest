@@ -6,6 +6,21 @@ GO
 USE NordicNestDB;
 GO
 
+-- Create a read-only login for the database
+GO
+-- Create a new login named Navbar with SQL Server authentication
+CREATE LOGIN FullAccess WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
+GO
+-- Switch to NordicNestDB database
+USE NordicNestDB;
+GO
+-- Create a user for the Navbar login
+CREATE USER FullAccess FOR LOGIN FullAccess;
+GO
+-- Grant read-only access to the Navbar user by adding it to db_datareader role
+ALTER ROLE db_owner ADD MEMBER FullAccess;
+GO
+
 -- Create a table named NavBars to store navigation bar items
 CREATE TABLE NavBars(
     NavID INT IDENTITY(1,1) PRIMARY KEY, -- Primary key with auto-increment starting from 1
@@ -87,24 +102,6 @@ BEGIN
     WHERE 
         p.Page = @PageName;
 END
-
--- Create a read-only login for the database
-GO
--- Create a new login named Navbar with SQL Server authentication
-CREATE LOGIN Navbar WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
-GO
--- Switch to NordicNestDB database
-USE NordicNestDB;
-GO
--- Create a user for the Navbar login
-CREATE USER Navbar FOR LOGIN Navbar;
-GO
--- Grant read-only access to the Navbar user by adding it to db_datareader role
-ALTER ROLE db_datareader ADD MEMBER Navbar;
-GO
-
--- Switch context to the NordicNestDB database
-USE NordicNestDB;
 GO
 
 -- CREATING A TABLE FOR Clients
@@ -155,24 +152,6 @@ BEGIN
                ERROR_MESSAGE() AS ErrorMessage;
     END CATCH
 END;
-
--- Create a read-only login for the database
-GO
--- Create a new login named CheckClient with SQL Server authentication
-CREATE LOGIN CheckClient WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
-GO
--- Switch to NordicNestDB database
-USE NordicNestDB;
-GO
--- Create a user for the CheckClient login
-CREATE USER CheckClient FOR LOGIN CheckClient;
-GO
--- Grant read-only access to the CheckClient user by adding it to db_datareader role
-ALTER ROLE db_datareader ADD MEMBER CheckClient;
-GO
-
--- Switch context to the NordicNestDB database
-USE NordicNestDB;
 GO
 
 CREATE TABLE ContactInquiries (
@@ -185,8 +164,8 @@ CREATE TABLE ContactInquiries (
 	UserEmail VARCHAR(75) NOT NULL,
 	InquiryCompleted BIT NOT NULL
 );
-
 GO
+
 CREATE PROCEDURE USERCONTACTFORM(
 	@FirstName VARCHAR(30),
 	@LastName VARCHAR(30),
@@ -216,103 +195,54 @@ BEGIN
                ERROR_MESSAGE() AS ErrorMessage;
     END CATCH
 END;
+GO
 
 -- exec USERCONTACTFORM 'Shazil','Shahid',0,'Hello my name is Shazil Shahid','Shazilshahid@gmail.com';
-
--- select * from ContactInquiries
-GO
--- Create a new login
-CREATE LOGIN ContactInquiriesLogin WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
--- GOING INTO THE DATABASE
-USE NordicNestDB;
-GO
--- Create a user in your database for this login
-CREATE USER ContactInquiriesLogin FOR LOGIN ContactInquiriesLogin;
-GO
--- Grant insert permissions on the ContactInquiries table
-GRANT INSERT ON ContactInquiries TO ContactInquiriesLogin;
-GO
--- Explicitly deny select and delete permissions
-DENY SELECT, UPDATE, DELETE ON ContactInquiries TO ContactInquiriesLogin;
-GO
 
 -- Switch context to the NordicNestDB database
 USE NordicNestDB;
 GO
-CREATE PROCEDURE AddNewClient
-    @FirstName VARCHAR(30),
-    @LastName VARCHAR(30),
-    @Email VARCHAR(255),
-    @UserName VARCHAR(255),
-    @Password VARCHAR(255),
-    @Gender BIT,
-    @Age INT
+
+CREATE PROCEDURE CheckEmailExist
+    @Email VARCHAR(255)
 AS
 BEGIN
-    SET NOCOUNT ON; -- This line prevents extra result sets from interfering with SELECT statements.
+    SET NOCOUNT ON;
 
-    -- Declare variables for use within the procedure
-    DECLARE @ClientNumber INT;
     DECLARE @Count INT;
 
-    BEGIN TRY
-        BEGIN TRANSACTION; -- Start a transaction for atomic operation
+    -- Check if the email already exists in the Clients table
+    SELECT @Count = COUNT(*)
+    FROM Clients
+    WHERE Email = @Email;
 
-        -- Check if the email already exists in the Clients table
-        SELECT @Count = COUNT(*)
-        FROM Clients
-        WHERE Email = @Email;
+    -- If an email is found, return 1; otherwise, return 0
+    IF @Count > 0
+        SELECT 1 AS EmailExists;
+    ELSE
+        SELECT 0 AS EmailExists;
+END;
+GO
 
-        -- If an email is found, raise an error and stop the procedure
-        IF @Count > 0
-        BEGIN
-            RAISERROR('The email provided is already in use.', 16, 1);
-            RETURN;
-        END
+USE NordicNestDB;
+GO
+CREATE PROCEDURE CheckUsernameExist
+    @UserName VARCHAR(255)
+AS
+BEGIN
+    SET NOCOUNT ON;
 
-        -- Check if the username already exists in the Clients table
-        SELECT @Count = COUNT(*)
-        FROM Clients
-        WHERE UserName = @UserName;
+    DECLARE @Count INT;
 
-        -- If a username is found, raise an error and stop the procedure
-        IF @Count > 0
-        BEGIN
-            RAISERROR('The username provided is already in use.', 16, 1);
-            RETURN;
-        END
+    -- Check if the username already exists in the Clients table
+    SELECT @Count = COUNT(*)
+    FROM Clients
+    WHERE UserName = @UserName;
 
-        -- Loop to generate a unique 8-digit ClientNumber
-        WHILE 1 = 1
-        BEGIN
-            -- Generate a random 8-digit number
-            SELECT @ClientNumber = CAST(RAND() * 89999999 AS INT) + 10000000;
-
-            -- Check if this ClientNumber already exists
-            SELECT @Count = COUNT(*)
-            FROM Clients
-            WHERE ClientNumber = @ClientNumber;
-
-            -- If no matching ClientNumber is found, exit the loop
-            IF @Count = 0
-                BREAK;
-        END
-
-        -- Insert the new client record into the Clients table
-        INSERT INTO Clients (ClientNumber, FirstName, LastName, Email, UserName, Password, Gender, Age)
-        VALUES (@ClientNumber, @FirstName, @LastName, @Email, @UserName, @Password, @Gender, @Age);
-
-        COMMIT TRANSACTION; -- Commit the transaction after successful operation
-    END TRY
-    BEGIN CATCH
-        -- Rollback transaction in case of any error during the procedure execution
-        IF @@TRANCOUNT > 0
-            ROLLBACK TRANSACTION;
-
-        -- Retrieve error information and rethrow the error
-        DECLARE @ErrMsg NVARCHAR(4000), @ErrSeverity INT;
-        SELECT @ErrMsg = ERROR_MESSAGE(), @ErrSeverity = ERROR_SEVERITY();
-        RAISERROR(@ErrMsg, @ErrSeverity, 1);
-    END CATCH
+    -- If a username is found, return 1; otherwise, return 0
+    IF @Count > 0
+        SELECT 1 AS UsernameExists;
+    ELSE
+        SELECT 0 AS UsernameExists;
 END;
 GO
