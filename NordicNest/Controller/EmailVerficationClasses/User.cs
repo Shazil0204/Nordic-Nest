@@ -1,4 +1,4 @@
-﻿namespace EmailVerification
+﻿namespace NordicNest.Controller.EmailVerficationClasses
 {
     public class User
     {
@@ -7,6 +7,4 @@
         public DateTime TokenCreated { get; set; } // Add this line
         public bool IsVerified { get; set; }
     }
-
-
 }

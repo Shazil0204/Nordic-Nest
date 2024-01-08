@@ -1,20 +1,29 @@
-﻿/* Customizes the whole scrollbar */
+﻿/* Hide the default scrollbar */
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the vertical scrollbar */
-    height: 12px; /* Height of the horizontal scrollbar */
+    width: 10px; /* Adjust the width as needed */
 }
 
-/* Customizes the scrollbar track (the part the thumb slides along) */
+/* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
+    background: #60a5fa; /* Background color of the track */
+    border-radius: 10px; /* Rounded corners for the track */
 }
 
-/* Customizes the scrollbar thumb (the draggable part) */
+/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; /* Thumb color */
+    background: #007acc; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners for the handle */
 }
 
-    /* Changes the color of the thumb when it's hovered or active */
+    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: #005fa3; /* Color when hovering over the handle */
     }
+
+/* Firefox scrollbar */
+/* Hide the default scrollbar */
+scrollbar-width: thin;
+/* Track */
+scrollbar-color: #60a5fa #007acc;
+/* Handle */
+scrollbar-color: #007acc #60a5fa;

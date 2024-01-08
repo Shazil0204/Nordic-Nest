@@ -2,7 +2,7 @@
 using System.Net.Mail;
 
 
-namespace EmailVerification
+namespace NordicNest.Controller.EmailVerficationClasses
 {
     public class EmailSender
     {
@@ -10,8 +10,8 @@ namespace EmailVerification
 
         public EmailSender(IConfiguration configuration)
         {
-            _configuration = configuration;
-            Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:MailServer"]}");
+			_configuration = configuration;
+			Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:MailServer"]}");
             Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:MailPort"]}");
             Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:SenderName"]}");
             Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:Sender"]}");
@@ -19,7 +19,7 @@ namespace EmailVerification
         }
 
         public Task SendEmailAsync(string email, string subject, string message)
-        {
+        { 
             var client = new SmtpClient(_configuration["EmailSettings:MailServer"], int.Parse(_configuration["EmailSettings:MailPort"]))
             {
                 Credentials = new NetworkCredential(_configuration["EmailSettings:Sender"], _configuration["EmailSettings:Password"]),

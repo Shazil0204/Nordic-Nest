@@ -15,12 +15,5 @@ namespace NordicNest.Controller
 
             return CFP;
         }
-
-
-        internal void OutputData(Contact_FormProperties CFProperties)
-        {
-            
-        }
-
     }
 }

@@ -112,3 +112,4 @@ C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\refin
 C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.pdb
 C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.genruntimeconfig.cache
 C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\ref\NordicNest.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest\NordicNest\bin\Debug\net8.0\BCrypt.Net-Next.dll
