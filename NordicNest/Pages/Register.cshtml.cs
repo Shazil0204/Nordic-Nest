@@ -12,96 +12,21 @@ namespace NordicNest.Pages
     public class RegisterModel : PageModel
     {
         private readonly EmailSender _emailSender;
-        public bool IsSuccess { get; set; }
-        public List<User> Users { get; set; }
 
-        internal bool isVarified;
-
-        internal bool allComplete;
-
-        internal bool emailExist;
-        
-        internal bool usernameExist;
-
-        private string _username;
-
-		private string _password;
-
+        Model.BasicProperties BP = new Model.BasicProperties();
 
 		public RegisterModel(EmailSender emailSender)
 		{
             _emailSender = emailSender;
         }
 
-        /// <summary>
-        /// with this i check if i already have a user and if he is verified
-        /// </summary>
-        /// <param name="token"></param>
-        public void OnGet(string token)
+        public void OnGet()
         {
-            // Initialize a variable to hold the user, starting as null
-            User user = null;
 
-            // Iterate through the list of users
-            foreach (var u in UserData.Users)
-            {
-                // Check if the current user has the matching verification token
-                if (u.VerificationToken == token)
-                {
-                    // If a match is found, assign this user to the 'user' variable
-                    user = u;
-                    // Exit the loop as we found the user we were looking for
-                    break;
-                }
-
-            }
-
-            // Token validity duration (e.g., 5 min)
-            TimeSpan tokenValidityDuration = TimeSpan.FromHours(0.05);
-
-            if (user == null)
-            {
-                Console.WriteLine("working");
-            }
-
-            // Check if a user was found and if the token is still within the validity period
-            else if (user != null && (DateTime.UtcNow - user.TokenCreated) <= tokenValidityDuration)
-            {
-                Users = UserData.Users;
-                // If a user was found and the token is valid, set their status to verified
-                user.IsVerified = true;
-                // Indicate success in the response
-                IsSuccess = true;
-
-                isVarified = true;
-
-                Console.WriteLine("well done");
-            }
-
-            else if (user != null && (DateTime.UtcNow - user.TokenCreated) > tokenValidityDuration)
-            {
-                Users = UserData.Users;
-                // If a user was found but the token is invalid, set their status to not verified yet.
-                user.IsVerified = false;
-                // Indicate unsuccess in the response
-                IsSuccess = false;
-                // Removing user so that i don't have so many data in my list
-                UserData.Users.Remove(user);
-            }
-
-            else
-            {
-                // If no user was found or the token has expired, set the response to indicate failure
-                IsSuccess = false;
-                // Removing user so that i don't have so many data in my list
-                UserData.Users.Remove(user);
-            }
         }
 
         public async Task<IActionResult> OnPostAsync(string email)
         {
-            Console.WriteLine(email);
-
             Model.DbUserEntry.CheckEmail CE = new Model.DbUserEntry.CheckEmail();
             int i = CE.CheckEmailIfExist(email);
 
@@ -120,7 +45,7 @@ namespace NordicNest.Pages
 				UserData.Users.Add(user);
 
 				// This is how i create a verification link
-				var verificationLink = Url.PageLink(pageName: "/Register", values: new { token = user.VerificationToken });
+				var verificationLink = Url.PageLink(pageName: "/EmailVerified", values: new { token = user.VerificationToken });
 
 				// This is the message that user will see in it's email
 				await _emailSender.SendEmailAsync(email, "Verify your email", $"Please verify your email by clicking <a href='{verificationLink}'>here</a>.");
@@ -131,53 +56,31 @@ namespace NordicNest.Pages
 			}
             else
             {
-				TempData["emailExist"] = true; // Set emailExist in TempData
+                BP.EmailExist = true;
+				TempData["storeData"] = BP.EmailExist;
 
-                Console.WriteLine("return value in CheckEmailIfExist is: " + i);
+				Console.WriteLine("return value in CheckEmailIfExist is: " + i);
 
 				return Page();
             }
         }
 
-        public IActionResult OnPostAllDone(string firstname, string lastname, int userage, string username, string password, string usergender )
-        {
+		public IActionResult OnPostEmailAlreadyExist()
+		{
+			ModelState.Clear(); // Clear ModelState to remove validation errors
+			BP.EmailExist = false;
+			TempData["storeData"] = BP.EmailExist;
 
-            Console.WriteLine(usergender);
+			// Redirect to a different page after handling the "Retry" action
+			return RedirectToPage("/SomeOtherPage"); // Change "/SomeOtherPage" to your desired URL
+		}
 
-   //         Model.DbUserEntry.InsertClient IC = new Model.DbUserEntry.InsertClient();
-			//int i = IC.CheckUserNameIfExist(username);
 
-   //         if (i == 0)
-   //         {
-			//	_username = HashData(username);
-			//	_password = HashData(password);
-
-			//	Console.WriteLine(_username + _password);
-
-			//	TempData["allComplete"] = true;
-
-   //             Console.WriteLine("return value in CheckUserNameIfExist is: " + i);
-
-			//	return Page();
-			//}
-
-   //         else
-   //         {
-   //             TempData["usernameExist"] = true;
-                
-   //             Console.WriteLine("return value in CheckUserNameIfExist is: " + i);
-
-			//	return Page();
-			//}
-				return Page();
-            // I am thinking that it will be great if i create a new page where user can insert there data after they have verified so that we don't go ack to email page again and again
-        }
-
-        /// <summary>
-        /// This is how i generate a Token
-        /// </summary>
-        /// <returns></returns>
-        private string GenerateToken()
+		/// <summary>
+		/// This is how i generate a Token
+		/// </summary>
+		/// <returns></returns>
+		private string GenerateToken()
         {            
             using (var rng = new RNGCryptoServiceProvider())
             {
@@ -185,16 +88,6 @@ namespace NordicNest.Pages
                 rng.GetBytes(randomBytes);
                 return Convert.ToBase64String(randomBytes);
             }
-        }
-
-        /// <summary>
-        /// This is how i hash Username and Password
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        private static string HashData(string data)
-        {
-            return BCrypt.Net.BCrypt.HashPassword(data);
         }
     }
 }

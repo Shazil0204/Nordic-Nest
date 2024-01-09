@@ -5,7 +5,9 @@ namespace NordicNest.Model
     public class BasicProperties
     {
         #region Variables
-        public static string CurrentPage = "Null"; 
+        internal static string CurrentPage = "Null"; 
+
+        internal bool EmailExist = false;
         #endregion
     }
 }
