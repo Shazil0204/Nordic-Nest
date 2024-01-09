@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HashPassword")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84466208174bd2a2d75ecb85a42e78b6115f4b0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HashPassword")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HashPassword")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
