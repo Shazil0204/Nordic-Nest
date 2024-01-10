@@ -138,12 +138,11 @@ namespace NordicNest.Pages
 			return RedirectToPage("/EmailVerified");
 		}
 
-		public IActionResult OnPostNewUser()
-		{
-			BasicProperties.IsNew = true;
-			TempData["IsNew"] = true;
-			return Page();
-		}
+        public bool IsUserTrue()
+        {
+            BasicProperties.IsNew = true;
+            return BasicProperties.IsNew; // Return a boolean value
+        }
 
-	}
+    }
 }

@@ -9,6 +9,12 @@
 			],
 			"group": "build",
 			"label": "dotnet: build"
+		},
+		{
+			"type": "Live Preview",
+			"workspacePath": "c:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest",
+			"problemMatcher": [],
+			"label": "Live Preview: Run Server"
 		}
 	]
 }
