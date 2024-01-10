@@ -256,68 +256,51 @@ CREATE PROCEDURE AddNewClient
     @Age INT
 AS
 BEGIN
-    SET NOCOUNT ON; -- This line prevents extra result sets from interfering with SELECT statements.
+    SET NOCOUNT ON;
 
-    -- Declare variables for use within the procedure
     DECLARE @ClientNumber INT;
     DECLARE @Count INT;
-
-    DECLARE @ReturnValue INT; -- Initialize the return value
+    DECLARE @ReturnValue INT = -99; -- Default to error value
 
     BEGIN TRY
-        BEGIN TRANSACTION; -- Start a transaction for atomic operation
+        BEGIN TRANSACTION;
 
-        -- Check if the username already exists in the Clients table
         SELECT @Count = COUNT(*)
         FROM Clients
         WHERE UserName = @UserName;
 
-        -- If a username is found, set return value to 2 and stop the procedure
         IF @Count > 0
         BEGIN
-            SET @ReturnValue = 2;
-            RETURN @ReturnValue;
+            SET @ReturnValue = 2; -- Username exists
+            SELECT @ReturnValue AS ReturnValue;
+            RETURN;
         END
 
-        -- Loop to generate a unique 8-digit ClientNumber
         WHILE 1 = 1
         BEGIN
-            -- Generate a random 8-digit number
             SELECT @ClientNumber = CAST(RAND() * 89999999 AS INT) + 10000000;
 
-            -- Check if this ClientNumber already exists
             SELECT @Count = COUNT(*)
             FROM Clients
             WHERE ClientNumber = @ClientNumber;
 
-            -- If no matching ClientNumber is found, exit the loop
             IF @Count = 0
                 BREAK;
         END
 
-        -- Insert the new client record into the Clients table
         INSERT INTO Clients (ClientNumber, FirstName, LastName, Email, UserName, Password, Gender, Age)
         VALUES (@ClientNumber, @FirstName, @LastName, @Email, @UserName, @Password, @Gender, @Age);
 
-        SET @ReturnValue = 1; -- Set return value to 1 for success
+        SET @ReturnValue = 1; -- Success
 
-        COMMIT TRANSACTION; -- Commit the transaction after successful operation
+        COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
-        -- Rollback transaction in case of any error during the procedure execution
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
 
-        -- Set return value to -99 for any error
-        SET @ReturnValue = -99;
-
-        -- Retrieve error information and rethrow the error
-        DECLARE @ErrMsg NVARCHAR(4000), @ErrSeverity INT;
-        SELECT @ErrMsg = ERROR_MESSAGE(), @ErrSeverity = ERROR_SEVERITY();
-        RAISERROR(@ErrMsg, @ErrSeverity, 1);
+        SET @ReturnValue = -99; -- Error
     END CATCH
 
-    -- Return the appropriate value based on the conditions
-    RETURN @ReturnValue;
+    SELECT @ReturnValue AS ReturnValue; -- Return a result set
 END;
-GO
