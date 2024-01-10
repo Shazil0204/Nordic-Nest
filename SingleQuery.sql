@@ -324,3 +324,62 @@ BEGIN
     RETURN @ReturnValue;
 END;
 GO
+
+CREATE PROCEDURE AddNewClient
+    @FirstName VARCHAR(30),
+    @LastName VARCHAR(30),
+    @Email VARCHAR(255),
+    @UserName VARCHAR(255),
+    @Password VARCHAR(255),
+    @Gender BIT,
+    @Age INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @ClientNumber INT;
+    DECLARE @Count INT;
+    DECLARE @ReturnValue INT = -99; -- Default to error value
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        SELECT @Count = COUNT(*)
+        FROM Clients
+        WHERE UserName = @UserName;
+
+        IF @Count > 0
+        BEGIN
+            SET @ReturnValue = 2; -- Username exists
+            SELECT @ReturnValue AS ReturnValue;
+            RETURN;
+        END
+
+        WHILE 1 = 1
+        BEGIN
+            SELECT @ClientNumber = CAST(RAND() * 89999999 AS INT) + 10000000;
+
+            SELECT @Count = COUNT(*)
+            FROM Clients
+            WHERE ClientNumber = @ClientNumber;
+
+            IF @Count = 0
+                BREAK;
+        END
+
+        INSERT INTO Clients (ClientNumber, FirstName, LastName, Email, UserName, Password, Gender, Age)
+        VALUES (@ClientNumber, @FirstName, @LastName, @Email, @UserName, @Password, @Gender, @Age);
+
+        SET @ReturnValue = 1; -- Success
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SET @ReturnValue = -99; -- Error
+    END CATCH
+
+    SELECT @ReturnValue AS ReturnValue; -- Return a result set
+END;
