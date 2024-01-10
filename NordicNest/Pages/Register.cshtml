@@ -15,30 +15,21 @@
 </head>
 <body class="flex justify-center items-center h-screen bg-cover bg-center"
 	  style="background-image: url('/Images/logo1.png');">
-	<div class="relative w-100 max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+	<div class="relative w-100 max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 lg:hover:scale-110">
 		<div class="absolute inset-0 bg-transparent backdrop-filter backdrop-blur-md border border-white border-opacity-50 rounded-lg">
 		</div>
 		<div class="relative px-8 py-10">
 
 			@if (TempData.ContainsKey("storeData") && (bool)TempData["storeData"] == true)
 			{
-				@* <form action="" method="post" asp-page-handler="emailAlreadyExist">
-					<p class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-500 hover:text-white bg-white rounded hover:bg-opacity-25">Email Already Been Used Before</p>
-					<p class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-500 hover:text-white bg-white rounded hover:bg-opacity-25">Please Try with another email</p>
-					<div class="flex justify-center items-center  mt-6">
-						<button onclick="goBack()" class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Back</button>
-					</div>
-				</form> *@
-
 				<form method="post" asp-page-handler="emailAlreadyExist">
-					<p class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-500 hover:text-white bg-white rounded hover:bg-opacity-25">Email Already Been Used Before</p>
-					<p class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-500 hover:text white bg-white rounded hover:bg-opacity-25">Please Try with another email</p>
+					<p class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-500 bg-white rounded hover:bg-opacity-25">Email Already Been Used Before</p>
+					<p class="text-2xl flex items-center justify-center w-auto font-bold mb-6 transition duration-500 bg-white rounded hover:bg-opacity-25">Please Try with another email</p>
 					<div class="flex justify-center items-center mt-6">
 						<button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
-					</div>
+					</div>	
 					<input type="hidden" name="handler" value="emailAlreadyExist" />
 				</form>
-
 			}
 
 			else

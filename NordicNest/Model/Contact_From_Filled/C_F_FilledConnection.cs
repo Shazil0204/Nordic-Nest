@@ -36,7 +36,6 @@ namespace NordicNest.Model.Contact_From_Filled
 				catch (SqlException ex)
 				{
 					// Handle exceptions
-					Console.WriteLine("SQL Error: " + ex.Message);
 					result = -99;
 				}
 				finally

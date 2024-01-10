@@ -48,16 +48,13 @@ namespace NordicNest.Model.NavBar
                     }
                     else
                     {
-                        Console.WriteLine("No navbars found for the specified page or page does not exist.");
-                        // You can also choose to handle this scenario differently
                     }
 
                     reader.Close();
                 }
                 catch (Exception ex)
                 {
-                    // Handle exceptions (log or throw)
-                    Console.WriteLine(ex.Message);
+
                 }
             }
 

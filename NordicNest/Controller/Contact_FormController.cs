@@ -11,8 +11,6 @@ namespace NordicNest.Controller
         {
             CFP = CFC.GetUserExistence(firstName, clientNumber);
 
-            Console.WriteLine(CFP.FirstName + " " + CFP.ClientNumber);
-
             return CFP;
         }
     }

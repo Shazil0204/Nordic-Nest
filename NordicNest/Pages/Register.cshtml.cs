@@ -1,11 +1,9 @@
 // dotnet add package BCrypt.Net-Next
 
-using BCrypt.Net;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using NordicNest.Controller.EmailVerficationClasses;
-using System.Runtime.CompilerServices;
 
 namespace NordicNest.Pages
 {
@@ -72,7 +70,7 @@ namespace NordicNest.Pages
 			TempData["storeData"] = BP.EmailExist;
 
 			// Redirect to a different page after handling the "Retry" action
-			return RedirectToPage("/SomeOtherPage"); // Change "/SomeOtherPage" to your desired URL
+			return RedirectToPage("/Register");
 		}
 
 

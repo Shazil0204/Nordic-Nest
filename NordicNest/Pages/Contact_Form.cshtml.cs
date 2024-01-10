@@ -75,17 +75,14 @@ namespace NordicNest.Pages
 		/// </summary>
 		public void OnPost()
 		{
-			Console.WriteLine();
 
 			CFP = CFConn.InputData(FirstName, ClientNumber);
 
 			if (CFP == null)
 			{
-				Console.WriteLine("Fucking not working");
 			}
 			else
 			{
-				Console.WriteLine(CFP.FirstName + " / " + CFP.LastName + " / " + CFP.ClientNumber + " / " + CFP.Result);
 
 				_firstname = CFP.FirstName;
 				_lastname = CFP.LastName;
@@ -106,7 +103,6 @@ namespace NordicNest.Pages
 		public IActionResult OnPostCancel()
 		{
 			ShowMessage = false;
-			Console.WriteLine("Back button method is working");
 			return RedirectToPage(); // Redirects to the same page with a GET request
 		}
 
@@ -121,8 +117,6 @@ namespace NordicNest.Pages
 			var lastName = TempData["LastName"] as string;
 			// ... similarly for other variables ...
 
-			Console.WriteLine("Everything is working on OnPostIsClient");
-			Console.WriteLine("_firstname " + firstName + " _lastname " + lastName + " userEmail " + userEmail + " userMessage " + userMessage);
 
 			CFFC.SubmitContactForm(firstName, lastName, true, userMessage, userEmail);
 
@@ -135,9 +129,6 @@ namespace NordicNest.Pages
 		/// <returns></returns>
 		public IActionResult OnPostIsNotClient()
 		{
-			Console.WriteLine("Everything is working on OnPostIsNotClient");
-
-            Console.WriteLine("NewUserFirstName " + NewUserFirstName + " NewUserLastName " + NewUserLastName + " userEmail " + userEmail + " userMessage " + userMessage );
 
 			CFFC.SubmitContactForm(NewUserFirstName, NewUserLastName, false, userMessage, userEmail);
 

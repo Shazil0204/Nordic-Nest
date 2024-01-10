@@ -11,11 +11,6 @@ namespace NordicNest.Controller.EmailVerficationClasses
         public EmailSender(IConfiguration configuration)
         {
 			_configuration = configuration;
-			Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:MailServer"]}");
-            Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:MailPort"]}");
-            Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:SenderName"]}");
-            Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:Sender"]}");
-            Console.WriteLine($"Mail Server from EmailSender: {_configuration["EmailSettings:Password"]}");
         }
 
         public Task SendEmailAsync(string email, string subject, string message)

@@ -1,13 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NordicNest.Controller;
 using NordicNest.Controller.EmailVerficationClasses;
+using NordicNest.Model;
 
 namespace NordicNest.Pages
 {
-    public class EmailVerifiedModel : PageModel
-    {
+	public class EmailVerifiedModel : PageModel
+	{
 		public bool IsSuccess { get; set; }
 		public List<User> Users { get; set; }
+
+		internal string hashpassword;
+
+		internal string email = "NULL";
+
+		internal bool gender;
 
 		/// <summary>
 		/// with this i check if i already have a user and if he is verified
@@ -15,6 +23,8 @@ namespace NordicNest.Pages
 		/// <param name="token"></param>
 		public IActionResult OnGet(string token)
 		{
+			TempData["result"] = 0;
+
 			// Initialize a variable to hold the user, starting as null
 			User user = null;
 
@@ -41,8 +51,10 @@ namespace NordicNest.Pages
 				Users = UserData.Users;
 				// If a user was found and the token is valid, set their status to verified
 				user.IsVerified = true;
-				// This way i remove all the data that is temperarory stored in C#
-				UserData.Users.Remove(user);
+				// Temparory storing the data
+				TempData["UserEmail"] = user.Email;
+
+				BasicProperties.Email = user.Email;
 
 				return Page();
 			}
@@ -70,5 +82,68 @@ namespace NordicNest.Pages
 				return RedirectToPage("/Register");
 			}
 		}
+
+		public IActionResult OnPost(string Firstname, string Lastname, int Userage, string UserGender, string Username, string Password)
+		{
+
+			TempData["fn"] = Firstname;
+			TempData["ln"] = Lastname;
+			TempData["ua"] = Userage;
+			TempData["un"] = Username;
+
+			gender = false;
+			hashpassword = HashData(Password);
+
+			if (UserGender == "Male")
+			{
+				gender = true;
+			}
+			else if (UserGender == "Female")
+			{
+				gender = false;
+			}
+
+			Model.DbUserEntry.InsertClient IC = new Model.DbUserEntry.InsertClient();
+
+			int i = IC.AddNewClient(Firstname, Lastname, Username, hashpassword, gender, Userage);
+
+			if (i == 2)
+			{
+				TempData["result"] = 2;
+			}
+			else if (i == 1)
+			{
+				User user = null;
+				TempData["result"] = 1;
+				UserData.Users.Remove(user);
+			}
+			else if (i == -99)
+			{
+				TempData["result"] = -99;
+			}
+
+			return Page();
+		}
+
+		private static string HashData(string data)
+		{
+			return BCrypt.Net.BCrypt.HashPassword(data);
+		}
+
+		public IActionResult OnPostError()
+		{
+			ModelState.Clear(); // Clear ModelState to remove validation errors
+			TempData["result"] = 0;
+			// Redirect to a different page after handling the "Retry" action
+			return RedirectToPage("/EmailVerified");
+		}
+
+		public IActionResult OnPostNewUser()
+		{
+			BasicProperties.IsNew = true;
+			TempData["IsNew"] = true;
+			return Page();
+		}
+
 	}
 }

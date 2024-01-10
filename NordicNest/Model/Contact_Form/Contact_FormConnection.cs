@@ -25,7 +25,6 @@ namespace NordicNest.Model.Contact_Form
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                Console.WriteLine(BasicProperties.CurrentPage);
 
                 // Add the page name as a parameter
                 command.Parameters.AddWithValue("@FirstName", firstName);
@@ -42,8 +41,6 @@ namespace NordicNest.Model.Contact_Form
                         properties.LastName = reader["LastName"].ToString();
                         properties.ClientNumber = (int)reader["ClientNumber"];
                         properties.Result = (int)reader["Result"];
-                        Console.WriteLine("From database " + (int)reader["Result"]);
-                        Console.WriteLine(properties.Result);
                     }
                     else
                     {
@@ -55,7 +52,6 @@ namespace NordicNest.Model.Contact_Form
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
                     properties.Result = -99; // Indicating an error
                     return null;
                 }
