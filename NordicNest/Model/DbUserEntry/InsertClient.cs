@@ -49,7 +49,7 @@ namespace NordicNest.Model.DbUserEntry
 				catch (SqlException ex)
 				{
 					Console.WriteLine("SQL Error: " + ex.Message);
-					result = -99;
+					result = -101;
 				}
 				finally
 				{

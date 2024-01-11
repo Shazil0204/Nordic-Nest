@@ -1,153 +1,156 @@
 ﻿@page
 @model NordicNest.Pages.EmailVerifiedModel
 @{
-    Layout = null;
+	Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finish Verification</title>
-    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Finish Verification</title>
+	<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 </head>
 <body class="flex font-bold justify-center items-center h-screen bg-cover bg-center"
-      style="background-image: url('/Images/logo.png');">
-    <div class="relative w-100 max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 lg:hover:scale-110">
-        <div class="absolute inset-0 bg-transparent backdrop-filter backdrop-blur-md border border-white border-opacity-50 rounded-lg">
-        </div>
-        <div class="relative px-8 py-10 text-black">
-            @if (Model.TempData["result"] != null && (int)Model.TempData["result"] == 0)
-            {
-                <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">Email Verfied Successfully</p>
-                <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">Please Continue</p>
-                <form method="post" asp-page-handler="allDone">
-                    <div class="mb-4">
-                        <input type="text" name="firstname" maxlength="30" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                               placeholder="First Name">
-                    </div>
-                    <div class="mb-4">
-                        <input type="text" name="lastname" maxlength="30" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                               placeholder="Last Name">
-                    </div>
-                    <div class="mb-4">
-                        <input type="number" name="userage" maxlength="2" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                               placeholder="Your Age">
-                    </div>
-                    <div class="mb-4">
-                        <input type="text" name="username" maxlength="50" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                               placeholder="Username">
-                    </div>
-                    <div class="mb-4">
-                        <input type="password" name="password" id="password" maxlength="50" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                               placeholder="Password">
-                    </div>
-                    <div class="mb-6">
-                        <input type="password" id="confirm_password" maxlength="50" required
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                               placeholder="Confirm Password">
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-center items-center">
-                            <label class="px-3 py-2 border border-gray-300 rounded-lg bg-white mb-4">
-                                Gender
-                            </label>
-                        </div>
-                        <div class="flex space-x-6 rounded bg-white">
-                            <div class="flex items-center justify-center my-4 w-1/2">
-                                <input id="genderMale" type="radio" name="userGender" value="Male" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
-                                <label for="genderMale" class="ml-2 text-sm font-medium text-black">
-                                    Male
-                                </label>
-                            </div>
-                            <div class="flex items-center justify-center my-4 w-1/2">
-                                <input id="genderFemale" type="radio" name="userGender" value="Female" class="w-4 h-4 text-pink-600 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
-                                <label for="genderFemale" class="ml-2 text-sm font-medium text-black">
-                                    Female
-                                </label>
-                            </div>
-                        </div>
+	  style="background-image: url('/Images/logo.png');">
+	<div class="relative w-100 max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 lg:hover:scale-110">
+		<div class="absolute inset-0 bg-transparent backdrop-filter backdrop-blur-md border border-white border-opacity-50 rounded-lg">
+		</div>
+		<div class="relative px-8 py-10 text-black">
+			@if (Model.TempData["result"] != null && (int)Model.TempData["result"] == 0)
+			{
+				<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">Email Verfied Successfully</p>
+				<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">Please Continue</p>
+				<form method="post" asp-page-handler="allDone">
+					<div class="mb-4">
+						<input type="text" name="firstname" maxlength="30" required
+							   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+							   placeholder="First Name">
+					</div>
+					<div class="mb-4">
+						<input type="text" name="lastname" maxlength="30" required
+							   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+							   placeholder="Last Name">
+					</div>
+					<div class="mb-4">
+						<input type="number" name="userage" maxlength="2" required
+							   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+							   placeholder="Your Age">
+					</div>
+					<div class="mb-4">
+						<input type="text" name="username" maxlength="50" required
+							   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+							   placeholder="Username">
+					</div>
+					<div class="mb-4">
+						<input type="password" name="password" id="password" maxlength="50" required
+							   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+							   placeholder="Password">
+					</div>
+					<div class="mb-6">
+						<input type="password" id="confirm_password" maxlength="50" required
+							   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+							   placeholder="Confirm Password">
+					</div>
+					<div class="mb-4">
+						<div class="flex justify-center items-center">
+							<label class="px-3 py-2 border border-gray-300 rounded-lg bg-white mb-4">
+								Gender
+							</label>
+						</div>
+						<div class="flex space-x-6 rounded bg-white">
+							<div class="flex items-center justify-center my-4 w-1/2">
+								<input id="genderMale" type="radio" name="userGender" value="Male" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
+								<label for="genderMale" class="ml-2 text-sm font-medium text-black">
+									Male
+								</label>
+							</div>
+							<div class="flex items-center justify-center my-4 w-1/2">
+								<input id="genderFemale" type="radio" name="userGender" value="Female" class="w-4 h-4 text-pink-600 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required>
+								<label for="genderFemale" class="ml-2 text-sm font-medium text-black">
+									Female
+								</label>
+							</div>
+						</div>
 
-                    </div>
+					</div>
 
-                    <button type="submit" class="w-full bg-blue-500 hover:bg-green-700 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">
-                        Submit
-                    </button>
-                </form>
-                <div class="text-center mt-4 font-bold text-black">
-                    <p> EXIT Back to <a asp-page="Index" class="text-blue-500 transition duration-700 hover:text-green-500">Home</a> Page </p>
-                </div>
-            }
-            else if (Model.TempData["result"] != null && (int)Model.TempData["result"] == 1)
-            {
-                <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">
-                    Congratulations Your Account has been created. Please go through some steps so that we can build your Dashboard
-                </p>
-                <a asp-page="/Login" class="font-bold w-1/2 m-1 p-1">Login</a>
-                <a asp-page="/NewUserContinue" class="font-bold w-1/2 m-1 p-1">Continue</a>
-                <div>
-                    @{
-                        Model.IsUserTrue();
-                    }
-                </div>
+					<button type="submit" class="w-full bg-blue-500 hover:bg-green-700 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">
+						Submit
+					</button>
+				</form>
+				<div class="text-center mt-4 font-bold text-black">
+					<p> EXIT Back to <a asp-page="Index" class="text-blue-500 transition duration-700 hover:text-green-500">Home</a> Page </p>
+				</div>
+			}
+			else if (Model.TempData["result"] != null && (int)Model.TempData["result"] == 1)
+			{
+				<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">
+					Congratulations Your Account has been created. Please go through some steps so that we can build your Dashboard
+				</p>
+				<div>
+					@{
+						Model.IsUserTrue();
+					}
+				</div>
 
-            }
-            else if (Model.TempData["result"] != null && (int)Model.TempData["result"] == 2)
-            {
-                <form method="post" asp-page-handler="error">
-                    <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">The username you used have already been used so please try a new one. Thanks </p>
-                    <div class="flex justify-center items-center mt-6">
-                        <button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
-                    </div>
-                    <input type="hidden" name="handler" value="error" />
-                </form>
-            }
-            else if (Model.TempData["result"] != null && (int)Model.TempData["result"] == -99)
-            {
-                <form method="post" asp-page-handler="error">
-                    <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">An error occurred in database please try again or contact me </p>
-                    <div class="flex justify-center items-center mt-6">
-                        <button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
-                    </div>
-                    <input type="hidden" name="handler" value="error" />
-                </form>
-            }
-            else
-            {
-                <form method="post" asp-page-handler="error">
-                    <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">An error occurred in system please try again or contact me </p>
-                    <div class="flex justify-center items-center mt-6">
-                        <button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
-                    </div>
-                    <input type="hidden" name="handler" value="error" />
-                </form>
-            }
+				<div class="bg-white flex justify-center items-center backdrop-filter backdrop-blur-md rounded-2xl">
+					<a class="font-bold w-1/2 m-1 p-1 text-center bg-black text-white rounded-2xl hover:bg-white hover:text-black duration-500" asp-page="/Login">Login</a>
+					<a class="font-bold w-1/2 m-1 p-1 text-center bg-black text-white rounded-2xl hover:bg-white hover:text-black duration-500" asp-page="/NewUserContinue">Continue</a>
+				</div>
 
-            @* @if (Model.TempData["IsNew"] != null && (bool)Model.TempData["IsNew"] == true)
-            {
-            <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">Choose one of the following options</p>
-            <div class="flex justify-center">
+			}
+			else if (Model.TempData["result"] != null && (int)Model.TempData["result"] == 2)
+			{
+				<form method="post" asp-page-handler="error">
+					<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">The username you used have already been used so please try a new one. Thanks </p>
+					<div class="flex justify-center items-center mt-6">
+						<button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
+					</div>
+					<input type="hidden" name="handler" value="error" />
+				</form>
+			}
+			else if (Model.TempData["result"] != null && (int)Model.TempData["result"] == -101)
+			{
+				<form method="post" asp-page-handler="error">
+					<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">An error occurred in System please try again or contact me </p>
+					<div class="flex justify-center items-center mt-6">
+						<button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
+					</div>
+					<input type="hidden" name="handler" value="error" />
+				</form>
+			}
+			else
+			{
+				<form method="post" asp-page-handler="error">
+					<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">An error occurred in Database please try again or contact me </p>
+					<div class="flex justify-center items-center mt-6">
+						<button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
+					</div>
+					<input type="hidden" name="handler" value="error" />
+				</form>
+			}
 
-            </div>
-            }
-            else
-            {
-            <form method="post" asp-page-handler="error">
-            <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">An error occurred please try again or contact me</p>
-            <p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded bg-opacity-25 hover:bg-opacity-75">your account has been created so you can just login</p>
-            <div class="flex justify-center items-center mt-6">
-            <button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
-            </div>
-            <input type="hidden" name="handler" value="error" />
-            </form>
-            } *@
-        </div>
-    </div>
-    <script src="~/js/ConfirmPassword.js"></script>
+			@* @if (Model.TempData["IsNew"] != null && (bool)Model.TempData["IsNew"] == true)
+			{
+			<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">Choose one of the following options</p>
+			<div class="flex justify-center">
+
+			</div>
+			}
+			else
+			{
+			<form method="post" asp-page-handler="error">
+			<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">An error occurred please try again or contact me</p>
+			<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl w-auto font-bold mb-6 transition duration-500 bg-white hover:text-white hover:bg-black rounded ">your account has been created so you can just login</p>
+			<div class="flex justify-center items-center mt-6">
+			<button class="w-full hover:text-black bg-blue-500 transition duration-700 text-white font-bold py-2 px-4 rounded-lg">Retry</button>
+			</div>
+			<input type="hidden" name="handler" value="error" />
+			</form>
+			} *@
+		</div>
+	</div>
+	<script src="~/js/ConfirmPassword.js"></script>
 </body>

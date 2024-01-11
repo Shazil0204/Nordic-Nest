@@ -13,6 +13,8 @@ namespace NordicNest.Model
 
         internal static bool IsNew { get; set; }
 
+        internal static bool IsLogged { get; set; } = false;
+
         #endregion
     }
 }
