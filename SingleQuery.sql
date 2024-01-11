@@ -304,3 +304,31 @@ BEGIN
 
     SELECT @ReturnValue AS ReturnValue; -- Return a result set
 END;
+
+CREATE PROCEDURE CHECKUSER
+    @UserName VARCHAR(255),
+    @Password VARCHAR(255) OUTPUT, -- This is now an output parameter
+    @Result INT OUTPUT -- Additional output parameter for the result code
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Check if the username exists with case-sensitive comparison
+        IF EXISTS (SELECT * FROM Clients WHERE UserName COLLATE Latin1_General_BIN = @UserName)
+        BEGIN
+            -- Get the password for the username
+            SELECT @Password = Password FROM Clients WHERE UserName COLLATE Latin1_General_BIN = @UserName;
+            SET @Result = 1; -- Indicate success
+        END
+        ELSE
+        BEGIN
+            SET @Password = NULL; -- No password to return
+            SET @Result = -2; -- Username does not exist or case mismatch
+        END
+    END TRY
+    BEGIN CATCH
+        -- If an error occurs, set the result to -99
+        SET @Result = -99;
+    END CATCH
+END
