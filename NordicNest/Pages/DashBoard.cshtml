@@ -5,81 +5,48 @@
     int secondProgressBar = 20;
     int tirstProgressBar = 99;
 }
-<body class="bg-[#6f5684]">
-    <div class="w-full p-2 h-screen">
-        <div class="w-full lg:bg-white lg:mt-[4rem] lg:h-[94.55%] lg:p-4 rounded-2xl lg:shadow-lg flex flex-col">
-            <div class="flex h-full gap-4">
-                @* This will show user info and messages that i will send from the database *@
-                <div class="flex-grow-0 flex-shrink-0 w-1/5  h-full border-2 border-sky-500 rounded-2xl mr-1"></div>
-                <div class="flex-grow flex-shrink h-full flex flex-col gap-4">
-                    @* This will show charts and creating optiopns *@
-                    <div class="h-2/5 border-2  border-sky-500 rounded-2xl w-full">
-                        <div class="flex justify-center items-center p-2 w-full">
-                            <div class="relative">
-                                <div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-                                    <span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-                                </div>
-                                <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-                                    <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color: #3B82F6;"></stop>
-                                        <stop offset="50%" style="stop-color: #9333EA;"></stop>
-                                        <stop offset="100%" style="stop-color: #F472B6;"></stop>
-                                    </linearGradient>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="h-2/5 border-2  border-sky-500 rounded-2xl w-full">
-                        <div class="flex justify-center items-center p-2 w-full">
-                            <div class="relative">
-                                <div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-                                    <span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-                                </div>
-                                <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-                                    <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color: #3B82F6;"></stop>
-                                        <stop offset="50%" style="stop-color: #9333EA;"></stop>
-                                        <stop offset="100%" style="stop-color: #F472B6;"></stop>
-                                    </linearGradient>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-1/5 border-2  border-sky-500 rounded-2xl w-full">
-                        <div class="flex justify-center items-center p-2 w-full">
-                            <div class="relative">
-                                <div id="circle-bg-3" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-                                    <span id="progress-text-3" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-                                </div>
-                                <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-                                    <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <circle id="progress-bar-lingering-3" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <circle id="progress-bar-3" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color: #3B82F6;"></stop>
-                                        <stop offset="50%" style="stop-color: #9333EA;"></stop>
-                                        <stop offset="100%" style="stop-color: #F472B6;"></stop>
-                                    </linearGradient>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @* this will show transactions & saving & loan charts *@
-                <div class="flex-grow-0 flex-shrink-0 w-1/5  h-full border-2 border-sky-500 rounded-2xl ml-1"></div>
-            </div>
-        </div>
-    </div>
+<body class="bg-[#343541]">
+<!--top margin so that divs don't go under the navbar-->
+<div class="mt-[4.5rem]"></div>
+<div class="grid grid-cols-1 xl:grid-cols-2 bp-1800:grid-cols-5 gap-3 p-2">
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">Profile</div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">transaction</div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">my total money right now</div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">my money that i can use without causing problem for my saving and loan accounts</div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:col-span-2 bp-1800:col-span-1">messages</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 bp-1800:grid-cols-4 gap-3 p-2 grid-flow-row-dense">
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2"> 1 </div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:col-span-2 bp-1800:col-span-2"> 2 </div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:col-span-2 bp-1800:col-span-2"> 3 </div>
+    <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:col-span-3 bp-1800:row-span-2 bp-1800:col-span-1"> 4 </div>
+</div>
 </body>
 
+
+
+
+
+
+
 @* https://www.behance.net/gallery/158583411/Fintech-Dashboard-%28FREE-Figma-template%29 *@
+@* <div class="flex justify-center items-center p-2 w-full">
+    <div class="relative">
+        <div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+            <span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+        </div>
+        <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: #3B82F6;"></stop>
+                <stop offset="50%" style="stop-color: #9333EA;"></stop>
+                <stop offset="100%" style="stop-color: #F472B6;"></stop>
+            </linearGradient>
+        </svg>
+    </div>
+</div>
 
 <script>
     function updateProgress(progressBarId, progressBarLingeringId, progressTextId, target) {
@@ -96,7 +63,7 @@
             progressBarLingering.style.strokeDashoffset = offset;
 
             if (progress < target) {
-                setTimeout(incrementProgress, 10);
+                setTimeout(incrementProgress, 30);
             }
         }
 
@@ -107,3 +74,4 @@
     updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', @secondProgressBar);
     updateProgress('progress-bar-3', 'progress-bar-lingering-3', 'progress-text-3', @tirstProgressBar);
 </script>
+ *@

@@ -9,79 +9,79 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NordicNest
 build_property.RootNamespace = NordicNest
-build_property.ProjectDir = C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest\
+build_property.ProjectDir = V:\Nordic-Nest\NordicNest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\20shi\OneDrive\Documenti\!On going project\Nordic-Nest\NordicNest
+build_property.MSBuildProjectDirectory = V:\Nordic-Nest\NordicNest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/About.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Contact.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Contact_Form.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Contact_Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdF9Gb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/DashBoard.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/DashBoard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/EmailVerified.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/EmailVerified.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1haWxWZXJpZmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Error.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Index.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Login.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Manual.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Manual.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFudWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/NewUserContinue.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/NewUserContinue.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3VXNlckNvbnRpbnVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Register.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Services.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Services.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/ShowErrorMessage.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/ShowErrorMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0Vycm9yTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/_ViewImports.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/_ViewStart.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/20shi/OneDrive/Documenti/\!On going project/Nordic-Nest/NordicNest/Pages/Shared/_Layout.cshtml]
+[V:/Nordic-Nest/NordicNest/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-52uxrxnjrm

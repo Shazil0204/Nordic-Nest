@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NM8LsIuPZHWlZZ1FxGjLSQjpUIY0oqEJQJ+52z66gqZLpdV5Xu5DWloVdVeoobuVLUT0lhsxWBB/lEB5PDz83w==",
+  "dgSpecHash": "txeC8oAZFy3GJ+DIOVlklU7CkA7plpQVL9AN9pCbu+KzictPgvjZ7qa2RseDbv6JisX1f7rAFNWxfFiNL/nJIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\20shi\\OneDrive\\Documenti\\!On going project\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+  "projectFilePath": "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\20shi\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\20shi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

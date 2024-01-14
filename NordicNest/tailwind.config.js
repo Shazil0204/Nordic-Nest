@@ -5,6 +5,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            screens: {
+                'bp-1800': '1800px',
+            },
         },
     },
     plugins: [],
