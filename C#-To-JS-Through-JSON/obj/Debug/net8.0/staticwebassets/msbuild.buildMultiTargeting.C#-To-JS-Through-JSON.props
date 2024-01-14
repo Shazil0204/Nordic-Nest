@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\C#-To-JS-Through-JSON.props" />
+</Project>

@@ -1,0 +1,149 @@
+﻿@page
+@using System.Text.Json
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    // string[] labels = Model.labels;
+    // int[] data = Model.data;
+
+    string[] labels = { "11", "22", "33", "44", "55", "66", "77", "88", "99", "1010", "1111", "1212" };
+    int[] data = { 0, 10, 5, 2, 20, 30, 45, 5, 2, 20, 30, 100 };
+
+    string labelsJson = JsonSerializer.Serialize(labels);
+    string dataJson = JsonSerializer.Serialize(data);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex">
+        <div class="w-[50%] h-[25vh] p-2">
+            <!-- Ensure enough height -->
+            <div class="shadow-lg rounded-lg overflow-hidden h-full">
+                <div class="py-3 px-5 bg-gray-50">Line chart</div>
+                <canvas id="chartLine" class="w-full h-full pb-10 px-3"></canvas> <!-- Full width and height -->
+            </div>
+        </div>
+        <div class="w-[50%] h-[25vh] p-2">
+            <!-- Ensure enough height -->
+            <div class="shadow-lg rounded-lg overflow-hidden h-full">
+                <div class="py-3 px-5 bg-gray-50">Column chart</div>
+                <canvas id="chartColumn" class="w-full h-full pb-10 px-3"></canvas> <!-- Full width and height -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Required chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var labels = @Html.Raw(labelsJson);
+        var data = @Html.Raw(dataJson);
+
+        // Now you can use the labels and data arrays in your JavaScript code
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx1 = document.getElementById('chartLine').getContext('2d');
+            const ctx2 = document.getElementById('chartColumn').getContext('2d');
+
+            const chartData1 = {
+                labels: labels,
+                datasets: [{
+                    label: "Daily Money usage",
+                    backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                    borderColor: "hsl(252, 82.9%, 67.8%)",
+                    data: data,
+                }],
+            };
+
+            const chartData2 = {  // Define data for the second chart (column chart)
+                labels: labels,
+                datasets: [{
+                    label: "Daily Money usage",
+                    backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                    borderColor: "hsl(252, 82.9%, 67.8%)",
+                    data: data,
+                }],
+            };
+
+            var chartLine = new Chart(ctx1, {
+                type: "line",
+                data: chartData1,
+                options: {
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            bottom: 30 // Adjust padding
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                autoSkip: true,
+                                maxRotation: 0,
+                                minRotation: 0
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return "Today's Money Usage: " + tooltipItem.yLabel;
+                            },
+                        },
+                    },
+                },
+            });
+
+            var chartColumn = new Chart(ctx2, {  // Create a second Chart instance (column chart)
+                type: "bar",  // Set the chart type to 'bar' for a column chart
+                data: chartData2,  // Use the data for the second chart
+                options: {
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            bottom: 30 // Adjust padding
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                autoSkip: true,
+                                maxRotation: 0,
+                                minRotation: 0
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            title: function (tooltipItems, data) {
+                                return data.labels[tooltipItems[0].index];
+                            },
+                            label: function (tooltipItem, data) {
+                                var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                                var description = 'Description: What the data represents';
+                                return `Data: ${value}, ${description}`;
+                            }
+                        }
+                    },
+
+                },
+            });
+
+        });
+    </script>
+</body>
+</html>

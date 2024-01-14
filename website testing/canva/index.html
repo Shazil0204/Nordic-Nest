@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- component -->
+    <div class="w-full h-[25vh] p-2" > <!-- Ensure enough height -->
+
+        <div class="shadow-lg rounded-lg overflow-hidden h-full">
+            <div class="py-3 px-5 bg-gray-50">Line chart</div>
+            <canvas id="chartLine" class="w-full h-full pb-10 px-3"></canvas> <!-- Full width and height -->
+        </div>
+    </div>
+        
+    <!-- Required chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart line -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const ctx = document.getElementById('chartLine').getContext('2d');
+          
+          const labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ];
+          const data = {
+              labels: labels,
+              datasets: [{
+                  label: "Daily Money Flow",
+                  backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                  borderColor: "hsl(252, 82.9%, 67.8%)",
+                  data: [0, 10, 5, 2, 20, 30, 45, 5, 2, 20, 30, 77],
+              }],
+          };
+
+          const configLineChart = {
+              type: "line",
+              data,
+              options: {
+                  maintainAspectRatio: false,
+                  layout: {
+                      padding: {
+                          bottom: 30 // Adjust padding
+                      }
+                  },
+                  scales: {
+                      x: {
+                          ticks: {
+                              autoSkip: true,
+                              maxRotation: 0,
+                              minRotation: 0
+                          }
+                      },
+                      y: {
+                          beginAtZero: true
+                      }
+                  }
+              },
+          };
+
+          var chartLine = new Chart(ctx, configLineChart);
+      });
+    </script>
+</body>
+
+</html>
