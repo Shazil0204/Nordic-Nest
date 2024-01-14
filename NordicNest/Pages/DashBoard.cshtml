@@ -5,25 +5,26 @@
     int firstProgressBar = 50;
     int secondProgressBar = 20;
     int tirstProgressBar = 99;
+    NordicNest.Model.BasicProperties.CurrentPage = "Home";
+    Model.NavBar.NavBarConnection navBarConnection = new Model.NavBar.NavBarConnection();
+    List<Model.NavBar.NavBarProperties> NBP = navBarConnection.GetNavBars();
 }
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 
-<body class="bg-[#343541]">
-    <!--top margin so that divs don't go under the navbar-->
-    <div class="mt-[4.5rem]"></div>
+<body class="bg-teal-400">
     <div class="grid grid-cols-1 xl:grid-cols-2 bp-1800:grid-cols-5 gap-3 p-2">
-        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">Profile</div>
-        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">transaction</div>
-        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">my total money right now</div>
-        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300">my money that i can use without causing problem for my saving and loan accounts</div>
-        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:col-span-2 bp-1800:col-span-1">messages</div>
+        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 text-center">Profile</div>
+        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 text-center">transaction</div>
+        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 text-center">my total money right now</div>
+        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 text-center">my money that i can use without causing problem for my saving and loan accounts</div>
+        <div class="bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 text-center xl:col-span-2 bp-1800:col-span-1">messages</div>
     </div>
     <div class="grid grid-cols-1 xl:grid-cols-2 bp-1800:grid-cols-4 gap-3 p-2 grid-flow-row-dense">
-        <div class="order-3 bp-1800:order-1 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2"> saving chart </div>
-        <div class="order-1 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2 bp-1800:xl:row-span-1"> money used chart</div>
-        <div class="order-2 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2 bp-1800:xl:row-span-1"> subscription payment chart </div>
-        <div class="order-5 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2 bp-1800:xl:row-span-1 XL:col-span-2"> buttons for CRUD </div>
-        <div class="order-4 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2"> loan chart </div>
+        <div class="order-3 bp-1800:order-1 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2"> saving chart </div>
+        <div class="order-1 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2 bp-1800:xl:row-span-1"> money used chart</div>
+        <div class="order-2 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2 bp-1800:xl:row-span-1"> subscription payment chart </div>
+        <div class="order-5 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2 bp-1800:xl:row-span-1 XL:col-span-2"> buttons for CRUD </div>
+        <div class="order-4 bg-white border-2 border-green-500 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300 xl:row-span-2"> loan chart </div>
     </div>
 </body>
 
@@ -34,7 +35,9 @@
 
 
 @* https://www.behance.net/gallery/158583411/Fintech-Dashboard-%28FREE-Figma-template%29 *@
-@* <div class="flex justify-center items-center p-2 w-full">
+ @* 
+<!-- First Progress Bar -->
+<div class="flex justify-center items-center p-2 w-full">
     <div class="relative">
         <div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
             <span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
@@ -48,6 +51,34 @@
                 <stop offset="50%" style="stop-color: #9333EA;"></stop>
                 <stop offset="100%" style="stop-color: #F472B6;"></stop>
             </linearGradient>
+        </svg>
+    </div>
+</div>
+
+<!-- Second Progress Bar -->
+<div class="flex justify-center items-center p-2 w-full">
+    <div class="relative">
+        <div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+            <span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+        </div>
+        <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+        </svg>
+    </div>
+</div>
+
+<!-- Third Progress Bar -->
+<div class="flex justify-center items-center p-2 w-full">
+    <div class="relative">
+        <div id="circle-bg-3" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+            <span id="progress-text-3" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+        </div>
+        <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <circle id="progress-bar-lingering-3" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+            <circle id="progress-bar-3" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
         </svg>
     </div>
 </div>
@@ -78,4 +109,4 @@
     updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', @secondProgressBar);
     updateProgress('progress-bar-3', 'progress-bar-lingering-3', 'progress-text-3', @tirstProgressBar);
 </script>
- *@
+*@
