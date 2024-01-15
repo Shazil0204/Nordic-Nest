@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {}
+    "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {}
   },
   "projects": {
-    "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {
+    "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+        "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
         "projectName": "NordicNest",
-        "projectPath": "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
-        "packagesPath": "C:\\Users\\20shi\\.nuget\\packages\\",
-        "outputPath": "V:\\Nordic-Nest\\NordicNest\\obj\\",
+        "projectPath": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+        "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\20shi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,7 +46,7 @@
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.5, )"
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
