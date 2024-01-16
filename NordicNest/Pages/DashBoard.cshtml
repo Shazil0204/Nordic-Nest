@@ -4,9 +4,8 @@
 @{
 	bool gender = true;
 	Layout = null;
-	int firstProgressBar = 50;
-	int secondProgressBar = 20;
-	int tirstProgressBar = 99;
+	int firstProgressBar = 59;
+	int secondProgressBar = 70;
 	NordicNest.Model.BasicProperties.CurrentPage = "Home";
 	Model.NavBar.NavBarConnection navBarConnection = new Model.NavBar.NavBarConnection();
 	List<Model.NavBar.NavBarProperties> NBP = navBarConnection.GetNavBars();
@@ -20,30 +19,93 @@
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 <script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
 
-
-<body class="bg-teal-400">
+@* bg-teal-400 *@
+<body class="bg-[#212529] flex items-center justify-center">
 
 	<div class="grid grid-cols-1 xl:grid-cols-2 bp-1800:grid-cols-4 gap-3 p-2 ">
 		<!-- Saving Chart -->
-		<div class="order-4 bp-1800:order-1 col-span-2 bp-1800:col-span-1 bp-1800:row-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Saving Chart</div>
+		<div class="order-4 bp-1800:order-1 col-span-2 bp-1800:col-span-1 bp-1800:row-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
 
+			<!--button to show the right chart-->
+			<div class="absolute bottom-5 right-5 z-1">
+				<i class="fa-solid fa-arrow-right"></i>
+			</div>
+
+			<!--button to show the left chart-->
+			<div class="absolute bottom-5 left-5 z-1">
+				<i class="fa-solid fa-arrow-left"></i>
+			</div>
+
+			<div class="w-2/3">
+				<div class="flex items-center justify-center">
+					<p class="font-bold text-4xl">
+						Saving name
+					</p>
+				</div>
+				<div class="mt-2 flex items-center justify-center">
+					<p class="font-bold text-2xl">
+						amount added / total amount
+					</p>
+				</div>
+			</div>
+			<div class="w-1/3">
+				<!-- First Progress Bar -->
+				<div class="flex justify-center items-center p-8 w-full">
+					<div class="relative">
+						<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+							<span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+						</div>
+						<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+							<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+								<stop offset="0%" style="stop-color: #3B82F6;"></stop>
+								<stop offset="50%" style="stop-color: #9333EA;"></stop>
+								<stop offset="100%" style="stop-color: #F472B6;"></stop>
+							</linearGradient>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- Amount section -->
-		<div class="order-3 xl:order-3 bp-1800:order-2 grid grid-cols-1 xl:grid-cols-2 bp-1800:grid-cols-4 gap-3 col-span-2">
+		<div class="order-3 xl:order-3 bp-1800:order-2 grid grid-cols-2 bp-1800:grid-cols-4 gap-3 col-span-2">
 			<!-- Amount right now -->
-			<div class="order-1 xl:order-1 bg-white col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Amount right now</div>
+			<div class="p-4 bg-gradient-to-br from-blue-500 to-blue-700 col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105 flex items-center justify-center text-center font-extrabold text-4xl text-white">
+				Amount right now
+			</div>
+
 			<!-- Usable amount -->
-			<div class="order-3 xl:order-2 bg-white col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Amount Usable</div>
+			<div class="p-4 bg-gradient-to-br from-green-500 to-green-700 col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105 flex items-center justify-center text-center font-extrabold text-4xl text-white">
+				Amount Usable
+			</div>
+
 			<!-- Amount right now -->
-			<div class="order-2 xl:order-3 bg-white col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Amount right now</div>
+			<div class="bg-gradient-to-br from-blue-500 to-blue-700 col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105 flex items-center justify-center text-center font-bold text-2xl text-white p-4">
+				5000 DKK
+			</div>
+
 			<!-- Usable amount -->
-			<div class="order-4 xl:order-4 bg-white col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Amount Usable</div>
+			<div class="bg-gradient-to-br from-green-500 to-green-700 col-span-1 bp-1800:col-span-2 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105 flex items-center justify-center text-center font-bold text-2xl text-white p-4">
+				3000 DKK
+			</div>
+
 		</div>
 
 		<!-- User Profile with message -->
-		<div class="order-1 xl:order-1 col-span-2 bp-1800:order-3 xl:row-span-1 bp-1800:row-span-2 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:border-blue-500 duration-300 p-3">
+		<div class="order-1 xl:order-1 col-span-2 bp-1800:order-3 xl:row-span-1 bp-1800:row-span-2 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:border-blue-500 duration-300 p-3 relative">
+			<!-- Add the logout button -->
+			<a href="/index" class="absolute top-3 right-3 text-gray-500 hover:text-red-500">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>
+			</a>
+			<!-- Add the edit button -->
+			<a href="/index" class="absolute top-3 left-3 text-gray-500 hover:text-red-500">
+				<i class="fas fa-user-edit hover:text-green-500 duration-500"></i>
+			</a>
 			<div class="hidden xl:flex items-center justify-center">
 				<div class="flex items-center justify-center w-32 h-32 rounded-full border-2 @borderClass">
-					<i class="@iconClass text-6xl @genderClass"></i>
+					<i class="@iconClass text-6xl @genderClass"> </i>
 				</div>
 			</div>
 			<!--Remove the border when done-->
@@ -58,59 +120,117 @@
 				<div class="w-1/3 h-8 rounded-2xl border-2 @borderClass @genderClass flex items-center justify-center">Gender</div>
 				<div class="w-1/3 h-8 rounded-2xl border-2 @borderClass @genderClass flex items-center justify-center">Age</div>
 			</div>
-			<div class="mt-4 flex items-center justify-center gap-3">
-				<div class="w-full h-18 rounded-2xl border-2 @borderClass @genderClass flex items-center justify-center">
-					<a asp-page="#" class="@genderClass hover:scale-110 hover:text-green-500 duration-300 font-bold cursor-pointer">Edit Profile</a>
+			<div class="mt-4 p-3 bg-gray-100 rounded-xl overflow-hidden">
+				<!-- Your message content goes here -->
+				<!-- For example, you can use a div with a class for styling -->
+				<div class="message-box overflow-y-auto max-h-[15rem]">
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+					<p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- Loan chart -->
+		<div class="order-4 xl:order-5 col-span-2 bp-1800:order-4 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
+			<!--button to show the right chart-->
+			<div class="absolute bottom-5 right-5 z-1">
+				<i class="fa-solid fa-arrow-right"></i>
+			</div>
+
+			<!--button to show the left chart-->
+			<div class="absolute bottom-5 left-5 z-1">
+				<i class="fa-solid fa-arrow-left"></i>
+			</div>
+
+			<div class="w-2/3">
+				<div class="flex items-center justify-center">
+					<p class="font-bold text-4xl">
+						Saving name
+					</p>
+				</div>
+				<div class="mt-2 flex items-center justify-center">
+					<p class="font-bold text-2xl">
+						amount added / total amount
+					</p>
+				</div>
+			</div>
+			<div class="w-1/3">
+				<!-- Second Progress Bar -->
+				<div class="flex justify-center items-center p-8 w-full">
+					<div class="relative">
+						<div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+							<span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+						</div>
+						<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+							<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+						</svg>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- Loan chart -->
-		<div class="order-4 xl:order-5 col-span-2 bp-1800:order-4 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Loan chart</div>
-
 		<!-- Subscription payment chart -->
-		@* <div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:scale-[95%] hover:border-blue-500 duration-300">
-		Subscription payment chart
-		</div> *@
-		<div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] hover:border-blue-500 duration-300">
+		<div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] hover:border-blue-500 duration-300 relative">
 			<div class="accordion border-b p-4 cursor-pointer text-center">
 				Subscription payment chart
 			</div>
-			<div class="flex m-auto">
+			<div class="bp-1800:mt-8 bp-1800:text-xl flex flex-row items-center justify-center">
 
 				<div class="accordion-content p-4">
 					<p><strong>Amount:</strong> $XX.XX</p>
 					<p><strong>Date:</strong> MM/DD/YYYY</p>
-					<p><strong>Subscription to:</strong> XYZ</p>
-					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+					<p class=""><strong>Subscription to:</strong> XYZ</p>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
 				<div class="accordion-content p-4">
 					<p><strong>Amount:</strong> $XX.XX</p>
 					<p><strong>Date:</strong> MM/DD/YYYY</p>
 					<p><strong>Subscription to:</strong> XYZ</p>
-					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
 				<div class="accordion-content p-4">
 					<p><strong>Amount:</strong> $XX.XX</p>
 					<p><strong>Date:</strong> MM/DD/YYYY</p>
 					<p><strong>Subscription to:</strong> XYZ</p>
-					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
 				<div class="accordion-content p-4">
 					<p><strong>Amount:</strong> $XX.XX</p>
 					<p><strong>Date:</strong> MM/DD/YYYY</p>
 					<p><strong>Subscription to:</strong> XYZ</p>
-					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
-				<div class="accordion-content p-4">
-					<p><strong>Amount:</strong> $XX.XX</p>
-					<p><strong>Date:</strong> MM/DD/YYYY</p>
-					<p><strong>Subscription to:</strong> XYZ</p>
-					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+				<div class="absolute flex right-3 top-50">
+
+				<i class="fas fa-angle-double-right"></i>
 				</div>
-				<!--If more then four in a day then send to a new page-->
+				<!-- If more than four in a day then send to a new page -->
 			</div>
 		</div>
+
+
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script>
+			function myFunction() {
+				swal({
+					title: 'Subscription Cancelled',
+					text: 'Your subscription Has been cancelled',
+					icon: 'success',
+					button: 'Continue'
+				});
+			}
+		</script>
 
 		<!-- Transaction -->
 		<div class="order-6 xl:order-2 col-span-2 bp-1800:order-6 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:border-blue-500 duration-300">
@@ -144,7 +264,15 @@
 							<td class="xl:hidden py-2 px-4 border-b">Monday</td>
 							<td class="xl:hidden py-2 px-4 border-b">2024-01-15</td>
 						</tr>
-						<!--If there are more then 2 then button will take you to another page-->
+						<tr class="text-center">
+							<td class="py-2 px-4 border-b">Recipient Name</td>
+							<td class="py-2 px-4 border-b">Sender Name</td>
+							<td class="py-2 px-4 border-b">1000 USD</td>
+							<td class="py-2 px-4 border-b">12:30 PM</td>
+							<td class="xl:hidden py-2 px-4 border-b">Monday</td>
+							<td class="xl:hidden py-2 px-4 border-b">2024-01-15</td>
+						</tr>
+						<!--If there are more then 3 then button will take you to another page-->
 					</tbody>
 				</table>
 				<div class="w-full h-16 rounded-2xl text-teal-400 flex items-center justify-center text-2xl font-bold">
@@ -223,79 +351,31 @@
 
 </body>
 
-@* https://www.behance.net/gallery/158583411/Fintech-Dashboard-%28FREE-Figma-template%29 *@
-@*
-<!-- First Progress Bar -->
-<div class="flex justify-center items-center p-2 w-full">
-    <div class="relative">
-        <div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-            <span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-        </div>
-        <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color: #3B82F6;"></stop>
-                <stop offset="50%" style="stop-color: #9333EA;"></stop>
-                <stop offset="100%" style="stop-color: #F472B6;"></stop>
-            </linearGradient>
-        </svg>
-    </div>
-</div>
-
-<!-- Second Progress Bar -->
-<div class="flex justify-center items-center p-2 w-full">
-    <div class="relative">
-        <div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-            <span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-        </div>
-        <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-        </svg>
-    </div>
-</div>
-
-<!-- Third Progress Bar -->
-<div class="flex justify-center items-center p-2 w-full">
-    <div class="relative">
-        <div id="circle-bg-3" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-            <span id="progress-text-3" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-        </div>
-        <svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-            <circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <circle id="progress-bar-lingering-3" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-            <circle id="progress-bar-3" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-        </svg>
-    </div>
-</div>
 
 <script>
-    function updateProgress(progressBarId, progressBarLingeringId, progressTextId, target) {
-        let progress = 0;
-        const progressBar = document.getElementById(progressBarId);
-        const progressBarLingering = document.getElementById(progressBarLingeringId);
-        const progressText = document.getElementById(progressTextId);
+	function updateProgress(progressBarId, progressBarLingeringId, progressTextId, target) {
+		let progress = 0;
+		const progressBar = document.getElementById(progressBarId);
+		const progressBarLingering = document.getElementById(progressBarLingeringId);
+		const progressText = document.getElementById(progressTextId);
 
-        function incrementProgress() {
-            progress += 1;
-            progressText.innerText = progress + '%';
-            const offset = 339.292 * (1 - progress / 100);
-            progressBar.style.strokeDashoffset = offset;
-            progressBarLingering.style.strokeDashoffset = offset;
+		function incrementProgress() {
+			progress += 1;
+			progressText.innerText = progress + '%';
+			const offset = 339.292 * (1 - progress / 100);
+			progressBar.style.strokeDashoffset = offset;
+			progressBarLingering.style.strokeDashoffset = offset;
 
-            if (progress < target) {
-                setTimeout(incrementProgress, 30);
-            }
-        }
+			if (progress < target) {
+				setTimeout(incrementProgress, 30);
+			}
+		}
 
-        incrementProgress();
-    }
+		incrementProgress();
+	}
 
-    updateProgress('progress-bar-1', 'progress-bar-lingering-1', 'progress-text-1', @firstProgressBar);
-    updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', @secondProgressBar);
-    updateProgress('progress-bar-3', 'progress-bar-lingering-3', 'progress-text-3', @tirstProgressBar);
+	updateProgress('progress-bar-1', 'progress-bar-lingering-1', 'progress-text-1', @firstProgressBar);
+	updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', @secondProgressBar);
 </script>
-*@
+
+@* https://www.behance.net/gallery/158583411/Fintech-Dashboard-%28FREE-Figma-template%29 *@
