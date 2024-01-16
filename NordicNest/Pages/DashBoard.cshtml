@@ -13,10 +13,8 @@
 	string genderClass = (gender) ? "text-pink-500" : "text-blue-500";
 	string borderClass = (gender) ? "border-pink-500" : "border-blue-500";
 	string iconClass = (gender) ? "fas fa-female" : "fas fa-male";
-	string[] labels = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" };
-	int[] data = { 0, 55, 5, 119, 202, 30, 45, 5, 2, 20, 30, 950 };
-	string labelsJson = JsonSerializer.Serialize(labels);
-	string dataJson = JsonSerializer.Serialize(data);
+	string labelsJson = JsonSerializer.Serialize(Model.labels);
+	string dataJson = JsonSerializer.Serialize(Model.data);
 }
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
@@ -71,7 +69,48 @@
 		<div class="order-4 xl:order-5 col-span-2 bp-1800:order-4 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Loan chart</div>
 
 		<!-- Subscription payment chart -->
-		<div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:scale-[95%] hover:border-blue-500 duration-300">Subscription payment chart</div>
+		@* <div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:scale-[95%] hover:border-blue-500 duration-300">
+		Subscription payment chart
+		</div> *@
+		<div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] hover:border-blue-500 duration-300">
+			<div class="accordion border-b p-4 cursor-pointer text-center">
+				Subscription payment chart
+			</div>
+			<div class="flex m-auto">
+
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+				</div>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+				</div>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+				</div>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+				</div>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<label><input type="checkbox" id="paidCheckbox"> Paid</label>
+				</div>
+				<!--If more then four in a day then send to a new page-->
+			</div>
+		</div>
 
 		<!-- Transaction -->
 		<div class="order-6 xl:order-2 col-span-2 bp-1800:order-6 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:border-blue-500 duration-300">

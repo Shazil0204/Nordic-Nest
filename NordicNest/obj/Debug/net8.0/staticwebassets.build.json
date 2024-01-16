@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "64iDEAd+p9orj63KCOTh9vWcwNU77zo0UOfah2bYQV0=",
+  "Hash": "Pt/TbPvAd4iNTPlH3hX7SiB7G7kU2uEAZSQKwRINrlo=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -452,6 +452,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\GoBack.js"
+    },
+    {
+      "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Monthlychart.js",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "js/Monthlychart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Monthlychart.js"
     },
     {
       "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Navbar.js",
