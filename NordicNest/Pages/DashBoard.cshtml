@@ -6,6 +6,7 @@
 	Layout = null;
 	int firstProgressBar = 59;
 	int secondProgressBar = 70;
+	int[] progressBars = { firstProgressBar, secondProgressBar };
 	NordicNest.Model.BasicProperties.CurrentPage = "Home";
 	Model.NavBar.NavBarConnection navBarConnection = new Model.NavBar.NavBarConnection();
 	List<Model.NavBar.NavBarProperties> NBP = navBarConnection.GetNavBars();
@@ -27,13 +28,16 @@
 		<div class="order-4 bp-1800:order-1 col-span-2 bp-1800:col-span-1 bp-1800:row-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
 
 			<!--button to show the right chart-->
-			<div class="absolute bottom-5 right-5 z-1">
-				<i class="fa-solid fa-arrow-right"></i>
-			</div>
+			<div class="cursor-e-resize hover:cursor-e-resize">
 
-			<!--button to show the left chart-->
-			<div class="absolute bottom-5 left-5 z-1">
-				<i class="fa-solid fa-arrow-left"></i>
+				<div class="absolute bottom-5 right-5 z-1">
+					<i class="fa-solid fa-arrow-right"></i>
+				</div>
+
+				<!--button to show the left chart-->
+				<div class="absolute bottom-5 left-5 z-1">
+					<i class="fa-solid fa-arrow-left"></i>
+				</div>
 			</div>
 
 			<div class="w-2/3">
@@ -141,14 +145,17 @@
 
 		<!-- Loan chart -->
 		<div class="order-4 xl:order-5 col-span-2 bp-1800:order-4 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
-			<!--button to show the right chart-->
-			<div class="absolute bottom-5 right-5 z-1">
-				<i class="fa-solid fa-arrow-right"></i>
-			</div>
+			<div class="cursor-e-resize hover:cursor-e-resize">
 
-			<!--button to show the left chart-->
-			<div class="absolute bottom-5 left-5 z-1">
-				<i class="fa-solid fa-arrow-left"></i>
+				<!--button to show the right chart-->
+				<div class="absolute bottom-5 right-5 z-1">
+					<i class="fa-solid fa-arrow-right"></i>
+				</div>
+
+				<!--button to show the left chart-->
+				<div class="absolute bottom-5 left-5 z-1">
+					<i class="fa-solid fa-arrow-left"></i>
+				</div>
 			</div>
 
 			<div class="w-2/3">
@@ -185,8 +192,7 @@
 			<div class="accordion border-b p-4 cursor-pointer text-center">
 				Subscription payment chart
 			</div>
-			<div class="bp-1800:mt-8 bp-1800:text-xl flex flex-row items-center justify-center">
-
+			<div class="bp-1800:mt-8 bp-1800:text-xl flex flex-col xl:flex-row items-center justify-center px-4">
 				<div class="accordion-content p-4">
 					<p><strong>Amount:</strong> $XX.XX</p>
 					<p><strong>Date:</strong> MM/DD/YYYY</p>
@@ -211,26 +217,21 @@
 					<p><strong>Subscription to:</strong> XYZ</p>
 					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
-				<div class="absolute flex right-3 top-50">
-
-				<i class="fas fa-angle-double-right"></i>
+				<div class="cursor-e-resize hover:cursor-e-resize">
+					<div class="absolute flex left-3 top-50">
+						<i class="fas fa-angle-double-left"></i>
+					</div>
+					<div class="absolute flex right-3 top-50">
+						<i class="fas fa-angle-double-right"></i>
+					</div>
 				</div>
-				<!-- If more than four in a day then send to a new page -->
 			</div>
 		</div>
 
 
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<script>
-			function myFunction() {
-				swal({
-					title: 'Subscription Cancelled',
-					text: 'Your subscription Has been cancelled',
-					icon: 'success',
-					button: 'Continue'
-				});
-			}
-		</script>
+		<script src="/js/sweetalert.js"> </script>
+
 
 		<!-- Transaction -->
 		<div class="order-6 xl:order-2 col-span-2 bp-1800:order-6 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:border-blue-500 duration-300">
@@ -243,8 +244,6 @@
 							<th class="py-2 px-4 border-b">From</th>
 							<th class="py-2 px-4 border-b">Amount</th>
 							<th class="py-2 px-4 border-b">Time</th>
-							<th class="xl:hidden py-2 px-4 border-b">Day</th>
-							<th class="xl:hidden py-2 px-4 border-b">Date</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -253,24 +252,20 @@
 							<td class="py-2 px-4 border-b">Sender Name</td>
 							<td class="py-2 px-4 border-b">1000 USD</td>
 							<td class="py-2 px-4 border-b">12:30 PM</td>
-							<td class="xl:hidden py-2 px-4 border-b">Monday</td>
-							<td class="xl:hidden py-2 px-4 border-b">2024-01-15</td>
+
 						</tr>
 						<tr class="text-center">
 							<td class="py-2 px-4 border-b">Recipient Name</td>
 							<td class="py-2 px-4 border-b">Sender Name</td>
 							<td class="py-2 px-4 border-b">1000 USD</td>
 							<td class="py-2 px-4 border-b">12:30 PM</td>
-							<td class="xl:hidden py-2 px-4 border-b">Monday</td>
-							<td class="xl:hidden py-2 px-4 border-b">2024-01-15</td>
+
 						</tr>
 						<tr class="text-center">
 							<td class="py-2 px-4 border-b">Recipient Name</td>
 							<td class="py-2 px-4 border-b">Sender Name</td>
 							<td class="py-2 px-4 border-b">1000 USD</td>
 							<td class="py-2 px-4 border-b">12:30 PM</td>
-							<td class="xl:hidden py-2 px-4 border-b">Monday</td>
-							<td class="xl:hidden py-2 px-4 border-b">2024-01-15</td>
 						</tr>
 						<!--If there are more then 3 then button will take you to another page-->
 					</tbody>
@@ -287,95 +282,23 @@
 		</div>
 
 		<script>
-			var labels = @Html.Raw(labelsJson);
-			var data = @Html.Raw(dataJson);
-
-			document.addEventListener('DOMContentLoaded', function () {
-				const ctx2 = document.getElementById('chartColumnCanvas').getContext('2d');
-
-				const chartData2 = {
-					labels: labels,
-					datasets: [{
-						label: "Daily Money Usage",
-						data: data,
-						backgroundColor: function (context) {
-							var value = context.dataset.data[context.dataIndex];
-							return value <= 50 ? 'blue' :
-								value <= 100 ? 'green' :
-									value <= 200 ? 'yellow' :
-										value <= 500 ? 'orange' :
-											'red';
-						},
-						borderColor: 'white',
-						borderWidth: 2,
-					}],
-				};
-
-				var chartColumn = new Chart(ctx2, {
-					type: "bar",
-					data: chartData2,
-					options: {
-						maintainAspectRatio: false,
-						layout: {
-							padding: {
-								bottom: 30
-							}
-						},
-						scales: {
-							x: {
-								ticks: {
-									autoSkip: true,
-									maxRotation: 0,
-									minRotation: 0
-								}
-							},
-							y: {
-								beginAtZero: true
-							}
-						},
-						plugins: {
-							tooltip: {
-								callbacks: {
-									label: function (context) {
-										const label = context.dataset.label || '';
-										return label + ': ' + context.parsed.y + ' DKK';
-									}
-								}
-							}
-						},
-					},
-				});
-			});
+			var chartData = {
+				labels: @Html.Raw(labelsJson),
+				data: @Html.Raw(dataJson)
+													};
 		</script>
+
+		<script src="/js/Monthlychart.js"></script>
+
 	</div>
 
 </body>
 
-
 <script>
-	function updateProgress(progressBarId, progressBarLingeringId, progressTextId, target) {
-		let progress = 0;
-		const progressBar = document.getElementById(progressBarId);
-		const progressBarLingering = document.getElementById(progressBarLingeringId);
-		const progressText = document.getElementById(progressTextId);
-
-		function incrementProgress() {
-			progress += 1;
-			progressText.innerText = progress + '%';
-			const offset = 339.292 * (1 - progress / 100);
-			progressBar.style.strokeDashoffset = offset;
-			progressBarLingering.style.strokeDashoffset = offset;
-
-			if (progress < target) {
-				setTimeout(incrementProgress, 30);
-			}
-		}
-
-		incrementProgress();
-	}
-
-	updateProgress('progress-bar-1', 'progress-bar-lingering-1', 'progress-text-1', @firstProgressBar);
-	updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', @secondProgressBar);
+	function getProgressBarsFromCSharp() { return @Html.Raw(Json.Serialize(progressBars)); }
 </script>
+
+<script src="/js/ProgressBar.js"></script>
+
 
 @* https://www.behance.net/gallery/158583411/Fintech-Dashboard-%28FREE-Figma-template%29 *@

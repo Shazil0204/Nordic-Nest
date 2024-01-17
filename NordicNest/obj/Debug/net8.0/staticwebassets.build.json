@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Pt/TbPvAd4iNTPlH3hX7SiB7G7kU2uEAZSQKwRINrlo=",
+  "Hash": "+CxG+ayJDe1pLi9R0yjhRzHmyExvh3HzRzdkZbiLO7s=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -492,6 +492,25 @@
       "OriginalItemSpec": "wwwroot\\js\\Navbar.js"
     },
     {
+      "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\ProgressBar.js",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "js/ProgressBar.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ProgressBar.js"
+    },
+    {
       "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\site.js",
       "SourceId": "NordicNest",
       "SourceType": "Discovered",
@@ -509,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\sweetalert.js",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "js/sweetalert.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\sweetalert.js"
     },
     {
       "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
