@@ -11,23 +11,36 @@ GO
 -- Create a new login named Navbar with SQL Server authentication
 CREATE LOGIN FullAccess WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = NordicNestDB;
 GO
+
 -- Switch to NordicNestDB database
 USE NordicNestDB;
 GO
+
 -- Create a user for the Navbar login
 CREATE USER FullAccess FOR LOGIN FullAccess;
 GO
+
 -- Grant read-only access to the Navbar user by adding it to db_datareader role
 ALTER ROLE db_owner ADD MEMBER FullAccess;
 GO
 
--- Create a table named NavBars to store navigation bar items
-CREATE TABLE NavBars(
-    NavID INT IDENTITY(1,1) PRIMARY KEY, -- Primary key with auto-increment starting from 1
-    Name VARCHAR(15) NOT NULL, -- Name of the navigation item, max 15 characters
-    URL VARCHAR(30) NOT NULL, -- URL associated with the navigation item, max 30 characters
+-- CREATING A TABLE FOR NAVIGATION BARS
+
+-- Define a table named NavBars
+CREATE TABLE NavBars (
+	-- Unique identifier for each navigation bar
+	NavID INT IDENTITY(1,1) PRIMARY KEY,
+
+	-- Name of the navigation bar (maximum length: 15 characters)
+	Name VARCHAR(15) NOT NULL,
+
+	-- URL associated with the navigation bar (maximum length: 30 characters)
+	URL VARCHAR(30) NOT NULL,
+
+	-- Indicates whether the navigation bar includes an authentication button (1 for true, 0 for false)
 	IsAuthBtn BIT NOT NULL
 );
+-- End of table creation
 GO
 
 -- Create a table named Pages to store page information
@@ -37,37 +50,257 @@ CREATE TABLE Pages(
 );
 GO
 
--- Create a table to link NavBars and Pages
-CREATE TABLE NavbarForPages(
-    NavbarForPageID INT IDENTITY(1,1) PRIMARY KEY, -- Primary key with auto-increment starting from 1
-    PageID INT NOT NULL, -- Foreign key referencing PageID in Pages table
-    NavID INT NOT NULL, -- Foreign key referencing NavID in NavBars table
-    FOREIGN KEY (PageID) REFERENCES Pages(PageID), -- Establishing foreign key relationship
-    FOREIGN KEY (NavID) REFERENCES NavBars(NavID) -- Establishing foreign key relationship
+-- CREATING A TABLE FOR NAVIGATION BAR ASSOCIATIONS WITH PAGES
+
+-- Define a table named NavbarForPages
+CREATE TABLE NavbarForPages (
+	-- Unique identifier for each navigation bar-page association
+	NavbarForPageID INT IDENTITY(1,1) PRIMARY KEY,
+
+	-- Identifier for the associated page
+	PageID INT NOT NULL,
+
+	-- Identifier for the associated navigation bar
+	NavID INT NOT NULL,
+
+	-- Establish a foreign key relationship with the Pages table using PageID
+	FOREIGN KEY (PageID) REFERENCES Pages(PageID),
+
+	-- Establish a foreign key relationship with the NavBars table using NavID
+	FOREIGN KEY (NavID) REFERENCES NavBars(NavID)
 );
+-- End of table creation
 GO
 
+-- CREATING A TABLE FOR Clients Contacts
+
+-- Define a table named ContactInquiries
 CREATE TABLE ContactInquiries (
+	-- Unique identifier for each contact inquiry
 	ContactInquiryID INT IDENTITY(1,1) PRIMARY KEY,
+
+	-- First name of the person making the inquiry (maximum length: 30 characters)
 	FirstName VARCHAR(30) NOT NULL,
+
+	-- Last name of the person making the inquiry (maximum length: 30 characters)
 	LastName VARCHAR(30) NOT NULL,
+
+	-- Indicates whether the person making the inquiry is an existing client (1 for true, 0 for false)
 	IsExistingClient BIT NOT NULL,
+
+	-- Date and time when the inquiry was submitted
 	SubmissionDateTime DATETIME NOT NULL,
+
+	-- Content of the message or inquiry (maximum length: 255 characters)
 	MessageContent VARCHAR(255) NOT NULL,
-	UserEmail VARCHAR(75) NOT NULL,
+
+	-- Indicates whether the inquiry has been completed (1 for true, 0 for false)
 	InquiryCompleted BIT NOT NULL
 );
+-- End of table creation
 GO
 
 -- CREATING A TABLE FOR Clients
 CREATE TABLE Clients(
+    -- Unique identifier for each client
 	ClientID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Client-specific number
 	ClientNumber INT NOT NULL,
+    -- First name of the client
 	FirstName VARCHAR(30) NOT NULL,
+    -- Last name of the client
 	LastName VARCHAR(30) NOT NULL,
-	Email VARCHAR(255) NOT NULL,
-	UserName VARCHAR(255) NOT NULL,
-	Password VARCHAR(255) NOT NULL,
-	Gender BIT,
-	Age INT
+    -- Email address of the client
+	Email VARCHAR(50) NOT NULL,
+    -- User login username
+	UserName VARCHAR(150) NOT NULL,
+    -- User login password
+	Password VARCHAR(150) NOT NULL,
+    -- Gender of the client (BIT: 0 for male, 1 for female, for example)
+	Gender BIT NOT NULL,
+    -- Age of the client
+	Age INT NOT NULL
+);
+GO
+
+CREATE TABLE Savings(
+    -- Unique identifier for each savings record
+	SavingID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+	ClientID INT NOT NULL,
+    -- Name of the savings account
+	Name VARCHAR(20) NOT NULL,
+    -- Total amount in the savings account
+	TotalAmount DECIMAL NOT NULL,
+    -- Start date of the savings account
+	StartingDate DATETIME,
+    -- End date of the savings account
+	EndingDate DATETIME,
+    -- Current balance in the savings account
+	AmountBalance DECIMAL NOT NULL,
+    -- Description of the savings account
+	Description VARCHAR(100),
+    -- Monthly input for the savings account
+	MonthlyInput DECIMAL NOT NULL,
+    -- User-defined deadline for savings
+	UserDeadLine DATETIME,
+    -- System deadline for savings
+	SystemDeadline DATETIME NOT NULL,
+    -- Reference to the client associated with this savings record
+	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+GO
+
+CREATE TABLE SavingSchedule (
+    -- Unique identifier for each savings schedule entry
+    ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated savings account
+    SavingID INT NOT NULL,
+    -- Day of the week for scheduled activities
+    WorkDay VARCHAR(10) NOT NULL, -- using VARCHAR to store day information
+    -- Reference to the associated savings account
+    FOREIGN KEY (SavingID) REFERENCES Savings(SavingID)
+);
+GO
+
+CREATE TABLE Loans(
+    -- Unique identifier for each loan record
+	LoanID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+	ClientID INT NOT NULL,
+    -- Name of the loan account
+	Name VARCHAR(20) NOT NULL,
+    -- Total amount of the loan
+	TotalAmount DECIMAL NOT NULL,
+    -- Start date of the loan
+	StartingDate DATETIME,
+    -- End date of the loan
+	EndingDate DATETIME,
+    -- Current balance of the loan
+	AmountBalance DECIMAL NOT NULL,
+    -- Description of the loan
+	Description VARCHAR(100),
+    -- Monthly payment for the loan
+	MonthlyInput DECIMAL NOT NULL,
+    -- User-defined deadline for the loan
+	UserDeadLine DATETIME,
+    -- System deadline for the loan
+	SystemDeadline DATETIME NOT NULL,
+    -- Reference to the client associated with this loan record
+	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+GO
+
+CREATE TABLE LoanSchedule (
+    -- Unique identifier for each loan schedule entry
+    ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated loan account
+    LoanID INT NOT NULL,
+    -- Day of the week for scheduled activities
+    WorkDay VARCHAR(10) NOT NULL, -- using VARCHAR to store day information
+    -- Reference to the associated loan account
+    FOREIGN KEY (LoanID) REFERENCES Loans(LoanID)
+);
+GO
+
+CREATE TABLE Incomes(
+    -- Unique identifier for each income record
+    IncomeID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+    ClientID INT NOT NULL,
+    -- Name of the income source
+    Name VARCHAR(20) NOT NULL,
+    -- Indicates whether the payment amount is fixed (BIT: 0 for no, 1 for yes)
+    IsPaymentAmountFixed BIT NOT NULL,
+    -- Indicates whether the payment day is fixed (BIT: 0 for no, 1 for yes)
+    IsPaymentDayFixed BIT NOT NULL,
+    -- Description of the income source
+    Description VARCHAR(100),
+    -- Reference to the client associated with this income record
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+GO
+
+CREATE TABLE WorkSchedule (
+    -- Unique identifier for each work schedule entry
+    ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated income source
+    IncomeID INT NOT NULL,
+    -- Day of the week for scheduled work
+    WorkDay VARCHAR(10) NOT NULL, -- using VARCHAR to store day information
+    -- Reference to the associated income source
+    FOREIGN KEY (IncomeID) REFERENCES Incomes(IncomeID)
+);
+GO
+
+CREATE TABLE Subscriptions(
+    -- Unique identifier for each subscription record
+    SubscriptionID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+    ClientID INT NOT NULL,
+    -- Name of the subscription
+    Name VARCHAR(20) NOT NULL,
+    -- Indicates whether the subscription is monthly (BIT: 0 for no, 1 for yes)
+    IsMonthly BIT NOT NULL,
+    -- Amount associated with the subscription
+    Amount INT NOT NULL,
+    -- Description of the subscription
+    Description VARCHAR(100),
+    -- Reference to the client associated with this subscription record
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+GO
+
+-- Creating a table for Non-Monthly Subscriptions
+CREATE TABLE NonMonthlySubscriptions (
+    -- Unique identifier for each non-monthly subscription record
+    NonMonthlySubscriptionID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated subscription
+    SubscriptionID INT NOT NULL,
+    -- Payment interval for non-monthly subscriptions (days, weeks, or months)
+    PaymentInterval INT NOT NULL, -- Interval in days (you can replace "days" with "weeks" or "months" based on your application's logic)
+    -- Reference to the associated subscription
+    FOREIGN KEY (SubscriptionID) REFERENCES Subscriptions(SubscriptionID)
+);
+GO
+
+CREATE TABLE Messages(
+    -- Unique identifier for each message
+    MessageID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+    ClientID INT NOT NULL,
+    -- Regarding field indicating the subject of the message
+    Regarding VARCHAR(20) NOT NULL,
+    -- Message content
+    Message VARCHAR(255) NOT NULL,
+    -- Reference to the client associated with this message
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+GO
+
+CREATE TABLE MonthlyUsage(
+    -- Unique identifier for each monthly usage record
+    MonthID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+    ClientID INT NOT NULL,
+    -- Reference to the client associated with this monthly usage record
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
+GO
+
+CREATE TABLE Transactions(
+    -- Unique identifier for each transaction record
+    TransactionID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated monthly usage
+    MonthID INT NOT NULL,
+    -- Recipient of the transaction
+    TransactionTo VARCHAR(30) NOT NULL,
+    -- Sender of the transaction
+    TransactionFrom VARCHAR(30) NOT NULL,
+    -- Transaction amount
+    Amount DECIMAL NOT NULL,
+    -- Timestamp of the transaction
+    Time DATETIME NOT NULL,
+    -- Reference to the associated monthly usage
+    FOREIGN KEY (MonthID) REFERENCES MonthlyUsage(MonthID)
 );
