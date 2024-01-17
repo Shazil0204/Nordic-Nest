@@ -29,3 +29,34 @@ V:\Nordic-Nest - Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\refint\C#-To-JS-
 V:\Nordic-Nest - Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.pdb
 V:\Nordic-Nest - Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.genruntimeconfig.cache
 V:\Nordic-Nest - Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\ref\C#-To-JS-Through-JSON.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\appsettings.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\C#-To-JS-Through-JSON.staticwebassets.runtime.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\C#-To-JS-Through-JSON.exe
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\C#-To-JS-Through-JSON.deps.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\C#-To-JS-Through-JSON.runtimeconfig.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\C#-To-JS-Through-JSON.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\bin\Debug\net8.0\C#-To-JS-Through-JSON.pdb
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.AssemblyInfoInputs.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.AssemblyInfo.cs
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.csproj.CoreCompileInputs.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.RazorAssemblyInfo.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.RazorAssemblyInfo.cs
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.sourcelink.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets\msbuild.C#-To-JS-Through-JSON.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets\msbuild.build.C#-To-JS-Through-JSON.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.C#-To-JS-Through-JSON.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.C#-To-JS-Through-JSON.props
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\scopedcss\bundle\C#-To-JS-Through-JSON.styles.css
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\scopedcss\projectbundle\C#-To-JS-Through-JSON.bundle.scp.css
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\refint\C#-To-JS-Through-JSON.dll
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.pdb
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\C#-To-JS-Through-JSON.genruntimeconfig.cache
+C:\Users\Shaz0184\Desktop\!OnGoing\Nordic-Nest Testing\C#-To-JS-Through-JSON\obj\Debug\net8.0\ref\C#-To-JS-Through-JSON.dll

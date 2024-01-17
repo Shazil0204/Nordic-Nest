@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("C#-To-JS-Through-JSON")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+499cbb9bc84e77f5f680fb28cf3a6722fdecfc09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+149d0e1f9179a375475505fe340a7a95271568e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("C#-To-JS-Through-JSON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("C#-To-JS-Through-JSON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

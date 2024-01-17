@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "V:\\Nordic-Nest - Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj": {}
+    "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj": {}
   },
   "projects": {
-    "V:\\Nordic-Nest - Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj": {
+    "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "V:\\Nordic-Nest - Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj",
+        "projectUniqueName": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj",
         "projectName": "C#-To-JS-Through-JSON",
-        "projectPath": "V:\\Nordic-Nest - Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj",
-        "packagesPath": "C:\\Users\\20shi\\.nuget\\packages\\",
-        "outputPath": "V:\\Nordic-Nest - Testing\\C#-To-JS-Through-JSON\\obj\\",
+        "projectPath": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest Testing\\C#-To-JS-Through-JSON\\C#-To-JS-Through-JSON.csproj",
+        "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest Testing\\C#-To-JS-Through-JSON\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\20shi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
