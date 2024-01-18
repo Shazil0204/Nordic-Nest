@@ -1,0 +1,31 @@
+﻿.animate-left {
+    animation: moveLeft 1s ease;
+}
+
+.animate-right {
+    animation: moveRight 1s ease;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+    to {
+        transform: translateX(100%);
+        filter: blur(10px);
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+        filter: blur(10px);
+    }
+}

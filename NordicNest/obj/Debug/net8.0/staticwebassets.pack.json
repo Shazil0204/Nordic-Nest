@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\Images\\landscape.png"
     },
     {
+      "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\css\\MovementAnimation.css",
+      "PackagePath": "staticwebassets\\css\\MovementAnimation.css"
+    },
+    {
       "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\css\\ScrollBar.css",
       "PackagePath": "staticwebassets\\css\\ScrollBar.css"
     },
