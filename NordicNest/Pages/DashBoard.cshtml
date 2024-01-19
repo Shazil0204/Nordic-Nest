@@ -31,60 +31,90 @@
 
 	<div class="grid grid-cols-1 xl:grid-cols-2 bp-1800:grid-cols-4 gap-3 p-2 ">
 		<!-- Saving Chart -->
-		<div class="order-4 bp-1800:order-1 col-span-2 bp-1800:col-span-1 bp-1800:row-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
-
-			<!--button to show the right chart-->
-			<button>
-				<div class="absolute bottom-5 right-5 z-1">
-					<i class="fa-solid fa-arrow-right hover:text-blue-500 duration-500"></i>
-				</div>
-			</button>
-
-			<!--button to show the left chart-->
-			<button>
-				<div class="absolute bottom-5 left-5 z-1">
-					<i class="fa-solid fa-arrow-left hover:text-blue-500 duration-500 "></i>
-				</div>
-			</button>
+		<div class="order-4 bp-1800:order-1 col-span-2 bp-1800:col-span-1 bp-1800:row-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] text-center hover:border-blue-500 duration-300 relative p-4">
 
 			@foreach (SLVariable v in sLVariables)
 			{
-				Console.WriteLine((NordicNest.Model.BasicProperties.DefaultSavingAccount) );
+				Console.WriteLine((NordicNest.Model.BasicProperties.DefaultSavingAccount));
 
 				if ((v.ID == NordicNest.Model.BasicProperties.DefaultSavingAccount && v.ID == NordicNest.Model.BasicProperties.UserSavingAccount) || v.ID == NordicNest.Model.BasicProperties.UserSavingAccount)
 				{
-					<div class="w-2/3">
-						<div class="flex items-center justify-center">
-							<p class="font-bold text-4xl">
-								Saving name
-							</p>
+					<div id="showData" class="flex items-center justify-center pt-6">
+						<!--button to show the list of all Savings-->
+						<button onclick="toggleTables()">
+							<div class="absolute top-5 right-5 z-1">
+								<i class="fa-solid fa-list hover:text-blue-500 duration-500"></i>
+							</div>
+						</button>
+
+						<!--button to show the list of all Savings-->
+						<button>
+							<div id="tables" class="absolute top-5 left-5 z-1">
+								<i class="fa-solid fa-pen-to-square hover:text-blue-500 duration-500"></i>
+							</div>
+						</button>
+						<div class="w-2/3">
+							<div class="flex items-center justify-center">
+								<p class="font-bold text-4xl">
+									@v.Name
+								</p>
+							</div>
+							<div class="mt-2 flex items-center justify-center">
+								<p class="font-bold text-2xl">
+									@v.AmountBalance / @v.TotalAmount
+								</p>
+							</div>
 						</div>
-						<div class="mt-2 flex items-center justify-center">
-							<p class="font-bold text-2xl">
-								amount added / total amount
-							</p>
-						</div>
-					</div>
-					<div class="w-1/3">
-						<!-- First Progress Bar -->
-						<div class="flex justify-center items-center p-8 w-full">
-							<div class="relative">
-								<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-									<span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+						<div class="w-1/3">
+							<!-- First Progress Bar -->
+							<div class="block flex justify-center items-center p-8 w-full">
+								<div class="relative">
+									<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+										<span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+									</div>
+									<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+										<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+										<circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+										<circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+										<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+											<stop offset="0%" style="stop-color: #3B82F6;"></stop>
+											<stop offset="50%" style="stop-color: #9333EA;"></stop>
+											<stop offset="100%" style="stop-color: #F472B6;"></stop>
+										</linearGradient>
+									</svg>
 								</div>
-								<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-									<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-									<circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-									<circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-									<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-										<stop offset="0%" style="stop-color: #3B82F6;"></stop>
-										<stop offset="50%" style="stop-color: #9333EA;"></stop>
-										<stop offset="100%" style="stop-color: #F472B6;"></stop>
-									</linearGradient>
-								</svg>
 							</div>
 						</div>
 					</div>
+
+					<div id="DataTable" class="hidden">
+						<button onclick="showShowData()">hello world!</button>
+					</div>
+
+					<script>
+						function toggleTables() {
+							var showData = document.getElementById("showData");
+							var DataTable = document.getElementById("DataTable");
+
+							if (showData.style.display === "none") {
+								showData.style.display = "block";
+								DataTable.style.display = "none";
+							} else {
+								showData.style.display = "none";
+								DataTable.style.display = "block";
+							}
+						}
+
+						// Function to hide DataTable and show showData
+						function showShowData() {
+							var showData = document.getElementById("showData");
+							var DataTable = document.getElementById("DataTable");
+
+							showData.style.display = "flex";
+							DataTable.style.display = "none";
+						}
+					</script>
+
 				}
 			}
 		</div>
@@ -160,19 +190,18 @@
 		<!-- Loan chart -->
 		<div class="order-4 xl:order-5 col-span-2 bp-1800:order-4 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
 
-			<!--button to show the right chart-->
-			<div class="absolute bottom-5 right-5 z-1">
-				<button>
-					<i class="fa-solid fa-arrow-right hover:text-blue-500 duration-500"></i>
-				</button>
-			</div>
+			<!--button to show the list of all loans-->
+			<button>
+				<div class="absolute top-5 right-5 z-1">
+					<i class="fa-solid fa-list hover:text-blue-500 duration-500"></i>
+				</div>
+			</button>
 
-			<!--button to show the left chart-->
-			<div class="absolute bottom-5 left-5 z-1">
-				<button>
-					<i class="fa-solid fa-arrow-left hover:text-blue-500 duration-500"></i>
-				</button>
-			</div>
+			<button>
+				<div class="absolute top-5 left-5 z-1">
+					<i class="fa-solid fa-pen-to-square hover:text-blue-500 duration-500"></i>
+				</div>
+			</button>
 
 			<div class="w-2/3">
 				<div class="flex items-center justify-center">
@@ -302,7 +331,7 @@
 			var chartData = {
 				labels: @Html.Raw(labelsJson),
 				data: @Html.Raw(dataJson)
-									};
+												};
 		</script>
 
 		<script src="/js/Monthlychart.js"></script>
