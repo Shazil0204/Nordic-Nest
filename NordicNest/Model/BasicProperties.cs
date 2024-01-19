@@ -8,13 +8,14 @@ namespace NordicNest.Model
         internal static string CurrentPage = "Default Value Null"; 
 
         internal bool EmailExist = false;
-
         internal static string Email {  get; set; } 
-
         internal static bool IsNew { get; set; }
-
         internal static bool IsLogged { get; set; } = false;
-
-        #endregion
-    }
+        internal static int ClientID { get; set; } = 1;
+        internal static int DefaultSavingAccount { get; set; } = 1;
+        internal static int DefaultLoanAccount { get; set; } = 1;
+		internal static int UserSavingAccount { get; set; } = 1;
+		internal static int UserLoanAccount { get; set; } = 1;
+		#endregion
+	}
 }

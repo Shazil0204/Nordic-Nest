@@ -27,9 +27,11 @@ namespace NordicNest.Model.SavingLoanDatabase
 				};
 
 				// Add the clientID as a parameter
-				command.Parameters.AddWithValue("@ClientID", 1);
+				command.Parameters.AddWithValue("@ClientID", BasicProperties.ClientID);
 
-				try
+                Console.WriteLine(BasicProperties.ClientID);
+
+                try
 				{
 					connection.Open();
 					SqlDataReader reader = command.ExecuteReader();

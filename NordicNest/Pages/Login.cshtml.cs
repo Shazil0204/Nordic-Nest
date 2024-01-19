@@ -26,8 +26,6 @@ namespace NordicNest.Pages
 				if (verified)
 				{
 					TempData["LoginReturnData"] = returnvalue;
-					Console.WriteLine("the return value is " + returnvalue);
-
 					// Set session variable to indicate the user is logged in
 					HttpContext.Session.SetBool("IsLoggedIn", true);
 
@@ -38,7 +36,6 @@ namespace NordicNest.Pages
 				else
 				{
                     TempData["LoginReturnData"] = -2;
-                    Console.WriteLine("the return value is -2");
                     return Page();
                 }
             }
@@ -47,7 +44,6 @@ namespace NordicNest.Pages
             else if (returnvalue == -99)
             {
                 TempData["LoginReturnData"] = returnvalue;
-                Console.WriteLine("the return value is " + returnvalue);
                 return Page();
             }
 
@@ -55,7 +51,6 @@ namespace NordicNest.Pages
             else if (returnvalue == -101)
             {
                 TempData["LoginReturnData"] = returnvalue;
-                Console.WriteLine("the return value is " + returnvalue);
                 return Page();
             }
 
@@ -64,7 +59,6 @@ namespace NordicNest.Pages
             else
             {
                 TempData["LoginReturnData"] = returnvalue;
-                Console.WriteLine("the return value is " + returnvalue);
                 return Page();
             }
         }
