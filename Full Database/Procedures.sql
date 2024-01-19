@@ -203,8 +203,9 @@ GO
 
 CREATE PROCEDURE CHECKUSER
     @UserName VARCHAR(255),
-    @Password VARCHAR(255) OUTPUT, -- This is now an output parameter
-    @Result INT OUTPUT -- Additional output parameter for the result code
+    @ClientID INT OUTPUT, -- New output parameter for ClientID
+    @Password VARCHAR(255) OUTPUT,
+    @Result INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -213,22 +214,26 @@ BEGIN
         -- Check if the username exists with case-sensitive comparison
         IF EXISTS (SELECT * FROM Clients WHERE UserName COLLATE Latin1_General_BIN = @UserName)
         BEGIN
-            -- Get the password for the username
-            SELECT @Password = Password FROM Clients WHERE UserName COLLATE Latin1_General_BIN = @UserName;
+            -- Get the ClientID and password for the username
+            SELECT @ClientID = ClientID, @Password = Password FROM Clients WHERE UserName COLLATE Latin1_General_BIN = @UserName;
             SET @Result = 1; -- Indicate success
         END
         ELSE
         BEGIN
+            SET @ClientID = NULL; -- No ClientID to return
             SET @Password = NULL; -- No password to return
             SET @Result = -2; -- Username does not exist or case mismatch
         END
     END TRY
     BEGIN CATCH
         -- If an error occurs, set the result to -99
+        SET @ClientID = NULL;
+        SET @Password = NULL;
         SET @Result = -99;
     END CATCH
 END
 GO
+
 
 CREATE PROCEDURE GetSavingsInfo
     @ClientID INT
