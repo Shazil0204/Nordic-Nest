@@ -273,3 +273,47 @@ BEGIN
         @ReturnValue AS ReturnValue;
 END;
 GO
+
+CREATE PROCEDURE GetLoansInfo
+    @ClientID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @LoanID INT;
+    DECLARE @Name VARCHAR(20);
+    DECLARE @TotalAmount DECIMAL;
+    DECLARE @AmountBalance DECIMAL;
+    DECLARE @ReturnValue INT = -99; -- Default to error value
+
+    BEGIN TRY
+        -- Check if the client exists
+        IF NOT EXISTS (SELECT 1 FROM Clients WHERE ClientID = @ClientID)
+        BEGIN
+            SET @ReturnValue = -1; -- Client does not exist
+            SELECT @ReturnValue AS ReturnValue;
+            RETURN;
+        END
+
+        -- Retrieve savings information
+        SELECT
+            LoanID,
+            Name,
+            TotalAmount,
+            AmountBalance
+        FROM Loans
+        WHERE ClientID = @ClientID
+        ORDER BY StartingDate DESC;
+
+        SET @ReturnValue = 1; -- Success
+
+    END TRY
+    BEGIN CATCH
+        SET @ReturnValue = -99; -- Error
+    END CATCH
+
+    -- Return the result set
+    SELECT
+        @ReturnValue AS ReturnValue;
+END;
+GO
