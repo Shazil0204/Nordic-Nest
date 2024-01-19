@@ -23,7 +23,6 @@ namespace NordicNest.Model.NavBar
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                Console.WriteLine(BasicProperties.CurrentPage);
                 // Add the page name as a parameter
                 command.Parameters.AddWithValue("@PageName", Model.BasicProperties.CurrentPage);
 

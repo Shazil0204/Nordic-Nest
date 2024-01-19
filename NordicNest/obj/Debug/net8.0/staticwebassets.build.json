@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dNjEOzwb+IzTqoOrX1TTCG7ZXbWJcr1V5/8HJdRSFOA=",
+  "Hash": "+CxG+ayJDe1pLi9R0yjhRzHmyExvh3HzRzdkZbiLO7s=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -53,25 +53,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NordicNest.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\css\\MovementAnimation.css",
-      "SourceId": "NordicNest",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\",
-      "BasePath": "_content/NordicNest",
-      "RelativePath": "css/MovementAnimation.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\MovementAnimation.css"
     },
     {
       "Identity": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\css\\ScrollBar.css",

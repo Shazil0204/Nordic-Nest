@@ -17,8 +17,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 <script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="~/css/MovementAnimation.css" />
-
 
 @* bg-teal-400 *@
 <body class="bg-[#212529] flex items-center justify-center">
@@ -143,138 +141,95 @@
 
 		</div>
 
-		<!-- First Section -->
+		<!-- Loan chart -->
 		<div class="order-4 xl:order-5 col-span-2 bp-1800:order-4 xl:row-span-1 bp-1800:col-span-1 bg-white rounded-2xl shadow-xl min-h-[100px] flex items-center justify-center text-center hover:border-blue-500 duration-300 relative p-4">
-			<!-- button to show the right chart -->
+
+			<!--button to show the right chart-->
 			<div class="absolute bottom-5 right-5 z-1">
-				<button onclick="showChart('right')">
+				<button>
 					<i class="fa-solid fa-arrow-right hover:text-blue-500 duration-500"></i>
 				</button>
 			</div>
 
-			<!-- button to show the left chart -->
+			<!--button to show the left chart-->
 			<div class="absolute bottom-5 left-5 z-1">
-				<button onclick="showChart('left')">
+				<button>
 					<i class="fa-solid fa-arrow-left hover:text-blue-500 duration-500"></i>
 				</button>
 			</div>
 
-			<div class="flex items-center justify-center overflow-hidden" id="chartContainer">
-				<div class="w-2/3">
-					<div class="flex items-center justify-center">
-						<p class="font-bold text-4xl">
-							Loan name
-						</p>
-					</div>
-					<div class="mt-2 flex items-center justify-center">
-						<p class="font-bold text-2xl">
-							amount added / total amount
-						</p>
-					</div>
+			<div class="w-2/3">
+				<div class="flex items-center justify-center">
+					<p class="font-bold text-4xl">
+						Loan name
+					</p>
 				</div>
-				<div class="w-1/3">
-					<!-- Second Progress Bar -->
-					<div class="flex justify-center items-center p-8 w-full">
-						<div class="relative">
-							<div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-								<span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
-							</div>
-							<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-								<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-								<circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-								<circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-							</svg>
+				<div class="mt-2 flex items-center justify-center">
+					<p class="font-bold text-2xl">
+						amount added / total amount
+					</p>
+				</div>
+			</div>
+			<div class="w-1/3">
+				<!-- Second Progress Bar -->
+				<div class="flex justify-center items-center p-8 w-full">
+					<div class="relative">
+						<div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+							<span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
 						</div>
+						<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+							<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+						</svg>
 					</div>
 				</div>
 			</div>
-			<script>
-				function showChart(direction) {
-					const chartContainer = document.getElementById('chartContainer');
-					const chartElements = chartContainer.children;
-
-					for (let i = 0; i < chartElements.length; i++) {
-						chartElements[i].classList.add(direction === 'right' ? 'animate-right' : 'animate-left');
-					}
-
-					// Remove the animation class after the animation is complete
-					setTimeout(() => {
-						for (let i = 0; i < chartElements.length; i++) {
-							chartElements[i].classList.remove(direction === 'right' ? 'animate-right' : 'animate-left');
-						}
-					}, 1000);
-				}
-			</script>
 		</div>
 
-		@* <link rel="stylesheet" href="~/css/MovementAnimation.css" /> *@
 		<!-- Subscription payment chart -->
 		<div class="order-5 xl:order-6 col-span-2 bp-1800:order-5 xl:row-span-1 bp-1800:col-span-2 bg-white rounded-2xl shadow-xl min-h-[100px] hover:border-blue-500 duration-300 relative">
 			<div class="accordion border-b p-4 cursor-pointer text-center">
 				Subscription payment chart
 			</div>
-
-			<div>
-				<div class="absolute flex left-3 top-1/2">
-					<button onclick="movingAnimation('left')">
-						<i class="fas fa-angle-double-left hover:text-blue-500 duration-500"></i>
-					</button>
+			<div class="bp-1800:mt-8 bp-1800:text-xl flex flex-col xl:flex-row items-center justify-center px-4">
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p class=""><strong>Subscription to:</strong> XYZ</p>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
-				<div class="absolute flex right-3 top-1/2">
-					<button onclick="movingAnimation('right')">
-						<i class="fas fa-angle-double-right hover:text-blue-500 duration-500"></i>
-					</button>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
 				</div>
-			</div>
-			<div class="bp-1800:mt-8 bp-1800:text-xl flex flex-col xl:flex-row items-center justify-center px-4 overflow-hidden">
-				<div id="accordionContainer" class="flex">
-					<div class="accordion-content p-4">
-						<p><strong>Amount:</strong> $XX.XX</p>
-						<p><strong>Date:</strong> MM/DD/YYYY</p>
-						<p class=""><strong>Subscription to:</strong> XYZ</p>
-						<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
+				</div>
+				<div class="accordion-content p-4">
+					<p><strong>Amount:</strong> $XX.XX</p>
+					<p><strong>Date:</strong> MM/DD/YYYY</p>
+					<p><strong>Subscription to:</strong> XYZ</p>
+					<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
+				</div>
+				<div>
+					<div class="absolute flex left-3 top-50">
+						<button onclick="MovingAnimationLeft()">
+							<i class="fas fa-angle-double-left hover:text-blue-500 duration-500"></i>
+						</button>
 					</div>
-					<div class="accordion-content p-4">
-						<p><strong>Amount:</strong> $XX.XX</p>
-						<p><strong>Date:</strong> MM/DD/YYYY</p>
-						<p><strong>Subscription to:</strong> XYZ</p>
-						<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
-					</div>
-					<div class="accordion-content p-4">
-						<p><strong>Amount:</strong> $XX.XX</p>
-						<p><strong>Date:</strong> MM/DD/YYYY</p>
-						<p><strong>Subscription to:</strong> XYZ</p>
-						<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
-					</div>
-					<div class="accordion-content p-4">
-						<p><strong>Amount:</strong> $XX.XX</p>
-						<p><strong>Date:</strong> MM/DD/YYYY</p>
-						<p><strong>Subscription to:</strong> XYZ</p>
-						<button onclick="myFunction()" class="p-1 border-2 border-teal-300 w-full rounded-2xl">Cancel</button>
+					<div class="absolute flex right-3 top-50">
+						<button onclick="MovingAnimationRight()">
+							<i class="fas fa-angle-double-right hover:text-blue-500 duration-500"></i>
+						</button>
 					</div>
 				</div>
 			</div>
-			<script>
-				function movingAnimation(direction) {
-					const accordionContainer = document.getElementById('accordionContainer');
-					const accordionItems = accordionContainer.children;
-
-					for (let i = 0; i < accordionItems.length; i++) {
-						accordionItems[i].classList.add(direction === 'right' ? 'animate-right' : 'animate-left');
-					}
-
-					// Remove the animation class after the animation is complete
-					setTimeout(() => {
-						for (let i = 0; i < accordionItems.length; i++) {
-							accordionItems[i].classList.remove(direction === 'right' ? 'animate-right' : 'animate-left');
-						}
-					}, 1000);
-				}
-
-				function myFunction() {
-					// Your existing function logic for cancel button
-				}
-			</script>
 		</div>
 
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -327,18 +282,18 @@
 			<canvas id="chartColumnCanvas"></canvas>
 		</div>
 
+		<script>
+			var chartData = {
+				labels: @Html.Raw(labelsJson),
+				data: @Html.Raw(dataJson)
+			};
+		</script>
+
+		<script src="/js/Monthlychart.js"></script>
+
 	</div>
 
 </body>
-
-<script>
-	var chartData = {
-		labels: @Html.Raw(labelsJson),
-		data: @Html.Raw(dataJson)
-										};
-</script>
-
-<script src="/js/Monthlychart.js"></script>
 
 <script>
 	function getProgressBarsFromCSharp() { return @Html.Raw(Json.Serialize(progressBars)); }
