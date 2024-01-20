@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>User Budget Pie Chart</title>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="flex items-center justify-center h-screen">
+        <div class="w-64">
+            <canvas id="budgetChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Data for the chart
+        var data = {
+            labels: ["Traveling", "Food", "Clothing", "shopping"],
+            datasets: [{
+                data: [20, 35, 15, 50],
+                backgroundColor: ["#3490dc", "#38a169", "#f6e05e", "#ff0000"],
+            }]
+        };
+
+        // Chart configuration
+        var config = {
+            type: 'doughnut', // Doughnut chart is similar to a pie chart
+            data: data,
+        };
+
+        // Create the chart
+        var myChart = new Chart(
+            document.getElementById('budgetChart'),
+            config
+        );
+    </script>
+
+</body>
+</html>
