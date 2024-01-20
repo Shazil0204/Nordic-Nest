@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r1UsisVBWDkwu4EtbtKF1KgnG7WECVQWmBOzqdwV6XA=",
+  "Hash": "xDY4bg/224FJDa/Znqly5/E2dd7XTO1IKbpgp3xe+WQ=",
   "Source": "NordicNest",
   "BasePath": "_content/NordicNest",
   "Mode": "Default",
@@ -490,6 +490,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Monthlychart.js"
+    },
+    {
+      "Identity": "V:\\Nordic-Nest\\NordicNest\\wwwroot\\js\\MonthlyUsage.js",
+      "SourceId": "NordicNest",
+      "SourceType": "Discovered",
+      "ContentRoot": "V:\\Nordic-Nest\\NordicNest\\wwwroot\\",
+      "BasePath": "_content/NordicNest",
+      "RelativePath": "js/MonthlyUsage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\MonthlyUsage.js"
     },
     {
       "Identity": "V:\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Navbar.js",

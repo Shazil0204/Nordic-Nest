@@ -1,12 +1,13 @@
-﻿var showNavID = document.getElementById('ShowNavBtn');
-var navbar = document.getElementById('DashboardNavbar');
+﻿const navbarToggle = document.getElementById('navbarToggle');
+const closeNavbar = document.getElementById('closeNavbar');
+const navbar = document.getElementById('navbar');
 
-function HideNav() {
-    navbar.classList.add('hidden');
-    showNavID.style.display = 'block';
-}
+navbarToggle.addEventListener('click', () => {
+    navbar.classList.toggle('-translate-x-full');
+    navbarToggle.style.display = 'none';
+});
 
-function ShowNav() {
-    navbar.classList.remove('hidden');
-    showNavID.style.display = 'none';
-}
+closeNavbar.addEventListener('click', () => {
+    navbar.classList.toggle('-translate-x-full');
+    navbarToggle.style.display = 'block';
+});

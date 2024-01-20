@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\js\\GoBack.js"
     },
     {
+      "Id": "V:\\Nordic-Nest\\NordicNest\\wwwroot\\js\\MonthlyUsage.js",
+      "PackagePath": "staticwebassets\\js\\MonthlyUsage.js"
+    },
+    {
       "Id": "V:\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Monthlychart.js",
       "PackagePath": "staticwebassets\\js\\Monthlychart.js"
     },
