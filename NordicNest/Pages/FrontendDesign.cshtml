@@ -1,0 +1,100 @@
+﻿@page
+@model NordicNest.Pages.FrontendDesignModel
+@{
+    Layout = null;
+    NordicNest.Model.BasicProperties.CurrentPage = "Home";
+    Model.NavBar.NavBarConnection navBarConnection = new Model.NavBar.NavBarConnection();
+    List<Model.NavBar.NavBarProperties> NBP = navBarConnection.GetNavBars();
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
+
+<body class="bg-gradient-to-b from-teal-950 to-gray-950 h-screen">
+
+    <div class="lg:flex h-screen">
+        <!-- Navbar Toggle Button -->
+        <button id="navbarToggle"
+                class="fixed z-50 top-4 left-4 p-2 rounded-md bg-gray-800 text-white">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar -->
+        <nav id="navbar" class="text-md flex flex-col fixed left-0 top-0 h-screen w-1/4 bg-gray-800 text-white transition-transform transform -translate-x-full ease-in-out duration-300">
+
+            <button id="closeNavbar" class="absolute right-0 top-0 p-4">
+                <i class="fa-solid fa-xmark text-4xl"></i>
+            </button>
+            <button id="closeNavbar" class="absolute left-0 bottom-0 p-4">
+                <i class="fa-solid fa-sign-out text-4xl"></i>
+            </button>
+
+            <a asp-page="/Index" class="mt-16 rounded-2xl hover:bg-gray-700 flex items-center justify-center duration-500">
+                <i class="w-1/3 fa-solid fa-sign-out text-red-500 text-4xl p-4"></i>
+                <p class="w-2/3 pb-4  rounded-2xl text-4xl">Profile</p>
+            </a>
+            <a asp-page="/Index" class="mt-1 rounded-2xl hover:bg-gray-700 flex items-center justify-center duration-500">
+                <i class="w-1/3 fa-solid fa-sign-out text-red-500 text-4xl p-4"></i>
+                <p class="w-2/3 pb-4  rounded-2xl text-4xl">Savings</p>
+            </a>
+            <a asp-page="/Index" class="mt-1 rounded-2xl hover:bg-gray-700 flex items-center justify-center duration-500">
+                <i class="w-1/3 fa-solid fa-sign-out text-red-500 text-4xl p-4"></i>
+                <p class="w-2/3 pb-4  rounded-2xl text-4xl">Loans</p>
+            </a>
+            <a asp-page="/Index" class="mt-1 rounded-2xl hover:bg-gray-700 flex items-center justify-center duration-500">
+                <i class="w-1/3 fa-solid fa-sign-out text-red-500 text-4xl p-4"></i>
+                <p class="w-2/3 pb-4  rounded-2xl text-4xl">Subscriptions</p>
+            </a>
+            <a asp-page="/Index" class="mt-1 rounded-2xl hover:bg-gray-700 flex items-center justify-center duration-500">
+                <i class="w-1/3 fa-solid fa-sign-out text-red-500 text-4xl p-4"></i>
+                <p class="w-2/3 pb-4  rounded-2xl text-4xl">Transactions</p>
+            </a>
+            <a asp-page="/Index" class="mt-1 rounded-2xl hover:bg-gray-700 flex items-center justify-center duration-500">
+                <i class="w-1/3 fa-solid fa-sign-out text-red-500 text-4xl p-4"></i>
+                <p class="w-2/3 pb-4  rounded-2xl text-4xl">Budget</p>
+            </a>
+            <a asp-page="/Index" class="text-center text-white text-4xl rounded-2xl bg-gray-950 pb-2 mt-16 mx-4 mb-4">
+                Messages
+            </a>
+            <div class="mx-4 mb-4 p-3 bg-gray-100 rounded-xl overflow-hidden">
+                <!-- Your message content goes here -->
+                <!-- For example, you can use a div with a class for styling -->
+                <div class="message-box overflow-y-auto max-h-[30rem]">
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                    <p class="bg-gray-200 p-2 m-2 rounded-xl border border-black">Your messages go here.</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="flex-1 p-8">
+            <h1 class="text-4xl font-bold">Content Goes Here</h1>
+        </div>
+    </div>
+
+    <script>
+        const navbarToggle = document.getElementById('navbarToggle');
+        const closeNavbar = document.getElementById('closeNavbar');
+        const navbar = document.getElementById('navbar');
+
+        navbarToggle.addEventListener('click', () => {
+            navbar.classList.toggle('-translate-x-full');
+            navbarToggle.style.display = 'none';
+        });
+
+        closeNavbar.addEventListener('click', () => {
+            navbar.classList.toggle('-translate-x-full');
+            navbarToggle.style.display = 'block';
+        });
+    </script>
+
+
+</body>
