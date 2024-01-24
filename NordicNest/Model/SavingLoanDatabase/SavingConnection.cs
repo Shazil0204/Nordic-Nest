@@ -8,7 +8,7 @@ namespace NordicNest.Model.SavingLoanDatabase
 {
 	public class SavingConnection
 	{
-		public List<SLVariable> GetSavingData()
+		public List<SLVariable> GetAllSavingData()
 		{
 			var Savings = new List<SLVariable>();
 
@@ -29,9 +29,9 @@ namespace NordicNest.Model.SavingLoanDatabase
 				// Add the clientID as a parameter
 				command.Parameters.AddWithValue("@ClientID", BasicProperties.ClientID);
 
-                Console.WriteLine(BasicProperties.ClientID);
+				Console.WriteLine(BasicProperties.ClientID);
 
-                try
+				try
 				{
 					connection.Open();
 					SqlDataReader reader = command.ExecuteReader();

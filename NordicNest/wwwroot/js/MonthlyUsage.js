@@ -1,9 +1,9 @@
 ﻿// Data for the chart
 var data = {
-    labels: ["Traveling", "Food", "Clothing", "shopping"],
+    labels: ["Traveling", "Food", "Clothing", "shopping", "cartoons"],
     datasets: [{
-        data: [20, 35, 15, 50],
-        backgroundColor: ["#3490dc", "#38a169", "#f6e05e", "#ff0000"],
+        data: [20, 35, 15, 50, 20],
+        backgroundColor: ["#3490dc", "#38a169", "#f6e05e", "#ff0000", "#343434"],
     }]
 };
 

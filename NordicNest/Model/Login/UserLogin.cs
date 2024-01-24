@@ -68,7 +68,7 @@ namespace NordicNest.Model.Login
 						.AddJsonFile("appsettings.json")
 						.Build();
 
-			var connectionString = config.GetConnectionString("Create_Account"); // Replace with the correct connection string name
+			var connectionString = config.GetConnectionString("Create_Account"); 
 
 			string password = null;
 			int resultCode = 0;

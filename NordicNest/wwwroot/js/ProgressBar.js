@@ -1,9 +1,4 @@
-﻿
-var progressBars = getProgressBarsFromCSharp();
-var firstProgressBar = progressBars[0];
-var secondProgressBar = progressBars[1];
-
-function updateProgress(progressBarId, progressBarLingeringId, progressTextId, target) {
+﻿function updateProgress(progressBarId, progressBarLingeringId, progressTextId, target) {
 	let progress = 0;
 	const progressBar = document.getElementById(progressBarId);
 	const progressBarLingering = document.getElementById(progressBarLingeringId);
@@ -23,6 +18,3 @@ function updateProgress(progressBarId, progressBarLingeringId, progressTextId, t
 
 	incrementProgress();
 }
-
-updateProgress('progress-bar-1', 'progress-bar-lingering-1', 'progress-text-1', firstProgressBar);
-updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', secondProgressBar);
