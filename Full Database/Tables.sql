@@ -119,9 +119,38 @@ CREATE TABLE Clients(
     -- Gender of the client (BIT: 0 for male, 1 for female, for example)
 	Gender BIT NOT NULL,
     -- Age of the client
-	Age INT NOT NULL
+	Age INT NOT NULL,
+	-- Check if user have read terms and conditions
+	ReadTeams BIT Default 0,
+	-- Check if user have completed his Data information
+	signup_completed BIT Default 0
 );
 GO
+
+-- CREATING A TABLE FOR Clients Data
+CREATE TABLE ClientData(
+	ClientData INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated client
+	ClientID INT NOT NULL,
+	-- Total Amount he earns each month 
+	TotalMonthlyAmount INT Default 0,
+	-- Total Amount He can use each month
+	UsableAmount INT Default 0,
+	-- User Reserve amount
+	UserReserved INT,
+	-- System Reserve amount
+	SystemReserved INT,
+	-- Total Amount of Savings (Max 10)
+	TotalSavings INT Default 0,
+	-- Total Amount of Loans (Max 10)
+	TotalLoans INT Default 0,
+	-- Total Amount of Subscriptions (Max 10)
+	TotalSubscriptions INT Default 0,
+	-- Total Amount of Incomes (Max 5)
+	TotalIncomes INT Default 0,
+	-- Reference to the client associated with this savings record
+	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
+);
 
 CREATE TABLE Savings(
     -- Unique identifier for each savings record
@@ -131,19 +160,21 @@ CREATE TABLE Savings(
     -- Name of the savings account
 	Name VARCHAR(20) NOT NULL,
     -- Total amount in the savings account
-	TotalAmount DECIMAL NOT NULL,
+	TotalAmount DECIMAL,
     -- Start date of the savings account
 	StartingDate DATETIME,
     -- End date of the savings account
 	EndingDate DATETIME,
     -- Current balance in the savings account
-	AmountBalance DECIMAL NOT NULL,
+	AmountBalance DECIMAL DEFAULT 0,
     -- Description of the savings account
 	Description VARCHAR(100),
     -- Monthly input for the savings account
 	MonthlyInput DECIMAL NOT NULL,
     -- User-defined deadline for savings
 	UserDeadLine DATETIME,
+	-- Is Default saving account
+	IsDefault Bit DEFAULT 0,
     -- System deadline for savings
 	SystemDeadline DATETIME NOT NULL,
     -- Reference to the client associated with this savings record
@@ -156,8 +187,8 @@ CREATE TABLE SavingSchedule (
     ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
     -- Reference to the associated savings account
     SavingID INT NOT NULL,
-    -- Day of the week for scheduled activities
-    WorkDay VARCHAR(10) NOT NULL, -- using VARCHAR to store day information
+    -- Number of days before Saving renewal for scheduled activities
+    DaysBeforeRenewal INT NOT NULL,
     -- Reference to the associated savings account
     FOREIGN KEY (SavingID) REFERENCES Savings(SavingID)
 );
@@ -184,6 +215,8 @@ CREATE TABLE Loans(
 	MonthlyInput DECIMAL NOT NULL,
     -- User-defined deadline for the loan
 	UserDeadLine DATETIME,
+	-- Is Default Loan account
+	IsDefault Bit DEFAULT 0,
     -- System deadline for the loan
 	SystemDeadline DATETIME NOT NULL,
     -- Reference to the client associated with this loan record
@@ -196,8 +229,8 @@ CREATE TABLE LoanSchedule (
     ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
     -- Reference to the associated loan account
     LoanID INT NOT NULL,
-    -- Day of the week for scheduled activities
-    WorkDay VARCHAR(10) NOT NULL, -- using VARCHAR to store day information
+    -- Number of days before Loan renewal for scheduled activities
+    DaysBeforeRenewal INT NOT NULL,
     -- Reference to the associated loan account
     FOREIGN KEY (LoanID) REFERENCES Loans(LoanID)
 );
@@ -226,8 +259,8 @@ CREATE TABLE WorkSchedule (
     ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
     -- Reference to the associated income source
     IncomeID INT NOT NULL,
-    -- Day of the week for scheduled work
-    WorkDay VARCHAR(10) NOT NULL, -- using VARCHAR to store day information
+    -- Number of days before income renewal for scheduled activities
+    DaysBeforeRenewal INT NOT NULL,
     -- Reference to the associated income source
     FOREIGN KEY (IncomeID) REFERENCES Incomes(IncomeID)
 );
@@ -251,15 +284,14 @@ CREATE TABLE Subscriptions(
 );
 GO
 
--- Creating a table for Non-Monthly Subscriptions
-CREATE TABLE NonMonthlySubscriptions (
-    -- Unique identifier for each non-monthly subscription record
-    NonMonthlySubscriptionID INT IDENTITY(1,1) PRIMARY KEY,
-    -- Reference to the associated subscription
+CREATE TABLE SubscriptionSchedule (
+    -- Unique identifier for each work schedule entry
+    ScheduleID INT IDENTITY(1,1) PRIMARY KEY,
+    -- Reference to the associated income source
     SubscriptionID INT NOT NULL,
-    -- Payment interval for non-monthly subscriptions (days, weeks, or months)
-    PaymentInterval INT NOT NULL, -- Interval in days (you can replace "days" with "weeks" or "months" based on your application's logic)
-    -- Reference to the associated subscription
+    -- Number of days before Loan renewal for scheduled activities
+    DaysBeforeRenewal INT NOT NULL,
+    -- Reference to the associated income source
     FOREIGN KEY (SubscriptionID) REFERENCES Subscriptions(SubscriptionID)
 );
 GO
@@ -283,6 +315,8 @@ CREATE TABLE MonthlyUsage(
     MonthID INT IDENTITY(1,1) PRIMARY KEY,
     -- Reference to the associated client
     ClientID INT NOT NULL,
+	--This will store the amount user used on each category
+	AmountUsed INT NOT NULL,
     -- Reference to the client associated with this monthly usage record
     FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
 );
@@ -303,4 +337,19 @@ CREATE TABLE Transactions(
     Time DATETIME NOT NULL,
     -- Reference to the associated monthly usage
     FOREIGN KEY (MonthID) REFERENCES MonthlyUsage(MonthID)
+);
+
+CREATE TABLE Categories(
+	CategoryID INT IDENTITY(1,1) PRIMARY KEY,
+	category VARCHAR(20) NOT NULL,
+	color VARCHAR(7) NOT NULL
+);
+GO
+
+CREATE TABLE EachCategoryUsage(
+	EachCategoryUsage INT IDENTITY(1,1) PRIMARY KEY,
+	MonthID INT NOT NULL,
+	CategoryID INT NOT NULL,
+	FOREIGN KEY (MonthID) REFERENCES MonthlyUsage(MonthID),
+	FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );

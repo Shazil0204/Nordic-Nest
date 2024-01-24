@@ -67,16 +67,15 @@ CREATE PROCEDURE USERCONTACTFORM(
 	@FirstName VARCHAR(30),
 	@LastName VARCHAR(30),
 	@IsExistingClient BIT,
-	@MessageContent VARCHAR(255),
-	@UserEmail VARCHAR(75)
+	@MessageContent VARCHAR(255)
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
     BEGIN TRY
         -- INSERTING DATA INTO THE TABLE
-		INSERT INTO ContactInquiries (FirstName, LastName, IsExistingClient, SubmissionDateTime, MessageContent, UserEmail, InquiryCompleted)
-		VALUES (@FirstName, @LastName, @IsExistingClient, GETDATE(), @MessageContent, @UserEmail, 0);
+		INSERT INTO ContactInquiries (FirstName, LastName, IsExistingClient, SubmissionDateTime, MessageContent,  InquiryCompleted)
+		VALUES (@FirstName, @LastName, @IsExistingClient, GETDATE(), @MessageContent, 0);
 		
 		-- DATA INSERT SUCCESSFULLY
 		SELECT 1 AS Result;
@@ -279,6 +278,94 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE GetDefaultSavingsInfo
+    @ClientID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @SavingID INT;
+    DECLARE @Name VARCHAR(20);
+    DECLARE @TotalAmount DECIMAL;
+    DECLARE @AmountBalance DECIMAL;
+    DECLARE @ReturnValue INT = -99; -- Default to error value
+
+    BEGIN TRY
+        -- Check if the client exists
+        IF NOT EXISTS (SELECT 1 FROM Clients WHERE ClientID = @ClientID)
+        BEGIN
+            SET @ReturnValue = -1; -- Client does not exist
+            SELECT @ReturnValue AS ReturnValue;
+            RETURN;
+        END
+
+        -- Retrieve savings information
+        SELECT
+            Name,
+            TotalAmount,
+            AmountBalance
+        FROM Savings
+        WHERE IsDefault = 1
+        ORDER BY StartingDate DESC;
+
+        SET @ReturnValue = 1; -- Success
+
+    END TRY
+    BEGIN CATCH
+        SET @ReturnValue = -99; -- Error
+    END CATCH
+
+    -- Return the result set
+    SELECT
+        @ReturnValue AS ReturnValue;
+END;
+GO
+
+CREATE PROCEDURE GetDefaultLoanInfo
+    @ClientID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @LoanID INT;
+    DECLARE @Name VARCHAR(20);
+    DECLARE @TotalAmount DECIMAL;
+    DECLARE @AmountBalance DECIMAL;
+    DECLARE @ReturnValue INT = -99; -- Default to error value
+
+    BEGIN TRY
+        -- Check if the client exists
+        IF NOT EXISTS (SELECT 1 FROM Clients WHERE ClientID = @ClientID)
+        BEGIN
+            SET @ReturnValue = -1; -- Client does not exist
+            SELECT @ReturnValue AS ReturnValue;
+            RETURN;
+        END
+
+        -- Retrieve default loan information
+        SELECT TOP 1
+            LoanID,
+            Name,
+            TotalAmount,
+            AmountBalance
+        FROM Loans
+        WHERE IsDefault = 1
+        ORDER BY StartingDate DESC;
+
+        SET @ReturnValue = 1; -- Success
+
+    END TRY
+    BEGIN CATCH
+        SET @ReturnValue = -99; -- Error
+    END CATCH
+
+    -- Return the result set
+    SELECT
+        @ReturnValue AS ReturnValue;
+END;
+GO
+
+
 CREATE PROCEDURE GetLoansInfo
     @ClientID INT
 AS
@@ -322,3 +409,63 @@ BEGIN
         @ReturnValue AS ReturnValue;
 END;
 GO
+
+CREATE PROCEDURE GetClientInfo
+    @InputClientID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    DECLARE @UserName VARCHAR(150),
+            @TotalMonthlyAmount INT,
+            @UsableAmount INT,
+            @UserReserved INT,
+            @SystemReserved INT;
+
+    BEGIN TRY
+        SELECT @UserName = UserName,
+               @TotalMonthlyAmount = TotalMonthlyAmount,
+               @UsableAmount = UsableAmount,
+               @UserReserved = UserReserved,
+               @SystemReserved = SystemReserved
+        FROM Clients c
+        INNER JOIN ClientData cd ON c.ClientID = cd.ClientID
+        WHERE c.ClientID = @InputClientID;
+
+        SELECT @UserName AS UserName,
+               @TotalMonthlyAmount AS TotalMonthlyAmount,
+               @UsableAmount AS UsableAmount,
+               @UserReserved AS UserReserved,
+               @SystemReserved AS SystemReserved;
+
+    END TRY
+    BEGIN CATCH
+        -- Handle the error and return -99 as result
+        SELECT -99 AS Result;
+    END CATCH
+END;
+GO
+
+CREATE PROCEDURE GetSubscriptionInfo
+    @ClientID INT,
+    @ResultCode INT OUTPUT
+AS
+BEGIN
+    SET @ResultCode = 1;  -- Default to success
+
+    BEGIN TRY
+        SELECT 
+            S.Name AS SubscriptionName,
+            S.Amount,
+            SS.DaysBeforeRenewal
+        FROM Subscriptions AS S
+        LEFT JOIN SubscriptionSchedule AS SS ON S.SubscriptionID = SS.SubscriptionID
+        WHERE S.ClientID = @ClientID;
+    END TRY
+    BEGIN CATCH
+        -- Log or handle the error as needed
+        SET @ResultCode = -99;  -- Set error code
+        PRINT 'An error occurred while fetching subscription information.';
+    END CATCH
+END;
+
