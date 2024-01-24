@@ -35,11 +35,6 @@ namespace NordicNest.Model.SavingLoanDatabase
 									DSLV.SaveName = reader["Name"].ToString();
 									DSLV.SavingTotalAmount = Convert.ToDecimal(reader["TotalAmount"]);
 									DSLV.SavingCurrentAmount = Convert.ToDecimal(reader["AmountBalance"]);
-
-									Console.WriteLine(reader["Name"].ToString());
-									Console.WriteLine(Convert.ToDecimal(reader["TotalAmount"]));
-									Console.WriteLine(Convert.ToDecimal(reader["AmountBalance"]));
-									// You can add similar lines for Loan information if needed
 								}
 							}
 						}
