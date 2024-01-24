@@ -5,6 +5,7 @@
 @model NordicNest.Pages.FrontendDesignModel
 @{
 	Layout = null;
+	List<NordicNest.Model.Subscriptions.SubVariables> SV = new NordicNest.Model.Subscriptions.SubConnection().GetSubscriptionInfo();
 	NordicNest.Controller.ClientDataController CDC = new NordicNest.Controller.ClientDataController();
 	List<Model.NavBar.NavBarProperties> NBP = new Model.NavBar.NavBarConnection().GetNavBars();
 	decimal[] progressBars = { Model.Savingpercentage(), Model.Loanpercentage() };
@@ -12,9 +13,6 @@
 	var Sresult = new DefaultSavingController().GetData();
 	var Lresult = new DefaultLoanController().GetData();
 	var ClientData = CDC.GetClientData();
-	NordicNest.Controller.SubController subc = new NordicNest.Controller.SubController();
-	subc.subControlIO();
-
 }
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -81,71 +79,71 @@
 	<!--This navbar will be connected to database-->
 	<!--My content-->
 	<div class="grid grid-cols-4 2xl:grid-cols-5 gap-4 mx-16 text-white text-center font-mono text-sm/[17px] md:text-lg lg:text-2xl my-4">
-		
+
 		<!--Username-->
 		<div class="order-1 lg:order-1 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-blue-500 bg-[#2f80ed] p-4 relative flex items-center justify-center">
 			<a asp-page="" class="absolute top-2 left-2 fa-solid fa-pen-to-square"></a>
 			<a asp-page="" class="absolute top-2 right-2 fa-solid fa-envelope "></a>
 			<div class="absolute top-2 right-1 h-2 w-2 bg-red-500 rounded-full"></div>
 			<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
-				Welcome to your dashboard <strong>[@ClientData.Item1]</strong>
+				Welcome to your dashboard <strong class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">@ClientData.Item1</strong>
 			</p>
 		</div>
-		
+
 		<!--Current Amount-->
-		<div class="order-4 lg:order-2  col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
+		<div class="order-4 lg:order-2  col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
 			<button onclick="showInfo('CurrentAmount')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			Current Amount
 			<br />
-			<p class="mt-2 font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item2</p>
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item2</p>
 		</div>
-		
+
 		<!--Usable Amount-->
-		<div class="order-5 lg:order-3 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-blue-500 bg-[#2f80ed] p-4 relative">
+		<div class="order-5 lg:order-3 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-blue-500 bg-[#2f80ed] p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
 			<button onclick="showInfo('UsableAmount')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			Usable Amount
 			<br />
-			<p class="mt-2 font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item3</p>
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item3</p>
 		</div>
-		
+
 		<!--Transactions-->
 		<div class="order-6 lg:order-7 col-span-2 row-span-1 2xl:col-span-4 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
 			<button onclick="showInfo('Transaction')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
-			Transactions
+			<p class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold text-4xl">Transactions</p>
 		</div>
-		
+
 		<!--Monthly chart-->
 		<div class="order-7 lg:order-6 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative overflow-auto">
 			<button onclick="showInfo('MonthlyChart')" class="absolute fas fa-info-circle top-2 right-2"></button>
-			Monthly chart
+			<p class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold text-4xl">Monthly chart</p>
 			<canvas id="budgetChart"></canvas>
 		</div>
-		
+
 		<!--User Reserver-->
-		<div class="order-2 lg:order-4  col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
+		<div class="order-2 lg:order-4  col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
 			<a asp-page="" class="absolute top-2 left-2 fa-solid fa-pen-to-square"></a>
 			<button onclick="showInfo('UserReserver')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			User Reserver
 			<br />
-			<p class="mt-2 font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item4</p>
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item4</p>
 		</div>
-		
+
 		<!--System Reserver-->
-		<div class="order-3 lg:order-5  col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
+		<div class="order-3 lg:order-5  col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
 			<button onclick="showInfo('SystemReserver')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			System Reserver
 			<br />
-			<p class="mt-2 font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item5</p>
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item5</p>
 		</div>
-		
+
 		<!--Savings-->
 		<div class="order-8 lg:order-8 col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
 			<button onclick="showInfo('Savings')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<!-- First div for saving name and current/total amount -->
 			<div class="mt-4 text-white">
-				<p class="text-sm/[17px] md:text-lg lg:text-2xl font-bold">@Sresult.Item1</p>
+				<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Sresult.Item1</p>
 				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
 				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
 			</div>
@@ -171,44 +169,28 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!--Subscriptions-->
 		<div class="order-9 lg:order-9 col-span-2 2xl:col-span-3 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative flex items-center justify-center">
 			<button onclick="showInfo('Subscriptions')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
-			<h2 class="hidden lg:block text-2xl font-semibold mb-4 absolute top-5">Your Subscriptions</h2>
+			<h2 class="hidden lg:block text-2xl font-semibold mb-4 absolute top-5 [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold lg:text-4xl">Your Subscriptions</h2>
 			<!-- Subscription Items -->
 			<div class="flex space-x-4 overflow-y-auto">
-				<!-- Subscription Item 1 -->
-				<div class="flex-1 bg-gray-100 p-4 rounded-md border border-black">
-					<span class="block text-lg font-medium text-gray-700">Premium Plan</span>
-					<span class="block text-green-500 font-semibold">$19.99/month</span>
-					<button onclick="cancelSubscription('Premium Plan')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
-				</div>
-				<!-- Subscription Item 2 -->
-				<div class="flex-1 bg-gray-100 p-4 rounded-md border border-black">
-					<span class="block text-lg font-medium text-gray-700">Pro Plan</span>
-					<span class="block text-green-500 font-semibold">$29.99/month</span>
-					<button onclick="cancelSubscription('Pro Plan')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
-				</div>
-				<!-- Subscription Item 3 -->
-				<div class="hidden 2xl:block flex-1 bg-gray-100 p-4 rounded-md border border-black">
-					<span class="block text-lg font-medium text-gray-700">Basic Plan</span>
-					<span class="block text-green-500 font-semibold">$9.99/month</span>
-					<button onclick="cancelSubscription('Basic Plan')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
-				</div>
-				<!-- Subscription Item 4 -->
-				<div class="hidden 2xl:block flex-1 bg-gray-100 p-4 rounded-md border border-black">
-					<span class="block text-lg font-medium text-gray-700">Basic Plan</span>
-					<span class="block text-green-500 font-semibold">$9.99/month</span>
-					<button onclick="cancelSubscription('Basic Plan')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
-				</div>
-				<div class="hidden 2xl:block flex-1 bg-gray-100 p-4 rounded-md border border-black">
-					<span class="block text-lg font-medium text-gray-700">Basic Plan</span>
-					<span class="block text-green-500 font-semibold">$9.99/month</span>
-					<button onclick="cancelSubscription('Basic Plan')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
-				</div>
+				@foreach (var v in SV)
+				{
+					for (int i = 0; i < 6; i++)
+					{
+						<div class="flex-1 bg-gray-100 p-4 rounded-md border border-black sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+							<span class="block text-lg font-medium text-gray-700">@v.Name</span>
+							<span class="block text-green-500 font-semibold">@v.Amount DKK</span>
+							<button onclick="cancelSubscription('@v.Name')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
+						</div>
+					}
+					break;
+				}
 			</div>
+
 		</div>
 
 		<!--Loan-->
@@ -217,7 +199,7 @@
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<!-- First div for loan name and current/total amount -->
 			<div class="mt-4 text-white">
-				<p class="text-sm/[17px] md:text-lg lg:text-2xl font-bold">@Lresult.Item1</p>
+				<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Lresult.Item1</p>
 				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Lresult.Item2</p>
 				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Lresult.Item3</p>
 			</div>
