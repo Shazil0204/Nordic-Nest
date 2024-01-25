@@ -1,0 +1,73 @@
+﻿@page
+@model NordicNest.Pages.ClientCommunicationModel
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
+
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-4">Messages</h1>
+        <div class="flex flex-col">
+            <!-- Chat Messages -->
+            <div class="flex-1 overflow-y-auto">
+                <div class="text-center text-sm text-gray-400 m-4">
+                    January 25, 2024
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-xmark text-center text-red-500"></i>
+                </div>
+                <div class="text-center text-sm text-gray-400 m-4">
+                    January 26, 2024
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-xmark text-red-500"></i>
+                </div>
+                <div class="text-center text-sm text-gray-400 m-4">
+                    January 27, 2024
+                </div>
+
+                <!-- User Messages -->
+                <div class="text-right mb-2">
+                    <div class="max-w-sm mx-auto bg-blue-500 text-white p-2 rounded-lg inline-block">
+                        Hello Admin!
+                    </div>
+                    <i class="fa-solid fa-user text-blue-500"></i>
+                </div>
+                <div class="text-right mb-2">
+                    <div class="max-w-sm mx-auto bg-blue-500 text-white p-2 rounded-lg inline-block">
+                        How can I help you today?
+                    </div>
+                    <i class="fa-solid fa-user text-blue-500"></i>
+                </div>
+                <!-- Admin Messages -->
+                <div class="text-left mb-2">
+                    <i class="fa-solid fa-user-secret text-green-500"></i>
+                    <div class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block">
+                        Hi there! How can I assist you?
+                    </div>
+                </div>
+                <div class="text-left mb-2">
+                    <i class="fa-solid fa-user-secret text-green-500"></i>
+                    <div class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block">
+                        Please let me know your query.
+                    </div>
+                </div>
+            </div>
+            <!-- Message Input -->
+            <div class="flex items-center mt-4">
+                <a asp-page="/frontenddesign" class="mr-2 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-2xl duration-500 hover:scale-95 cursor-pointer">
+                    Back
+                </a>
+                <input type="text"
+                       placeholder="Type your message here..."
+                       class="flex-1 bg-gray-800 text-white border border-gray-700 rounded-lg px-4 py-2 focus:outline-none" />
+                <a class="ml-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-2xl duration-500 hover:scale-95 cursor-pointer">
+                    Send
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
