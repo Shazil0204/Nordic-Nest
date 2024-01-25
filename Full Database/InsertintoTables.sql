@@ -95,12 +95,6 @@ VALUES
 (1, 'Payment Reminder', 'Your loan installment is due on 2024-02-01. Please ensure sufficient balance.'),
 (2, 'Subscription Renewal', 'Your Netflix subscription will renew on 2024-02-05. Make sure your payment method is up to date.');
 
--- Dummy data for MonthlyUsage table
-INSERT INTO MonthlyUsage (ClientID, AmountUsed)
-VALUES 
-(1, 3500),
-(2, 4500);
-
 -- Dummy data for Transactions table
 INSERT INTO Transactions (ClientID, TransactionTo, TransactionFrom, Amount, Time)
 VALUES 
