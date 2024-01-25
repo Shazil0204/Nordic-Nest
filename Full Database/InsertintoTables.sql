@@ -102,7 +102,7 @@ VALUES
 (2, 4500);
 
 -- Dummy data for Transactions table
-INSERT INTO Transactions (MonthID, TransactionTo, TransactionFrom, Amount, Time)
+INSERT INTO Transactions (ClientID, TransactionTo, TransactionFrom, Amount, Time)
 VALUES 
 (1, 'Landlord', 'John Doe', 1200, '2024-02-03 12:30:00'),
 (2, 'Freelance Client', 'Jane Smith', 2000, '2024-02-05 14:45:00');
@@ -117,9 +117,7 @@ VALUES
 ('Saving', '#8BC34A');
 
 -- Dummy data for EachCategoryUsage table
-INSERT INTO EachCategoryUsage (MonthID, CategoryID)
+INSERT INTO EachCategoryUsage (TransactionID, CategoryID)
 VALUES 
 (1, 1),
-(1, 2),
-(2, 2),
 (2, 3);

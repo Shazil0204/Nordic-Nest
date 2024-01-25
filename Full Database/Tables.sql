@@ -122,6 +122,8 @@ CREATE TABLE Clients(
 	Age INT NOT NULL,
 	-- Check if user have read terms and conditions
 	ReadTeams BIT Default 0,
+	-- This will store the amount user used on each category
+	AmountUsed INT Default 0,
 	-- Check if user have completed his Data information
 	signup_completed BIT Default 0
 );
@@ -310,23 +312,11 @@ CREATE TABLE Messages(
 );
 GO
 
-CREATE TABLE MonthlyUsage(
-    -- Unique identifier for each monthly usage record
-    MonthID INT IDENTITY(1,1) PRIMARY KEY,
-    -- Reference to the associated client
-    ClientID INT NOT NULL,
-	--This will store the amount user used on each category
-	AmountUsed INT NOT NULL,
-    -- Reference to the client associated with this monthly usage record
-    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
-);
-GO
-
 CREATE TABLE Transactions(
     -- Unique identifier for each transaction record
     TransactionID INT IDENTITY(1,1) PRIMARY KEY,
     -- Reference to the associated monthly usage
-    MonthID INT NOT NULL,
+    ClientID INT NOT NULL,
     -- Recipient of the transaction
     TransactionTo VARCHAR(30) NOT NULL,
     -- Sender of the transaction
@@ -336,7 +326,7 @@ CREATE TABLE Transactions(
     -- Timestamp of the transaction
     Time DATETIME NOT NULL,
     -- Reference to the associated monthly usage
-    FOREIGN KEY (MonthID) REFERENCES MonthlyUsage(MonthID)
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
 );
 
 CREATE TABLE Categories(
@@ -348,8 +338,8 @@ GO
 
 CREATE TABLE EachCategoryUsage(
 	EachCategoryUsage INT IDENTITY(1,1) PRIMARY KEY,
-	MonthID INT NOT NULL,
+	TransactionID INT NOT NULL,
 	CategoryID INT NOT NULL,
-	FOREIGN KEY (MonthID) REFERENCES MonthlyUsage(MonthID),
+	FOREIGN KEY (TransactionID) REFERENCES Transactions(TransactionID),
 	FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );

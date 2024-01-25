@@ -468,4 +468,41 @@ BEGIN
         PRINT 'An error occurred while fetching subscription information.';
     END CATCH
 END;
+GO
 
+CREATE PROCEDURE GetTransactionInfoForClient
+    @ClientID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @ErrorMessage NVARCHAR(MAX);
+
+    BEGIN TRY
+        DECLARE @SQL NVARCHAR(MAX);
+
+        -- Use parameterized query to prevent SQL injection
+        SET @SQL = N'
+            SELECT 
+				T.TransactionTo,
+				T.TransactionFrom,
+				T.Amount,
+				T.Time,
+				C.category AS Category
+			FROM Transactions AS T
+			INNER JOIN EachCategoryUsage AS ECU ON T.TransactionID = ECU.TransactionID
+			INNER JOIN Categories AS C ON ECU.CategoryID = C.CategoryID
+            WHERE ClientID = @ClientID
+        ';
+
+        EXEC sp_executesql @SQL, N'@ClientID INT', @ClientID;
+    END TRY
+    BEGIN CATCH
+        -- Capture the error message
+        SET @ErrorMessage = ERROR_MESSAGE();
+        
+        -- Log or handle the error as needed
+        PRINT 'An error occurred while fetching transaction information: ' + @ErrorMessage;
+        -- You may choose to re-throw the error or take other appropriate actions.
+    END CATCH;
+END;
