@@ -12,7 +12,7 @@
 			break;
 		case 'Transaction':
 			title = 'Transactions';
-			text = 'These are you few transactions. If you want to see more please click on the 3 dots on the top left of this div to see all the transactions of the last 30 days';
+			text = 'These are you few transactions. If you want to see more please click on the right double arrow on the top left of this div to see all the transactions of the last 30 days';
 			break;
 		case 'MonthlyChart':
 			title = 'Monthly Chart';

@@ -5,6 +5,7 @@
 @model NordicNest.Pages.FrontendDesignModel
 @{
 	Layout = null;
+	List<NordicNest.Model.Transaction.TransactionVariable> TV = new NordicNest.Model.Transaction.TransactionConnection().GetTransactionInfo();
 	List<NordicNest.Model.Subscriptions.SubVariables> SV = new NordicNest.Model.Subscriptions.SubConnection().GetSubscriptionInfo();
 	NordicNest.Controller.ClientDataController CDC = new NordicNest.Controller.ClientDataController();
 	List<Model.NavBar.NavBarProperties> NBP = new Model.NavBar.NavBarConnection().GetNavBars();
@@ -13,6 +14,10 @@
 	var Sresult = new DefaultSavingController().GetData();
 	var Lresult = new DefaultLoanController().GetData();
 	var ClientData = CDC.GetClientData();
+
+	List<string> CSLabel = new List<string> { "Traveling", "Food", "Clothing", "shopping", "cartoons" };
+	List<int> CSdata = new List<int> { 20, 40, 20, 20, 20 };
+	List<string> CSbackgroundColor = new List<string> { "#3490dc", "#38a169", "#f6e05e", "#ff0000", "#343434" };
 }
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -78,14 +83,14 @@
 	<script src="/js/dashboardnav.js"></script>
 	<!--This navbar will be connected to database-->
 	<!--My content-->
-	<div class="grid grid-cols-4 2xl:grid-cols-5 gap-4 mx-16 text-white text-center font-mono text-sm/[17px] md:text-lg lg:text-2xl my-4">
+	<div class="h-screen grid grid-cols-4 2xl:grid-cols-5 gap-4 mx-16 text-white text-center font-mono text-sm/[17px] md:text-lg lg:text-2xl py-4">
 
 		<!--Username-->
 		<div class="order-1 lg:order-1 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-blue-500 bg-[#2f80ed] p-4 relative flex items-center justify-center">
 			<a asp-page="" class="absolute top-2 left-2 fa-solid fa-pen-to-square"></a>
 			<a asp-page="" class="absolute top-2 right-2 fa-solid fa-envelope "></a>
 			<div class="absolute top-2 right-1 h-2 w-2 bg-red-500 rounded-full"></div>
-			<p class="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+			<p class="text-3xl">
 				Welcome to your dashboard <strong class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">@ClientData.Item1</strong>
 			</p>
 		</div>
@@ -95,7 +100,7 @@
 			<button onclick="showInfo('CurrentAmount')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			Current Amount
 			<br />
-			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item2</p>
+			<p class="mt-2 font-bold text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-blue-500 hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item2</p>
 		</div>
 
 		<!--Usable Amount-->
@@ -103,15 +108,47 @@
 			<button onclick="showInfo('UsableAmount')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			Usable Amount
 			<br />
-			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item3</p>
+			<p class="text-green-400 mt-2 font-bold text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-white hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item3</p>
 		</div>
 
-		<!--Transactions-->
+		<!-- Transactions -->
 		<div class="order-6 lg:order-7 col-span-2 row-span-1 2xl:col-span-4 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
+			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-angle-double-right"></a>
 			<button onclick="showInfo('Transaction')" class="absolute fas fa-info-circle top-2 right-2"></button>
-			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<p class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold text-4xl">Transactions</p>
+
+			<!-- Transaction Table -->
+			<table class="w-full mt-4">
+				<thead>
+					<tr class="text-white bg-[#2f80ed] text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+						<th class="py-2 px-4">Send To</th>
+						<th class="py-2 px-4">From</th>
+						<th class="py-2 px-4">Amount</th>
+						<th class="py-2 px-4">Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					@{
+						int TVi = 1;
+						@foreach (var item in TV)
+						{
+							<tr class="text-center text-gray-800 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl border-2xl bg-gray-300 mb-2 border-b-4 border-indigo-500 ">
+								<td class="py-2 px-4">@item.TransactionTo</td>
+								<td class="py-2 px-4">@item.TransactionFrom</td>
+								<td class="py-2 px-4">@item.Amount DKK</td>
+								<td class="py-2 px-4">@item.Time</td>
+							</tr>
+							@if (TVi == 4)
+							{
+								break;
+							}
+							TVi++;
+						}
+					}
+				</tbody>
+			</table>
 		</div>
+
 
 		<!--Monthly chart-->
 		<div class="order-7 lg:order-6 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative overflow-auto">
@@ -126,7 +163,7 @@
 			<button onclick="showInfo('UserReserver')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			User Reserver
 			<br />
-			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item4</p>
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-blue-500 hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item4</p>
 		</div>
 
 		<!--System Reserver-->
@@ -134,7 +171,7 @@
 			<button onclick="showInfo('SystemReserver')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			System Reserver
 			<br />
-			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl">@ClientData.Item5</p>
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-blue-500 hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item5</p>
 		</div>
 
 		<!--Savings-->
@@ -176,20 +213,33 @@
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<h2 class="hidden lg:block text-2xl font-semibold mb-4 absolute top-5 [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold lg:text-4xl">Your Subscriptions</h2>
 			<!-- Subscription Items -->
-			<div class="flex space-x-4 overflow-y-auto">
+			@{
+				int SVi = 1;
 				@foreach (var v in SV)
 				{
-					for (int i = 0; i < 6; i++)
+					if (SVi == 5)
 					{
-						<div class="flex-1 bg-gray-100 p-4 rounded-md border border-black sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
-							<span class="block text-lg font-medium text-gray-700">@v.Name</span>
-							<span class="block text-green-500 font-semibold">@v.Amount DKK</span>
-							<button onclick="cancelSubscription('@v.Name')" class="mt-4 bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
+
+						break;
+					}
+					for (int i = 0; i < 5; i++)
+					{
+
+						<div class="w-full h-full flex items-center justify-center space-x-4 overflow-y-auto">
+							<div class="h-3/5 flex-1 bg-gray-300 p-4 rounded-md border border-black">
+								<div class="h-1/3 flex justify-center items-center">
+									<span class="text-lg font-medium text-gray-700 mr-4">@v.Name</span>
+									<span class="text-green-500 font-semibold">@v.Amount DKK</span>
+								</div>
+								<div class="h-2/3 flex justify-center items-center">
+									<button onclick="cancelSubscription('@v.Name')" class="bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
+								</div>
+							</div>
 						</div>
 					}
-					break;
+					SVi++;
 				}
-			</div>
+			}
 
 		</div>
 
@@ -226,6 +276,12 @@
 <script src="/js/sweetalert.js"></script>
 <script src="/js/SweetInfo.js"></script>
 <script src="/js/MonthlyUsage.js"></script>
+<script>
+	var labels = @Html.Raw(Json.Serialize(CSLabel));
+	var data = @Html.Raw(Json.Serialize(CSdata));
+	var backgroundColors = @Html.Raw(Json.Serialize(CSbackgroundColor));
+	initializeProgressBars(labels, data, backgroundColors)
+</script>
 <script src="/js/ProgressBar.js"></script>
 <script>
 	// Over here i converted my C# to Json so that i can use it in my JS
