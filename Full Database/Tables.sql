@@ -138,6 +138,8 @@ CREATE TABLE ClientData(
 	TotalMonthlyAmount INT Default 0,
 	-- Total Amount He can use each month
 	UsableAmount INT Default 0,
+	-- Total amount used each month
+	TotalAmountUsed INT DEFAULT 0;
 	-- User Reserve amount
 	UserReserved INT,
 	-- System Reserve amount
