@@ -54,19 +54,7 @@ namespace NordicNest.Model.Subscriptions
 
 						// Retrieve the result code after executing the stored procedure
 						resultCode = (int)command.Parameters["@ResultCode"].Value;
-						Console.WriteLine(resultCode);
 					}
-				}
-
-				// Check the result code and handle it as needed
-				if (resultCode == 1)
-				{
-					Console.WriteLine("Subscription information retrieved successfully.");
-				}
-				else
-				{
-					Console.WriteLine($"An error occurred while fetching subscription information. Result Code: {resultCode}");
-					// Handle the error based on the result code
 				}
 			}
 			catch (Exception ex)

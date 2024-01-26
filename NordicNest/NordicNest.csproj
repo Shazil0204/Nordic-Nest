@@ -17,6 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Model\NewFolder\" />
 	  <Folder Include="wwwroot\Images\" />
 	</ItemGroup>
 

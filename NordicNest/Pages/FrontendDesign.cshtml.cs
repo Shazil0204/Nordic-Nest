@@ -1,5 +1,4 @@
 using NordicNest.Controller.DefaultSLController;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace NordicNest.Pages
@@ -14,7 +13,7 @@ namespace NordicNest.Pages
         {
         }
 
-        public decimal Savingpercentage()
+		public decimal Savingpercentage()
         {
 			DefaultSavingController DSC = new DefaultSavingController();
 			var Sresult = DSC.GetData();
