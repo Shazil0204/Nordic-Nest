@@ -27,12 +27,11 @@ INSERT INTO NavbarForPages(PageID, NavID) VALUES
 	(4,1),(4,2),(4,3),(4,5),(4,6),(4,7);
 
 --------------------------------------------------------------  DUMMY DATA
-
 -- Dummy data for Clients table
 INSERT INTO Clients (ClientNumber, FirstName, LastName, Email, UserName, Password, Gender, Age, ReadTeams, signup_completed)
 VALUES 
-(1001, 'John', 'Doe', 'john.doe@example.com', 'john_doe', 'password123', 0, 25, 1, 1),
-(1002, 'Jane', 'Smith', 'jane.smith@example.com', 'jane_smith', 'securepass456', 1, 30, 1, 0);
+(1001, 'John', 'Doe', 'john.doe@example.com', 'john_doe', 'password123', 0, 25, 0, 1),
+(1002, 'Jane', 'Smith', 'jane.smith@example.com', 'jane_smith', 'securepass456', 1, 30, 0, 0);
 
 -- Dummy data for ClientData table
 INSERT INTO ClientData (ClientID, TotalMonthlyAmount, UsableAmount, UserReserved, SystemReserved, TotalSavings, TotalLoans, TotalSubscriptions, TotalIncomes)
@@ -41,11 +40,11 @@ VALUES
 (2, 8000, 6000, 700, 300, 2500, 1500, 800, 3000);
 
 -- Dummy data for Savings table
-INSERT INTO Savings (ClientID, Name, TotalAmount, StartingDate, EndingDate, AmountBalance, Description, MonthlyInput, UserDeadLine, SystemDeadline, IsDefault)
+INSERT INTO Savings (ClientID, Name, TotalAmount, StartingDate, EndingDate, AmountBalance, IsMonthly, AverageInput, UserDeadLine, SystemDeadline, IsDefault)
 VALUES 
-(1, 'Emergency Fund', 1000, '2024-01-01', '2025-01-01', 500, 'Saving for unexpected expenses', 200, '2024-12-31', '2025-01-05', 1),
-(1, 'Vacation Fund', 2000, '2024-01-01', '2024-12-31', 1000, 'Saving for a dream vacation', 300, '2024-12-31', '2025-01-05', 0),
-(2, 'Education Fund', 3000, '2024-01-01', '2024-12-31', 1500, 'Saving for further studies', 400, '2024-12-31', '2025-01-05', 0);
+(1, 'Emergency Fund', 1000, '2024-01-01', '2025-01-01', 500, 1, 200, '2024-12-31', '2025-01-05', 1),
+(1, 'Vacation Fund', 2000, '2024-01-01', '2024-12-31', 1000, 0, 300, '2024-12-31', '2025-01-05', 0),
+(2, 'Education Fund', 3000, '2024-01-01', '2024-12-31', 1500, 0, 400, '2024-12-31', '2025-01-05', 0);
 
 -- Dummy data for SavingSchedule table
 INSERT INTO SavingSchedule (SavingID, DaysBeforeRenewal)
@@ -54,10 +53,10 @@ VALUES
 (2, 14);
 
 -- Dummy data for Loans table
-INSERT INTO Loans (ClientID, Name, TotalAmount, StartingDate, EndingDate, AmountBalance, Description, MonthlyInput, UserDeadLine, SystemDeadline, IsDefault)
+INSERT INTO Loans (ClientID, Name, TotalAmount, StartingDate, EndingDate, AmountBalance, IsMonthly, AverageInput, UserDeadLine, SystemDeadline, IsDefault)
 VALUES 
-(1, 'Car Loan', 10000, '2024-01-01', '2025-01-01', 5000, 'Loan for a new car', 800, '2024-12-31', '2025-01-05', 0),
-(2, 'Home Loan', 50000, '2024-01-01', '2025-01-01', 25000, 'Loan for a new home', 1500, '2024-12-31', '2025-01-05', 1);
+(1, 'Car Loan', 10000, '2024-01-01', '2025-01-01', 5000, 0, 800, '2024-12-31', '2025-01-05', 0),
+(2, 'Home Loan', 50000, '2024-01-01', '2025-01-01', 25000, 1, 1500, '2024-12-31', '2025-01-05', 1);
 
 -- Dummy data for LoanSchedule table
 INSERT INTO LoanSchedule (LoanID, DaysBeforeRenewal)

@@ -21,10 +21,8 @@ SELECT * FROM SubscriptionSchedule;
 -- 11
 SELECT * FROM Messages;
 -- 12
-SELECT * FROM MonthlyUsage;
--- 13
 SELECT * FROM Transactions;
--- 14
+-- 13
 SELECT * FROM Categories;
--- 15
+-- 14
 SELECT * FROM EachCategoryUsage;

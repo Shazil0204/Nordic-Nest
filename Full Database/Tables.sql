@@ -139,7 +139,7 @@ CREATE TABLE ClientData(
 	-- Total Amount He can use each month
 	UsableAmount INT Default 0,
 	-- Total amount used each month
-	TotalAmountUsed INT DEFAULT 0;
+	TotalAmountUsed INT DEFAULT 0,
 	-- User Reserve amount
 	UserReserved INT,
 	-- System Reserve amount
@@ -147,11 +147,11 @@ CREATE TABLE ClientData(
 	-- Total Amount of Savings (Max 10)
 	TotalSavings INT Default 0,
 	-- Total Amount of Loans (Max 10)
-	TotalLoans INT Default 0,
+	TotalLoans INT Default 0 ,
 	-- Total Amount of Subscriptions (Max 10)
-	TotalSubscriptions INT Default 0,
+	TotalSubscriptions INT Default 0 ,
 	-- Total Amount of Incomes (Max 5)
-	TotalIncomes INT Default 0,
+	TotalIncomes INT Default 0 ,
 	-- Reference to the client associated with this savings record
 	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
 );
@@ -166,21 +166,21 @@ CREATE TABLE Savings(
     -- Total amount in the savings account
 	TotalAmount DECIMAL,
     -- Start date of the savings account
-	StartingDate DATETIME,
+	StartingDate DATETIME NOT NULL,
     -- End date of the savings account
 	EndingDate DATETIME,
     -- Current balance in the savings account
 	AmountBalance DECIMAL DEFAULT 0,
-    -- Description of the savings account
-	Description VARCHAR(100),
-    -- Monthly input for the savings account
-	MonthlyInput DECIMAL NOT NULL,
+    -- If true then a date will be fixed for each month else a number will be take that will 
+	IsMonthly BIT NOT NULL,
+    -- Average input for the savings account
+	AverageInput DECIMAL NOT NULL,
     -- User-defined deadline for savings
 	UserDeadLine DATETIME,
 	-- Is Default saving account
 	IsDefault Bit DEFAULT 0,
     -- System deadline for savings
-	SystemDeadline DATETIME NOT NULL,
+	SystemDeadline DATETIME,
     -- Reference to the client associated with this savings record
 	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
 );
@@ -213,16 +213,16 @@ CREATE TABLE Loans(
 	EndingDate DATETIME,
     -- Current balance of the loan
 	AmountBalance DECIMAL NOT NULL,
-    -- Description of the loan
-	Description VARCHAR(100),
-    -- Monthly payment for the loan
-	MonthlyInput DECIMAL NOT NULL,
+    -- If true then a date will be fixed for each month else a number will be take that will 
+	IsMonthly BIT NOT NULL,
+    -- Average payment for the loan
+	AverageInput DECIMAL NOT NULL,
     -- User-defined deadline for the loan
 	UserDeadLine DATETIME,
 	-- Is Default Loan account
 	IsDefault Bit DEFAULT 0,
     -- System deadline for the loan
-	SystemDeadline DATETIME NOT NULL,
+	SystemDeadline DATETIME,
     -- Reference to the client associated with this loan record
 	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
 );

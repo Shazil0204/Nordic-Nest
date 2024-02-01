@@ -489,9 +489,9 @@ BEGIN
 				T.Amount,
 				T.Time,
 				C.category AS Category
-			FROM Transactions AS T
-			INNER JOIN EachCategoryUsage AS ECU ON T.TransactionID = ECU.TransactionID
-			INNER JOIN Categories AS C ON ECU.CategoryID = C.CategoryID
+			FROM dbo.Transactions AS T
+			INNER JOIN dbo.EachCategoryUsage AS ECU ON T.TransactionID = ECU.TransactionID
+			INNER JOIN dbo.Categories AS C ON ECU.CategoryID = C.CategoryID
             WHERE ClientID = @ClientID
         ';
 
