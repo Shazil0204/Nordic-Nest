@@ -180,7 +180,13 @@ CREATE TABLE Savings(
 	-- Is Default saving account
 	IsDefault Bit DEFAULT 0,
     -- System deadline for savings
+<<<<<<< Updated upstream
 	SystemDeadline DATETIME,
+=======
+	SystemDeadline DATETIME NOT NULL,
+	-- this will automatically make the system to add amount each month
+	SystemControl BIT DEFAULT 1,
+>>>>>>> Stashed changes
     -- Reference to the client associated with this savings record
 	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID)
 );
