@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NordicNest.Controller.DefaultSLController;
 using NordicNest.Model;
 
 namespace NordicNest.Pages
@@ -28,11 +29,32 @@ namespace NordicNest.Pages
 		public int[] data = { 13, 15, 5, 19, 20, 30, 15, 5, 2, 20, 30, 11, 11, 15, 5, 11, 20, 30, 15, 5, 2, 20, 30, 11, 11, 10, 10, 10, 10, 10, 10 };
 		public int firstProgressBar = 59;
 		public int secondProgressBar = 70;
-		public void OnGet()
-		{
+        public int SavingProgressBar = 59;
+        public int LoanProgressBar = 70;
+        public void OnGet()
+        {
+        }
 
-		}
-	}
+        public decimal Savingpercentage()
+        {
+            DefaultSavingController DSC = new DefaultSavingController();
+            var Sresult = DSC.GetData();
+
+            decimal percentage = (Sresult.Item2 / Sresult.Item3) * 100;
+
+            return percentage;
+        }
+
+        public decimal Loanpercentage()
+        {
+            DefaultLoanController DLC = new DefaultLoanController();
+            var Lresult = DLC.GetData();
+
+            decimal percentage = (Lresult.Item2 / Lresult.Item3) * 100;
+
+            return percentage;
+        }
+    }
 }
 
 // Extension methods to set and get Boolean values in session

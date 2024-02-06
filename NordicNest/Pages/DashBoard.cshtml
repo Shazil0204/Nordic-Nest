@@ -1,7 +1,299 @@
 ﻿@page
-@using NordicNest.Model.SavingLoanDatabase;
-@using System.Text.Json;
 @model NordicNest.Pages.DashBoardModel
+@using System.Text.Json;
+@using NordicNest.Model.SavingLoanDatabase;
+@using NordicNest.Controller.DefaultSLController;
 @{
 	Layout = null;
+	List<NordicNest.Model.Transaction.TransactionVariable> TV = new NordicNest.Model.Transaction.TransactionConnection().GetTransactionInfo();
+	List<NordicNest.Model.Subscriptions.SubVariables> SV = new NordicNest.Model.Subscriptions.SubConnection().GetSubscriptionInfo();
+	NordicNest.Controller.ClientDataController CDC = new NordicNest.Controller.ClientDataController();
+	List<Model.NavBar.NavBarProperties> NBP = new Model.NavBar.NavBarConnection().GetNavBars();
+	decimal[] progressBars = { Model.Savingpercentage(), Model.Loanpercentage() };
+	NordicNest.Model.BasicProperties.CurrentPage = "Home";
+	var Sresult = new DefaultSavingController().GetData();
+	var Lresult = new DefaultLoanController().GetData();
+	var ClientData = CDC.GetClientData();
+
+	List<string> CSLabel = new List<string> { "Traveling", "Food", "Clothing", "shopping", "cartoons" };
+	List<int> CSdata = new List<int> { 20, 20, 20, 20, 20 };
+	List<string> CSbackgroundColor = new List<string> { "#3490dc", "#38a169", "#f6e05e", "#ff0000", "#343434" };
 }
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
+<link href="/css/transparentScrollbar.css" rel="stylesheet" asp-append-version="true" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+<body class="bg-black">
+
+	<!-- Navbar Toggle Button -->
+	<button id="navbarToggle"
+			class="fixed z-50 top-4 left-4 p-2 rounded-md bg-gray-800 text-white ">
+		<i class="fas fa-bars"></i>
+	</button>
+
+	<!-- Navbar -->
+	<nav id="navbar" class="bg-gradient-to-b rounded-r-2xl from-teal-500 to-cyan-950 text-4xl flex flex-col fixed left-0 top-0 h-screen w-[100%] lg:w-2/4 2xl:w-1/4 text-white transition-transform transform -translate-x-full ease-in-out duration-500 overflow-y-auto z-50 p-8">
+
+		<button id="closeNavbar" class="absolute left-0 top-0 p-4 hover:text-red-500 duration-300">
+			<i class="fa-solid fa-xmark"></i>
+		</button>
+		<button id="closeNavbar" class="absolute right-0 top-0 p-4">
+			<i class="fa-solid fa-sign-out text-red-500 hover:text-black duration-500"></i>
+		</button>
+
+		<!--This div is just to give the buttons on top space from the others-->
+		<div class="p-8"></div>
+
+		<!--This navbar will be connected to database-->
+		<div>
+
+			<a asp-page="/Index" class="mt-2 mx-1 rounded-2xl bg-[rgba(255,255,255,0.5)] hover:bg-gray-700 flex items-center justify-center duration-500 ">
+				<i class="w-1/3 fas fa-user p-4"></i>
+				<p class="w-2/3 rounded-2xl">Profile</p>
+			</a>
+			<a asp-page="/Index" class="mt-2 mx-1 rounded-2xl bg-[rgba(255,255,255,0.5)] hover:bg-gray-700 flex items-center justify-center duration-500 ">
+				<i class="w-1/3 fas fa-piggy-bank p-4"></i>
+				<p class="w-2/3 rounded-2xl">Savings</p>
+			</a>
+			<a asp-page="/Index" class="mt-2 mx-1 rounded-2xl bg-[rgba(255,255,255,0.5)] hover:bg-gray-700 flex items-center justify-center duration-500 ">
+				<i class="w-1/3 fas fa-money-bill-wave p-4"></i>
+				<p class="w-2/3 rounded-2xl">Loans</p>
+			</a>
+			<a asp-page="/Index" class="mt-2 mx-1 rounded-2xl bg-[rgba(255,255,255,0.5)] hover:bg-gray-700 flex items-center justify-center duration-500 ">
+				<i class="w-1/3 fas fa-receipt p-4"></i>
+				<p class="w-2/3 rounded-2xl">Subscriptions</p>
+			</a>
+			<a asp-page="/Index" class="mt-2 mx-1 rounded-2xl bg-[rgba(255,255,255,0.5)] hover:bg-gray-700 flex items-center justify-center duration-500 ">
+				<i class="w-1/3 fas fa-exchange-alt p-4"></i>
+				<p class="w-2/3 rounded-2xl">Transactions</p>
+			</a>
+			<a asp-page="/Index" class="mt-2 mx-1 rounded-2xl bg-[rgba(255,255,255,0.5)] hover:bg-gray-700 flex items-center justify-center duration-500 ">
+				<i class="w-1/3 fas fa-chart-pie p-4"></i>
+				<p class="w-2/3 rounded-2xl">Budget</p>
+			</a>
+		</div>
+
+	</nav>
+
+	<script src="/js/dashboardnav.js"></script>
+	<!--This navbar will be connected to database-->
+	<!--My content-->
+	<div class="h-screen grid grid-cols-4 2xl:grid-cols-5 gap-4 mx-16 text-white text-center font-mono text-sm/[17px] md:text-lg lg:text-2xl py-4">
+
+		<!--Username-->
+		<div class="order-1 lg:order-1 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-blue-500 bg-[#2f80ed] p-4 relative flex items-center justify-center">
+			<a asp-page="" class="absolute top-2 left-2 fa-solid fa-pen-to-square"></a>
+			<a asp-page="/ClientCommunication" class="absolute top-2 right-2 fa-solid fa-envelope "></a>
+			<div class="absolute top-2 right-1 h-2 w-2 bg-red-500 rounded-full"></div>
+			<p class="text-3xl">
+				Welcome to your dashboard <strong class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">@ClientData.Item1</strong>
+			</p>
+		</div>
+
+		<!--Current Amount-->
+		<div class="order-4 lg:order-2  col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
+			<button onclick="showInfo('CurrentAmount')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			Current Amount
+			<br />
+			<p class="mt-2 font-bold text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-blue-500 hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item2</p>
+		</div>
+
+		<!--Usable Amount-->
+		<div class="order-5 lg:order-3 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-blue-500 bg-[#2f80ed] p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
+			<button onclick="showInfo('UsableAmount')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			Usable Amount
+			<br />
+			<p class="text-green-400 mt-2 font-bold text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-white hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item3</p>
+		</div>
+
+		<!-- Transactions -->
+		<div class="order-6 lg:order-7 col-span-2 row-span-1 2xl:col-span-4 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative flex flex-col justify-center items-center">
+			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-angle-double-right"></a>
+			<button onclick="showInfo('Transaction')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			<p class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold text-4xl absolute top-1">Transactions</p>
+
+			<!-- Transaction Table -->
+			<table class="w-full mt-8">
+				<thead>
+					<tr class="text-white bg-[#2f80ed] text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+						<th class="py-2 px-4">Send To</th>
+						<th class="py-2 px-4">From</th>
+						<th class="py-2 px-4">Amount</th>
+						<th class="hidden lg:block py-2 px-4">Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					@{
+						int TVi = 1;
+						@foreach (var item in TV)
+						{
+							<tr class="text-center text-gray-800 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl border-2xl bg-gray-300 mb-2 border-b-4 border-indigo-500 ">
+								<td class="py-2 px-4">@item.TransactionTo</td>
+								<td class="py-2 px-4">@item.TransactionFrom</td> 
+								<td class="py-2 px-4">@item.Amount DKK</td>
+								<td class="hidden lg:block py-2 px-4">@item.Time</td>
+							</tr>
+							@if (TVi == 4)
+							{
+								break;
+							}
+							TVi++;
+						}
+					}
+				</tbody>
+			</table>
+		</div>
+
+
+		<!--Monthly chart-->
+		<div class="order-7 lg:order-6 col-span-2 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative overflow-auto">
+			<button onclick="showInfo('MonthlyChart')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			<p class="[text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] font-bold text-4xl">Monthly chart</p>
+			<canvas id="budgetChart"></canvas>
+		</div>
+
+		<!--User Reserver-->
+		<div class="order-2 lg:order-4  col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
+			<a asp-page="" class="absolute top-2 left-2 fa-solid fa-pen-to-square"></a>
+			<button onclick="showInfo('UserReserver')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			User Reserver
+			<br />
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-blue-500 hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item4</p>
+		</div>
+
+		<!--System Reserver-->
+		<div class="order-3 lg:order-5  col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)]">
+			<button onclick="showInfo('SystemReserver')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			System Reserver
+			<br />
+			<p class="mt-2 font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-3xl 2xl:text-6xl duration-500 hover:scale-125 hover:text-blue-500 hover:[text-shadow:_0_3px_3px_rgb(0_0_0_/_100%)]">@ClientData.Item5</p>
+		</div>
+
+		<!--Savings-->
+		<div class="order-8 lg:order-8 col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
+			<button onclick="showInfo('Savings')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
+			<!-- First div for saving name and current/total amount -->
+			<div class="mt-4 text-white">
+				<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Sresult.Item1</p>
+				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
+				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
+			</div>
+			<!-- Second div for the chart (replace the content below with your actual chart code) -->
+			<div class="mt-4 overflow-hidden">
+				<!-- First Progress Bar -->
+				<div class="block flex justify-center items-center p-8 w-full">
+					<div class="relative">
+						<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+							<span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+						</div>
+						<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+							<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+								<stop offset="0%" style="stop-color: #3B82F6;"></stop>
+								<stop offset="50%" style="stop-color: #9333EA;"></stop>
+								<stop offset="100%" style="stop-color: #F472B6;"></stop>
+							</linearGradient>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Subscriptions-->
+		<div class="order-9 lg:order-9 col-span-2 2xl:col-span-3 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative ">
+			<button onclick="showInfo('Subscriptions')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
+			<!-- Subscription Items -->
+			<div class="overflow-x-auto h-full flex items-center justify-center gap-4">
+
+			@{
+				int SVi = 1;
+				@foreach (var v in SV)
+				{
+					if (SVi == 5)
+					{
+
+						break;
+					}
+					for (int i = 0; i < 4; i++)
+					{
+
+						<div class="w-full h-full flex items-center justify-center space-x-4">
+							<div class="h-3/5 flex-1 bg-gray-300 p-4 rounded-md border border-black">
+								<div class="h-1/3 flex justify-center items-center">
+									<span class="text-lg text-black mr-4 font-bold ">@v.Name</span>
+									<span class="text-green-500 font-semibold">@v.Amount DKK</span>
+								</div>
+								<div class="h-2/3 flex justify-center items-center">
+									<button onclick="cancelSubscription('@v.Name')" class="bg-red-500 text-white px-3 py-1 rounded-md hover:scale-110 duration-500">Cancel</button>
+								</div>
+							</div>
+						</div>
+					}
+					SVi++;
+				}
+			}
+			</div>
+
+		</div>
+
+		<!--Loan-->
+		<div class="h-full order-10 col-span-1 2xl:col-span-1 row-span-1 rounded-2xl shadow-2xl shadow-teal-500 bg-teal-500 p-4 relative">
+			<button onclick="showInfo('Loans')" class="absolute fas fa-info-circle top-2 right-2"></button>
+			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
+			<!-- First div for loan name and current/total amount -->
+			<div class="mt-4 text-white">
+				<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Lresult.Item1</p>
+				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Lresult.Item2</p>
+				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Lresult.Item3</p>
+			</div>
+			<!-- Second div for the chart (replace the content below with your actual chart code) -->
+			<div class="mt-4 overflow-hidden">
+				<!-- Second Progress Bar -->
+				<div class="flex justify-center items-center p-8 w-full">
+					<div class="relative">
+						<div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+							<span id="progress-text-2" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+						</div>
+						<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+							<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-lingering-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+							<circle id="progress-bar-2" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="/js/sweetalert.js"></script>
+<script src="/js/SweetInfo.js"></script>
+<script src="/js/MonthlyUsage.js"></script>
+<script>
+	var labels = @Html.Raw(Json.Serialize(CSLabel));
+	var data = @Html.Raw(Json.Serialize(CSdata));
+	var backgroundColors = @Html.Raw(Json.Serialize(CSbackgroundColor));
+	initializeProgressBars(labels, data, backgroundColors)
+</script>
+<script src="/js/ProgressBar.js"></script>
+<script>
+	// Over here i converted my C# to Json so that i can use it in my JS
+	var progressBars = @Html.Raw(Json.Serialize(progressBars));
+
+	// Over here i seperated my data from my Int Array
+	var firstProgressBar = progressBars[0];
+	var secondProgressBar = progressBars[1];
+
+	updateProgress('progress-bar-1', 'progress-bar-lingering-1', 'progress-text-1', firstProgressBar);
+	updateProgress('progress-bar-2', 'progress-bar-lingering-2', 'progress-text-2', secondProgressBar);
+</script>
+
