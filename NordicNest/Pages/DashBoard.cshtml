@@ -179,29 +179,31 @@
 			<button onclick="showInfo('Savings')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<!-- First div for saving name and current/total amount -->
-			<div class="mt-4 text-white">
-				<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Sresult.Item1</p>
-				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
-				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
-			</div>
-			<!-- Second div for the chart (replace the content below with your actual chart code) -->
-			<div class="mt-4 overflow-hidden">
-				<!-- First Progress Bar -->
-				<div class="block flex justify-center items-center p-8 w-full">
-					<div class="relative">
-						<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
-							<span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+			<div class="flex justify-center items-center h-full">
+				<div class="mt-4 text-white">
+					<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Sresult.Item1</p>
+					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
+					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
+				</div>
+				<!-- Second div for the chart (replace the content below with your actual chart code) -->
+				<div class="mt-4 overflow-hidden">
+					<!-- First Progress Bar -->
+					<div class="block flex justify-center items-center p-8 w-full">
+						<div class="relative">
+							<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
+								<span id="progress-text-1" class="font-semibold text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">0%</span>
+							</div>
+							<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
+								<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
+								<circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
+								<circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
+								<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+									<stop offset="0%" style="stop-color: #3B82F6;"></stop>
+									<stop offset="50%" style="stop-color: #9333EA;"></stop>
+									<stop offset="100%" style="stop-color: #F472B6;"></stop>
+								</linearGradient>
+							</svg>
 						</div>
-						<svg class="absolute top-0 left-0 transform -rotate-90 w-full h-full" viewBox="0 0 128 128">
-							<circle class="text-gray-300" stroke-width="10" stroke="currentColor" fill="transparent" r="54" cx="64" cy="64"></circle>
-							<circle id="progress-bar-lingering-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" fill="transparent" r="54" cx="64" cy="64"></circle>
-							<circle id="progress-bar-1" stroke-width="10" stroke-dasharray="339.292" stroke-dashoffset="339.292" stroke-linecap="round" stroke="url(#gradient)" fill="transparent" r="54" cx="64" cy="64"></circle>
-							<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-								<stop offset="0%" style="stop-color: #3B82F6;"></stop>
-								<stop offset="50%" style="stop-color: #9333EA;"></stop>
-								<stop offset="100%" style="stop-color: #F472B6;"></stop>
-							</linearGradient>
-						</svg>
 					</div>
 				</div>
 			</div>
@@ -250,6 +252,7 @@
 			<button onclick="showInfo('Loans')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<!-- First div for loan name and current/total amount -->
+			<div class="flex justify-center items-center h-full">
 			<div class="mt-4 text-white">
 				<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Lresult.Item1</p>
 				<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Lresult.Item2</p>
@@ -270,6 +273,7 @@
 						</svg>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>
