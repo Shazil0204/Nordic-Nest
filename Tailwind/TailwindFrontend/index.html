@@ -33,11 +33,11 @@
         </div>
         <a
           asp-page=""
-          class="absolute top-2 left-2 fa-solid fa-pen-to-square text-[#34D399]"
+          class="absolute top-2 left-2 fa-solid fa-pen-to-square text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-[#34D399]"
         ></a>
         <a
           asp-page="/ClientCommunication"
-          class="absolute top-2 right-2 fa-solid fa-envelope text-[#636363]"
+          class="absolute top-2 right-2 fa-solid fa-envelope text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-[#636363]"
         ></a>
         Welcome to your dashboard john_doe
       </div>
@@ -46,13 +46,13 @@
       >
         <button
           onclick="showInfo('CurrentAmount')"
-          class="absolute fas fa-info-circle top-2 right-2"
+          class="absolute fas fa-info-circle top-2 right-2 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
         ></button>
-        <div class="lg:absolute w-full flex justify-center top-1">
+        <div class="lg:absolute w-full hidden lg:flex justify-center top-1">
           Current Amount
         </div>
         <div
-          class="lg:flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
+          class="flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
         >
           5000
         </div>
@@ -64,11 +64,11 @@
           onclick="showInfo('UsableAmount')"
           class="absolute fas fa-info-circle top-2 right-2"
         ></button>
-        <div class="lg:absolute w-full flex justify-center top-1">
+        <div class="lg:absolute w-full hidden lg:flex justify-center top-1">
           Usable Amount
         </div>
         <div
-          class="flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] pb-5 pt-0 lg:pb-6 lg:pt-12"
+          class="flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
         >
           4000
         </div>
@@ -84,11 +84,11 @@
           onclick="showInfo('UserReserver')"
           class="absolute fas fa-info-circle top-2 right-2"
         ></button>
-        <div class="lg:absolute w-full flex justify-center top-1">
+        <div class="lg:absolute w-full hidden lg:flex justify-center top-1">
           User Reserver
         </div>
         <div
-          class="lg:flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
+          class="flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
         >
           500
         </div>
@@ -98,13 +98,13 @@
       >
         <button
           onclick="showInfo('SystemReserver')"
-          class="absolute fas fa-info-circle top-2 right-2"
+          class="absolute fas fa-info-circle top-2 right-2 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"
         ></button>
-        <div class="lg:absolute w-full flex justify-center top-1">
+        <div class="lg:absolute w-full hidden lg:flex justify-center top-1">
           System Reserver
         </div>
         <div
-          class="lg:flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
+          class="flex justify-center items-center h-full lg:text-[1rem] xl:text-[3rem] 2xl:text-[5rem] py-5 lg:pb-6 lg:pt-12"
         >
           200
         </div>
@@ -267,7 +267,7 @@
         ></a>
       </div>
       <div
-        class="order-10 p-3 text-center bg-[#BBDEFB] text-[#1565C0] rounded-2xl col-span-4 lg:col-span-5 relative"
+        class="order-10 p-3 lg:p-2 text-center bg-[#BBDEFB] text-[#1565C0] rounded-2xl col-span-4 lg:col-span-5 relative"
       >
         <button
           onclick="showInfo('Loans')"
@@ -277,7 +277,7 @@
           asp-page=""
           class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"
         ></a>
-        <div class="flex justify-center items-center h-full">
+        <div class="pt-5 flex justify-center items-center h-full">
           <div class="flex overflow-x-auto mx-auto space-x-4">
             <div class="flex-none bg-white p-6 rounded-md shadow-md">
               <h2 class="font-semibold mb-4">Subscription 1</h2>
@@ -342,7 +342,7 @@
         ],
       },
       options: {
-        cutout: "50%",
+        cutout: "30%",
         plugins: {
           legend: {
             display: false,
