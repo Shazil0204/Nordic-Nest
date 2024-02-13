@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-12T10:29:35.241Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="7qjRD1mlDrewSNroG5Zg" version="23.1.2" type="device">
+<mxfile host="app.diagrams.net" modified="2024-02-13T08:26:04.593Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="XTW3xQanIf3-UpMGC3ea" version="23.1.2" type="device">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1195" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -48,7 +48,7 @@
             <mxPoint x="2" y="53" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ouNLPlltGPWdf7MoxKM8-50" value="Do you &lt;br&gt;still need this saving account?" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="ouNLPlltGPWdf7MoxKM8-50" value="Do you &lt;br&gt;still need this Loan account?" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="580" y="480" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="ouNLPlltGPWdf7MoxKM8-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ouNLPlltGPWdf7MoxKM8-52" target="ouNLPlltGPWdf7MoxKM8-42" edge="1">
@@ -122,7 +122,7 @@
         <mxCell id="ouNLPlltGPWdf7MoxKM8-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ouNLPlltGPWdf7MoxKM8-88" target="ouNLPlltGPWdf7MoxKM8-90" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ouNLPlltGPWdf7MoxKM8-88" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;C# will calculate &lt;br&gt;how much of an amount user &lt;br&gt;need to insert" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="ouNLPlltGPWdf7MoxKM8-88" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;C# will calculate &lt;br&gt;how much of an amount user &lt;br&gt;need to pay" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="390" y="1060" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ouNLPlltGPWdf7MoxKM8-93" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ouNLPlltGPWdf7MoxKM8-90" target="ouNLPlltGPWdf7MoxKM8-92" edge="1">
@@ -200,13 +200,13 @@
         <mxCell id="ouNLPlltGPWdf7MoxKM8-151" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ouNLPlltGPWdf7MoxKM8-138" target="ouNLPlltGPWdf7MoxKM8-52" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ouNLPlltGPWdf7MoxKM8-138" value="Enter the&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;starting amount" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="ouNLPlltGPWdf7MoxKM8-138" value="Enter the&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;starting amount&lt;br&gt;(Can be 0)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="40" y="420" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ouNLPlltGPWdf7MoxKM8-150" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ouNLPlltGPWdf7MoxKM8-139" target="ouNLPlltGPWdf7MoxKM8-138" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ouNLPlltGPWdf7MoxKM8-139" value="A description for&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;the Saving&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;account" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="ouNLPlltGPWdf7MoxKM8-139" value="A description for&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;the Loan&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;account" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="40" y="310" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ouNLPlltGPWdf7MoxKM8-143" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ouNLPlltGPWdf7MoxKM8-140" target="ouNLPlltGPWdf7MoxKM8-141" edge="1">
