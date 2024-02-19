@@ -11,7 +11,7 @@ namespace NordicNest.Model
         internal static string Email {  get; set; } 
         internal static bool IsNew { get; set; }
         internal static bool IsLogged { get; set; } = false;
-        internal static int ClientID { get; set; } = 1;
+        internal static int ClientID { get; set; } = 2;
         internal static int DefaultSavingAccount { get; set; } = 1;
         internal static int DefaultLoanAccount { get; set; } = 1;
 		internal static int UserSavingAccount { get; set; } = 1;

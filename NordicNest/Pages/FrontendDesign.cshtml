@@ -16,7 +16,7 @@
 	var ClientData = CDC.GetClientData();
 
 	List<string> CSLabel = new List<string> { "Housing", "Transportation", "Living Expenses", "Debt and Savings", "Discretionary Spending" };
-	List<int> CSdata = new List<int> { 20, 20, 20, 20, 20 };
+	List<int> CSdata = new List<int> { 20, 20, 20, 20, 80 };
 	List<string> CSbackgroundColor = new List<string> { "#3498db", "#27ae60", "#e74c3c", "#f39c12", "#8e44ad" };
 }
 
@@ -29,16 +29,22 @@
 
 <body class="bg-gradient-to-b from-blue-950 to-teal-700 min-h-screen min-w-screen flex justify-center items-center">
 	<div class="grid grid-cols-4 lg:grid-cols-5 gap-3 p-4 min-h-screen min-w-screen text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+		<!--Profile-->
 		<div class="order-1 flex justify-center items-center bg-gradient-to-r from-blue-400 via-indigo-400 to-teal-400 text-white lg:block text-center lg:pt-52 rounded-2xl col-span-2 lg:col-span-1 row-span-2 relative px-4">
 			<div class="flex justify-center hidden lg:flex">
 				<i class="absolute text-[#3b82f6] fas fa-user hidden top-2 lg:block lg:text-[5rem] xl:text-[7rem] 2xl:text-[10rem]"></i>
 			</div>
 			<a asp-page=""
-			   class="absolute bottom-2 right-2 fa-solid fa-pen-to-square text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-[#636363]"></a>
+			   class="absolute top-2 left-2 fa-solid fa-pen-to-square text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-[#636363]"></a>
 			<a asp-page="/ClientCommunication"
 			   class="absolute top-2 right-2 fa-solid fa-envelope text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-[#636363]"></a>
+			<button class="absolute cursor-pointer bottom-2 right-2 text-red-500 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl z-50 hover:text-black hover:scale-110 duration-500">
+				<i class="fas fa-sign-out"> </i>
+			</button>
 			Welcome to your dashboard @ClientData.Item1
 		</div>
+
+		<!--Current Amount-->
 		<div class="order-4 lg:order-2 text-center rounded-2xl col-span-2 lg:col-span-1 bg-[#4CAF50] text-white relative font-extrabold">
 			<button onclick="showInfo('CurrentAmount')" 
 					class="z-10 absolute fas fa-info-circle top-2 right-2"></button>
@@ -49,6 +55,8 @@
 				@ClientData.Item2
 			</div>
 		</div>
+
+		<!--Usable Amount-->
 		<div class="order-5 lg:order-3 text-center rounded-2xl col-span-4 lg:col-span-1 bg-[#FFC107] text-white relative font-extrabold">
 			<button onclick="showInfo('UsableAmount')"
 					class="z-10 absolute fas fa-info-circle top-2 right-2"></button>
@@ -59,6 +67,8 @@
 				@ClientData.Item3
 			</div>
 		</div>
+
+		<!--User Reserver-->
 		<div class="order-2 lg:order-4 text-center rounded-2xl col-span-1 lg:col-span-1 bg-[#FF5722] text-white relative font-extrabold">
 			<a asp-page=""
 			   class="absolute top-2 left-2 fa-solid fa-pen-to-square"></a>
@@ -71,6 +81,8 @@
 				@ClientData.Item4
 			</div>
 		</div>
+
+		<!--System Reserver-->
 		<div class="order-3 lg:order-5 text-center rounded-2xl col-span-1 lg:col-span-1 bg-[#2196F3] text-white relative font-extrabold">
 			<button onclick="showInfo('SystemReserver')"
 					class="z-10 absolute fas fa-info-circle top-2 right-2 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl"></button>
@@ -81,6 +93,8 @@
 				@ClientData.Item5
 			</div>
 		</div>
+
+		<!--Monthly Usage-->
 		<div class="order-6 lg:order-8 p-3 text-center h-full bg-white border border-green-500 rounded-2xl col-span-4 lg:col-span-1 relative">
 			<button onclick="showInfo('MonthlyChart')"
 					class="absolute fas fa-info-circle top-2 right-2"></button>
@@ -89,6 +103,8 @@
 				<canvas id="donutChart"></canvas>
 			</div>
 		</div>
+
+		<!--Transaction-->
 		<div class="order-7 lg:order-6 p-3 text-center bg-[#E0E0E0] text-[#424242] rounded-2xl col-span-4 lg:col-span-4 py-8 relative">
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-angle-double-right"></a>
 			<button onclick="showInfo('Transaction')" class="absolute fas fa-info-circle top-2 right-2"></button>
@@ -127,6 +143,7 @@
 			</div>
 		</div>
 
+		<!--Saving-->
 		<div class="order-8 p-3 text-center bg-[#C8E6C9] text-[#2E7D32] rounded-2xl col-span-4 lg:col-span-2 relative">
 			<button onclick="showInfo('Savings')"
 					class="absolute fas fa-info-circle top-2 right-2"></button>
@@ -134,16 +151,13 @@
 			   class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<button onclick="showInfo('Savings')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
-			<!-- First div for saving name and current/total amount -->
 			<div class="flex justify-center items-center h-full">
 				<div class="mt-4 text-white">
 					<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Sresult.Item1</p>
 					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
 					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
 				</div>
-				<!-- Second div for the chart (replace the content below with your actual chart code) -->
 				<div class="mt-4 overflow-hidden">
-					<!-- First Progress Bar -->
 					<div class="block flex justify-center items-center p-8 w-full">
 						<div class="relative">
 							<div id="circle-bg-1" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
@@ -164,6 +178,8 @@
 				</div>
 			</div>
 		</div>
+
+		<!--Loan-->
 		<div class="order-9 p-3 text-center bg-[#FFCDD2] text-[#C62828] rounded-2xl col-span-4 lg:col-span-2 relative">
 			<button onclick="showInfo('Loans')"
 					class="absolute fas fa-info-circle top-2 right-2"></button>
@@ -171,16 +187,13 @@
 			   class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<button onclick="showInfo('Loans')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
-			<!-- First div for loan name and current/total amount -->
 			<div class="flex justify-center items-center h-full">
 				<div class="mt-4 text-white">
 					<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Lresult.Item1</p>
 					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Lresult.Item2</p>
 					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Lresult.Item3</p>
 				</div>
-				<!-- Second div for the chart (replace the content below with your actual chart code) -->
 				<div class="mt-4 overflow-hidden">
-					<!-- Second Progress Bar -->
 					<div class="flex justify-center items-center p-8 w-full">
 						<div class="relative">
 							<div id="circle-bg-2" class="flex justify-center items-center w-32 h-32 rounded-full bg-gray-300">
@@ -196,6 +209,8 @@
 				</div>
 			</div>
 		</div>
+
+		<!--Subscription-->
 		<div class="order-10 p-3 lg:p-2 text-center bg-[#BBDEFB] text-[#1565C0] rounded-2xl col-span-4 lg:col-span-5 relative">
 			<button onclick="showInfo('Subscriptions')" class="absolute fas fa-info-circle top-2 right-2"></button>
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
@@ -240,10 +255,7 @@
 </script>
 <script src="/js/ProgressBar.js"></script>
 <script>
-	// Over here i converted my C# to Json so that i can use it in my JS
 	var progressBars = @Html.Raw(Json.Serialize(progressBars));
-
-	// Over here i seperated my data from my Int Array
 	var firstProgressBar = progressBars[0];
 	var secondProgressBar = progressBars[1];
 

@@ -53,7 +53,7 @@ namespace NordicNest.Model.NavBar
                 }
                 catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex);
                 }
             }
 

@@ -52,6 +52,7 @@ namespace NordicNest.Model.Contact_Form
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     properties.Result = -99; // Indicating an error
                     return null;
                 }

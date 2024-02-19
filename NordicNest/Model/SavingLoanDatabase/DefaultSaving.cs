@@ -23,7 +23,7 @@ namespace NordicNest.Model.SavingLoanDatabase
 					using (SqlCommand command = new SqlCommand("GetDefaultSavingsInfo", connection))
 					{
 						command.CommandType = CommandType.StoredProcedure;
-						command.Parameters.AddWithValue("@ClientID", Model.BasicProperties.ClientID);
+						command.Parameters.AddWithValue("@ClientID", BasicProperties.ClientID);
 
 						using (SqlDataReader reader = command.ExecuteReader())
 						{
