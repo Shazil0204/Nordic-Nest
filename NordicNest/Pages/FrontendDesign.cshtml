@@ -98,8 +98,7 @@
 		<div class="order-6 lg:order-8 p-3 text-center h-full bg-white border border-green-500 rounded-2xl col-span-4 lg:col-span-1 relative">
 			<button onclick="showInfo('MonthlyChart')"
 					class="absolute fas fa-info-circle top-2 right-2"></button>
-			<p>Monthly Usage</p>
-			<div class="max-w-[15rem] mx-auto h-full">
+			<div class="max-w-[15rem] mx-auto h-full flex justify-center items-center">
 				<canvas id="donutChart"></canvas>
 			</div>
 		</div>
@@ -153,9 +152,9 @@
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<div class="flex justify-center items-center h-full">
 				<div class="mt-4 text-white">
-					<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Sresult.Item1</p>
-					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
-					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
+					<p class="text-green-600 text-sm/[17px] md:text-lg lg:text-4xl font-bold mb-2">@Sresult.Item1</p>
+					<p class="text-green-600 text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Sresult.Item2</p>
+					<p class="text-green-600 text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Sresult.Item3</p>
 				</div>
 				<div class="mt-4 overflow-hidden">
 					<div class="block flex justify-center items-center p-8 w-full">
@@ -189,9 +188,9 @@
 			<a asp-page="" class="text-2xl font-semibold absolute top-1 lg:top-2 left-2 fas fa-ellipsis-h"></a>
 			<div class="flex justify-center items-center h-full">
 				<div class="mt-4 text-white">
-					<p class="text-sm/[17px] md:text-lg lg:text-4xl font-bold [text-shadow:_0_3px_0_rgb(0_0_0_/_100%)] mb-2">@Lresult.Item1</p>
-					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Lresult.Item2</p>
-					<p class="text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Lresult.Item3</p>
+					<p class="text-[#7f000d] text-sm/[17px] md:text-lg lg:text-4xl font-bold mb-2">@Lresult.Item1</p>
+					<p class="text-[#7f000d] text-sm/[17px] md:text-lg lg:text-2xl">Current Amount: @Lresult.Item2</p>
+					<p class="text-[#7f000d] text-sm/[17px] md:text-lg lg:text-2xl">Total Amount: @Lresult.Item3</p>
 				</div>
 				<div class="mt-4 overflow-hidden">
 					<div class="flex justify-center items-center p-8 w-full">

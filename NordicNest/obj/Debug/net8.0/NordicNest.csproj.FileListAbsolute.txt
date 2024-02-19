@@ -150,9 +150,9 @@ V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\staticwebassets.pack.json
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\bundle\NordicNest.styles.css
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\projectbundle\NordicNest.bundle.scp.css
-V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.CopyComplete
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.dll
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\refint\NordicNest.dll
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.pdb
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.genruntimeconfig.cache
 V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\ref\NordicNest.dll
+V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.csproj.Up2Date
