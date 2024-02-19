@@ -278,6 +278,7 @@ BEGIN
 END;
 GO
 
+-- update this because it will just give the same for all of them make it more specific like for which client specifically
 CREATE PROCEDURE GetDefaultSavingsInfo
     @ClientID INT
 AS
@@ -321,6 +322,7 @@ BEGIN
 END;
 GO
 
+-- update this because it will just give the same for all of them make it more specific like for which client specifically
 CREATE PROCEDURE GetDefaultLoanInfo
     @ClientID INT
 AS
