@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
     <script
@@ -28,7 +31,7 @@
       }
     </style>
   </head>
-  <body class="bg-[#F2EFE5] flex">
+  <body class="bg-[#F2EFE5] text-white">
     <!-- <button
       id="toggleButton"
       class="fixed block lg:hidden bottom-4 right-4 bg-gray-50/50 p-2 rounded-lg drop-shadow-md hover:drop-shadow-[0_15px_25px_rgba(0,0,255,0.75)] duration-150"
@@ -83,74 +86,61 @@
     </div> -->
     <!--My content-->
     <div
-      class="grid md:grid-cols-4 lg:grid-cols-12 gap-3 p-4 h-auto w-full text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-center"
+      class="md:grid md:grid-cols-4 lg:grid-cols-12 min-h-screen gap-3 p-4 text-2xl text-center"
     >
+      <div
+        class="md:col-span-4 lg:col-span-12 bg-gray-500 rounded-lg relative flex justify-center items-center p-4"
+      >
+        <div class="absolute fas fa-bars top-2 right-2"></div>
+        <strong class="2xl:text-6xl p-12">Hello user</strong>
+      </div>
       <!-- Total amount -->
       <div
-        class="md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
       >
         <div class="absolute top-2 hidden lg:block">Total Amount</div>
         <a class="absolute top-2 left-2 fas fa-pen-to-square"></a>
         <a class="absolute top-2 right-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-2 lg:p-12">5000</strong>
+        <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
       <!-- current amount -->
       <div
-        class="md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
       >
         <div class="absolute top-2 hidden lg:block">Usable Amount</div>
         <a class="absolute top-2 left-2 fas fa-pen-to-square"></a>
         <a class="absolute top-2 right-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-2 lg:p-12">5000</strong>
+        <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
       <!-- user reserve -->
       <div
-        class="md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
       >
         <div class="absolute top-2 hidden lg:block">User Reserve Amount</div>
         <a class="absolute top-2 left-2 fas fa-pen-to-square"></a>
         <a class="absolute top-2 right-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-2 lg:p-12">5000</strong>
+        <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
       <!-- system reserve -->
       <div
-        class="md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-3 bg-gray-500 rounded-lg relative flex justify-center items-center"
       >
         <div class="absolute top-2 hidden lg:block">System Reserve Amount</div>
         <a class="absolute top-2 right-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-2 lg:p-12">5000</strong>
+        <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
-      <!-- this week usage chart -->
       <div
-        class="md:col-span-2 lg:col-span-4 bg-black/25 relative flex justify-center items-center p-2"
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-4 p-4 bg-gray-500 rounded-lg"
       >
-        <div class="w-full h-auto bg-white/50 p-8 rounded shadow-md">
-          <h1 class="text-2xl font-bold mb-4">Weekly Money Usage Tracker</h1>
-          <canvas id="DailyUsageChart" class="h-128"></canvas>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const chartContainer = document.getElementById("DailyUsageChart");
-
-            if (!chartContainer) {
-              console.error("Could not find chart container element.");
-              return;
-            }
-
-            if (!(chartContainer instanceof HTMLCanvasElement)) {
-              console.error("The chart container is not a canvas element.");
-              return;
-            }
-
-            const ctx = chartContainer.getContext("2d");
-
-            if (!ctx) {
-              console.error("Failed to get 2D context for chart container.");
-              return;
-            }
-
-            const data = {
+        <canvas id="Weekchart" class="bg-white/50 rounded-lg"></canvas>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const ctx = document.getElementById("Weekchart").getContext("2d");
+          const myChart = new Chart(ctx, {
+            type: "line",
+            data: {
               labels: [
                 "Monday",
                 "Tuesday",
@@ -162,221 +152,251 @@
               ],
               datasets: [
                 {
-                  label: "Money Spent",
-                  data: [50, 30, 40, 60, 45, 55, 35], // Sample data for demonstration
-                  backgroundColor: "rgba(54, 162, 235, 0.2)",
-                  borderColor: "rgba(54, 162, 235, 1)",
-                  borderWidth: 1,
-                },
-              ],
-            };
-
-            const options = {
-              scales: {
-                y: {
-                  beginAtZero: true,
-                },
-              },
-            };
-
-            const myChart = new Chart(ctx, {
-              type: "bar",
-              data: data,
-              options: options,
-            });
-          });
-        </script>
-      </div>
-      <!-- Proximity to Limit Amount chart -->
-      <div
-        class="md:col-span-2 lg:col-span-4 bg-black/25 relative flex justify-center items-center p-2"
-      >
-        <div class="w-full h-auto bg-white/50 p-8 rounded shadow-md">
-          <h1 class="text-2xl font-bold mb-4">Weekly Money Usage Tracker</h1>
-          <canvas id="LimitAmountContainer" class="h-64"></canvas>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const chartContainer = document.getElementById(
-              "LimitAmountContainer"
-            );
-
-            if (!chartContainer) {
-              console.error("Could not find chart container element.");
-              return;
-            }
-
-            if (!(chartContainer instanceof HTMLCanvasElement)) {
-              console.error("The chart container is not a canvas element.");
-              return;
-            }
-
-            const ctx = chartContainer.getContext("2d");
-
-            if (!ctx) {
-              console.error("Failed to get 2D context for chart container.");
-              return;
-            }
-
-            const dailyAmounts = [50, 30, 40, 60, 45, 55, 35]; // Sample daily amounts
-            const maxAmount = 70; // Maximum amount for the week
-
-            const data = {
-              labels: [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday",
-              ],
-              datasets: [
-                {
-                  label: "Daily Amount",
-                  data: dailyAmounts,
-                  fill: false,
-                  borderColor: "rgba(54, 162, 235, 1)",
-                  tension: 0.4,
-                },
-                {
-                  label: "Max Weekly Amount",
-                  data: Array(7).fill(maxAmount),
-                  fill: false,
+                  label: "Amount used",
+                  data: [65, 59, 80, 81, 56, 55, 40],
                   borderColor: "rgba(255, 99, 132, 1)",
-                  borderDash: [5, 5],
-                  tension: 0.4,
-                },
-              ],
-            };
-
-            const options = {
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  ticks: {
-                    callback: function (value, index, values) {
-                      return "$" + value; // Display $ sign with y-axis values
-                    },
-                  },
-                },
-              },
-            };
-
-            const myChart = new Chart(ctx, {
-              type: "line",
-              data: data,
-              options: options,
-            });
-          });
-        </script>
-      </div>
-      <!-- monthly chart -->
-      <div
-        class="md:col-span-2 lg:col-span-4 bg-black/25 relative flex justify-center items-center p-2"
-      >
-        <div class="w-full h-auto bg-white/50 p-8 rounded shadow-md">
-          <h1 class="text-2xl font-bold mb-4 text-center">
-            Monthly Spending Chart
-          </h1>
-          <canvas id="monthlyChart" class="h-64"></canvas>
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const monthlyChart = document.getElementById("monthlyChart");
-
-            if (!monthlyChart) {
-              console.error("Could not find monthly chart container element.");
-              return;
-            }
-
-            if (!(monthlyChart instanceof HTMLCanvasElement)) {
-              console.error(
-                "The monthly chart container is not a canvas element."
-              );
-              return;
-            }
-
-            const ctx = monthlyChart.getContext("2d");
-
-            if (!ctx) {
-              console.error(
-                "Failed to get 2D context for monthly chart container."
-              );
-              return;
-            }
-
-            const data = {
-              labels: [
-                "Housing",
-                "Transportation",
-                "Living Expenses",
-                "Debt and Savings",
-                "Discretionary Spending",
-              ],
-              datasets: [
-                {
-                  label: "January 2024",
-                  data: [1500, 500, 800, 400, 600], // Sample monthly spending data
-                  backgroundColor: [
-                    "rgba(255, 99, 132, 0.5)", // Housing - Red
-                    "rgba(54, 162, 235, 0.5)", // Transportation - Blue
-                    "rgba(255, 205, 86, 0.5)", // Living Expenses - Yellow
-                    "rgba(75, 192, 192, 0.5)", // Debt and Savings - Green
-                    "rgba(153, 102, 255, 0.5)", // Discretionary Spending - Purple
-                  ],
-                  borderColor: [
-                    "rgba(255, 99, 132, 1)",
-                    "rgba(54, 162, 235, 1)",
-                    "rgba(255, 205, 86, 1)",
-                    "rgba(75, 192, 192, 1)",
-                    "rgba(153, 102, 255, 1)",
-                  ],
                   borderWidth: 1,
                 },
               ],
-            };
-
-            const options = {
+            },
+            options: {
               scales: {
-                x: {
-                  stacked: true,
-                },
                 y: {
-                  stacked: true,
-                  ticks: {
-                    beginAtZero: true,
-                    callback: function (value, index, values) {
-                      return "$" + value; // Display $ sign with y-axis values
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        });
+      </script>
+      <div
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-4 p-4 bg-gray-500 rounded-lg"
+      >
+        <canvas id="MaxAmount" class="bg-white/50 rounded-lg"></canvas>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const chartContainer = document.getElementById("MaxAmount");
+
+          if (!chartContainer) {
+            console.error("Could not find chart container element.");
+            return;
+          }
+
+          if (!(chartContainer instanceof HTMLCanvasElement)) {
+            console.error("The chart container is not a canvas element.");
+            return;
+          }
+
+          const ctx = chartContainer.getContext("2d");
+
+          if (!ctx) {
+            console.error("Failed to get 2D context for chart container.");
+            return;
+          }
+
+          const dailyAmounts = [50, 30, 40, 60, 45, 55, 35]; // Sample daily amounts
+          const maxAmount = 70; // Maximum amount for the week
+          const deadlineAmount = 55; // Deadline amount
+
+          const data = {
+            labels: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+            ],
+            datasets: [
+              {
+                label: "Daily Amount",
+                data: dailyAmounts,
+                fill: false,
+                borderColor: "rgba(54, 162, 235, 1)",
+                tension: 0.4,
+              },
+              {
+                label: "Max Weekly Amount",
+                data: Array(7).fill(maxAmount),
+                fill: false,
+                borderColor: "rgba(255, 99, 132, 1)",
+                borderDash: [5, 5],
+                tension: 0.4,
+              },
+            ],
+          };
+
+          const options = {
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value, index, values) {
+                    return "$" + value; // Display $ sign with y-axis values
+                  },
+                },
+              },
+            },
+            plugins: {
+              annotation: {
+                annotations: {
+                  deadlineLine: {
+                    type: "line",
+                    mode: "horizontal",
+                    scaleID: "y",
+                    value: deadlineAmount,
+                    borderColor: "red",
+                    borderWidth: 2,
+                    label: {
+                      content: "Deadline",
+                      enabled: true,
+                      position: "right",
                     },
                   },
                 },
               },
-            };
+            },
+          };
 
-            const myChart = new Chart(ctx, {
-              type: "bar",
-              data: data,
-              options: options,
-            });
+          const myChart = new Chart(ctx, {
+            type: "line",
+            data: data,
+            options: options,
           });
-        </script>
+        });
+      </script>
+      <div
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-4 p-4 bg-gray-500 rounded-lg"
+      >
+        <canvas id="MonthlyUsage" class="bg-white/50 rounded-lg"></canvas>
       </div>
-      <!-- transactions -->
-      <div class="md:col-span-2 lg:col-span-8 bg-black/25 relative"></div>
-      <!-- subscriptions -->
-      <div class="md:col-span-2 lg:col-span-4 bg-black/25 relative"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const ctx = document.getElementById("MonthlyUsage").getContext("2d");
+          const myChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+              ],
+              datasets: [
+                {
+                  label: "Amount used",
+                  data: [65, 59, 80, 81, 56, 55, 40],
+                  borderColor: "rgba(255, 99, 132, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        });
+      </script>
+      <div
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-8 p-4 bg-gray-500 rounded-lg relative"
+      >
+        <a class="absolute top-2 right-2 fa-solid fa-angles-right"></a>
+        <h2 class="font-semibold mb-4">Transactions</h2>
+        <table class="table-fixed w-full">
+          <thead>
+            <tr class="text-left text-bold text-[10px] md:text-[15px] lg:text-lg xl:text-xl 2xl:text-2xl 4xl:text-4xl">
+              <th class="w-1/6">ID</th>
+              <th class="w-1/6">Day</th>
+              <th class="w-1/6">Date</th>
+              <th class="w-1/6">From</th>
+              <th class="w-1/6">To</th>
+              <th class="w-1/6">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="text-left text-bold text-[10px] md:text-[15px] lg:text-lg xl:text-xl 2xl:text-2xl 4xl:text-4xl">
+            <tr class="rounded-lg border border-gray-400/50">
+              <td>5</td>
+              <td>Monday</td>
+              <td>09:02:33</td>
+              <td>Me</td>
+              <td>My Friend</td>
+              <td>920 DKK</td>
+            </tr>
+            <tr class="rounded-lg border border-gray-400/50">
+              <td>4</td>
+              <td>Monday</td>
+              <td>09:02:33</td>
+              <td>Me</td>
+              <td>My Friend</td>
+              <td>920 DKK</td>
+            </tr>
+            <tr class="rounded-lg border border-gray-400/50">
+              <td>3</td>
+              <td>Monday</td>
+              <td>09:02:33</td>
+              <td>Me</td>
+              <td>My Friend</td>
+              <td>920 DKK</td>
+            </tr>
+            <tr class="rounded-lg border border-gray-400/50">
+              <td>2</td>
+              <td>Monday</td>
+              <td>09:02:33</td>
+              <td>Me</td>
+              <td>My Friend</td>
+              <td>920 DKK</td>
+            </tr>
+            <tr class="rounded-lg border border-gray-400/50">
+              <td>1</td>
+              <td>Monday</td>
+              <td>09:02:33</td>
+              <td>Me</td>
+              <td>My Friend</td>
+              <td>920 DKK</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="mt-2 md:mt-0 md:col-span-2 lg:col-span-4 bg-gray-500 rounded-lg p-4"
+      >
+        <h2 class="text-white text-lg font-semibold mb-4">Subscriptions</h2>
+        <div class="flex flex-col gap-4">
+          <div
+            class="bg-gray-600 rounded-lg p-4 flex justify-between items-center"
+          >
+            <div>
+              <p class="text-white font-semibold">Subscription Name</p>
+              <p class="text-gray-300">Price: $9.99/mo</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-md">
+              Manage
+            </button>
+          </div>
+          <div
+            class="bg-gray-600 rounded-lg p-4 flex justify-between items-center"
+          >
+            <div>
+              <p class="text-white font-semibold">Another Subscription</p>
+              <p class="text-gray-300">Price: $14.99/mo</p>
+            </div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-md">
+              Manage
+            </button>
+          </div>
+          <!-- Add more subscriptions as needed -->
+        </div>
+      </div>
     </div>
-    <!--My content-->
-    <script>
-      const toggleButton = document.getElementById("toggleButton");
-      const content = document.getElementById("content");
-
-      toggleButton.addEventListener("click", () => {
-        content.classList.toggle("hidden");
-      });
-    </script>
   </body>
 </html>
