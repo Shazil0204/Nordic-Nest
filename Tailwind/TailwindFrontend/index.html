@@ -28,7 +28,7 @@
       }
     </style>
   </head>
-  <body class="bg-[#F2EFE5] flex min-h-screen min-w-screen">
+  <body class="bg-[#F2EFE5] flex">
     <button
       id="toggleButton"
       class="fixed block lg:hidden bottom-4 right-4 bg-gray-50/50 p-2 rounded-lg drop-shadow-md hover:drop-shadow-[0_15px_25px_rgba(0,0,255,0.75)] duration-150"
@@ -82,16 +82,27 @@
       </div>
     </div>
     <!--My content-->
-    <div class="grid grid-cols-12 gap-3 p-4 min-h-screen min-w-screen w-full text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-center">
-      <div class="col-span-3 bg-black/25">1</div>
-      <div class="col-span-3 bg-black/25">1</div>
-      <div class="col-span-3 bg-black/25">1</div>
-      <div class="col-span-3 bg-black/25">1</div>
-      <div class="col-span-4 bg-black/25">1</div>
-      <div class="col-span-4 bg-black/25">1</div>
-      <div class="col-span-4 bg-black/25">1</div>
-      <div class="col-span-8 bg-black/25">1</div>
-      <div class="col-span-4 bg-black/25">1</div>
+    <div
+      class="grid md:grid-cols-4 lg:grid-cols-12 gap-3 p-4 min-h-screen min-w-screen w-full text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-center"
+    >
+      <!-- Total amount -->
+      <div class="md:col-span-2 lg:col-span-3 bg-black/25 relative"></div>
+      <!-- current amount -->
+      <div class="md:col-span-2 lg:col-span-3 bg-black/25 relative"></div>
+      <!-- user reserve -->
+      <div class="md:col-span-2 lg:col-span-3 bg-black/25 relative"></div>
+      <!-- system reserve -->
+      <div class="md:col-span-2 lg:col-span-3 bg-black/25 relative"></div>
+      <!-- this week usage chart -->
+      <div class="md:col-span-2 lg:col-span-4 bg-black/25 relative"></div>
+      <!-- Proximity to Limit Amount chart -->
+      <div class="md:col-span-2 lg:col-span-4 bg-black/25 relative"></div>
+      <!-- monthly chart -->
+      <div class="md:col-span-2 lg:col-span-4 bg-black/25 relative"></div>
+      <!-- transactions -->
+      <div class="md:col-span-2 lg:col-span-8 bg-black/25 relative"></div>
+      <!-- subscriptions -->
+      <div class="md:col-span-2 lg:col-span-4 bg-black/25 relative"></div>
     </div>
     <!--My content-->
     <script>
