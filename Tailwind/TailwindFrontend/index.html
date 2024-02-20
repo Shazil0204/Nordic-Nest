@@ -16,32 +16,91 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+      }
+
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
+      }
+    </style>
   </head>
-  <body class="bg-gray-900 text-white font-sans">
-    <div class="container mx-auto px-4 py-8 h-screen flex flex-col">
-        <div class="text-center mb-4">
-            <h1 class="text-2xl font-bold">Chat</h1>
-            <p class="text-gray-400">February 19, 2024</p>
+  <body class="bg-[#F2EFE5] flex min-h-screen min-w-screen">
+    <button
+      id="toggleButton"
+      class="fixed block lg:hidden bottom-4 right-4 bg-gray-50/50 p-2 rounded-lg drop-shadow-md hover:drop-shadow-[0_15px_25px_rgba(0,0,255,0.75)] duration-150"
+    >
+      Toggle Content
+    </button>
+    <div
+      id="content"
+      class="sidebar bg-[#E3E1D9] m-4 h-[calc(100vh-32px)] w-[calc(35vh-0.1px)] rounded-xl p-4 border border-gray-400 hidden lg:block lg:static overflow-y-auto fixed z-10"
+    >
+      <div
+        class="text-bold text-[10px] md:text-[15px] lg:text-lg xl:text-xl 2xl:text-2xl 4xl:text-4xl text-center cursor-pointer"
+      >
+        <a
+          class="hidden lg:block bg-[#B4B4B8] [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] p-2 rounded-2xl drop-shadow-md hover:drop-shadow-[0_0_25px_rgba(0,0,0,0.75)] duration-150"
+          >Nordic Nest
+        </a>
+        <div class="flex flex-col text-white">
+          <a
+            class="mt-[0.5rem] lg:mt-[3rem] p-2 bg-[#929284] rounded-lg drop-shadow-md hover:drop-shadow-[0_0_10px_rgba(100,100,100,1)] duration-150"
+          >
+            Dashboard
+          </a>
+          <a
+            class="mt-[1rem] p-2 bg-[#B4B4A8] rounded-lg drop-shadow-md hover:drop-shadow-[0_0_10px_rgba(100,100,100,1)] duration-150"
+          >
+            Profile
+          </a>
+          <a
+            class="mt-[1rem] p-2 bg-[#B4B4A8] rounded-lg drop-shadow-md hover:drop-shadow-[0_0_10px_rgba(100,100,100,1)] duration-150"
+          >
+            Charts
+          </a>
+          <a
+            class="mt-[1rem] p-2 bg-[#B4B4A8] rounded-lg drop-shadow-md hover:drop-shadow-[0_0_10px_rgba(100,100,100,1)] duration-150"
+          >
+            Chat Room
+          </a>
+          <a
+            class="mt-[1rem] p-2 bg-[#B4B4A8] rounded-lg drop-shadow-md hover:drop-shadow-[0_0_10px_rgba(100,100,100,1)] duration-150"
+          >
+            Create A new one
+          </a>
+          <a class="mt-[1rem] border border-black"></a>
+          <a
+            class="mt-[1rem] p-2 bg-red-400 rounded-lg drop-shadow-md hover:drop-shadow-[0_0_10px_rgba(255,0,0,0.75)] duration-150"
+          >
+            Sign out
+          </a>
         </div>
-        <div class="flex-grow chat-container flex flex-col space-y-4">
-            <div class="flex justify-end">
-                <div class="bg-gray-800 rounded-lg p-4 max-w-md">
-                    <p class="text-sm">11:30 AM</p>
-                    <p>Hi there! How can I help you today?</p>
-                </div>
-            </div>
-            <div class="flex justify-start">
-                <div class="bg-blue-600 rounded-lg p-4 max-w-md">
-                    <p class="text-sm">11:32 AM</p>
-                    <p>Sure, I can assist you with that. What specifically do you need?</p>
-                </div>
-            </div>
-            <!-- More messages here -->
-        </div>
-        <div class="input-container flex items-center">
-            <textarea class="flex-grow bg-gray-800 rounded-lg p-4 mr-4 focus:outline-none focus:ring focus:border-blue-300" rows="3" placeholder="Type your message..."></textarea>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300">Send</button>
-        </div>
+      </div>
     </div>
-</body>
+    <!--My content-->
+    <div class="grid grid-cols-12 gap-3 p-4 min-h-screen min-w-screen w-full text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-center">
+      <div class="col-span-3 bg-black/25">1</div>
+      <div class="col-span-3 bg-black/25">1</div>
+      <div class="col-span-3 bg-black/25">1</div>
+      <div class="col-span-3 bg-black/25">1</div>
+      <div class="col-span-4 bg-black/25">1</div>
+      <div class="col-span-4 bg-black/25">1</div>
+      <div class="col-span-4 bg-black/25">1</div>
+      <div class="col-span-8 bg-black/25">1</div>
+      <div class="col-span-4 bg-black/25">1</div>
+    </div>
+    <!--My content-->
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const content = document.getElementById("content");
+
+      toggleButton.addEventListener("click", () => {
+        content.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
