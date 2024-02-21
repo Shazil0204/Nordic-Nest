@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  const monthlyAmounts = [150, 130, 140, 160]; // Sample monthly amounts
+  const monthlyAmounts = [150, 130, 140, 160, 150, 130, 140, 160, 150, 130, 140, 160, 150, 130, 140, 160, 150, 130, 140, 160, 150, 130, 140, 160, 150, 130, 140, 160, 150, 130, 140]; // Sample monthly amounts
   const maxAmount = 200; // Maximum amount for the month
   const deadlineAmount = 160; // Deadline amount
 
   const data = {
-    labels: ["1", "2", "3", "4"], // Assuming the month has 4 days for simplicity
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"], // Assuming the month has 31 days
     datasets: [
       {
         label: "Daily Amount",
