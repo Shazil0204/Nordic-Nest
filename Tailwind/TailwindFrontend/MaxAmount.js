@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         label: "Max Monthly Amount",
-        data: Array(4).fill(maxAmount), // 4 days in the month
+        data: Array(31).fill(maxAmount), // 4 days in the month
         fill: false,
         borderColor: "rgba(255, 99, 132, 1)",
         borderDash: [1, 5],
