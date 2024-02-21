@@ -1,29 +1,9 @@
-﻿/* Hide the default scrollbar */
+﻿/* Hide scrollbar for webkit browsers */
 ::-webkit-scrollbar {
-    width: 10px; /* Adjust the width as needed */
+    width: 0; /* Remove scrollbar space */
 }
 
-/* Track */
+/* Optional: Style the scrollbar track and thumb */
 ::-webkit-scrollbar-track {
-    background: #60a5fa; /* Background color of the track */
-    border-radius: 10px; /* Rounded corners for the track */
+    background: transparent; /* Make scrollbar track transparent */
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #007acc; /* Color of the scrollbar handle */
-    border-radius: 10px; /* Rounded corners for the handle */
-}
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #005fa3; /* Color when hovering over the handle */
-    }
-
-/* Firefox scrollbar */
-/* Hide the default scrollbar */
-scrollbar-width: thin;
-/* Track */
-scrollbar-color: #60a5fa #007acc;
-/* Handle */
-scrollbar-color: #007acc #60a5fa;

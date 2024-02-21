@@ -16,16 +16,17 @@
 	var ClientData = CDC.GetClientData();
 
 	List<string> CSLabel = new List<string> { "Housing", "Transportation", "Living Expenses", "Debt and Savings", "Discretionary Spending" };
-	List<int> CSdata = new List<int> { 20, 20, 20, 20, 80 };
 	List<string> CSbackgroundColor = new List<string> { "#3498db", "#27ae60", "#e74c3c", "#f39c12", "#8e44ad" };
+	List<int> CSdata = new List<int> { 20, 20, 20, 20, 80 };
 }
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
-<script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
-<link href="/css/transparentScrollbar.css" rel="stylesheet" asp-append-version="true" />
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+	<script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
+	<link href="/css/transparentScrollbar.css" rel="stylesheet" asp-append-version="true" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
 
 <body class="bg-gradient-to-b from-blue-950 to-teal-700 min-h-screen min-w-screen flex justify-center items-center">
 	<div class="grid grid-cols-4 lg:grid-cols-5 gap-3 p-4 min-h-screen min-w-screen text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
@@ -46,7 +47,7 @@
 
 		<!--Current Amount-->
 		<div class="order-4 lg:order-2 text-center rounded-2xl col-span-2 lg:col-span-1 bg-[#4CAF50] text-white relative font-extrabold">
-			<button onclick="showInfo('CurrentAmount')" 
+			<button onclick="showInfo('CurrentAmount')"
 					class="z-10 absolute fas fa-info-circle top-2 right-2"></button>
 			<div class="lg:absolute w-full hidden lg:flex justify-center top-1">
 				Current Amount
@@ -247,9 +248,9 @@
 <script src="/js/SweetInfo.js"></script>
 <script src="/js/MonthlyUsage.js"></script>
 <script>
+	var backgroundColors = @Html.Raw(Json.Serialize(CSbackgroundColor));
 	var labels = @Html.Raw(Json.Serialize(CSLabel));
 	var data = @Html.Raw(Json.Serialize(CSdata));
-	var backgroundColors = @Html.Raw(Json.Serialize(CSbackgroundColor));
 	initializeProgressBars(labels, data, backgroundColors)
 </script>
 <script src="/js/ProgressBar.js"></script>
