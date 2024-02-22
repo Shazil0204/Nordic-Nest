@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f3d48ce569.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+      }
+
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="max-w-md w-full drop-shadow-[0_5px_5px_rgba(0,0,0,1)] space-y-8"
+      >
+        <div>
+          <h2 class="mt-6 text-center text-3xl font-extrabold text-emerald-300">
+            Contact Form
+          </h2>
+          <p class="mt-2 text-center text-sm text-gray-600">
+            Please fill in the following details:
+          </p>
+        </div>
+        <form class="mt-8 space-y-6" action="#" method="POST">
+          <div class="shadow-sm -space-y-px">
+            <div>
+              <input
+                id="first-name"
+                name="first-name"
+                type="text"
+                autocomplete="given-name"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-900 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="First Name"
+              />
+            </div>
+            <div>
+              <input
+                id="last-name"
+                name="last-name"
+                type="text"
+                autocomplete="family-name"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-800 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="Last Name"
+              />
+            </div>
+            <div>
+              <input
+                id="age"
+                name="age"
+                type="number"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-700 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="Age"
+              />
+            </div>
+            <div>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                autocomplete="username"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-600 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="Username"
+              />
+            </div>
+            <div>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="Password"
+              />
+            </div>
+            <div>
+              <input
+                id="confirm-password"
+                name="confirm-password"
+                type="password"
+                autocomplete="new-password"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-400 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <div>
+              <select
+                id="gender"
+                name="gender"
+                required
+                class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border-4 border-indigo-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-emerald-500 focus:z-10 sm:text-sm"
+              >
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="flex items-center">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                required
+                class="mt-4 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+              />
+              <label for="terms" class="mt-4 ml-2 block text-sm text-gray-900">
+                I agree to the
+                <a href="#" class="text-indigo-600 hover:text-indigo-500"
+                  >terms and conditions</a
+                >
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="group relative w-full flex justify-center py-2 px-4 border-4 border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-900 focus:outline-none duration-500 hover:scale-90"
+            >
+              <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                <!-- Heroicon name: solid/lock-closed -->
+                <i class="fas fa-paper-plane"></i>
+              </span>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  >
+</html>
