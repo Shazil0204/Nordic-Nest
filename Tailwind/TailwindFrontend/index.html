@@ -30,14 +30,20 @@
         background: transparent; /* Make scrollbar track transparent */
       }
     </style>
+
+    <script>
+      function changeBackground() {
+        document.body.classList.add("bg-red-500"); // Add Tailwind CSS class to change background color to red
+      }
+    </script>
   </head>
   <body class="bg-emerald-900 relative">
     <div class="flex">
       <!-- Sidebar -->
       <div
-        class="h-screen w-1/4 bg-gray-200 fixed top-0 left-0 overflow-y-auto z-10"
+        class="h-screen w-1/4 bg-gray-200 fixed top-0 left-0 overflow-y-auto -z-10"
       >
-        <h1>hellow</h1>
+        <h1>hello</h1>
         <!-- You can add your navigation links, logo, etc. -->
       </div>
 
@@ -54,10 +60,15 @@
       <div
         class="mt-2 col-span-2 xl:col-span-4 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
       >
-        <div class="absolute top-2 hidden lg:block">Current Usable Amount</div>
-        <a class="absolute top-2 left-2 fas fa-pen-to-square"></a>
         <a
-          class="absolute top-2 right-2 fas fa-circle-info drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+          onclick="changeBackground()"
+          class="absolute top-2 right-2 fas fa-bars cursor-pointer"
+          >Change Background</a
+        >
+
+        <div class="absolute top-2 hidden lg:block">Current Usable Amount</div>
+        <a
+          class="absolute top-2 left-2 fas fa-circle-info drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         ></a>
         <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
@@ -66,8 +77,7 @@
         class="mt-2 col-span-1 xl:col-span-4 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
       >
         <div class="absolute top-2 hidden lg:block">Current Amount</div>
-        <a class="absolute top-2 left-2 fas fa-pen-to-square"></a>
-        <a class="absolute top-2 right-2 fas fa-circle-info"></a>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
         <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
       <!-- Total amount -->
@@ -75,8 +85,7 @@
         class="mt-2 col-span-1 xl:col-span-4 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
       >
         <div class="absolute top-2 hidden lg:block">Total Amount</div>
-        <a class="absolute top-2 left-2 fas fa-pen-to-square"></a>
-        <a class="absolute top-2 right-2 fas fa-circle-info"></a>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
         <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
       <!-- user reserve -->
@@ -84,7 +93,7 @@
         class="mt-2 col-span-1 xl:col-span-6 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
       >
         <div class="absolute top-2 hidden lg:block">User Reserve Amount</div>
-        <a class="absolute top-2 right-2 fas fa-circle-info"></a>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
         <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
       <!-- system reserve -->
@@ -92,7 +101,7 @@
         class="mt-2 col-span-1 xl:col-span-6 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
       >
         <div class="absolute top-2 hidden lg:block">System Reserve Amount</div>
-        <a class="absolute top-2 right-2 fas fa-circle-info"></a>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
         <strong class="2xl:text-6xl p-12">5000</strong>
       </div>
     </div>
