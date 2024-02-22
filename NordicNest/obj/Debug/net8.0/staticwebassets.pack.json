@@ -85,6 +85,10 @@
       "PackagePath": "staticwebassets\\js\\GoBack.js"
     },
     {
+      "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\MaxAmount.js",
+      "PackagePath": "staticwebassets\\js\\MaxAmount.js"
+    },
+    {
       "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\MonthlyUsage.js",
       "PackagePath": "staticwebassets\\js\\MonthlyUsage.js"
     },
@@ -99,6 +103,10 @@
     {
       "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\SweetInfo.js",
       "PackagePath": "staticwebassets\\js\\SweetInfo.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Weekchart.js",
+      "PackagePath": "staticwebassets\\js\\Weekchart.js"
     },
     {
       "Id": "C:\\Users\\Shaz0184\\Desktop\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\charCount.js",
