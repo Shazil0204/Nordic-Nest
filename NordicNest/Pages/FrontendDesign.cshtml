@@ -9,7 +9,6 @@
 	NordicNest.Controller.ClientDataController CDC = new NordicNest.Controller.ClientDataController();
 	List<Model.NavBar.NavBarProperties> NBP = new Model.NavBar.NavBarConnection().GetNavBars();
 	decimal[] progressBars = { Model.Savingpercentage(), Model.Loanpercentage() };
-	NordicNest.Model.BasicProperties.CurrentPage = "Home";
 	var Sresult = new DefaultSavingController().GetData();
 	var Lresult = new DefaultLoanController().GetData();
 	var ClientData = CDC.GetClientData();
