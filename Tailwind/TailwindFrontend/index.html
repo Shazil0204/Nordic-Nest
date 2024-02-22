@@ -30,10 +30,18 @@
         background: transparent; /* Make scrollbar track transparent */
       }
     </style>
-
     <script>
       function changeBackground() {
-        document.body.classList.add("bg-red-500"); // Add Tailwind CSS class to change background color to red
+        var x = document.getElementById("Sidebar");
+        var computedStyle = window.getComputedStyle(x); // Get the computed style of the element
+        console.log(computedStyle.display);
+        if (computedStyle.display === "none") {
+          x.style.display = "block";
+          console.log('x.style.display = "block";');
+        } else {
+          x.style.display = "none";
+          console.log('x.style.display = "none";');
+        }
       }
     </script>
   </head>
@@ -41,7 +49,8 @@
     <div class="flex">
       <!-- Sidebar -->
       <div
-        class="h-screen w-1/4 bg-gray-200 fixed top-0 left-0 overflow-y-auto -z-10"
+        id="Sidebar"
+        class="hidden h-screen w-1/4 bg-gray-200 fixed top-0 left-0 overflow-y-auto z-10"
       >
         <h1>hello</h1>
         <!-- You can add your navigation links, logo, etc. -->
