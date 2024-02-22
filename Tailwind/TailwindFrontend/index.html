@@ -31,9 +31,24 @@
       }
     </style>
   </head>
-  <body class="bg-emerald-900">
+  <body class="bg-emerald-900 relative">
+    <div class="flex">
+      <!-- Sidebar -->
+      <div
+        class="h-screen w-1/4 bg-gray-200 fixed top-0 left-0 overflow-y-auto z-10"
+      >
+        <h1>hellow</h1>
+        <!-- You can add your navigation links, logo, etc. -->
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-grow">
+        <!-- Your main content goes here -->
+        <!-- This will be the content that scrolls -->
+      </div>
+    </div>
     <div
-      class="mt-12 grid grid-cols-2 xl:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center"
+      class="grid grid-cols-2 xl:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center"
     >
       <!-- Current usable amount -->
       <div
