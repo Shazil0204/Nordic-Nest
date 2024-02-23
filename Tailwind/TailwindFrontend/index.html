@@ -30,46 +30,30 @@
         background: transparent; /* Make scrollbar track transparent */
       }
     </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const sidebar = document.getElementById("sidebar");
-        const toggleSidebarBtn = document.getElementById("toggleSidebar");
-
-        toggleSidebarBtn.addEventListener("click", function () {
-          const isOpen = sidebar.classList.contains("-translate-x-full");
-          if (isOpen) {
-            sidebar.classList.remove("-translate-x-full");
-            sidebar.classList.add("translate-x-0");
-          } else {
-            sidebar.classList.remove("translate-x-0");
-            sidebar.classList.add("-translate-x-full");
-          }
-        });
-      });
-    </script>
+    <script></script>
   </head>
   <body class="bg-emerald-900 relative">
     <div class="flex">
       <!-- Sidebar -->
       <div
         id="sidebar"
-        class="bg-gray-800 text-white w-64 h-full fixed top-0 left-0 transform -translate-x-full transition-transform duration-500 ease-in-out z-10 rounded-r-lg p-2 overflow-y-auto"
+        class="bg-gray-800 text-white w-full md:w-1/3 lg:w-2/6 h-screen fixed top-0 left-0 transform -translate-x-full transition-transform duration-1000 ease-in-out z-10 rounded-r-lg p-2 overflow-y-auto"
       >
         <!-- Logo/Header -->
         <div class="flex items-center justify-center p-4">
           <a
-            class="h-8 w-auto bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3"
+            class="h-8 bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative"
             >Nordic Nest</a
           >
+          <button id="closeSidebar">
+            <i
+              class="absolute top-2 right-2 fa-solid fa-x text-white hover:text-red-500 text-2xl duration-300 z-50"
+            ></i>
+          </button>
         </div>
         <!-- Navigation Links -->
         <nav class="mt-4">
           <ul>
-            <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
-                >Dashboard</a
-              >
-            </li>
             <li>
               <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
                 >UserProfile</a
@@ -120,7 +104,8 @@
 
     <!--My content starts from here-->
     <div
-      class="grid grid-cols-2 xl:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center"
+      id="context-div-1"
+      class="grid grid-cols-2 xl:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
       <!-- Current usable amount -->
       <div
@@ -170,7 +155,8 @@
       </div>
     </div>
     <div
-      class="-mt-5 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center"
+      id="context-div-2"
+      class="-mt-5 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
       <div
         class="mt-2 md:col-span-2 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
@@ -346,7 +332,6 @@
         for permission.
       </div>
     </div>
+    <script src="sidebartoggle.js"></script>
   </body>
-
-  >
 </html>
