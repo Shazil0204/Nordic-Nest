@@ -262,3 +262,97 @@
 
   >
 </html>
+
+
+<!-- Current usable amount -->
+      <div
+        class="mt-2 col-span-2 xl:col-span-2 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <button id="toggleSidebar" class="absolute top-2 right-2">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="absolute top-2 hidden lg:block">Current Usable Amount</div>
+        <a
+          class="absolute top-2 left-2 fas fa-circle-info drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        ></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- current amount -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">Current Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- Total amount -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">Total Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- user reserve -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">User Reserve Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- system reserve -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">System Reserve Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- Current usable amount -->
+      <div
+        class="mt-2 col-span-2 xl:col-span-2 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <button id="toggleSidebar" class="absolute top-2 right-2">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="absolute top-2 hidden lg:block">Current Usable Amount</div>
+        <a
+          class="absolute top-2 left-2 fas fa-circle-info drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        ></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- current amount -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">Current Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- Total amount -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">Total Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- user reserve -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">User Reserve Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>
+      <!-- system reserve -->
+      <div
+        class="mt-2 col-span-1 xl:col-span-2 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_5px_5px_rgba(255,255,255,1)] duration-500"
+      >
+        <div class="absolute top-2 hidden lg:block">System Reserve Amount</div>
+        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
+        <strong class="2xl:text-6xl p-12">5000</strong>
+      </div>

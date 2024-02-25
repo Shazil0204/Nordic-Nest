@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f3d48ce569.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+      }
+
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 h-screen flex items-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Current Usable Amount -->
+      <div class="p-4 bg-white shadow-lg rounded-md">
+        <h2 class="text-lg font-semibold mb-2">Current Usable Amount</h2>
+        <p class="text-2xl font-bold text-blue-500">5000</p>
+      </div>
+  
+      <!-- Current Amount -->
+      <div class="p-4 bg-white shadow-lg rounded-md">
+        <h2 class="text-lg font-semibold mb-2">Current Amount</h2>
+        <p class="text-2xl font-bold text-green-500">7500</p>
+      </div>
+  
+      <!-- Total Amount -->
+      <div class="p-4 bg-white shadow-lg rounded-md">
+        <h2 class="text-lg font-semibold mb-2">Total Amount</h2>
+        <p class="text-2xl font-bold text-purple-500">10000</p>
+      </div>
+  
+      <!-- User Reserve -->
+      <div class="p-4 bg-white shadow-lg rounded-md">
+        <h2 class="text-lg font-semibold mb-2">User Reserve</h2>
+        <p class="text-2xl font-bold text-orange-500">2000</p>
+      </div>
+  
+      <!-- System Reserve -->
+      <div class="p-4 bg-white shadow-lg rounded-md">
+        <h2 class="text-lg font-semibold mb-2">System Reserve</h2>
+        <p class="text-2xl font-bold text-red-500">3000</p>
+      </div>
+    </div>
+  </body>
+</html>

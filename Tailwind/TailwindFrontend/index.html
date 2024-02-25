@@ -30,19 +30,18 @@
         background: transparent; /* Make scrollbar track transparent */
       }
     </style>
-    <script></script>
   </head>
-  <body class="bg-emerald-900 relative">
+  <body class="relative">
     <div class="flex">
       <!-- Sidebar -->
       <div
         id="sidebar"
-        class="bg-gray-800 text-white w-full md:w-1/3 lg:w-2/6 h-screen fixed top-0 left-0 transform -translate-x-full transition-transform duration-1000 ease-in-out z-10 rounded-r-lg p-2 overflow-y-auto"
+        class="bg-gray-800 text-white w-full md:w-1/3 lg:w-2/6 h-screen fixed top-0 left-0 transform -translate-x-full transition-transform duration-1000 ease-in-out z-10 md:rounded-r-lg p-2 overflow-y-auto"
       >
         <!-- Logo/Header -->
         <div class="flex items-center justify-center p-4">
           <a
-            class="h-8 bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative"
+            class="bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative w-3/5 text-center text-4xl"
             >Nordic Nest</a
           >
           <button id="closeSidebar">
@@ -122,53 +121,57 @@
     <!--My content starts from here-->
     <div
       id="context-div-1"
-      class="grid grid-cols-2 xl:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
+      class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
-      <!-- Current usable amount -->
       <div
-        class="mt-2 col-span-2 xl:col-span-4 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
+        class="col-span-2 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
-        <button id="toggleSidebar" class="absolute top-2 right-2">
+        <button id="toggleSidebar" class="absolute top-0 right-1">
           <i class="fas fa-bars"></i>
         </button>
-
-        <div class="absolute top-2 hidden lg:block">Current Usable Amount</div>
-        <a
-          class="absolute top-2 left-2 fas fa-circle-info drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
-        ></a>
-        <strong class="2xl:text-6xl p-12">5000</strong>
+        <button
+          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          <i class="fas fa-circle-info"></i>
+        </button>
+        <div class="text-left w-full p-3 pt-10">Current amount:</div>
+        <div class="text-center w-full p-3 pt-10">5000</div>
       </div>
-      <!-- current amount -->
-      <div
-        class="mt-2 col-span-1 xl:col-span-4 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
-      >
-        <div class="absolute top-2 hidden lg:block">Current Amount</div>
-        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-12">5000</strong>
+      <div class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500">
+        <button
+          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          <i class="fas fa-circle-info"></i>
+        </button>
+        <div class="text-left w-full p-3 pt-10">Current amount:</div>
+        <div class="text-center w-full p-3 pt-10">5000</div>
       </div>
-      <!-- Total amount -->
-      <div
-        class="mt-2 col-span-1 xl:col-span-4 bg-gradient-to-r from-[#6DD7B9] to-[#9AE3C0] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
-      >
-        <div class="absolute top-2 hidden lg:block">Total Amount</div>
-        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-12">5000</strong>
+      <div class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500">
+        <button
+          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          <i class="fas fa-circle-info"></i>
+        </button>
+        <div class="text-left w-full p-3 pt-10">Current amount:</div>
+        <div class="text-center w-full p-3 pt-10">5000</div>
       </div>
-      <!-- user reserve -->
-      <div
-        class="mt-2 col-span-1 xl:col-span-6 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
-      >
-        <div class="absolute top-2 hidden lg:block">User Reserve Amount</div>
-        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-12">5000</strong>
+      <div class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500">
+        <button
+          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          <i class="fas fa-circle-info"></i>
+        </button>
+        <div class="text-left w-full p-3 pt-10">Current amount:</div>
+        <div class="text-center w-full p-3 pt-10">5000</div>
       </div>
-      <!-- system reserve -->
-      <div
-        class="mt-2 col-span-1 xl:col-span-6 bg-gradient-to-r from-[#5DBFAC] to-[#87CCB9] rounded-lg relative flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
-      >
-        <div class="absolute top-2 hidden lg:block">System Reserve Amount</div>
-        <a class="absolute top-2 left-2 fas fa-circle-info"></a>
-        <strong class="2xl:text-6xl p-12">5000</strong>
+      <div class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500">
+        <button
+          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          <i class="fas fa-circle-info"></i>
+        </button>
+        <div class="text-left w-full p-3 pt-10">Current amount:</div>
+        <div class="text-center w-full p-3 pt-10">5000</div>
       </div>
     </div>
     <div
@@ -176,28 +179,28 @@
       class="-mt-5 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
       <div
-        class="mt-2 md:col-span-2 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
+        class="mt-2 md:col-span-2 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <canvas id="Weekchart" class="bg-white/90 rounded-lg"></canvas>
       </div>
       <script src="Weekchart.js"></script>
 
       <div
-        class="mt-2 md:col-span-4 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
+        class="mt-2 md:col-span-4 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <canvas id="MaxAmount" class="bg-white/90 rounded-lg"></canvas>
       </div>
       <script src="MaxAmount.js"></script>
 
       <div
-        class="mt-2 md:col-span-2 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
+        class="mt-2 md:col-span-2 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <canvas id="MonthlyUsage" class="bg-white/90 rounded-lg"></canvas>
       </div>
       <script src="MonthlyUsage.js"></script>
 
       <div
-        class="mt-2 md:mt-0 md:col-span-4 lg:col-span-8 p-4 bg-white/50 rounded-lg relative drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
+        class="mt-2 md:mt-0 md:col-span-4 lg:col-span-8 p-4 bg-white/50 rounded-lg relative drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <a class="absolute top-2 right-2 fa-solid fa-angles-right"></a>
         <h2 class="font-semibold mb-4">Transactions</h2>
@@ -280,8 +283,9 @@
         </div>
       </div>
       <div
-        class="mt-2 md:mt-0 md:col-span-4 bg-white/50 rounded-lg p-4 drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500"
+        class="mt-2 md:mt-0 md:col-span-4 bg-white/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
+      <a class="absolute top-2 right-2 fa-solid fa-angles-right"></a>
         <h2 class="font-semibold mb-4">Subscriptions</h2>
         <div class="max-h-64 overflow-y-auto">
           <div class="flex flex-col gap-4">
@@ -341,7 +345,7 @@
         </div>
       </div>
       <div
-        class="mt-2 col-span-full bg-white/50 rounded-lg p-4 drop-shadow-[0_5px_5px_rgba(255,255,255,1)] hover:drop-shadow-[0_0_0_rgba(0,0,0,1)] duration-500 text-sm"
+        class="mt-2 col-span-full bg-white/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-sm"
       >
         This website is open source and licensed under
         <strong>Creative Commons Zero (CC0)</strong>. You are free to copy,
