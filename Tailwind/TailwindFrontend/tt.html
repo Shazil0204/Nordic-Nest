@@ -29,36 +29,23 @@
       ::-webkit-scrollbar-track {
         background: transparent; /* Make scrollbar track transparent */
       }
-
-      .menu-option {
-        transition: transform 0.3s ease;
-      }
     </style>
   </head>
-  <body class="bg-gray-200 h-screen flex items-center justify-center">
-    <button id="menuButton" class="btn">Open Menu</button>
-
-    <div
-      id="menuOverlay"
-      class="hidden fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 z-50"
-    >
-      <div class="bg-white p-8 rounded-lg shadow-lg">
-        <ul class="space-y-4">
-          <li class="menu-option hover:scale-105">Option 1</li>
-          <li class="menu-option hover:scale-105">Option 2</li>
-          <li class="menu-option hover:scale-105">Option 3</li>
-          <li class="menu-option hover:scale-105">Option 4</li>
-        </ul>
+  <body class="flex items-center justify-center w-screen h-screen">
+    <!-- Component Start -->
+    <div class="relative flex flex-col items-center group">
+      <i class="fas fa-circle-info"></i>
+      <div
+        class="absolute bottom-0 flex-col items-center hidden mb-5 group-hover:flex transition-filter duration-1000 ease-in-out"
+      >
+        <span
+          class="relative rounded-md z-10 p-4 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg min-w-64 transition-filter duration-1000 ease-in-out"
+          >A top aligned tooltip. That has enough text to be multi-line!
+          <p class="pt-4 pb-4">Just check it out!</p></span
+        >
+        <div class="w-3 h-3 -mt-2 rotate-45 bg-black"></div>
       </div>
     </div>
+    <!-- Component End  -->
   </body>
 </html>
-
-<script>
-  const menuButton = document.getElementById('menuButton');
-  const menuOverlay = document.getElementById('menuOverlay');
-
-  menuButton.addEventListener('click', () => {
-    menuOverlay.classList.toggle('hidden');
-  });
-</script>

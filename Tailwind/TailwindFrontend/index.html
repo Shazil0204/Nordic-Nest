@@ -42,7 +42,7 @@
         <!-- Logo/Header -->
         <div class="flex items-center justify-center p-4">
           <a
-            class="bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative w-3/5 text-center text-4xl"
+            class="bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative w-3/5 text-center text-4xl hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
             >Nordic Nest</a
           >
           <button id="closeSidebar">
@@ -76,32 +76,44 @@
         <nav class="mt-4">
           <ul>
             <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
+              <a
+                href="#"
+                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
                 >Dashboard</a
               >
             </li>
             <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
+              <a
+                href="#"
+                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
                 >Chat</a
               >
             </li>
             <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
+              <a
+                href="#"
+                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
                 >Chart</a
               >
             </li>
             <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
+              <a
+                href="#"
+                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
                 >Saving</a
               >
             </li>
             <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
+              <a
+                href="#"
+                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
                 >Loan</a
               >
             </li>
             <li>
-              <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-700"
+              <a
+                href="#"
+                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
                 >CraftHub</a
               >
             </li>
@@ -112,7 +124,7 @@
         <div class="mt-auto">
           <a
             href="#"
-            class="block py-2 px-4 text-sm bg-red-600 hover:bg-red-700 rounded"
+            class="block py-2 px-4 text-sm bg-red-600 hover:bg-red-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
             >Sign Out</a
           >
         </div>
@@ -126,7 +138,7 @@
       class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
       <div
-        class="col-span-2 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
+        class="col-span-2 xl:col-span-2 text-white bg-black/25 rounded-lg relative lg:flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <button id="toggleSidebar" class="absolute top-0 right-1">
           <i class="fas fa-bars"></i>
@@ -136,59 +148,69 @@
         >
           <i class="fas fa-circle-info"></i>
         </button>
-        <div class="text-left w-full p-3 py-10">Current amount:</div>
-        <div class="text-center w-full p-3 py-10">5000</div>
+        <div class="text-center lg:text-left w-full p-3 py-2 lg:py-10">
+          Current amount:
+        </div>
+        <div class="text-center w-full p-3 py-2 lg:py-10">5000</div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
+        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative lg:flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
           <i class="fas fa-circle-info"></i>
         </button>
-        <div class="text-left w-full p-3 py-10">Current amount:</div>
-        <div class="text-center w-full p-3 py-10">5000</div>
+        <div class="text-center lg:text-left w-full p-0 lg:p-10 py-2 lg:py-10">
+          Current usable amount:
+        </div>
+        <div class="text-center w-full p-3 py-2 lg:py-10">5000</div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
+        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative lg:flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
           <i class="fas fa-circle-info"></i>
         </button>
-        <div class="text-left w-full p-3 py-10">Current amount:</div>
-        <div class="text-center w-full p-3 py-10">5000</div>
+        <div class="py-5 lg:flex justify-center items-center w-full pl-2">
+          <div class="lg:w-2/3 lg:text-left">Current Amount:</div>
+          <div class="lg:w-1/3">5000</div>
+        </div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
+        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative lg:flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
           <i class="fas fa-circle-info"></i>
         </button>
-        <div class="text-left w-full p-3 py-10">Current amount:</div>
-        <div class="text-center w-full p-3 py-10">5000</div>
+        <div class="text-center lg:text-left w-full p-3 py-2 lg:py-10">
+          System reserve:
+        </div>
+        <div class="text-center w-full p-3 py-2 lg:py-10">5000</div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
+        class="col-span-1 xl:col-span-2 text-white bg-black/25 rounded-lg relative lg:flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
       >
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
           <i class="fas fa-circle-info"></i>
         </button>
-        <div class="text-left w-full p-3 py-10">Current amount:</div>
-        <div class="text-center w-full p-3 py-10">5000</div>
+        <div class="text-center lg:text-left w-full p-5 py-2 lg:py-10">
+          User reserve:
+        </div>
+        <div class="text-center w-full p-3 py-2 lg:py-10">5000</div>
       </div>
     </div>
 
     <!--Second content grid-->
     <div
       id="context-div-2"
-      class="-mt-5 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
+      class="-mt-7 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
       <div
         class="mt-2 md:col-span-2 lg:col-span-4 p-4 bg-white/50 rounded-lg flex justify-center items-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500"
@@ -218,7 +240,7 @@
           <a class="absolute top-2 right-2 fa-solid fa-angles-right"> </a>
         </abbr>
         <h2 class="font-semibold mb-4">Transactions</h2>
-        <div class="max-h-64 overflow-y-auto">
+        <div class="max-h-[512px] overflow-y-auto">
           <table class="table-fixed min-w-full text-left">
             <thead>
               <tr class="bg-black text-white">
@@ -364,11 +386,87 @@
 
     <!--Third content grid-->
     <div
-      id="context-div-2"
-      class="-mt-5 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
+      id="context-div-3"
+      class="-mt-5 md:grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out"
     >
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-green-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Generate Income
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-green-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Establish Saving
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-green-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Initiate Loan
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-green-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Form Transaction
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-green-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Include Subscription
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-yellow-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Modify Income
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-yellow-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Adjust Saving
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-yellow-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Revise Loan
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-yellow-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Amend Transaction
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-yellow-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Refresh Subscription
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-red-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Remove Income
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-red-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Erase Saving
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-red-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Remove Loan
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-red-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Eliminate Transaction
+      </button>
+      <button
+        class="col-span-full lg:col-span-1 w-full mt-5 lg:mt-2 hover:bg-blue-500 rounded-lg p-4 hover:text-white bg-red-500 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:scale-90 hover:-rotate-3"
+      >
+        Cancel Subscription
+      </button>
+
       <div
-        class=" col-span-full bg-white/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-sm"
+        class="mt-5 lg:mt-0 col-span-full lg:col-span-full bg-white/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-sm"
       >
         This website is open source and licensed under
         <strong>Creative Commons Zero (CC0)</strong>. You are free to copy,
