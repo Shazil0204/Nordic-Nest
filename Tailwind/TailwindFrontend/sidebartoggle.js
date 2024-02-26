@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.getElementById("sidebar");
   const context1 = document.getElementById("context-div-1");
   const context2 = document.getElementById("context-div-2");
-  const context3 = document.getElementById("context-div-3");
   const toggleSidebarBtn = document.getElementById("toggleSidebar");
   const closeSidebarBtn = document.getElementById("closeSidebar"); // New button for closing the sidebar
 
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleSidebarBtn.style.display = "none";
       context1.style.filter = "blur(5px)"; // Apply blur effect to body
       context2.style.filter = "blur(5px)"; // Apply blur effect to body
-      context3.style.filter = "blur(5px)"; // Apply blur effect to body
     } else {
       sidebar.classList.remove(
         "translate-x-0",
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebar.classList.add("-translate-x-full");
       context1.style.filter = "none"; // Remove blur effect from body
       context2.style.filter = "none"; // Remove blur effect from body
-      context3.style.filter = "none"; // Remove blur effect from body
       toggleSidebarBtn.style.display = "block";
     }
   }
