@@ -32,6 +32,10 @@
     </style>
   </head>
   <body class="relative">
+    <button id="toggleSidebar" class="fixed top-2 right-2 z-50 text-4xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <!--Side bar-->
     <div class="flex">
       <!-- Sidebar -->
@@ -138,18 +142,12 @@
       class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-xl text-center transition-filter duration-1000 ease-in-out"
     >
       <div
-        class="col-span-2 xl:col-span-2 text-[#333333] bg-[#66cc99]/90 hover:bg-[#66cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 flex justify-center items-center lg:block p-10 lg:p-0"
+        class="col-span-2 xl:col-span-2 bg-[#66cc99]/90 hover:bg-[#66cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 flex justify-center items-center lg:block p-10 lg:p-0"
       >
         <button
           class="absolute top-2 left-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
-          <i class="fas fa-circle-info"></i>
-        </button>
-        <button
-          id="toggleSidebar"
-          class="absolute top-2 right-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
-        >
-          <i class="fas fa-bars"></i>
+          <i class="fas fa-money-check"></i>
         </button>
         <div class="w-1/2 lg:w-full text-center lg:p-3 lg:pt-10">
           Usable Amount:
@@ -159,12 +157,12 @@
         </div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 bg-[#ffcc00]/90 hover:bg-[#ffcc00]/70  rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        class="col-span-1 xl:col-span-2 bg-[#ffcc00]/90 hover:bg-[#ffcc00]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
       >
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
-          <i class="fas fa-circle-info"></i>
+          <i class="fas fa-money-bill"></i>
         </button>
         <div class="w-full text-center p-3 pt-10">Current Amount:</div>
         <div class="w-full text-center p-3 pb-10 text-6xl">5000</div>
@@ -175,20 +173,9 @@
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
-          <i class="fas fa-circle-info"></i>
+          <i class="fas fa-coins"></i>
         </button>
         <div class="w-full text-center p-3 pt-10">Total Amount:</div>
-        <div class="w-full text-center p-3 pb-10 text-6xl">5000</div>
-      </div>
-      <div
-        class="col-span-1 xl:col-span-2 bg-[#ff6666]/90 hover:bg-[#ff6666]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
-      >
-        <button
-          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
-        >
-          <i class="fas fa-circle-info"></i>
-        </button>
-        <div class="w-full text-center p-3 pt-10">System Reserve Amount:</div>
         <div class="w-full text-center p-3 pb-10 text-6xl">5000</div>
       </div>
       <div
@@ -197,9 +184,20 @@
         <button
           class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
         >
-          <i class="fas fa-circle-info"></i>
+          <i class="fas fa-lock"></i>
         </button>
         <div class="w-full text-center p-3 pt-10">User Reserve Amount:</div>
+        <div class="w-full text-center p-3 pb-10 text-6xl">5000</div>
+      </div>
+      <div
+        class="col-span-1 xl:col-span-2 bg-[#ff6666]/90 hover:bg-[#ff6666]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+      >
+        <button
+          class="absolute top-0 left-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          <i class="fas fa-shield-alt"></i>
+        </button>
+        <div class="w-full text-center p-3 pt-10">System Reserve Amount:</div>
         <div class="w-full text-center p-3 pb-10 text-6xl">5000</div>
       </div>
     </div>
@@ -372,12 +370,13 @@
           </div>
         </div>
       </div>
-      <div
+      <!--This one might not be nesecary right now so i might have to move it to another page-->
+      <!-- <div
         class="mt-2 col-span-full p-4 bg-[#ffcc66]/90 hover:bg-[#ffcc66]/70 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
       >
         <canvas id="MaxAmount" class="bg-white/90 rounded-lg"></canvas>
       </div>
-      <script src="MaxAmount.js"></script>
+      <script src="MaxAmount.js"></script> -->
       <div
         class="mt-5 lg:mt-0 col-span-full lg:col-span-full bg-black/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-sm text-white"
       >

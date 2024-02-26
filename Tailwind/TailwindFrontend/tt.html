@@ -2,44 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Angled Sides Div</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f3d48ce569.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <style>
-      .angled-div {
-        width: 200px;
-        height: 200px;
-        background-color: #007bff;
-        position: relative;
-        overflow: hidden;
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
       }
 
-      .angled-div::before,
-      .angled-div::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: inherit;
-      }
-
-      .angled-div::before {
-        border-radius: 0 0 50% 50%;
-        bottom: 0;
-        left: 0;
-        transform: skewX(45deg);
-        transform-origin: bottom left;
-      }
-
-      .angled-div::after {
-        border-radius: 50% 50% 0 0;
-        top: 0;
-        right: 0;
-        transform: skewX(-45deg);
-        transform-origin: top right;
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
       }
     </style>
   </head>
-  <body>
-    <div class="angled-div"></div>
+  <body class="h-screen flex items-center justify-center">
+    <div id="myDiv" class="relative">
+      Hover over me
+      <div
+        id="tooltip"
+        class="hidden text-center w-full absolute bg-gray-800 text-white text-sm px-2 py-1 rounded-md shadow-md"
+      >
+        Tooltip Text
+      </div>
+    </div>
+    <script>
+      const myDiv = document.getElementById("myDiv");
+      const tooltip = document.getElementById("tooltip");
+
+      myDiv.addEventListener("mouseover", function () {
+        tooltip.classList.remove("hidden");
+      });
+
+      myDiv.addEventListener("mouseout", function () {
+        tooltip.classList.add("hidden");
+      });
+    </script>
   </body>
 </html>
