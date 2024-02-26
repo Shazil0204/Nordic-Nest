@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
       context1.style.filter = "none"; // Remove blur effect from body
       context2.style.filter = "none"; // Remove blur effect from body
       toggleSidebarBtn.style.display = "block";
+      sidebar.classList.remove(
+        "translate-x-0",
+        "drop-shadow-[0_15px_15px_rgba(0,0,0,1)]"
+      );
     }
   }
 });
