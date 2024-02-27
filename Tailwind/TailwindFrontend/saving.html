@@ -31,5 +31,98 @@
       }
     </style>
   </head>
-  <body class="bg-emerald-300 h-screen"></body>
+  <body class="bg-emerald-900/75">
+    <!--Search bar-->
+    <div class="flex items-center space-x-4">
+      <!-- Search Input -->
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Search"
+          class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-400"
+        />
+        <button
+          class="absolute inset-y-0 right-0 px-3 py-2 bg-gray-200 text-gray-600 rounded-r-md focus:outline-none group"
+        >
+          <i
+            class="fa-brands fa-searchengin group-hover:rotate-90 duration-500"
+          ></i>
+        </button>
+      </div>
+
+      <!-- Filter Dropdown -->
+      <div class="relative">
+        <div class="flex">
+          <button
+            type="button"
+            onclick="showOptions()"
+            class="inline-flex justify-center min-w-[120px] rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            Filter
+            <!-- Heroicon name: chevron-down -->
+            <i
+              id="dropdownicon"
+              class="ml-1.5 mt-1 fa-solid fa-caret-down rotate-180 transition"
+            ></i>
+          </button>
+        </div>
+        <!-- Dropdown panel, show/hide based on dropdown state. -->
+        <div
+          id="filtermenu"
+          class="hidden origin-top-right absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+        >
+          <div
+            class="py-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Default</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Expiring</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Fresh</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Alphabetical</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Alphabetical Reverse</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Latest</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              role="menuitem"
+              >Oldest</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/filter.js"></script>
 </html>

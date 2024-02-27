@@ -32,13 +32,28 @@
     </style>
   </head>
   <body class="h-screen flex items-center justify-center">
-    <div class="relative group">
+    <!-- <div class="relative group">
       Hover over me
       <div
         class="text-center w-full absolute bg-gray-800 text-white text-sm px-2 py-1 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
       >
         Tooltip Text
       </div>
-    </div>
+    </div> -->
+    <style>
+      #myDiv {
+        overflow: hidden; /* Hide content that exceeds the div's height */
+        height: 0; /* Start with height 0 */
+        transition: height 0.5s; /* Add a transition effect for smooth height change */
+      }
+
+      #myDiv.visible {
+        height: 200px; /* Set the desired height when the div is visible */
+      }
+    </style>
+    <div id="myDiv">Content goes here</div>
+    <script>
+      document.getElementById("myDiv").classList.toggle("visible");
+    </script>
   </body>
 </html>
