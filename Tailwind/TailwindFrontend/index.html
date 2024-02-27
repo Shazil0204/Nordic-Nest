@@ -32,9 +32,10 @@
     </style>
   </head>
   <body class="relative">
+    <!--Button for the sidebar-->
     <button
       id="toggleSidebar"
-      class="fixed top-2 right-2 z-50 text-4xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+      class="fixed top-2 right-2 z-50 text-4xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] px-1 bg-white/50 rounded-lg"
     >
       <i class="fas fa-bars"></i>
     </button>
@@ -82,58 +83,63 @@
         <!-- Navigation Links -->
         <nav class="mt-4">
           <ul>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-                >Dashboard</a
-              >
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+            >
+              <i class="fas fa-tachometer-alt pr-2 pt-1"></i>
+              <a href="#"> Dashboard </a>
             </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-                >Chat</a
-              >
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] relative"
+            >
+              <i class="fa-solid fa-message pr-2 pt-1"> </i>
+              <a href="#"> messages </a>
+              <i
+                class="absolute top-1 left-7 fas fa-circle text-xs text-red-500 pt-1"
+              ></i>
             </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-                >Chart</a
-              >
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] relative"
+            >
+              <i class="fa-solid fa-comments pr-2 pt-1"> </i>
+              <a href="#"> Chat </a>
+              <i
+                class="absolute top-1 left-7 fas fa-circle text-xs text-red-500 pt-1"
+              ></i>
             </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-                >Saving</a
-              >
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+            >
+              <i class="fas fa-chart-bar pr-2 pt-1"></i>
+              <a href="#"> Chart </a>
             </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-                >Loan</a
-              >
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+            >
+              <i class="fas fa-piggy-bank pr-2 pt-1"></i>
+              <a href="#"> Saving </a>
             </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 text-sm hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-                >CraftHub</a
-              >
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+            >
+              <i class="fas fa-money-check-alt pr-2 pt-1"></i>
+              <a href="#"> Loan </a>
+            </li>
+            <li
+              class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
+            >
+              <i class="fas fa-cubes pr-2 pt-1"></i>
+              <a href="#">CraftHub</a>
             </li>
           </ul>
         </nav>
 
         <!-- Sign Out -->
-        <div class="mt-auto">
-          <a
-            href="#"
-            class="block py-2 px-4 text-sm bg-red-600 hover:bg-red-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
-            >Sign Out</a
-          >
+        <div
+          class="block py-2 px-4 text-xl bg-red-600 hover:bg-red-700 rounded-lg duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+        >
+          <i class="fas fa-sign-out-alt pr-2 pt-1"></i>
+          <a href="#">Sign Out</a>
         </div>
       </div>
     </div>
@@ -145,8 +151,14 @@
       class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-xl text-center transition-filter duration-1000 ease-in-out"
     >
       <div
-        class="col-span-2 xl:col-span-2 bg-[#66cc99]/90 hover:bg-[#66cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold"
+        class="col-span-2 xl:col-span-2 bg-[#66cc99]/90 hover:bg-[#66cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group"
       >
+        <div
+          class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin"
+        >
+          The current usable amount reflects funds readily accessible for
+          spending
+        </div>
         <div class="w-full flex items-center justify-center">
           <i class="fas fa-money-check text-left w-1/2 text-6xl"></i>
           <div class="w-1/2 px-2">
@@ -156,8 +168,14 @@
         </div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 bg-[#ffcc00]/90 hover:bg-[#ffcc00]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold"
+        class="col-span-1 xl:col-span-2 bg-[#ffcc00]/90 hover:bg-[#ffcc00]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group"
       >
+        <div
+          class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin"
+        >
+          Your current amount signifies the balance in your bank account at
+          present
+        </div>
         <div class="w-full flex items-center justify-center">
           <i class="fas fa-money-bill text-left w-1/2 text-6xl"></i>
           <div class="w-1/2 px-2">
@@ -167,37 +185,54 @@
         </div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 bg-[#3399ff]/90 hover:bg-[#3399ff]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold"
+        class="col-span-1 xl:col-span-2 bg-[#3399ff]/90 hover:bg-[#3399ff]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group"
       >
-      <div class="w-full flex items-center justify-center">
-        <i class="fas fa-coins text-left w-1/2 text-6xl"></i>
-        <div class="w-1/2 px-2">
-          <p class="h-1/2">Total Amount:</p>
-          <p class="text-4xl h-1/2">5000</p>
+        <div
+          class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin"
+        >
+          Total amount denotes the sum received monthly by the user
         </div>
-      </div>
+        <div class="w-full flex items-center justify-center">
+          <i class="fas fa-coins text-left w-1/2 text-6xl"></i>
+          <div class="w-1/2 px-2">
+            <p class="h-1/2">Total Amount:</p>
+            <p class="text-4xl h-1/2">5000</p>
+          </div>
+        </div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 bg-[#ff9933]/90 hover:bg-[#ff9933]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold"
+        class="col-span-1 xl:col-span-2 bg-[#ff9933]/90 hover:bg-[#ff9933]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group"
       >
-      <div class="w-full flex items-center justify-center">
-        <i class="fas fa-lock text-left w-1/2 text-6xl"></i>
-        <div class="w-1/2 px-2">
-          <p class="h-1/2">User Reserve:</p>
-          <p class="text-4xl h-1/2">5000</p>
+        <div
+          class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin"
+        >
+          User reserve amount indicates funds set aside for specific purposes or
+          emergencies
         </div>
-      </div>
+        <div class="w-full flex items-center justify-center">
+          <i class="fas fa-lock text-left w-1/2 text-6xl"></i>
+          <div class="w-1/2 px-2">
+            <p class="h-1/2">User Reserve:</p>
+            <p class="text-4xl h-1/2">5000</p>
+          </div>
+        </div>
       </div>
       <div
-        class="col-span-1 xl:col-span-2 bg-[#ff6666]/90 hover:bg-[#ff6666]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold"
+        class="col-span-1 xl:col-span-2 bg-[#ff6666]/90 hover:bg-[#ff6666]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group"
       >
-      <div class="w-full flex items-center justify-center">
-        <i class="fas fa-shield-alt text-left w-1/2 text-6xl "></i>
-        <div class="w-1/2 px-2">
-          <p class="h-1/2">System Reserve:</p>
-          <p class="text-4xl h-1/2">5000</p>
+        <div
+          class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin"
+        >
+          System reserve amount represents funds reserved by the system for
+          operational needs or contingencies
         </div>
-      </div>
+        <div class="w-full flex items-center justify-center">
+          <i class="fas fa-shield-alt text-left w-1/2 text-6xl"></i>
+          <div class="w-1/2 px-2">
+            <p class="h-1/2">System Reserve:</p>
+            <p class="text-4xl h-1/2">5000</p>
+          </div>
+        </div>
       </div>
     </div>
 
