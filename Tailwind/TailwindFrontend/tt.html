@@ -31,29 +31,27 @@
       }
     </style>
   </head>
-  <body class="h-screen flex items-center justify-center">
-    <!-- <div class="relative group">
-      Hover over me
+  <body class="bg-green-200 p-4">
+    <div class="grid grid-cols-8 xl:grid-cols-12 gap-3">
       <div
-        class="text-center w-full absolute bg-gray-800 text-white text-sm px-2 py-1 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+        class="col-span-2 bg-black/30 rounded-lg flex items-center justify-center min-h-full"
       >
-        Tooltip Text
+        Search Bar
       </div>
-    </div> -->
-    <style>
-      #myDiv {
-        overflow: hidden; /* Hide content that exceeds the div's height */
-        height: 0; /* Start with height 0 */
-        transition: height 0.5s; /* Add a transition effect for smooth height change */
-      }
-
-      #myDiv.visible {
-        height: 200px; /* Set the desired height when the div is visible */
-      }
-    </style>
-    <div id="myDiv">Content goes here</div>
-    <script>
-      document.getElementById("myDiv").classList.toggle("visible");
-    </script>
+      <div class="col-span-4 xl:col-span-8 bg-black/30 rounded-lg p-1">
+        <input class="col-span-6 bg-white/30 rounded-lg w-full p-2" />
+      </div>
+      <div
+        class="col-span-1 bg-blue-500 rounded-lg flex items-center justify-center min-h-full hover:bg-green-500 hover:-rotate-12 duration-700"
+      >
+        Search
+      </div>
+      <div
+        class="col-span-1 bg-blue-500 rounded-lg flex items-center justify-center min-h-full hover:bg-green-500 duration-700"
+      >
+        Filter
+        <i class="ml-4 fas fa-arrow-up"></i>
+      </div>
+    </div>
   </body>
 </html>
