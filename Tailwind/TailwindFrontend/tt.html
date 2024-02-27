@@ -32,6 +32,8 @@
     </style>
   </head>
   <body class="bg-green-200 p-4">
+    
+    <!--Yop bar grid sustem-->
     <div class="grid grid-cols-2 md:grid-cols-8 xl:grid-cols-12 gap-3">
       <input
         class="xl:col-start-3 md:col-span-5 rounded-lg w-full p-2"
@@ -42,25 +44,17 @@
       >
         Search
       </div>
-      <!-- <div
-        class=""
-      >
-        Filter
-        <i class="ml-4 fa-solid fa-caret-up"></i>
-        
-      </div> -->
+
       <button
         type="button"
         onclick="showOptions()"
         class="col-span-1 bg-blue-500 rounded-lg flex items-center justify-center min-h-full hover:bg-blue-700 hover:scale-105 hover:cursor-pointer relative text-white duration-500"
       >
         Filter
-        <!-- Heroicon name: chevron-down -->
         <i
           id="dropdownicon"
           class="ml-1.5 mt-1 fa-solid fa-caret-down rotate-180 transition"
         ></i>
-        <!-- Dropdown panel, show/hide based on dropdown state. -->
         <div
           id="filtermenu"
           class="hidden origin-top-right absolute top-12 min-w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
@@ -123,6 +117,8 @@
         Default
       </div>
     </div>
+    
+    <!--Default Saving Account-->
   </body>
 </html>
 <script src="/js/filter.js"></script>
