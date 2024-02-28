@@ -34,18 +34,18 @@
   <body class="bg-emerald-900/75">
     <div class="grid grid-cols-12 gap-4 p-4 text-white">
       <input
-        class="lg:col-start-2 xl:col-start-2 col-span-full md:col-span-3 lg:col-span-4 xl:col-span-7 rounded-lg p-3 text-black"
+        class="lg:col-start-2 xl:col-start-2 col-span-full md:col-span-3 lg:col-span-4 xl:col-span-7 rounded-lg p-3 text-black drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)] duration-300"
         placeholder="Seacrh Name"
       />
       <button
-        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg hover:scale-110 hover:bg-blue-700 duration-300"
+        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg hover:scale-110 hover:bg-blue-700 duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
       >
         Search
       </button>
       <button
         type="button"
         id="filter"
-        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg flex items-center justify-center min-h-full hover:cursor-pointer relative duration-500"
+        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg flex items-center justify-center min-h-full hover:cursor-pointer relative duration-500 drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
       >
         Filter
         <i
@@ -109,14 +109,14 @@
       </button>
       <button
         id="currentfilter"
-        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg hover:text-white hover:scale-110 hover:bg-blue-700 duration-300 p-4"
+        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg hover:text-white hover:scale-110 hover:bg-blue-700 duration-300 p-4 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
       >
         Default
       </button>
     </div>
     <div class="grid grid-cols-12 gap-4 p-4">
       <div
-        class="col-span-full lg:col-span-10 lg:col-start-2 bg-white p-6 rounded-lg shadow-lg"
+        class="col-span-full lg:col-span-10 lg:col-start-2 bg-white p-6 rounded-lg shadow-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)] duration-300 -z-10"
       >
         <h2 class="text-3xl font-bold text-gray-900 mb-4">
           Default Savings Account
@@ -181,13 +181,28 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-12 p-4">
+    <div class="grid grid-cols-12 p-4 gap-4 text-white">
       <div class="lg:col-start-2 col-span-full lg:col-span-10">
         <canvas
           id="SavingInsert"
-          class="bg-white/90 rounded-lg text-2xl"
+          class="bg-white/90 rounded-lg text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)] duration-300"
         ></canvas>
       </div>
+      <button
+        class="p-2 py-4 text-6xl font-thin mt-2 col-span-4 lg:col-span-3 bg-blue-500 hover:bg-blue-900 hover:scale-95 duration-300 rounded-lg lg:col-start-2 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+      >
+        <i class="fas fa-plus"></i>
+      </button>
+      <button
+        class="p-2 py-4 text-6xl font-thin mt-2 col-span-4 lg:col-span-4 bg-yellow-500 hover:bg-yellow-900 hover:scale-95 duration-300 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+      >
+        <i class="fas fa-pencil-alt"></i>
+      </button>
+      <button
+        class="p-2 py-4 text-6xl font-thin mt-2 col-span-4 lg:col-span-3 bg-red-500 hover:bg-red-900 hover:scale-95 duration-300 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+      >
+        <i class="fas fa-trash-alt"></i>
+      </button>
     </div>
   </body>
 </html>

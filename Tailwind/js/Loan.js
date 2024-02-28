@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tooltip: {
           callbacks: {
             label: function (context) {
-              return "You have inserted: " + context.raw + " in this month";
+              return "You have paid: " + context.raw + " in this month";
             },
           },
         },
