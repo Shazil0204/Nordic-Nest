@@ -31,7 +31,85 @@
       }
     </style>
   </head>
-  <body class="bg-teal-300 flex justify-center p-2 h-screen relative">
-    <div class="absolute bottom-10">hello world</div>
+  <body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-2xl font-bold mb-4">Messages</h1>
+      <div class="overflow-y-auto">
+        <div class="text-center text-sm text-gray-400 m-4">
+          January 25, 2024
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-xmark text-center text-red-500"></i>
+        </div>
+        <div class="text-center text-sm text-gray-400 m-4">
+          January 26, 2024
+        </div>
+        <div class="text-center">
+          <i class="fa-solid fa-xmark text-red-500"></i>
+        </div>
+        <div class="text-center text-sm text-gray-400 m-4">
+          January 27, 2024
+        </div>
+
+        <!-- User Messages -->
+        <div class="text-right mb-2">
+          <div
+            class="max-w-sm mx-auto bg-blue-500 text-white p-2 rounded-lg inline-block"
+          >
+            Hello Admin!
+          </div>
+          <i class="fa-solid fa-user text-blue-500"></i>
+        </div>
+        <div class="text-right mb-2">
+          <div
+            class="max-w-sm mx-auto bg-blue-500 text-white p-2 rounded-lg inline-block"
+          >
+            I need help today?
+          </div>
+          <i class="fa-solid fa-user text-blue-500"></i>
+        </div>
+        <!-- Admin Messages -->
+        <div class="text-left mb-2">
+          <i class="fa-solid fa-user-secret text-green-500"></i>
+          <div
+            class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block"
+          >
+            Hi there! How can I assist you?
+          </div>
+        </div>
+        <div class="text-left mb-2">
+          <i class="fa-solid fa-user-secret text-green-500"></i>
+          <div
+            class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block"
+          >
+            Please let me know what you need help with.
+          </div>
+        </div>
+        <div class="text-left mb-2">
+          <i class="fa-solid fa-user-secret text-green-500"></i>
+          <div
+            class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block"
+          >
+            Please let me know what you need help with. Please let me know what
+            you need help with. Please let me know what you need help with.
+          </div>
+        </div>
+        <!-- Message Input -->
+      </div>
+    </div>
+
+    <!-- Fixed bottom input bar -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-gray-800 px-4 py-2 flex items-center"
+    >
+      <input
+        type="text"
+        placeholder="Type your message here..."
+        class="flex-1 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none"
+      />
+      <button class="ml-4 bg-blue-500 text-white px-4 py-2 rounded-lg">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
   </body>
 </html>
