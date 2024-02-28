@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f3d48ce569.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+      }
+
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
+      }
+    </style>
+  </head>
+  <body class="bg-emerald-900/75">
+    <div class="max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Saving Account Details</div>
+        <div class="mb-4">
+          <p class="text-gray-700">Account Name:</p>
+          <p class="text-gray-900 font-semibold">Your Saving Account</p>
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-700">Total Amount:</p>
+          <p class="text-gray-900 font-semibold">$10,000.00</p>
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-700">Current Amount:</p>
+          <input
+            type="text"
+            class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
+            placeholder="$0.00"
+          />
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-700">Description:</p>
+          <textarea
+            class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"
+            placeholder="Enter description here"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
