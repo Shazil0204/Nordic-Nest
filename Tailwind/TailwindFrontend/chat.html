@@ -32,84 +32,69 @@
     </style>
   </head>
   <body class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 py-8">
-      <h1 class="text-2xl font-bold mb-4">Messages</h1>
-      <div class="overflow-y-auto">
-        <div class="text-center text-sm text-gray-400 m-4">
-          January 25, 2024
-        </div>
-        <div class="text-center">
-          <i class="fa-solid fa-xmark text-center text-red-500"></i>
-        </div>
-        <div class="text-center text-sm text-gray-400 m-4">
-          January 26, 2024
-        </div>
-        <div class="text-center">
-          <i class="fa-solid fa-xmark text-red-500"></i>
-        </div>
-        <div class="text-center text-sm text-gray-400 m-4">
-          January 27, 2024
-        </div>
-
-        <!-- User Messages -->
-        <div class="text-right mb-2">
-          <div
-            class="max-w-sm mx-auto bg-blue-500 text-white p-2 rounded-lg inline-block"
-          >
-            Hello Admin!
-          </div>
-          <i class="fa-solid fa-user text-blue-500"></i>
-        </div>
-        <div class="text-right mb-2">
-          <div
-            class="max-w-sm mx-auto bg-blue-500 text-white p-2 rounded-lg inline-block"
-          >
-            I need help today?
-          </div>
-          <i class="fa-solid fa-user text-blue-500"></i>
-        </div>
-        <!-- Admin Messages -->
-        <div class="text-left mb-2">
-          <i class="fa-solid fa-user-secret text-green-500"></i>
-          <div
-            class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block"
-          >
-            Hi there! How can I assist you?
-          </div>
-        </div>
-        <div class="text-left mb-2">
-          <i class="fa-solid fa-user-secret text-green-500"></i>
-          <div
-            class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block"
-          >
-            Please let me know what you need help with.
-          </div>
-        </div>
-        <div class="text-left mb-2">
-          <i class="fa-solid fa-user-secret text-green-500"></i>
-          <div
-            class="max-w-sm mx-auto bg-green-500 text-white p-2 rounded-lg inline-block"
-          >
-            Please let me know what you need help with. Please let me know what
-            you need help with. Please let me know what you need help with.
-          </div>
-        </div>
-        <!-- Message Input -->
-      </div>
-    </div>
-
-    <!-- Fixed bottom input bar -->
-    <div
-      class="fixed bottom-0 left-0 right-0 bg-gray-800 px-4 py-2 flex items-center"
+    <a
+      href="index.html"
+      class="absolute p-4 py-2 bg-gray-500/50 top-2 left-2 rounded-lg hover:text-red-500 hover:bg-gray-500 hover:scale-90 duration-300"
     >
-      <input
-        type="text"
-        placeholder="Type your message here..."
-        class="flex-1 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none"
-      />
-      <button class="ml-4 bg-blue-500 text-white px-4 py-2 rounded-lg">
-        <i class="fas fa-paper-plane"></i>
-      </button>
+      <i class="fas fa-backward"></i>
+    </a>
+    <div class="flex flex-col h-dvh">
+      <div class="flex-1 overflow-auto px-4 py-2 text-center">
+        <h1
+          class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text text-xl mb-4"
+        >
+          ONLINE CONVERSATION
+        </h1>
+
+        <!--User Message-->
+        <div class="flex justify-end mb-4">
+          <div class="flex">
+            <div class="bg-blue-200 text-blue-800 rounded-lg p-4 max-w-md">
+              <p class="text-sm text-justify text-pretty font-mono">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </div>
+            <i
+              class="fas fa-user p-1 pl-4 text-blue-500 sm:text-md md:text-xl lg:text-3xl xl:text-6xl"
+            ></i>
+          </div>
+        </div>
+
+        <!--Admin Message-->
+        <div class="flex justify-start mb-4">
+          <div class="flex">
+            <i
+              class="fas fa-user-tie p-1 pr-4 text-green-500 sm:text-md md:text-xl lg:text-3xl xl:text-6xl"
+            ></i>
+            <div class="bg-green-200 text-green-800 rounded-lg p-4 max-w-md">
+              <p class="text-sm text-justify text-pretty font-mono">
+                Lorem Ipsum is simply dummy text of the printing and
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="flex justify-between items-center bg-gray-800 px-4 py-2">
+        <textarea
+          class="w-full resize-none py-2 px-4 bg-gray-700 focus:outline-none"
+          placeholder="Type your message..."
+        ></textarea>
+        <button
+          type="submit"
+          class="ml-4 px-6 py-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded"
+        >
+          <i class="fas fa-paper-plane w-full"></i>
+        </button>
+      </form>
     </div>
   </body>
 </html>
