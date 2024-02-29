@@ -50,6 +50,7 @@
         <!-- Logo/Header -->
         <div class="flex items-center justify-center p-4">
           <a
+            href="index.html"
             class="bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative w-3/5 text-center text-4xl hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
             >Nordic Nest</a
           >
@@ -69,15 +70,21 @@
               <p class="text-sm text-white font-semibold">JohnDoe</p>
             </div>
             <div>
-              <p class="text-sm text-gray-400">Client ID:</p>
+              <p class="text-sm text-gray-400 text-right">Client ID:</p>
               <p class="text-sm text-white font-semibold">1234567890</p>
             </div>
           </div>
-          <button
-            class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
-          >
-            Edit
-          </button>
+          <div class="flex justify-between items-center mt-2">
+            <button
+              class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            >
+              Edit
+            </button>
+            <div>
+              <p class="text-sm text-gray-400">Became a Client:</p>
+              <p class="text-sm text-white text-right font-semibold">01:01:2024</p>
+            </div>
+          </div>
         </div>
 
         <!-- Navigation Links -->
@@ -93,7 +100,7 @@
               class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] relative"
             >
               <i class="fa-solid fa-message pr-2 pt-1"> </i>
-              <a href="message.html" class="w-full"> messages </a>
+              <a href="message.html" class="w-full"> Messages </a>
               <i
                 class="absolute top-1 left-7 fas fa-circle text-xs text-red-500 pt-1"
               ></i>
@@ -129,12 +136,13 @@
         </nav>
 
         <!-- Sign Out -->
-        <div
-          class="block py-2 px-4 text-xl bg-red-600 hover:bg-red-700 rounded-lg duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
+        <a
+          href="index.html"
+          class="block w-full py-2 px-4 text-xl bg-red-600 hover:bg-red-700 rounded-lg duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]"
         >
           <i class="fas fa-sign-out-alt pr-2 pt-1"></i>
-          <a href="#" class="w-full">Sign Out</a>
-        </div>
+          Sign Out
+        </a>
       </div>
     </div>
 
