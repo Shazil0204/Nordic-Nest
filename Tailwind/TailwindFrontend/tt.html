@@ -31,93 +31,60 @@
       }
     </style>
   </head>
-  <body class="bg-green-200 p-2">
-    <!--Yop bar grid sustem-->
-    <div class="grid grid-cols-2 md:grid-cols-8 xl:grid-cols-12 gap-3">
-      <input
-        class="xl:col-start-3 md:col-span-5 rounded-lg w-full p-2"
-        placeholder="Saving Account Name"
-      />
-      <div
-        class="col-span-1 bg-blue-500 rounded-lg flex items-center justify-center min-h-full hover:bg-blue-700 hover:scale-105 hover:text-white duration-700 hover:cursor-pointer text-white"
-      >
-        Search
-      </div>
-
-      <button
-        type="button"
-        id="filter"
-        class="col-span-4 md:col-span-3 lg:col-span-2 xl:col-span-1 bg-blue-500 rounded-lg hover:text-white flex items-center justify-center min-h-full hover:bg-blue-700 hover:scale-105 hover:cursor-pointer relative text-white duration-500"
-      >
-        Filter
-        <i
-          id="dropdownicon"
-          class="ml-1.5 mt-1 fa-solid fa-caret-down rotate-180 transition"
-        ></i>
-        <div
-          id="filtermenu"
-          class="hidden origin-top-right absolute top-12 min-w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10"
+  <body class="bg-gray-900 text-white">
+    <div class="flex flex-col h-dvh">
+      <div class="flex-1 overflow-auto px-4 py-2 text-center">
+        <h1
+          class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text text-xl mb-4"
         >
-          <div
-            class=""
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="options-menu"
-          >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-emerald-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Default</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Expiring</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Fresh</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Alphabetical</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Reverse</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Latest</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 my-1 text-xl bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]"
-              role="menuitem"
-              >Oldest</a
-            >
+          ONLINE CONVERSATION
+        </h1>
+
+        <!--User Message-->
+        <div class="flex justify-end mb-4">
+          <div class="flex">
+            <div class="bg-blue-200 text-blue-800 rounded-lg p-4 max-w-md">
+              <p class="text-sm text-justify text-pretty font-mono">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </div>
+            <i class="fas fa-user p-1 pl-4 text-blue-500 sm:text-md md:text-xl lg:text-3xl xl:text-6xl"></i>
           </div>
         </div>
-      </button>
 
-      <button
-        id="currentfilter"
-        class="bg-black/30 rounded-lg flex items-center justify-center min-h-full hover:scale-105 hover:bg-black/60 duration-700 hover:cursor-pointer text-white"
-      >
-        Default
-      </button>
+        <!--Admin Message-->
+        <div class="flex justify-start mb-4">
+          <div class="flex">
+            <i class="fas fa-user-tie p-1 pr-4 text-green-500 sm:text-md md:text-xl lg:text-3xl xl:text-6xl"></i>
+            <div class="bg-green-200 text-green-800 rounded-lg p-4 max-w-md">
+              <p class="text-sm text-justify text-pretty font-mono">
+                Lorem Ipsum is simply dummy text of the printing and
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="flex justify-between items-center bg-gray-800 px-4 py-2">
+        <textarea
+          class="w-full resize-none py-2 px-4 bg-gray-700 focus:outline-none"
+          placeholder="Type your message..."
+        ></textarea>
+        <button
+          type="submit"
+          class="ml-4 px-6 py-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded"
+        >
+          <i class="fas fa-paper-plane w-full"></i>
+        </button>
+      </form>
     </div>
   </body>
 </html>
-<script src="/js/filter.js"></script>
-<script src="/js/DefaultSaving.js"></script>
