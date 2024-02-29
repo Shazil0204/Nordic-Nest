@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f3d48ce569.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+      }
+
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="index.html"
+      class="absolute p-4 py-2 bg-gray-500/50 top-2 left-2 rounded-lg hover:text-red-500 hover:bg-gray-500 hover:scale-90 duration-300"
+    >
+      <i class="fas fa-backward"></i>
+    </a>
+    <div class="lg:grid grid-cols-2 gap-2 px-2 bg-black/10">
+      <!--This is the main title-->
+      <div class="col-span-full text-center">
+        <h1
+          class="bg-gradient-to-r from-indigo-600 via-green-500 to-blue-400 inline-block text-transparent bg-clip-text font-bold font-mono text-pretty text-6xl"
+        >
+          CHART
+        </h1>
+      </div>
+      <div
+        class="mt-2 col-span-1 p-4 bg-[#66ccff]/90 hover:bg-[#66ccff]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Monthly Usage vs. Max Limit: A Visual Analysis
+        </p>
+        <div class="flex justify-center items-center">
+          <canvas id="Weekchart" class="bg-white/90 rounded-lg"></canvas>
+        </div>
+      </div>
+
+      <div
+        class="mt-2 col-span-1 p-4 bg-[#99cc99]/90 hover:bg-[#99cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Weekly Usage Analysis: Tracking User Consumption
+        </p>
+        <div class="flex justify-center items-center">
+          <canvas id="MaxAmount" class="bg-white/90 rounded-lg"></canvas>
+        </div>
+      </div>
+      <div
+        class="col-span-1 text-center font-bold font-mono text-pretty text-2xl bg-gray-100 rounded-lg p-2 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 mt-2"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Default Saving Account
+          <br />
+          Saving Account Progress: Track Your Savings Journey
+        </p>
+
+        <div class="w-full h-2 bg-white rounded-full overflow-hidden mt-5">
+          <div id="savingProgressBarFill" class="h-full rounded-full"></div>
+        </div>
+        <div class="flex">
+          <p class="text-sm text-gray-700 mb-1">Percentage:</p>
+          <p class="text-sm text-gray-900 mb-4 ml-4 w-full text-right pr-10">
+            9.8%
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-1 text-center font-bold font-mono text-pretty text-2xl bg-gray-100 rounded-lg p-2 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 mt-2"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Default Loan Account
+          <br />
+          Loan Repayment Progress: Visualizing Your Debt Reduction
+        </p>
+
+        <div class="w-full h-2 bg-white rounded-full overflow-hidden mt-5">
+          <div id="loanProgressBarFill" class="h-full rounded-full"></div>
+        </div>
+        <div class="flex">
+          <p class="text-sm text-gray-700 mb-1">Percentage:</p>
+          <p class="text-sm text-gray-900 mb-4 ml-4 w-full text-right pr-10">
+            9.8%
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-1 text-center font-bold font-mono text-pretty text-2xl bg-gray-100 rounded-lg p-2 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 mt-2"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Monthly Loan Payments: Tracking Your Repayment Progress
+        </p>
+        <canvas
+          id="LoanInsert"
+          class="bg-white/90 rounded-lg text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)] duration-300"
+        ></canvas>
+      </div>
+
+      <div
+        class="col-span-1 text-center font-bold font-mono text-pretty text-2xl bg-gray-100 rounded-lg p-2 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 mt-2"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Monthly Savings Breakdown: Tracking Your Saving Habits
+        </p>
+        <canvas
+          id="SavingInsert"
+          class="bg-white/90 rounded-lg text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)] duration-300"
+        ></canvas>
+      </div>
+
+      <div
+        class="col-span-full p-4 bg-[#99cc99]/90 hover:bg-[#99cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 mt-2"
+      >
+        <p
+          class="text-center font-bold font-mono text-pretty text-2xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
+        >
+          Monthly Usage Breakdown: Tracking Consumption Trends
+        </p>
+        <div class="flex justify-center items-center">
+          <canvas id="MonthlyUsage" class="bg-white/90 rounded-lg"></canvas>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="/js/Weekchart.js"></script>
+<script src="/js/MaxAmount.js"></script>
+<script src="/js/DefaultLoan.js"></script>
+<script src="/js/Saving.js"></script>
+<script src="/js/DefaultSaving.js"></script>
+<script src="/js/Loan.js"></script>
+<script src="/js/MonthlyUsage.js"></script>

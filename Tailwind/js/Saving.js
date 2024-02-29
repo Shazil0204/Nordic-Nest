@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       datasets: [
         {
-          label: "Total Amount Used",
+          label: "Saving",
           data: [
             1200, 1300, 1100, 900, 1000, 950, 1050, 1150, 1250, 1350, 1400,
             1300,
