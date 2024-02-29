@@ -31,7 +31,53 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 h-screen flex items-center justify-center">
+  <body class="bg-gray-900 text-white">
+    <a
+      href="index.html"
+      class="absolute p-4 py-2 bg-gray-500/50 top-2 left-2 rounded-lg hover:text-red-500 hover:bg-gray-500 hover:scale-90 duration-300"
+    >
+      <i class="fas fa-backward"></i>
+    </a>
+    <div class="flex flex-col h-screen items-center">
+      <div class="overflow-auto px-4 py-2 text-center w-full max-w-md">
+        <div class="bg-black/75 mb-4 rounded-lg p-4">
+          <h1
+            class="bg-gradient-to-r from-yellow-600 via-green-500 to-red-400 inline-block text-transparent bg-clip-text text-xl font-bold"
+          >
+            MESSAGES REGARDING YOUR FINANCE
+          </h1>
+        </div>
 
-</body>
+        <!--User Message-->
+        <div class="mb-4">
+          <div class="flex justify-end">
+            <div class="bg-blue-200 text-blue-800 rounded-lg p-4 max-w-md">
+              <p class="text-sm text-justify text-pretty font-mono">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Check if the user has visited the page before
+      if (localStorage.getItem("visited")) {
+        console.log("Welcome back!");
+      } else {
+        console.log("Welcome to the page for the first time!");
+        // Mark the user as visited
+        localStorage.setItem("visited", "true");
+      }
+    </script>
+  </body>
 </html>
