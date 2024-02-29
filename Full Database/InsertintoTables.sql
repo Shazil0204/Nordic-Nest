@@ -7,14 +7,20 @@ INSERT INTO NavBars(Name, URL, IsAuthBtn) VALUES
     ('Contact','/Contact',0),
 	('Manual','/Manual', 0),
 	('Login','/Login',1),
-	('Register','/Register',1);
+	('Register','/Register',1),
+	('Dashboard','/Dashboard',0),
+	('Charts','/Charts',0),
+	('CraftHub','/CraftHub',0);
 GO
 -- Insert initial data into the Pages table
 INSERT INTO Pages(Page) VALUES
     ('Home'),
     ('About'),
     ('Services'),
-    ('Contact');
+    ('Contact'),
+	('Dashboard'), 
+	('Charts'), 
+	('CraftHub');
 GO
 -- Linking pages with navigation bars in NavbarForPages table
 INSERT INTO NavbarForPages(PageID, NavID) VALUES
