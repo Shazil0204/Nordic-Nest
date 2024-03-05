@@ -4,6 +4,7 @@ function updateButtonText() {
   const totalAmount = parseFloat(document.getElementById("totalValue").value);
   const startingDate = new Date(document.getElementById("starting-date").value);
   const deadlineInput = document.getElementById("deadline").value;
+  const ContinueBtn = document.getElementById("ContinueBtn");
   const deadline = deadlineInput ? new Date(deadlineInput) : null;
   const amountToInsert = parseFloat(
     document.getElementById("valueToInsert").value
@@ -25,17 +26,19 @@ function updateButtonText() {
   const calculateBtn = document.getElementById("calculateBtn");
   if (totalAmount && deadline && amountToInsert && frequency) {
     calculateBtn.textContent = "Double check";
-    countDates();
+    ContinueBtn.style.display = "block";
   } else if (totalAmount && deadline && frequency) {
     calculateBtn.textContent = `Calculate Value to Insert ${frequency}`;
-    countDates();
+    ContinueBtn.style.display = "block";
   } else if (totalAmount && amountToInsert && frequency && !deadline) {
     calculateBtn.textContent = "Calculate Deadline";
+    ContinueBtn.style.display = "block";
   } else if (deadline && amountToInsert && frequency && !totalAmount) {
     calculateBtn.textContent = "Calculate Total Amount";
-    countDates();
+    ContinueBtn.style.display = "block";
   } else {
     calculateBtn.textContent = "Few Data Missing";
+    ContinueBtn.style.display = "none";
   }
 }
 
