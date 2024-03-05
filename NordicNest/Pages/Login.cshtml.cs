@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NordicNest.Model;
+using BCrypt.Net;
 
 namespace NordicNest.Pages
 {
@@ -15,7 +16,7 @@ namespace NordicNest.Pages
         public IActionResult OnPost(string username, string password)
         {
 
-            var userLogin = new NordicNest.Model.Login.UserLogin();
+            var userLogin = new Model.Login.UserLogin();
             var (returnpassword, returnvalue) = userLogin.CheckUser(username);
 
             if (returnvalue == 1)

@@ -1,13 +1,6 @@
 ﻿@{
     Model.NavBar.NavBarConnection navBarConnection = new Model.NavBar.NavBarConnection();
     List<Model.NavBar.NavBarProperties> NBP = navBarConnection.GetNavBars();
-    // Testing code
-    Console.WriteLine(NordicNest.Model.BasicProperties.CurrentPage);
-    foreach(var navbar in NBP)
-    {
-        Console.WriteLine("Navbars: " + navbar.Name);
-        Console.WriteLine("Navbars: " + navbar.URL);
-    }
 }
 <!DOCTYPE html>
 <html lang="en">

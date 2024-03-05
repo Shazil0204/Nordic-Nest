@@ -4,6 +4,7 @@
 @using NordicNest.Model.SavingLoanDatabase;
 @using NordicNest.Controller.DefaultSLController;
 @{
+	Layout = "~/Pages/Shared/_LayoutDashboard.cshtml";
 	NordicNest.Model.BasicProperties.CurrentPage = "Dashboard";
 	List<NordicNest.Model.Transaction.TransactionVariable> TV = new NordicNest.Model.Transaction.TransactionConnection().GetTransactionInfo();
 	List<NordicNest.Model.Subscriptions.SubVariables> SV = new NordicNest.Model.Subscriptions.SubConnection().GetSubscriptionInfo();

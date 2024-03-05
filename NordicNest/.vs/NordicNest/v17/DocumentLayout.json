@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "V:\\Nordic-Nest\\NordicNest\\",
+  "WorkspaceRootPath": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|v:\\nordic-nest\\nordicnest\\pages\\frontenddesign.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\frontenddesign.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\shared\\_layoutdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\shared\\_layoutdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 223,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashBoard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\DashBoard.cshtml",
+              "RelativeDocumentMoniker": "Pages\\DashBoard.cshtml",
+              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\DashBoard.cshtml",
+              "RelativeToolTip": "Pages\\DashBoard.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAoAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-05T12:37:55.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layoutdashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Shared\\_Layoutdashboard.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_Layoutdashboard.cshtml",
+              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Shared\\_Layoutdashboard.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_Layoutdashboard.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-05T12:35:08.559Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -23,19 +53,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrontendDesign.cshtml",
-              "DocumentMoniker": "V:\\Nordic-Nest\\NordicNest\\Pages\\FrontendDesign.cshtml",
-              "RelativeDocumentMoniker": "Pages\\FrontendDesign.cshtml",
-              "ToolTip": "V:\\Nordic-Nest\\NordicNest\\Pages\\FrontendDesign.cshtml",
-              "RelativeToolTip": "Pages\\FrontendDesign.cshtml",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAAAJoAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-19T18:39:45.595Z",
-              "EditorCaption": ""
             }
           ]
         }
