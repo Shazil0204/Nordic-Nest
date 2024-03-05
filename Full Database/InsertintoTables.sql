@@ -36,8 +36,8 @@ INSERT INTO NavbarForPages(PageID, NavID) VALUES
 -- Dummy data for Clients table
 INSERT INTO Clients (ClientNumber, FirstName, LastName, Email, UserName, Password, Gender, Age, ReadTeams, signup_completed)
 VALUES 
-(1001, 'John', 'Doe', 'john.doe@example.com', 'john_doe', 'password123', 0, 25, 0, 1),
-(1002, 'Jane', 'Smith', 'jane.smith@example.com', 'jane_smith', 'securepass456', 1, 30, 0, 0);
+(1001, 'John', 'Doe', 'john.doe@example.com', 'john_doe', '$2a$10$v7bhGx/F2n6i8OjhuMgFPOQ4zE1qLRTWbCqWw69zsYPuolsKSa3ku', 0, 25, 0, 1),
+(1002, 'Jane', 'Smith', 'jane.smith@example.com', 'jane_smith', '$2a$10$8jwys1sNieC4gTYbzWyLJOYkFdsriV5PFeAy96MwcffVfqWWHZLFu', 1, 30, 0, 0);
 
 -- Dummy data for ClientData table
 INSERT INTO ClientData (ClientID, TotalMonthlyAmount, UsableAmount, UserReserved, SystemReserved, TotalSavings, TotalLoans, TotalSubscriptions, TotalIncomes)
