@@ -22,20 +22,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/ClientCommunication.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50Q29tbXVuaWNhdGlvbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/Contact_Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdF9Gb3JtLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/DashBoard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaEJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/EmailVerified.cshtml]
@@ -80,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/ShowErrorMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0Vycm9yTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/UserDashboardPages/DashBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckRhc2hib2FyZFBhZ2VzXERhc2hCb2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Shaz0184/OneDrive - EFIF/Skrivebord/\!OnGoing/Nordic-Nest/NordicNest/Pages/_ViewImports.cshtml]

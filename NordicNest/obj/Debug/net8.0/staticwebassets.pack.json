@@ -81,44 +81,76 @@
       "PackagePath": "staticwebassets\\js\\Contact_Form.js"
     },
     {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\DefaultLoan.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\DefaultLoan.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\DefaultSaving.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\DefaultSaving.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\Loan.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\Loan.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\MaxAmount.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\MaxAmount.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\MonthlyUsage.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\MonthlyUsage.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\Saving.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\Saving.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\Savingcalculate.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\Savingcalculate.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\Start-end-date.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\Start-end-date.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\Weekchart.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\Weekchart.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\buttonTextUpdater.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\buttonTextUpdater.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\createsavingmanual.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\createsavingmanual.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\filter.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\filter.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\sidebartoggle.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\sidebartoggle.js"
+    },
+    {
+      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Dashboard\\todaydate.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard\\todaydate.js"
+    },
+    {
       "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\GoBack.js",
       "PackagePath": "staticwebassets\\js\\GoBack.js"
-    },
-    {
-      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\MaxAmount.js",
-      "PackagePath": "staticwebassets\\js\\MaxAmount.js"
-    },
-    {
-      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\MonthlyUsage.js",
-      "PackagePath": "staticwebassets\\js\\MonthlyUsage.js"
     },
     {
       "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Navbar.js",
       "PackagePath": "staticwebassets\\js\\Navbar.js"
     },
     {
-      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\ProgressBar.js",
-      "PackagePath": "staticwebassets\\js\\ProgressBar.js"
-    },
-    {
       "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\SweetInfo.js",
       "PackagePath": "staticwebassets\\js\\SweetInfo.js"
     },
     {
-      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Weekchart.js",
-      "PackagePath": "staticwebassets\\js\\Weekchart.js"
-    },
-    {
       "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\charCount.js",
       "PackagePath": "staticwebassets\\js\\charCount.js"
-    },
-    {
-      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\dashboardnav.js",
-      "PackagePath": "staticwebassets\\js\\dashboardnav.js"
-    },
-    {
-      "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\sweetalert.js",

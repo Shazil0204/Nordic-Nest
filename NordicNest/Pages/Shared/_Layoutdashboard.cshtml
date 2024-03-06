@@ -29,11 +29,112 @@
 		}
 	</style>
 </head>
-<body class="bg-red-500 h-[10000px]">
+<body>
+    <!--Button for the sidebar-->
+    <button id="toggleSidebar"
+            class="fixed top-2 right-2 z-50 text-4xl drop-shadow-[0_5px_5px_rgba(0,0,0,1)] px-1 bg-white/50 rounded-lg">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!--Side bar-->
+    <div class="flex">
+        <!-- Sidebar -->
+        <div id="sidebar"
+             class="bg-gray-800 text-white w-full md:w-1/3 lg:w-2/6 h-screen fixed top-0 left-0 transform -translate-x-full transition-transform duration-1000 ease-in-out z-10 md:rounded-r-lg p-2 overflow-y-auto">
+            <!-- Logo/Header -->
+            <div class="flex items-center justify-center p-4">
+                <a href="index.html"
+                   class="bg-blue-800 rounded-lg p-2 pt-1 hover:scale-110 duration-500 cursor-pointer hover:rotate-3 relative w-3/5 text-center text-4xl hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">Nordic Nest</a>
+                <button id="closeSidebar">
+                    <i class="absolute top-2 right-2 fa-solid fa-x text-white hover:text-red-500 text-2xl duration-300 z-50"></i>
+                </button>
+            </div>
+
+            <!-- User Card -->
+            <div class="mt-4 p-4 bg-gray-700 rounded-lg">
+                <h2 class="text-lg font-semibold text-white">User Information</h2>
+                <div class="flex justify-between items-center mt-2">
+                    <div>
+                        <p class="text-sm text-gray-400">Username:</p>
+                        <p class="text-sm text-white font-semibold">JohnDoe</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-400 text-right">Client ID:</p>
+                        <p class="text-sm text-white font-semibold">1234567890</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-2">
+                    <button class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                        Edit
+                    </button>
+                    <div>
+                        <p class="text-sm text-gray-400">Became a Client:</p>
+                        <p class="text-sm text-white text-right font-semibold">
+                            01:01:2024
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="mt-4">
+                <ul>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-tachometer-alt pr-2 pt-1"></i>
+                        <a href="index.html" class="w-full"> Dashboard </a>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] relative">
+                        <i class="fa-solid fa-message pr-2 pt-1"> </i>
+                        <a href="message.html" class="w-full"> Messages </a>
+                        <i class="absolute top-1 left-7 fas fa-circle text-xs text-red-500 pt-1"></i>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] relative">
+                        <i class="fa-solid fa-comments pr-2 pt-1"> </i>
+                        <a href="chat.html" class="w-full"> Chat </a>
+                        <i class="absolute top-1 left-7 fas fa-circle text-xs text-red-500 pt-1"></i>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-chart-bar pr-2 pt-1"></i>
+                        <a href="chart.html" class="w-full"> Chart </a>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-piggy-bank pr-2 pt-1"></i>
+                        <a href="saving.html" class="w-full"> Saving </a>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-money-check-alt pr-2 pt-1"></i>
+                        <a href="loan.html" class="w-full"> Loan </a>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-money-check-alt pr-2 pt-1"></i>
+                        <a href="createsavingaccount.html" class="w-full"> Create Saving </a>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-money-check-alt pr-2 pt-1"></i>
+                        <a href="createloan.html" class="w-full"> Create Loan </a>
+                    </li>
+                    <li class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+                        <i class="fas fa-money-check-alt pr-2 pt-1"></i>
+                        <a href="createsubscription.html" class="w-full"> Create subscription </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Sign Out -->
+            <a href="index.html"
+               class="block w-full py-2 px-4 text-xl bg-red-600 hover:bg-red-700 rounded-lg duration-300 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+                <i class="fas fa-sign-out-alt pr-2 pt-1"></i>
+                Sign Out
+            </a>
+        </div>
+    </div>
 
 	@RenderBody()
 
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!--My JS Links-->
+    <script src="~/js/dashboard/sidebartoggle.js"></script>
 
 	@await RenderSectionAsync("Scripts", required: false)
 </body>

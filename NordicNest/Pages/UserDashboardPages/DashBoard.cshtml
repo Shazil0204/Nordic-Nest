@@ -1,0 +1,240 @@
+﻿@page
+@model NordicNest.Pages.DashBoardModel
+@using System.Text.Json;
+@using NordicNest.Model.SavingLoanDatabase;
+@using NordicNest.Controller.DefaultSLController;
+@{
+	Layout = "~/Pages/Shared/_LayoutDashboard.cshtml";
+	NordicNest.Model.BasicProperties.CurrentPage = "Dashboard";
+	List<NordicNest.Model.Transaction.TransactionVariable> TV = new NordicNest.Model.Transaction.TransactionConnection().GetTransactionInfo();
+	List<NordicNest.Model.Subscriptions.SubVariables> SV = new NordicNest.Model.Subscriptions.SubConnection().GetSubscriptionInfo();
+	NordicNest.Controller.ClientDataController CDC = new NordicNest.Controller.ClientDataController();
+	List<Model.NavBar.NavBarProperties> NBP = new Model.NavBar.NavBarConnection().GetNavBars();
+	decimal[] progressBars = { Model.Savingpercentage(), Model.Loanpercentage() };
+	var Sresult = new DefaultSavingController().GetData();
+	var Lresult = new DefaultLoanController().GetData();
+	var ClientData = CDC.GetClientData();
+
+	List<string> CSLabel = new List<string> { "Housing", "Transportation", "Living Expenses", "Debt and Savings", "Discretionary Spending" };
+	List<int> CSdata = new List<int> { 20, 20, 20, 20, 20 };
+	List<string> CSbackgroundColor = new List<string> { "#3498db", "#27ae60", "#e74c3c", "#f39c12", "#8e44ad" };
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/ScrollBar.css" asp-append-version="true" />
+<script src="https://kit.fontawesome.com/f3d48ce569.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<body>
+    <!--First content grid-->
+    <div id="context-div-1"
+         class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-lg text-center transition-filter duration-1000 ease-in-out">
+        <div class="col-span-2 xl:col-span-2 bg-[#66cc99]/90 hover:bg-[#66cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group">
+            <div class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin">
+                The current usable amount reflects funds readily accessible for
+                spending
+            </div>
+            <div class="w-full flex items-center justify-center">
+                <i class="fas fa-money-check text-left w-1/2 text-3xl lg:text-6xl"></i>
+                <div class="w-1/2 px-2">
+                    <p class="h-1/2">Usable Amount:</p>
+                    <p class="h-1/2">5000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 xl:col-span-2 bg-[#ffcc00]/90 hover:bg-[#ffcc00]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group">
+            <div class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin">
+                Your current amount signifies the balance in your bank account at
+                present
+            </div>
+            <div class="w-full flex items-center justify-center">
+                <i class="fas fa-money-bill text-left w-1/2 text-3xl lg:text-6xl"></i>
+                <div class="w-1/2 px-2">
+                    <p class="h-1/2">Current Amount:</p>
+                    <p class="h-1/2">5000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 xl:col-span-2 bg-[#3399ff]/90 hover:bg-[#3399ff]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group">
+            <div class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin">
+                Total amount denotes the sum received monthly by the user
+            </div>
+            <div class="w-full flex items-center justify-center">
+                <i class="fas fa-coins text-left w-1/2 text-3xl lg:text-6xl"></i>
+                <div class="w-1/2 px-2">
+                    <p class="h-1/2">Total Amount:</p>
+                    <p class="h-1/2">5000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 xl:col-span-2 bg-[#ff9933]/90 hover:bg-[#ff9933]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group">
+            <div class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin">
+                User reserve amount indicates funds set aside for specific purposes or
+                emergencies
+            </div>
+            <div class="w-full flex items-center justify-center">
+                <i class="fas fa-lock text-left w-1/2 text-3xl lg:text-6xl"></i>
+                <div class="w-1/2 px-2">
+                    <p class="h-1/2">User Reserve:</p>
+                    <p class="h-1/2">5000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 xl:col-span-2 bg-[#ff6666]/90 hover:bg-[#ff6666]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group">
+            <div class="text-center w-full absolute bg-gray-800 text-white text-sm bottom-0 rounded-md shadow-md transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 font-thin">
+                System reserve amount represents funds reserved by the system for
+                operational needs or contingencies
+            </div>
+            <div class="w-full flex items-center justify-center">
+                <i class="fas fa-shield-alt text-left w-1/2 text-3xl lg:text-6xl"></i>
+                <div class="w-1/2 px-2">
+                    <p class="h-1/2">System Reserve:</p>
+                    <p class="h-1/2">5000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Second content grid-->
+    <div id="context-div-2"
+         class="-mt-7 md:grid md:grid-cols-4 lg:grid-cols-12 grid-flow-row-dense gap-3 p-4 text-2xl text-center transition-filter duration-1000 ease-in-out">
+        <div class="mt-2 md:col-span-2 lg:col-span-6 p-4 bg-[#66ccff]/90 hover:bg-[#66ccff]/70 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500">
+            <canvas id="Weekchart" class="bg-white/90 rounded-lg"></canvas>
+        </div>
+        <script src="/js/Weekchart.js"></script>
+
+        <div class="mt-2 md:col-span-2 lg:col-span-6 p-4 bg-[#99cc99]/90 hover:bg-[#99cc99]/70 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500">
+            <canvas id="MaxAmount" class="bg-white/90 rounded-lg"></canvas>
+        </div>
+        <script src="/js/MaxAmount.js"></script>
+
+        <div class="mt-2 md:mt-0 md:col-span-4 lg:col-span-8 p-4 bg-gradient-to-r from-indigo-500/50 to-emerald-500/50 rounded-lg relative drop-shadow-[0_5px_5px_rgba(0,0,0,1)] transition-filter duration-700 ease-in-out text-white">
+            <abbr title="For more click here--">
+                <a class="absolute top-2 right-2 fa-solid fa-angles-right"> </a>
+            </abbr>
+            <h2 class="font-semibold mb-4">Transactions</h2>
+            <div class="max-h-[350px] overflow-y-auto">
+                <table class="table-fixed min-w-full text-left">
+                    <thead>
+                        <tr class="bg-black">
+                            <th class="px-6 py-6 w-1/6">Day</th>
+                            <th class="px-6 w-1/6">Date</th>
+                            <th class="px-6 w-1/6">Time</th>
+                            <th class="px-6 w-1/6">From</th>
+                            <th class="px-6 w-1/6">To</th>
+                            <th class="px-6 w-1/6">Amount</th>
+                            <th class="px-6 w-1/6">Modify</th>
+                        </tr>
+                    </thead>
+                    <tbody class="">
+                        <tr class="bg-white/50 border-b-2 border-gray-500">
+                            <td class="px-6 py-3">Monday</td>
+                            <td class="px-6">09/02/23</td>
+                            <td class="px-6">09:02:33</td>
+                            <td class="px-6">Me</td>
+                            <td class="px-6">My Friend</td>
+                            <td class="px-6">920 DKK</td>
+                            <td class="px-6">
+                                <button class="border border-gray-500 min-w-full rounded-lg bg-blue-500 hover:scale-105 duration-300">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-white/50 border-b-2 border-gray-500">
+                            <td class="px-6 py-3">Monday</td>
+                            <td class="px-6">09/02/23</td>
+                            <td class="px-6">09:02:33</td>
+                            <td class="px-6">Me</td>
+                            <td class="px-6">My Friend</td>
+                            <td class="px-6">920 DKK</td>
+                            <td class="px-6">
+                                <button class="border border-gray-500 min-w-full rounded-lg bg-blue-500 hover:scale-105 duration-300">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-white/50 border-b-2 border-gray-500">
+                            <td class="px-6 py-3">Monday</td>
+                            <td class="px-6">09/02/23</td>
+                            <td class="px-6">09:07:33</td>
+                            <td class="px-6">Me</td>
+                            <td class="px-6">My Friend</td>
+                            <td class="px-6">920 DKK</td>
+                            <td class="px-6">
+                                <button class="border border-gray-500 min-w-full rounded-lg bg-blue-500 hover:scale-105 duration-300">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-white/50 border-b-2 border-gray-500">
+                            <td class="px-6 py-3">Monday</td>
+                            <td class="px-6">09/02/23</td>
+                            <td class="px-6">09:02:33</td>
+                            <td class="px-6">Me</td>
+                            <td class="px-6">My Friend</td>
+                            <td class="px-6">920 DKK</td>
+                            <td class="px-6">
+                                <button class="border border-gray-500 min-w-full rounded-lg bg-blue-500 hover:scale-105 duration-300">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mt-2 md:mt-0 md:col-span-4 bg-[#3366ff]/90 rounded-lg p-4 drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-white">
+            <abbr title="For more click here--">
+                <a class="absolute top-2 right-2 fa-solid fa-angles-right"></a>
+            </abbr>
+            <h2 class="font-semibold mb-4">Subscriptions</h2>
+            <div class="max-h-[350px] overflow-y-auto">
+                <div class="flex flex-col gap-4">
+                    <div class="bg-gray-600 rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">Subscription Name</p>
+                            <p class="text-gray-300">Price: $9.99/mo</p>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:-translate-x-5 duration-300">
+                            Manage
+                        </button>
+                    </div>
+                    <div class="bg-gray-600 rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">Subscription Name</p>
+                            <p class="text-gray-300">Price: $9.99/mo</p>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:-translate-x-5 duration-300">
+                            Manage
+                        </button>
+                    </div>
+                    <div class="bg-gray-600 rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">Subscription Name</p>
+                            <p class="text-gray-300">Price: $9.99/mo</p>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:-translate-x-5 duration-300">
+                            Manage
+                        </button>
+                    </div>
+                    <div class="bg-gray-600 rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">Subscription Name</p>
+                            <p class="text-gray-300">Price: $9.99/mo</p>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:-translate-x-5 duration-300">
+                            Manage
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 lg:mt-0 col-span-full lg:col-span-full bg-black/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-sm text-white">
+            This website is open source and licensed under
+            <strong>Creative Commons Zero (CC0)</strong>. You are free to copy,
+            modify, distribute, and use the content for any purpose without asking
+            for permission.
+        </div>
+    </div>
+</body>
