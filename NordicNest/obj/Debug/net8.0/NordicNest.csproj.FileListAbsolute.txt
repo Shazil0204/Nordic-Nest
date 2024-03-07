@@ -199,3 +199,4 @@ C:\Users\Shaz0184\OneDrive - EFIF\Skrivebord\!OnGoing\Nordic-Nest\NordicNest\obj
 C:\Users\Shaz0184\OneDrive - EFIF\Skrivebord\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\NordicNest.genruntimeconfig.cache
 C:\Users\Shaz0184\OneDrive - EFIF\Skrivebord\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\ref\NordicNest.dll
 C:\Users\Shaz0184\OneDrive - EFIF\Skrivebord\!OnGoing\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layoutdashboard.cshtml.rz.scp.css
+V:\Nordic-Nest\NordicNest\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layoutdashboard.cshtml.rz.scp.css

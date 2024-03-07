@@ -1,18 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\",
+  "WorkspaceRootPath": "V:\\Nordic-Nest\\NordicNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\userdashboardpages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|v:\\nordic-nest\\nordicnest\\pages\\userdashboardpages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\userdashboardpages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\shared\\_layoutdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\shared\\_layoutdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\wwwroot\\js\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:wwwroot\\js\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 223,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashBoard.cshtml",
+              "DocumentMoniker": "V:\\Nordic-Nest\\NordicNest\\Pages\\UserDashboardPages\\DashBoard.cshtml",
+              "RelativeDocumentMoniker": "Pages\\UserDashboardPages\\DashBoard.cshtml",
+              "ToolTip": "V:\\Nordic-Nest\\NordicNest\\Pages\\UserDashboardPages\\DashBoard.cshtml",
+              "RelativeToolTip": "Pages\\UserDashboardPages\\DashBoard.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAcAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-07T15:36:39.635Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -31,45 +36,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Auth.js",
-              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Auth.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\Auth.js",
-              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\wwwroot\\js\\Auth.js",
-              "RelativeToolTip": "wwwroot\\js\\Auth.js",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-03-06T10:24:22.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DashBoard.cshtml",
-              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "RelativeDocumentMoniker": "Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "RelativeToolTip": "Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "ViewState": "AQIAAMMAAAAAAAAAAAAAANsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-05T12:37:55.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layoutdashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Shared\\_Layoutdashboard.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Shared\\_Layoutdashboard.cshtml",
-              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Shared\\_Layoutdashboard.cshtml",
-              "RelativeToolTip": "Pages\\Shared\\_Layoutdashboard.cshtml",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAAIUAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-05T12:35:08.559Z",
-              "EditorCaption": ""
             }
           ]
         }

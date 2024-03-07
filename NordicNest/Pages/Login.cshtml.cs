@@ -30,7 +30,7 @@ namespace NordicNest.Pages
 					// Set session variable to indicate the user is logged in
 					HttpContext.Session.SetBool("IsLoggedIn", true);
 
-					return RedirectToPage("/DashBoard"); // This will send him to the dashboard
+					return RedirectToPage("/UserDashboardPages/DashBoard"); // This will send him to the dashboard
 				}
 
 				// If password is incorrect
