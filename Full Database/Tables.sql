@@ -32,7 +32,7 @@ CREATE TABLE NavBars (
 	NavID INT IDENTITY(1,1) PRIMARY KEY,
 
 	-- Name of the navigation bar (maximum length: 15 characters)
-	Name VARCHAR(15) NOT NULL,
+	Name VARCHAR(20) NOT NULL,
 
 	-- URL associated with the navigation bar (maximum length: 30 characters)
 	URL VARCHAR(30) NOT NULL,

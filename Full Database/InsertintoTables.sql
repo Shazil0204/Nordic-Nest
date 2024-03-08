@@ -1,36 +1,72 @@
 GO
 -- Insert initial data into the NavBars table
 INSERT INTO NavBars(Name, URL, IsAuthBtn) VALUES
-    ('Home','/Index',0),
-    ('About','/About',0),
-    ('Services','/Services',0),
-    ('Contact','/Contact',0),
-	('Manual','/Manual', 0),
-	('Login','/Login',1),
-	('Register','/Register',1),
-	('Dashboard','/Dashboard',0),
-	('Charts','/Charts',0),
-	('CraftHub','/CraftHub',0);
+    ('Home','/Index',0),---------------------------------- 1 	*
+    ('About','/About',0),--------------------------------- 2 	*
+    ('Services','/Services',0),--------------------------- 3 	*
+    ('Contact','/Contact',0),----------------------------- 4 	*
+	('Manual','/Manual', 0),------------------------------ 5 	*
+	('Login','/Login',1),--------------------------------- 6 	*
+	('Register','/Register',1),--------------------------- 7 	*
+	('sign out','/Index',1),------------------------------ 8 	*
+	('Dashboard','/Dashboard',0),------------------------- 9 	*
+	('Savings','/Savings',0),----------------------------- 10	
+	('Loans','/Loans',0),--------------------------------- 11	
+	('subscriptions','/Subscriptions',0),----------------- 12	
+	('message','/message',0),----------------------------- 13	
+	('Charts','/Charts',0),------------------------------- 14	
+	('Chat','/Chat',0),----------------------------------- 15	
+	('Contact Form','/Contact_Form',0),------------------- 16	*
+	('Create Saving','/CreateSaving',0),------------------ 17	
+	('Update Saving','/UpdateSaving',0),------------------ 18	
+	('Delete Saving','/DeleteSaving',0),------------------ 19	
+	('Create Loan','/CreateLoan',0),---------------------- 20	
+	('Update Loan','/UpdateLoan',0),---------------------- 21	
+	('Delete Loan','/DeleteLoan',0),---------------------- 22	
+	('Create subscription','/CreateSubscription',0),------ 23	
+	('Update subscription','/UpdateSubscription',0),------ 24	
+	('Delete subscription','/DeleteSubscription',0);------ 25		
+	
 GO
--- Insert initial data into the Pages table
 INSERT INTO Pages(Page) VALUES
-    ('Home'),
-    ('About'),
-    ('Services'),
-    ('Contact'),
-	('Dashboard'), 
-	('Charts'), 
-	('CraftHub');
+('Home'               ),
+('About'              ),
+('Services'           ),
+('Contact'            ),
+('Manual'             ),
+('Login'              ),
+('Register'           ),
+('sign'               ),
+('Dashboard'          ),
+('Savings'            ),
+('Loans'              ),
+('subscriptions'      ),
+('message'            ),
+('Charts'             ),
+('Chat'               ),
+('Contact'            ),
+('Create Saving'      ),
+('Update Saving'      ),
+('Delete Saving'      ),
+('Create Loan'        ),
+('Update Loan'        ),
+('Delete Loan'        ),
+('Create subscription'),
+('Update subscription'),
+('Delete subscription');
+
 GO
 -- Linking pages with navigation bars in NavbarForPages table
 INSERT INTO NavbarForPages(PageID, NavID) VALUES
-    (1,2),(1,3),(1,4),(1,5),(1,6),(1,7),
-	
-    (2,1),(2,3),(2,4),(2,5),(2,6),(2,7),
-    
+	(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),
+	(2,1),(2,3),(2,4),(2,5),(2,6),(2,7),
 	(3,1),(3,2),(3,4),(3,5),(3,6),(3,7),
-    
-	(4,1),(4,2),(4,3),(4,5),(4,6),(4,7);
+	(4,1),(4,2),(4,3),(4,5),(4,16),(4,6),(4,7),
+	(5,1),(5,2),(5,3),(5,4),(5,6),(5,7),
+	(9,10),(9,11),(9,12),(9,13),(9,14),(9,15),(9,8),
+	(10,17),(10,18),(10,19),(10,9),(10,8),
+	(11,20),(11,21),(11,22),(11,9),(11,8),
+	(12,23),(12,24),(12,25),(12,9),(12,8);
 
 --------------------------------------------------------------  DUMMY DATA
 -- Dummy data for Clients table
