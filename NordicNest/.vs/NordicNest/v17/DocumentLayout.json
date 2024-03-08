@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "V:\\Nordic-Nest\\NordicNest\\",
+  "WorkspaceRootPath": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|v:\\nordic-nest\\nordicnest\\pages\\userdashboardpages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\userdashboardpages\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\manual.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\manual.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|c:\\users\\shaz0184\\onedrive - efif\\skrivebord\\!ongoing\\nordic-nest\\nordicnest\\pages\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA978400-1FD2-432F-B52B-C119457C0288}|NordicNest.csproj|solutionrelative:pages\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DashBoard.cshtml",
-              "DocumentMoniker": "V:\\Nordic-Nest\\NordicNest\\Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "RelativeDocumentMoniker": "Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "ToolTip": "V:\\Nordic-Nest\\NordicNest\\Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "RelativeToolTip": "Pages\\UserDashboardPages\\DashBoard.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAcAAAA6AAAA",
+              "Title": "Manual.cshtml",
+              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Manual.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Manual.cshtml",
+              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Manual.cshtml",
+              "RelativeToolTip": "Pages\\Manual.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-07T15:36:39.635Z",
+              "WhenOpened": "2024-03-08T08:17:36.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Services.cshtml",
+              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Services.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Services.cshtml",
+              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Services.cshtml",
+              "RelativeToolTip": "Pages\\Services.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-08T08:17:27.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Contact.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\Contact.cshtml",
+              "RelativeToolTip": "Pages\\Contact.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-08T08:16:12.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\About.cshtml",
+              "RelativeDocumentMoniker": "Pages\\About.cshtml",
+              "ToolTip": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\Pages\\About.cshtml",
+              "RelativeToolTip": "Pages\\About.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-08T08:15:58.669Z",
               "EditorCaption": ""
             },
             {
