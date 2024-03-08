@@ -138,7 +138,9 @@
               class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
             >
               <i class="fas fa-money-check-alt pr-2 pt-1"></i>
-              <a href="createsavingaccount.html" class="w-full"> Create Saving </a>
+              <a href="createsavingaccount.html" class="w-full">
+                Create Saving
+              </a>
             </li>
             <li
               class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
@@ -150,7 +152,9 @@
               class="flex py-2 px-4 text-xl hover:bg-gray-700 rounded-lg duration-300 hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)]"
             >
               <i class="fas fa-money-check-alt pr-2 pt-1"></i>
-              <a href="createsubscription.html" class="w-full"> Create subscription </a>
+              <a href="createsubscription.html" class="w-full">
+                Create subscription
+              </a>
             </li>
           </ul>
         </nav>
@@ -170,7 +174,7 @@
     <!--First content grid-->
     <div
       id="context-div-1"
-      class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-xl text-center transition-filter duration-1000 ease-in-out"
+      class="grid grid-cols-2 xl:grid-cols-10 grid-flow-row-dense gap-3 p-4 text-lg text-center transition-filter duration-1000 ease-in-out"
     >
       <div
         class="col-span-2 xl:col-span-2 bg-[#66cc99]/90 hover:bg-[#66cc99]/70 rounded-lg drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500 py-10 font-extrabold relative group"
@@ -182,10 +186,12 @@
           spending
         </div>
         <div class="w-full flex items-center justify-center">
-          <i class="fas fa-money-check text-left w-1/2 text-6xl"></i>
+          <i
+            class="fas fa-money-check text-left w-1/2 text-3xl lg:text-6xl"
+          ></i>
           <div class="w-1/2 px-2">
             <p class="h-1/2">Usable Amount:</p>
-            <p class="text-4xl h-1/2">5000</p>
+            <p class="h-1/2">5000</p>
           </div>
         </div>
       </div>
@@ -199,10 +205,10 @@
           present
         </div>
         <div class="w-full flex items-center justify-center">
-          <i class="fas fa-money-bill text-left w-1/2 text-6xl"></i>
+          <i class="fas fa-money-bill text-left w-1/2 text-3xl lg:text-6xl"></i>
           <div class="w-1/2 px-2">
             <p class="h-1/2">Current Amount:</p>
-            <p class="text-4xl h-1/2">5000</p>
+            <p class="h-1/2">5000</p>
           </div>
         </div>
       </div>
@@ -215,10 +221,10 @@
           Total amount denotes the sum received monthly by the user
         </div>
         <div class="w-full flex items-center justify-center">
-          <i class="fas fa-coins text-left w-1/2 text-6xl"></i>
+          <i class="fas fa-coins text-left w-1/2 text-3xl lg:text-6xl"></i>
           <div class="w-1/2 px-2">
             <p class="h-1/2">Total Amount:</p>
-            <p class="text-4xl h-1/2">5000</p>
+            <p class="h-1/2">5000</p>
           </div>
         </div>
       </div>
@@ -232,10 +238,10 @@
           emergencies
         </div>
         <div class="w-full flex items-center justify-center">
-          <i class="fas fa-lock text-left w-1/2 text-6xl"></i>
+          <i class="fas fa-lock text-left w-1/2 text-3xl lg:text-6xl"></i>
           <div class="w-1/2 px-2">
             <p class="h-1/2">User Reserve:</p>
-            <p class="text-4xl h-1/2">5000</p>
+            <p class="h-1/2">5000</p>
           </div>
         </div>
       </div>
@@ -249,10 +255,10 @@
           operational needs or contingencies
         </div>
         <div class="w-full flex items-center justify-center">
-          <i class="fas fa-shield-alt text-left w-1/2 text-6xl"></i>
+          <i class="fas fa-shield-alt text-left w-1/2 text-3xl lg:text-6xl"></i>
           <div class="w-1/2 px-2">
             <p class="h-1/2">System Reserve:</p>
-            <p class="text-4xl h-1/2">5000</p>
+            <p class="h-1/2">5000</p>
           </div>
         </div>
       </div>
@@ -268,15 +274,12 @@
       >
         <canvas id="Weekchart" class="bg-white/90 rounded-lg"></canvas>
       </div>
-      <script src="/js/Weekchart.js"></script>
 
       <div
         class="mt-2 md:col-span-2 lg:col-span-6 p-4 bg-[#99cc99]/90 hover:bg-[#99cc99]/70 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
       >
         <canvas id="MaxAmount" class="bg-white/90 rounded-lg"></canvas>
       </div>
-      <script src="/js/MaxAmount.js"></script>
-
       <div
         class="mt-2 md:mt-0 md:col-span-4 lg:col-span-8 p-4 bg-gradient-to-r from-indigo-500/50 to-emerald-500/50 rounded-lg relative drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] transition-filter duration-700 ease-in-out text-white"
       >
@@ -426,13 +429,6 @@
           </div>
         </div>
       </div>
-      <!--This one might not be nesecary right now so i might have to move it to another page-->
-      <!-- <div
-        class="mt-2 col-span-full p-4 bg-[#ffcc66]/90 hover:bg-[#ffcc66]/70 rounded-lg flex justify-center items-center drop-shadow-[0_5px_5px_rgba(0,0,0,1)] hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] duration-500"
-      >
-        <canvas id="MaxAmount" class="bg-white/90 rounded-lg"></canvas>
-      </div>
-      <script src="MaxAmount.js"></script> -->
       <div
         class="mt-5 lg:mt-0 col-span-full lg:col-span-full bg-black/50 rounded-lg p-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_5px_5px_rgba(0,0,0,1)] duration-500 text-sm text-white"
       >
@@ -442,7 +438,8 @@
         for permission.
       </div>
     </div>
-
-    <script src="/js/sidebartoggle.js"></script>
   </body>
 </html>
+<script src="/js/Weekchart.js"></script>
+<script src="/js/MaxAmount.js"></script>
+<script src="/js/sidebartoggle.js"></script>
