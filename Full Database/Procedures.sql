@@ -64,21 +64,22 @@ END;
 GO
 
 CREATE PROCEDURE USERCONTACTFORM(
-	@FirstName VARCHAR(30),
-	@LastName VARCHAR(30),
-	@IsExistingClient BIT,
-	@MessageContent VARCHAR(255)
+    @FirstName VARCHAR(30),
+    @LastName VARCHAR(30),
+    @IsExistingClient BIT,
+    @MessageContent VARCHAR(255),
+    @ClientEmail VARCHAR(50) -- Add email parameter
 )
 AS
 BEGIN
-	SET NOCOUNT ON;
+    SET NOCOUNT ON;
     BEGIN TRY
         -- INSERTING DATA INTO THE TABLE
-		INSERT INTO ContactInquiries (FirstName, LastName, IsExistingClient, SubmissionDateTime, MessageContent,  InquiryCompleted)
-		VALUES (@FirstName, @LastName, @IsExistingClient, GETDATE(), @MessageContent, 0);
+        INSERT INTO ContactInquiries (FirstName, LastName, IsExistingClient, SubmissionDateTime, MessageContent, InquiryCompleted, ClientEmail) -- Include ClientEmail column
+        VALUES (@FirstName, @LastName, @IsExistingClient, GETDATE(), @MessageContent, 0, @ClientEmail); -- Pass @ClientEmail parameter
 		
-		-- DATA INSERT SUCCESSFULLY
-		SELECT 1 AS Result;
+        -- DATA INSERT SUCCESSFULLY
+        SELECT 1 AS Result;
 
     END TRY
     BEGIN CATCH
