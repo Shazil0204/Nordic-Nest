@@ -95,7 +95,10 @@ CREATE TABLE ContactInquiries (
 	MessageContent VARCHAR(255) NOT NULL,
 
 	-- Indicates whether the inquiry has been completed (1 for true, 0 for false)
-	InquiryCompleted BIT NOT NULL
+	InquiryCompleted BIT NOT NULL,
+	
+	-- User Email to reply
+	ClientEmail VARCHAR(50) NOT NULL
 );
 -- End of table creation
 GO
