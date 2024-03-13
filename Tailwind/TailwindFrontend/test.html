@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f3d48ce569.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Hide scrollbar for webkit browsers */
+      ::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+      }
+
+      /* Optional: Style the scrollbar track and thumb */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Make scrollbar track transparent */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 py-8 px-4">
+    <div class="max-w-md mx-auto bg-white p-8 rounded shadow-md">
+      <h2 class="text-xl font-semibold mb-4">Password Matching Check</h2>
+      <form id="passwordForm">
+        <div class="mb-4">
+          <label for="password" class="block text-gray-700 font-medium mb-2"
+            >Password:</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="border border-gray-300 rounded-md px-3 py-2 w-full"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="confirmPassword"
+            class="block text-gray-700 font-medium mb-2"
+            >Confirm Password:</label
+          >
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            class="border border-gray-300 rounded-md px-3 py-2 w-full"
+            required
+          />
+        </div>
+        <div id="passwordMatchMessage" class="text-red-600 mb-4 hidden">
+          Passwords do not match!
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-md"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <script>
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirmPassword");
+      const passwordMatchMessage = document.getElementById(
+        "passwordMatchMessage"
+      );
+
+      // Function to check password match
+      function checkPasswordMatch() {
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          passwordMatchMessage.classList.remove("hidden");
+          confirmPasswordInput.style.border = "1px solid red";
+        } else {
+          passwordMatchMessage.classList.add("hidden");
+          passwordInput.style.border = "1px solid green";
+          confirmPasswordInput.style.border = "1px solid green";
+        }
+      }
+
+      // Add event listeners for input events on both password fields
+      passwordInput.addEventListener("input", checkPasswordMatch);
+      confirmPasswordInput.addEventListener("input", checkPasswordMatch);
+    </script>
+  </body>
+</html>
