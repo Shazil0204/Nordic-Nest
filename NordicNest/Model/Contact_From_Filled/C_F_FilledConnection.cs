@@ -25,7 +25,7 @@ namespace NordicNest.Model.Contact_From_Filled
 				cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 30).Value = lastName;
 				cmd.Parameters.Add("@IsExistingClient", SqlDbType.Bit).Value = isExistingClient;
 				cmd.Parameters.Add("@MessageContent", SqlDbType.VarChar, 255).Value = messageContent;
-				cmd.Parameters.Add("@UserEmail", SqlDbType.VarChar, 75).Value = userEmail;
+				cmd.Parameters.Add("@ClientEmail", SqlDbType.VarChar, 75).Value = userEmail;
 
 				try
 				{
@@ -44,9 +44,7 @@ namespace NordicNest.Model.Contact_From_Filled
 					conn.Close();
 				}
 			}
-
 			return result;
 		}
-
 	}
 }

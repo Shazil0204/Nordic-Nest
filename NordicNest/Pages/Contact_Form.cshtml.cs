@@ -83,12 +83,10 @@ namespace NordicNest.Pages
 			}
 			else
 			{
-
 				_firstname = CFP.FirstName;
 				_lastname = CFP.LastName;
 				_clientNumber = CFP.ClientNumber;
 				_result = CFP.Result;
-
 				TempData["FirstName"] = _firstname;
 				TempData["LastName"] = _lastname;
 			}
@@ -103,6 +101,7 @@ namespace NordicNest.Pages
 		public IActionResult OnPostCancel()
 		{
 			ShowMessage = false;
+
 			return RedirectToPage(); // Redirects to the same page with a GET request
 		}
 
@@ -117,7 +116,6 @@ namespace NordicNest.Pages
 			var lastName = TempData["LastName"] as string;
 			// ... similarly for other variables ...
 
-
 			CFFC.SubmitContactForm(firstName, lastName, true, userMessage, userEmail);
 
 			return RedirectToPage();
@@ -129,7 +127,7 @@ namespace NordicNest.Pages
 		/// <returns></returns>
 		public IActionResult OnPostIsNotClient()
 		{
-
+			
 			CFFC.SubmitContactForm(NewUserFirstName, NewUserLastName, false, userMessage, userEmail);
 
 			return RedirectToPage();
@@ -137,3 +135,4 @@ namespace NordicNest.Pages
 		#endregion
 	}
 }
+ 

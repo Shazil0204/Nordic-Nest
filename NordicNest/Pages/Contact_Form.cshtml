@@ -78,9 +78,9 @@
 					<form id="clientForm" method="post" asp-page-handler="isNotClient">
 						<div class="bg-gray-100 p-1 rounded">
 							<div class="lg:flex text-center justify-center items-center bg-gray-100">
-								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" name="NewUserFirstName" type="text" placeholder="First Name" required />
-								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" name="NewUserLastName" type="text" placeholder="Last Name" required />
-								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold lg:w-100 m-3 text-black font-bold" name="userEmail" type="email" placeholder="Your Email" required />
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold w-1/3 m-3 text-black font-bold" name="NewUserFirstName" type="text" placeholder="First Name" required />
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold w-1/3 m-3 text-black font-bold" name="NewUserLastName" type="text" placeholder="Last Name" required />
+								<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold w-1/3 m-3 text-black font-bold" name="userEmail" type="email" placeholder="Your Email" required />
 							</div>
 						</div>
 
@@ -140,9 +140,10 @@
 						<form id="clientForm" method="post" asp-page-handler="isClient">
 							<div class="bg-gray-100 p-1 rounded">
 								<div class="lg:flex text-center justify-center items-center bg-gray-100">
-									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold" type="text" placeholder="@Model._firstname" readonly />
-									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold" type="text" placeholder="@Model._lastname" readonly />
-									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/5 font-bold m-3 text-black font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" type="number" placeholder="@Model._clientNumber" readonly />
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/4 font-bold m-3 text-black font-bold" type="text" placeholder="@Model._firstname" readonly />
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/4 font-bold m-3 text-black font-bold" type="text" placeholder="@Model._lastname" readonly />
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center lg:w-1/4 font-bold m-3 text-black font-bold" type="number" placeholder="@Model._clientNumber" readonly />
+									<input class="rounded border-2 border-sky-500 text-xs sm:text-sm lg:text-lg xl:text-xl text-center font-bold w-1/3 m-3 text-black font-bold" name="userEmail" type="email" placeholder="Your Email" required />
 								</div>
 							</div>
 
