@@ -116,7 +116,7 @@ CREATE TABLE Clients(
     -- Email address of the client
 	Email VARCHAR(50) NOT NULL,
     -- User login username
-	UserName VARCHAR(150) NOT NULL,
+	UserName VARCHAR(30) NOT NULL,
     -- User login password
 	Password VARCHAR(150) NOT NULL,
     -- Gender of the client (BIT: 0 for male, 1 for female, for example)
