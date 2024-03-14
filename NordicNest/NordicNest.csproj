@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\NewFolder\**" />
+    <Content Remove="Model\NewFolder\**" />
+    <EmbeddedResource Remove="Model\NewFolder\**" />
+    <None Remove="Model\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
@@ -17,7 +24,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Model\NewFolder\" />
 	  <Folder Include="wwwroot\Images\" />
 	</ItemGroup>
 
