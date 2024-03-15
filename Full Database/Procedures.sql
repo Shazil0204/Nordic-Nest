@@ -498,6 +498,14 @@ BEGIN
             WHERE ClientID = @ClientID
         ';
 
+        -- Validate @ClientID if necessary
+        IF @ClientID IS NULL
+        BEGIN
+            -- Handle invalid input (e.g., raise error or return specific result)
+            RAISEERROR('ClientID cannot be NULL.', 16, 1);
+            RETURN;
+        END
+
         EXEC sp_executesql @SQL, N'@ClientID INT', @ClientID;
     END TRY
     BEGIN CATCH
