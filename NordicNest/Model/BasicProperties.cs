@@ -12,7 +12,7 @@ namespace NordicNest.Model
         internal static bool IsNew { get; set; }
         internal static bool IsLogged { get; set; } = false;
         internal static int ClientID { get; set; } = 1;
-        internal static int ForgotPasswordcurrentForm { get; set; } = 4;
+        internal static int ForgotPasswordcurrentForm { get; set; } = 0;
 		#endregion
 	}
 }

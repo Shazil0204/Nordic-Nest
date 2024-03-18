@@ -515,19 +515,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\20shi\\.nuget\\packages\\": {}
+    "C:\\Users\\Shaz0184\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+      "projectUniqueName": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
       "projectName": "NordicNest",
-      "projectPath": "V:\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
-      "packagesPath": "C:\\Users\\20shi\\.nuget\\packages\\",
-      "outputPath": "V:\\Nordic-Nest\\NordicNest\\obj\\",
+      "projectPath": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\NordicNest.csproj",
+      "packagesPath": "C:\\Users\\Shaz0184\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Shaz0184\\OneDrive - EFIF\\Skrivebord\\!OnGoing\\Nordic-Nest\\NordicNest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\20shi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Shaz0184\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -586,7 +586,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
