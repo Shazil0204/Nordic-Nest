@@ -4,6 +4,22 @@ GO
 USE T;
 GO
 
+-- Create a new login named Navbar with SQL Server authentication
+CREATE LOGIN TFullAccess WITH PASSWORD = 'Kode1234!', DEFAULT_DATABASE = T;
+GO
+
+-- Switch to NordicNestDB database
+USE T;
+GO
+
+-- Create a user for the Navbar login
+CREATE USER TFullAccess FOR LOGIN TFullAccess;
+GO
+
+-- Grant read-only access to the Navbar user by adding it to db_datareader role
+ALTER ROLE db_owner ADD MEMBER TFullAccess;
+GO
+
 CREATE TABLE Clients(
     -- Unique identifier for each client
 	ClientID INT IDENTITY(1,1) PRIMARY KEY,
@@ -109,7 +125,7 @@ BEGIN
     DECLARE @Digit CHAR(1);
     DECLARE @Counter INT = 1;
 
-    WHILE @Counter <= 19
+    WHILE @Counter <= 9
     BEGIN
         SET @Digit = CHAR(FLOOR(RAND() * 10) + 48);  -- Generate a random digit (0-9)
         SET @RandomCode = @RandomCode + @Digit;  -- Append the digit to the random code
@@ -128,7 +144,7 @@ GO
 
 
 CREATE PROCEDURE AUTOKEYINSERTER(
-	@AKUsername VARCHAR(20),
+	@Username VARCHAR(20),
 	@Result INT OUTPUT
 )
 AS
@@ -137,7 +153,7 @@ BEGIN
 	BEGIN TRY
 		DECLARE @ClientID INT; 
 		DECLARE @COUNTHMT INT;
-		SELECT @ClientID = ClientID FROM Clients WHERE Username = @AKUsername;
+		SELECT @ClientID = ClientID FROM Clients WHERE Username = @Username;
 		SELECT @COUNTHMT = HowManyTimes FROM Clients WHERE ClientID = @ClientID;
 		IF @COUNTHMT = 5
 		BEGIN
@@ -201,6 +217,28 @@ BEGIN
 END;
 GO
 
+
+-----------------------------------------------------------------------AGKReturn
+
+
+CREATE PROCEDURE AGKRETURN(
+    @Username VARCHAR(30),
+    @Result VARCHAR(20) OUTPUT
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRY
+        SELECT @Result = AGK FROM Clients WHERE UserName = @Username;
+    END TRY
+    BEGIN CATCH
+        -- Handle errors
+        SET @Result = '-994';
+        PRINT 'Error: ' + ERROR_MESSAGE(); -- Print the error message for debugging
+    END CATCH
+END;
+
+
 -- works hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu hu-hu
 
 
@@ -215,3 +253,4 @@ GO
 -- @Result = 991 -- Print the error message for debugging (CHECKUSERNAMEANDEMAIL)
 -- @Result = 992 -- Print the error message for debugging (AUTOKEYINSERTER)
 -- @Result = 993 -- Print the error message for debugging (RESETPASSWORDFINAL)
+-- @Result = 994 -- Print the error message for debugging (AGKRETURN)
