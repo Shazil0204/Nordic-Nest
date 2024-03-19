@@ -5,11 +5,8 @@ namespace NordicNest.Model.ForgotPassword
 {
     public class CheckUserEmailConnection
     {
-        internal void CUEConnection()
+        internal void CUEConnection(string username, string email)
         {
-            string username = "";
-            string email = "abcd";
-
             int result = -9991;
 
             // Connection string from appsettings.json
@@ -46,9 +43,7 @@ namespace NordicNest.Model.ForgotPassword
                         result = (int)resultParam.Value;
 
                         // Assign the result to Model.BasicProperties.ForgotPasswordcurrentForm
-                        Console.WriteLine("before " + BasicProperties.ForgotPasswordcurrentForm);
                         BasicProperties.ForgotPasswordcurrentForm = result;
-                        Console.WriteLine("After " + BasicProperties.ForgotPasswordcurrentForm);
                     }
                     catch (Exception ex)
                     {

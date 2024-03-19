@@ -6,11 +6,8 @@ namespace NordicNest.Model.ForgotPassword
 {
     public class PasswordResetConnection
     {
-        internal void PRConnection()
+        internal void PRConnection(string username, string password, string verifyAGK)
         {
-            string username = "johndoe";
-            string password = "abcd";
-            string verifyAGK = "0";
             int result = -9993;
 
             // Connection string from appsettings.json
@@ -48,9 +45,7 @@ namespace NordicNest.Model.ForgotPassword
                         result = (int)resultParam.Value;
 
                         // Assign the result to Model.BasicProperties.ForgotPasswordcurrentForm
-                        Console.WriteLine("before " + BasicProperties.ForgotPasswordcurrentForm);
                         BasicProperties.ForgotPasswordcurrentForm = result;
-                        Console.WriteLine("After " + BasicProperties.ForgotPasswordcurrentForm);
                     }
                     catch (Exception ex)
                     {
